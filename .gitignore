@@ -1,0 +1,7 @@
+export/
+assets_flynet/
+assets_old/
+assets_older/
+flynets source/
+.vscode/
+APIStuff.hx

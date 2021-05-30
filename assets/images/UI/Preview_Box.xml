@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Preview_Box.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Preview Box Movie0000" x="0" y="0" width="325" height="495" frameX="-3" frameY="-7" frameWidth="330" frameHeight="502"/>
+	<SubTexture name="Preview Box Movie0001" x="0" y="0" width="325" height="495" frameX="-3" frameY="-7" frameWidth="330" frameHeight="502"/>
+	<SubTexture name="Preview Box Movie0002" x="0" y="495" width="330" height="501" frameX="0" frameY="0" frameWidth="330" frameHeight="502"/>
+	<SubTexture name="Preview Box Movie0003" x="0" y="495" width="330" height="501" frameX="0" frameY="0" frameWidth="330" frameHeight="502"/>
+</TextureAtlas>

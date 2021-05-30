@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="flynets_dog.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="dog bop0000" x="0" y="0" width="529" height="551" frameX="0" frameY="-16" frameWidth="529" frameHeight="571"/>
+	<SubTexture name="dog bop0001" x="0" y="0" width="529" height="551" frameX="0" frameY="-16" frameWidth="529" frameHeight="571"/>
+	<SubTexture name="dog bop0002" x="534" y="0" width="525" height="566" frameX="-2" frameY="-3" frameWidth="529" frameHeight="571"/>
+	<SubTexture name="dog bop0003" x="534" y="0" width="525" height="566" frameX="-2" frameY="-3" frameWidth="529" frameHeight="571"/>
+	<SubTexture name="dog bop0004" x="1064" y="0" width="523" height="570" frameX="-3" frameY="0" frameWidth="529" frameHeight="571"/>
+	<SubTexture name="dog bop0005" x="1064" y="0" width="523" height="570" frameX="-3" frameY="0" frameWidth="529" frameHeight="571"/>
+	<SubTexture name="dog bop0006" x="0" y="575" width="522" height="570" frameX="-4" frameY="-1" frameWidth="529" frameHeight="571"/>
+	<SubTexture name="dog bop0007" x="0" y="575" width="522" height="570" frameX="-4" frameY="-1" frameWidth="529" frameHeight="571"/>
+</TextureAtlas>

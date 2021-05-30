@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="nadalyn_dancers.png">
+	<!-- Created with Adobe Animate version 21.0.1.37179 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="nadders dance0000" x="0" y="0" width="442" height="389" frameX="0" frameY="0" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0001" x="0" y="0" width="442" height="389" frameX="0" frameY="0" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0002" x="442" y="0" width="417" height="371" frameX="-27" frameY="-18" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0003" x="442" y="0" width="417" height="371" frameX="-27" frameY="-18" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0004" x="442" y="0" width="417" height="371" frameX="-27" frameY="-18" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0005" x="859" y="0" width="368" height="347" frameX="-74" frameY="-42" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0006" x="859" y="0" width="368" height="347" frameX="-74" frameY="-42" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0007" x="1227" y="0" width="316" height="329" frameX="-122" frameY="-60" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0008" x="1227" y="0" width="316" height="329" frameX="-122" frameY="-60" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0009" x="1543" y="0" width="260" height="329" frameX="-180" frameY="-61" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0010" x="1543" y="0" width="260" height="329" frameX="-180" frameY="-61" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0011" x="0" y="389" width="307" height="347" frameX="-183" frameY="-43" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0012" x="0" y="389" width="307" height="347" frameX="-183" frameY="-43" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0013" x="0" y="389" width="307" height="347" frameX="-183" frameY="-43" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0014" x="0" y="389" width="307" height="347" frameX="-183" frameY="-43" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0015" x="307" y="389" width="443" height="389" frameX="-179" frameY="-1" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0016" x="307" y="389" width="443" height="389" frameX="-179" frameY="-1" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0017" x="750" y="389" width="417" height="371" frameX="-177" frameY="-18" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0018" x="750" y="389" width="417" height="371" frameX="-177" frameY="-18" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0019" x="750" y="389" width="417" height="371" frameX="-177" frameY="-18" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0020" x="1167" y="389" width="368" height="347" frameX="-176" frameY="-42" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0021" x="1167" y="389" width="368" height="347" frameX="-176" frameY="-42" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0022" x="1535" y="389" width="316" height="329" frameX="-175" frameY="-60" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0023" x="1535" y="389" width="316" height="329" frameX="-175" frameY="-60" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0024" x="0" y="778" width="260" height="329" frameX="-174" frameY="-61" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0025" x="0" y="778" width="260" height="329" frameX="-174" frameY="-61" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0026" x="260" y="778" width="307" height="347" frameX="-125" frameY="-43" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0027" x="260" y="778" width="307" height="347" frameX="-125" frameY="-43" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0028" x="260" y="778" width="307" height="347" frameX="-125" frameY="-43" frameWidth="622" frameHeight="390"/>
+	<SubTexture name="nadders dance0029" x="260" y="778" width="307" height="347" frameX="-125" frameY="-43" frameWidth="622" frameHeight="390"/>
+</TextureAtlas>

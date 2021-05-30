@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Free texture packer v0.6.6 http://free-tex-packer.com
+Format:
+n  => name
+x  => x pos
+y  => y pos
+w  => width
+h  => height
+pX => x pos of the pivot point
+pY => y pos of the pivot point
+oX => x-corner offset
+oY => y-corner offset
+oW => original width
+oH => original height
+r => 'y' if sprite is rotated-->
+<TextureAtlas imagePath="gamingChar.png">
+  <SubTexture name="downAnim0000.png" x="0" y="0" width="380" height="460"/>
+  <SubTexture name="downAnim0001.png" x="0" y="0" width="380" height="460"/>
+  <SubTexture name="downAnim0002.png" x="0" y="0" width="380" height="460" frameX="0" frameY="-10" frameWidth="380" frameHeight="460"/>
+  <SubTexture name="gamingLeft0000.png" x="380" y="0" width="280" height="460"/>
+  <SubTexture name="gamingLeft0001.png" x="660" y="0" width="280" height="460"/>
+  <SubTexture name="gamingLeft0002.png" x="940" y="0" width="280" height="460"/>
+  <SubTexture name="gamingLeft0003.png" x="1220" y="0" width="280" height="460"/>
+  <SubTexture name="leftAnim0000.png" x="1500" y="0" width="380" height="460"/>
+  <SubTexture name="leftAnim0001.png" x="1500" y="0" width="380" height="460"/>
+  <SubTexture name="leftAnim0002.png" x="1500" y="0" width="380" height="460" frameX="0" frameY="-10" frameWidth="380" frameHeight="460"/>
+  <SubTexture name="rightAnim0000.png" x="0" y="460" width="280" height="460"/>
+  <SubTexture name="rightAnim0001.png" x="0" y="460" width="280" height="460"/>
+  <SubTexture name="rightAnim0002.png" x="0" y="460" width="280" height="460" frameX="0" frameY="-10" frameWidth="280" frameHeight="460"/>
+  <SubTexture name="upAnim0000.png" x="280" y="460" width="480" height="580"/>
+  <SubTexture name="upAnim0001.png" x="280" y="460" width="480" height="580"/>
+  <SubTexture name="upAnim0002.png" x="280" y="460" width="480" height="580"  frameX="0" frameY="-10" frameWidth="480" frameHeight="480"/>
+</TextureAtlas>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Title_Screen_Junks.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="gamign0000" x="0" y="0" width="754" height="757"/>
+	<SubTexture name="gamign0001" x="759" y="0" width="754" height="757"/>
+	<SubTexture name="gamign0002" x="759" y="0" width="754" height="757"/>
+	<SubTexture name="gamign0003" x="0" y="762" width="754" height="757"/>
+	<SubTexture name="gamign0004" x="0" y="762" width="754" height="757"/>
+	<SubTexture name="gamign0005" x="759" y="762" width="754" height="757"/>
+	<SubTexture name="gamign0006" x="759" y="762" width="754" height="757"/>
+	<SubTexture name="gamign0007" x="0" y="1524" width="754" height="757"/>
+	<SubTexture name="gamign0008" x="0" y="1524" width="754" height="757"/>
+	<SubTexture name="gamign0009" x="759" y="1524" width="754" height="757"/>
+	<SubTexture name="gamign0010" x="759" y="1524" width="754" height="757"/>
+	<SubTexture name="gamign0011" x="759" y="1524" width="754" height="757"/>
+	<SubTexture name="gamign0012" x="759" y="1524" width="754" height="757"/>
+	<SubTexture name="gamign0013" x="759" y="1524" width="754" height="757"/>
+	<SubTexture name="gamign0014" x="759" y="1524" width="754" height="757"/>
+	<SubTexture name="racial jig (not spiteful)0000" x="0" y="2286" width="666" height="804"/>
+	<SubTexture name="racial jig (not spiteful)0001" x="0" y="2286" width="666" height="804"/>
+	<SubTexture name="racial jig (not spiteful)0002" x="671" y="2286" width="666" height="804"/>
+	<SubTexture name="racial jig (not spiteful)0003" x="671" y="2286" width="666" height="804"/>
+	<SubTexture name="racial jig (not spiteful)0004" x="1342" y="2286" width="666" height="804"/>
+	<SubTexture name="racial jig (not spiteful)0005" x="1342" y="2286" width="666" height="804"/>
+	<SubTexture name="racial jig (not spiteful)0006" x="0" y="3095" width="666" height="804"/>
+	<SubTexture name="racial jig (not spiteful)0007" x="0" y="3095" width="666" height="804"/>
+	<SubTexture name="racial jig (not spiteful)0008" x="671" y="3095" width="666" height="804"/>
+	<SubTexture name="racial jig (not spiteful)0009" x="671" y="3095" width="666" height="804"/>
+	<SubTexture name="racial jig (not spiteful)0010" x="671" y="3095" width="666" height="804"/>
+	<SubTexture name="racial jig (not spiteful)0011" x="671" y="3095" width="666" height="804"/>
+	<SubTexture name="racial jig (not spiteful)0012" x="671" y="3095" width="666" height="804"/>
+	<SubTexture name="racial jig (not spiteful)0013" x="671" y="3095" width="666" height="804"/>
+	<SubTexture name="racial jig (not spiteful)0014" x="671" y="3095" width="666" height="804"/>
+</TextureAtlas>
+
+
+var _GAMEPLAY_up = new FlxActionDigital(Action.GAMEPLAY_UP);
+	var _GAMEPLAY_left = new FlxActionDigital(Action.GAMEPLAY_LEFT);
+	var _GAMEPLAY_right = new FlxActionDigital(Action.GAMEPLAY_RIGHT);
+	var _GAMEPLAY_down = new FlxActionDigital(Action.GAMEPLAY_DOWN);
+	var _GAMEPLAY_upP = new FlxActionDigital(Action.GAMEPLAY_UP_P);
+	var _GAMEPLAY_leftP = new FlxActionDigital(Action.GAMEPLAY_LEFT_P);
+	var _GAMEPLAY_rightP = new FlxActionDigital(Action.GAMEPLAY_RIGHT_P);
+	var _GAMEPLAY_downP = new FlxActionDigital(Action.GAMEPLAY_DOWN_P);
+	var _GAMEPLAY_upR = new FlxActionDigital(Action.GAMEPLAY_UP_R);
+	var _GAMEPLAY_leftR = new FlxActionDigital(Action.GAMEPLAY_LEFT_R);
+	var _GAMEPLAY_rightR = new FlxActionDigital(Action.GAMEPLAY_RIGHT_R);
+	var _GAMEPLAY_downR = new FlxActionDigital(Action.GAMEPLAY_DOWN_R);

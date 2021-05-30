@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="iuytres.png">
+	<!-- Created with Adobe Animate version 20.0.0.17400 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="idle" x="0" y="0" width="351" height="534" frameX="0" frameY="0" frameWidth="386" frameHeight="535"/>
+	<SubTexture name="right" x="367" y="0" width="374" height="534" frameX="0" frameY="0" frameWidth="386" frameHeight="535"/>
+	<SubTexture name="up" x="763" y="0" width="386" height="534" frameX="0" frameY="0" frameWidth="386" frameHeight="535"/>
+	<SubTexture name="left" x="1170" y="0" width="328" height="535" frameX="0" frameY="0" frameWidth="386" frameHeight="535"/>
+	<SubTexture name="down" x="1514" y="0" width="350" height="534" frameX="20" frameY="0" frameWidth="386" frameHeight="535"/>
+</TextureAtlas>

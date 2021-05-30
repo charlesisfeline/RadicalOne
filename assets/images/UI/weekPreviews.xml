@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="weekPreviews.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="pic10000" x="0" y="0" width="675" height="392"/>
+	<SubTexture name="pic20000" x="0" y="392" width="776" height="391"/>
+	<SubTexture name="pic30000" x="0" y="783" width="663" height="394"/>
+	<SubTexture name="pic40000" x="0" y="1177" width="699" height="395"/>
+	<SubTexture name="pic60000" x="0" y="1572" width="779" height="398"/>
+</TextureAtlas>

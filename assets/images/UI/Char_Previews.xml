@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Char_Previews.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="NewRadical0000" x="0" y="0" width="153" height="215" frameX="0" frameY="-4" frameWidth="153" frameHeight="219"/>
+	<SubTexture name="NewRadical0001" x="0" y="0" width="153" height="215" frameX="0" frameY="-4" frameWidth="153" frameHeight="219"/>
+	<SubTexture name="NewRadical0002" x="153" y="0" width="147" height="217" frameX="-2" frameY="-2" frameWidth="153" frameHeight="219"/>
+	<SubTexture name="NewRadical0003" x="153" y="0" width="147" height="217" frameX="-2" frameY="-2" frameWidth="153" frameHeight="219"/>
+	<SubTexture name="NewRadical0004" x="300" y="0" width="141" height="219" frameX="-4" frameY="0" frameWidth="153" frameHeight="219"/>
+	<SubTexture name="NewRadical0005" x="300" y="0" width="141" height="219" frameX="-4" frameY="0" frameWidth="153" frameHeight="219"/>
+	<SubTexture name="NewRadical0006" x="0" y="219" width="131" height="217" frameX="-9" frameY="-2" frameWidth="153" frameHeight="219"/>
+	<SubTexture name="NewRadical0007" x="0" y="219" width="131" height="217" frameX="-9" frameY="-2" frameWidth="153" frameHeight="219"/>
+	<SubTexture name="NewRadical0008" x="0" y="219" width="131" height="217" frameX="-9" frameY="-2" frameWidth="153" frameHeight="219"/>
+	<SubTexture name="NewRadical0009" x="0" y="219" width="131" height="217" frameX="-9" frameY="-2" frameWidth="153" frameHeight="219"/>
+	<SubTexture name="NewRadical0010" x="0" y="219" width="131" height="217" frameX="-9" frameY="-2" frameWidth="153" frameHeight="219"/>
+	<SubTexture name="NewRadical0011" x="0" y="219" width="131" height="217" frameX="-9" frameY="-2" frameWidth="153" frameHeight="219"/>
+	<SubTexture name="NewRadical0012" x="0" y="219" width="131" height="217" frameX="-9" frameY="-2" frameWidth="153" frameHeight="219"/>
+	<SubTexture name="NewRadical0013" x="0" y="219" width="131" height="217" frameX="-9" frameY="-2" frameWidth="153" frameHeight="219"/>
+	<SubTexture name="RadicalOne0000" x="131" y="219" width="189" height="173" frameX="-3" frameY="-8" frameWidth="195" frameHeight="181"/>
+	<SubTexture name="RadicalOne0001" x="131" y="219" width="189" height="173" frameX="-3" frameY="-8" frameWidth="195" frameHeight="181"/>
+	<SubTexture name="RadicalOne0002" x="0" y="436" width="195" height="177" frameX="0" frameY="-4" frameWidth="195" frameHeight="181"/>
+	<SubTexture name="RadicalOne0003" x="0" y="436" width="195" height="177" frameX="0" frameY="-4" frameWidth="195" frameHeight="181"/>
+	<SubTexture name="RadicalOne0004" x="195" y="436" width="195" height="181"/>
+	<SubTexture name="RadicalOne0005" x="195" y="436" width="195" height="181"/>
+	<SubTexture name="RadicalOne0006" x="195" y="436" width="195" height="181"/>
+	<SubTexture name="RadicalOne0007" x="195" y="436" width="195" height="181"/>
+	<SubTexture name="RadicalOne0008" x="195" y="436" width="195" height="181"/>
+	<SubTexture name="RadicalOne0009" x="195" y="436" width="195" height="181"/>
+	<SubTexture name="RadicalOne0010" x="195" y="436" width="195" height="181"/>
+	<SubTexture name="RadicalOne0011" x="195" y="436" width="195" height="181"/>
+	<SubTexture name="RadicalOne0012" x="195" y="436" width="195" height="181"/>
+	<SubTexture name="RadicalOne0013" x="195" y="436" width="195" height="181"/>
+</TextureAtlas>

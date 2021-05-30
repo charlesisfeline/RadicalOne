@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Flan_But_Awesome.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="IM DOWN BAD0000" x="0" y="0" width="1349" height="993" frameX="0" frameY="0" frameWidth="1362" frameHeight="993"/>
+	<SubTexture name="IM DOWN BAD0001" x="0" y="0" width="1349" height="993" frameX="0" frameY="0" frameWidth="1362" frameHeight="993"/>
+	<SubTexture name="IM DOWN BAD0002" x="1354" y="0" width="1361" height="943" frameX="-1" frameY="-45" frameWidth="1362" frameHeight="993"/>
+	<SubTexture name="IM DOWN BAD0003" x="1354" y="0" width="1361" height="943" frameX="-1" frameY="-45" frameWidth="1362" frameHeight="993"/>
+	<SubTexture name="IM DOWN BAD0004" x="2720" y="0" width="1361" height="943" frameX="-1" frameY="-45" frameWidth="1362" frameHeight="993"/>
+	<SubTexture name="IM DOWN BAD0005" x="2720" y="0" width="1361" height="943" frameX="-1" frameY="-45" frameWidth="1362" frameHeight="993"/>
+	<SubTexture name="IM DOWN BAD0006" x="2720" y="0" width="1361" height="943" frameX="-1" frameY="-45" frameWidth="1362" frameHeight="993"/>
+	<SubTexture name="IM DOWN BAD0007" x="2720" y="0" width="1361" height="943" frameX="-1" frameY="-45" frameWidth="1362" frameHeight="993"/>
+	<SubTexture name="super awesome idle dance0000" x="0" y="998" width="957" height="1039" frameX="-4" frameY="-45" frameWidth="961" frameHeight="1088"/>
+	<SubTexture name="super awesome idle dance0001" x="0" y="998" width="957" height="1039" frameX="-4" frameY="-45" frameWidth="961" frameHeight="1088"/>
+	<SubTexture name="super awesome idle dance0002" x="962" y="998" width="957" height="1064" frameX="-2" frameY="-22" frameWidth="961" frameHeight="1088"/>
+	<SubTexture name="super awesome idle dance0003" x="962" y="998" width="957" height="1064" frameX="-2" frameY="-22" frameWidth="961" frameHeight="1088"/>
+	<SubTexture name="super awesome idle dance0004" x="1924" y="998" width="957" height="1084" frameX="0" frameY="-4" frameWidth="961" frameHeight="1088"/>
+	<SubTexture name="super awesome idle dance0005" x="1924" y="998" width="957" height="1084" frameX="0" frameY="-4" frameWidth="961" frameHeight="1088"/>
+	<SubTexture name="super awesome idle dance0006" x="2886" y="998" width="957" height="1088" frameX="0" frameY="0" frameWidth="961" frameHeight="1088"/>
+	<SubTexture name="super awesome idle dance0007" x="2886" y="998" width="957" height="1088" frameX="0" frameY="0" frameWidth="961" frameHeight="1088"/>
+	<SubTexture name="super awesome idle dance0008" x="2886" y="998" width="957" height="1088" frameX="0" frameY="0" frameWidth="961" frameHeight="1088"/>
+	<SubTexture name="super awesome idle dance0009" x="2886" y="998" width="957" height="1088" frameX="0" frameY="0" frameWidth="961" frameHeight="1088"/>
+	<SubTexture name="super awesome idle dance0010" x="2886" y="998" width="957" height="1088" frameX="0" frameY="0" frameWidth="961" frameHeight="1088"/>
+	<SubTexture name="super awesome idle dance0011" x="2886" y="998" width="957" height="1088" frameX="0" frameY="0" frameWidth="961" frameHeight="1088"/>
+	<SubTexture name="super awesome idle dance0012" x="2886" y="998" width="957" height="1088" frameX="0" frameY="0" frameWidth="961" frameHeight="1088"/>
+	<SubTexture name="super awesome idle dance0013" x="2886" y="998" width="957" height="1088" frameX="0" frameY="0" frameWidth="961" frameHeight="1088"/>
+	<SubTexture name="thats right0000" x="0" y="2091" width="957" height="1078" frameX="0" frameY="-38" frameWidth="1015" frameHeight="1116"/>
+	<SubTexture name="thats right0001" x="0" y="2091" width="957" height="1078" frameX="0" frameY="-38" frameWidth="1015" frameHeight="1116"/>
+	<SubTexture name="thats right0002" x="962" y="2091" width="955" height="1116" frameX="-60" frameY="0" frameWidth="1015" frameHeight="1116"/>
+	<SubTexture name="thats right0003" x="962" y="2091" width="955" height="1116" frameX="-60" frameY="0" frameWidth="1015" frameHeight="1116"/>
+	<SubTexture name="thats right0004" x="962" y="2091" width="955" height="1116" frameX="-60" frameY="0" frameWidth="1015" frameHeight="1116"/>
+	<SubTexture name="thats right0005" x="962" y="2091" width="955" height="1116" frameX="-60" frameY="0" frameWidth="1015" frameHeight="1116"/>
+	<SubTexture name="thats right0006" x="962" y="2091" width="955" height="1116" frameX="-60" frameY="0" frameWidth="1015" frameHeight="1116"/>
+	<SubTexture name="thats right0007" x="962" y="2091" width="955" height="1116" frameX="-60" frameY="0" frameWidth="1015" frameHeight="1116"/>
+	<SubTexture name="the LEFT NOTE (swagger note)0000" x="1922" y="2091" width="942" height="1143" frameX="-6" frameY="-9" frameWidth="948" frameHeight="1152"/>
+	<SubTexture name="the LEFT NOTE (swagger note)0001" x="1922" y="2091" width="942" height="1143" frameX="-6" frameY="-9" frameWidth="948" frameHeight="1152"/>
+	<SubTexture name="the LEFT NOTE (swagger note)0002" x="2869" y="2091" width="918" height="1152" frameX="0" frameY="0" frameWidth="948" frameHeight="1152"/>
+	<SubTexture name="the LEFT NOTE (swagger note)0003" x="2869" y="2091" width="918" height="1152" frameX="0" frameY="0" frameWidth="948" frameHeight="1152"/>
+	<SubTexture name="the LEFT NOTE (swagger note)0004" x="2869" y="2091" width="918" height="1152" frameX="0" frameY="0" frameWidth="948" frameHeight="1152"/>
+	<SubTexture name="the LEFT NOTE (swagger note)0005" x="2869" y="2091" width="918" height="1152" frameX="0" frameY="0" frameWidth="948" frameHeight="1152"/>
+	<SubTexture name="the LEFT NOTE (swagger note)0006" x="2869" y="2091" width="918" height="1152" frameX="0" frameY="0" frameWidth="948" frameHeight="1152"/>
+	<SubTexture name="the LEFT NOTE (swagger note)0007" x="2869" y="2091" width="918" height="1152" frameX="0" frameY="0" frameWidth="948" frameHeight="1152"/>
+	<SubTexture name="up (the movie)0000" x="0" y="3248" width="957" height="1314" frameX="-4" frameY="-118" frameWidth="961" frameHeight="1435"/>
+	<SubTexture name="up (the movie)0001" x="0" y="3248" width="957" height="1314" frameX="-4" frameY="-118" frameWidth="961" frameHeight="1435"/>
+	<SubTexture name="up (the movie)0002" x="962" y="3248" width="955" height="1435" frameX="0" frameY="0" frameWidth="961" frameHeight="1435"/>
+	<SubTexture name="up (the movie)0003" x="962" y="3248" width="955" height="1435" frameX="0" frameY="0" frameWidth="961" frameHeight="1435"/>
+	<SubTexture name="up (the movie)0004" x="962" y="3248" width="955" height="1435" frameX="0" frameY="0" frameWidth="961" frameHeight="1435"/>
+	<SubTexture name="up (the movie)0005" x="962" y="3248" width="955" height="1435" frameX="0" frameY="0" frameWidth="961" frameHeight="1435"/>
+	<SubTexture name="up (the movie)0006" x="962" y="3248" width="955" height="1435" frameX="0" frameY="0" frameWidth="961" frameHeight="1435"/>
+	<SubTexture name="up (the movie)0007" x="962" y="3248" width="955" height="1435" frameX="0" frameY="0" frameWidth="961" frameHeight="1435"/>
+</TextureAtlas>

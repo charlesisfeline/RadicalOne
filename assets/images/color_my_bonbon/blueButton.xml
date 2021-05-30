@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Free texture packer v0.6.6 http://free-tex-packer.com
+Format:
+n  => name
+x  => x pos
+y  => y pos
+w  => width
+h  => height
+pX => x pos of the pivot point
+pY => y pos of the pivot point
+oX => x-corner offset
+oY => y-corner offset
+oW => original width
+oH => original height
+r => 'y' if sprite is rotated-->
+<TextureAtlas imagePath="blueButton.png">
+  <SubTexture name="BlueBon0000.png" x="0" y="0" width="755" height="362"/>
+  <SubTexture name="Button0000.png" x="755" y="0" width="112" height="252" frameX="163" frameY="0" frameWidth="112" frameHeight="252"/>
+</TextureAtlas>

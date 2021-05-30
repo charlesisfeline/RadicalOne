@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="weird_junk_wtf.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="junkiung0000" x="0" y="0" width="2114" height="1075"/>
+	<SubTexture name="junkingVEETOO0000" x="0" y="1075" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0001" x="0" y="1075" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0002" x="0" y="0" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0003" x="0" y="0" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0004" x="0" y="1075" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0005" x="0" y="1075" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0006" x="0" y="0" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0007" x="0" y="0" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0008" x="0" y="1075" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0009" x="0" y="1075" width="2114" height="1075"/>
+	<SubTexture name="junkingVEETOO0010" x="0" y="0" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0011" x="0" y="0" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0012" x="0" y="1075" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0013" x="0" y="1075" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0014" x="0" y="0" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0015" x="0" y="0" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0016" x="0" y="1075" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0017" x="0" y="1075" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0018" x="0" y="0" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0019" x="0" y="0" width="2114" height="1075"/>
+	<SubTexture name="junkingVEETOO0020" x="0" y="1075" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0021" x="0" y="1075" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0022" x="0" y="0" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0023" x="0" y="0" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0024" x="0" y="1075" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0025" x="0" y="1075" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0026" x="0" y="0" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0027" x="0" y="0" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0028" x="0" y="1075" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0029" x="0" y="1075" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0030" x="0" y="0" width="2114" height="1075"/>
+   <SubTexture name="junkingVEETOO0031" x="0" y="0" width="2114" height="1075"/>
+</TextureAtlas>
