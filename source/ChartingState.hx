@@ -956,9 +956,19 @@ class ChartingState extends MusicBeatState
 
 		for (i in _song.notes[curSection].sectionNotes)
 		{
-			if (i.strumTime == note.strumTime && i.noteData % 4 == note.noteData)
+			if (FlxG.save.data.inputSystem == 'Kade Engine')
 			{
-				curSelectedNote = _song.notes[curSection].sectionNotes[swagNum];
+				if (i.strumTime - FlxG.save.data.offset == note.strumTime - FlxG.save.data.offset && i.noteData % 4 == note.noteData)
+				{
+					curSelectedNote = _song.notes[curSection].sectionNotes[swagNum];
+				}
+			}
+			else
+			{
+				if (i.strumTime == note.strumTime && i.noteData % 4 == note.noteData)
+				{
+					curSelectedNote = _song.notes[curSection].sectionNotes[swagNum];
+				}
 			}
 
 			swagNum += 1;
@@ -972,10 +982,21 @@ class ChartingState extends MusicBeatState
 	{
 		for (i in _song.notes[curSection].sectionNotes)
 		{
-			if (i[0] == note.strumTime && i[1] % 4 == note.noteData)
+			if (FlxG.save.data.inputSystem == 'Kade Engine')
 			{
-				FlxG.log.add('FOUND EVIL NUMBER');
-				_song.notes[curSection].sectionNotes.remove(i);
+				if (i[0] == note.strumTime - FlxG.save.data.offset && i[1] % 4 == note.noteData)
+				{
+					FlxG.log.add('FOUND EVIL NUMBER');
+					_song.notes[curSection].sectionNotes.remove(i);
+				}
+			}
+			else
+			{
+				if (i[0] == note.strumTime && i[1] % 4 == note.noteData)
+				{
+					FlxG.log.add('FOUND EVIL NUMBER');
+					_song.notes[curSection].sectionNotes.remove(i);
+				}
 			}
 		}
 

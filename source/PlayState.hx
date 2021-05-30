@@ -197,7 +197,8 @@ class PlayState extends MusicBeatState
 		0xFF7c57bd,
 		0xFF644e66,
 		0xFFffffff,
-		0xFFf5e187
+		0xFFf5e187,
+		0xFF4884ff
 	];
 
 	override public function create()
@@ -318,6 +319,8 @@ class PlayState extends MusicBeatState
 					curStage = 'iAmJUNKING';
 				case 'scribble-street':
 					curStage = 'scribble';
+				case 'weird-junk-wtf':
+					curStage = 'junkers';
 				default:
 					curStage = 'stage';
 			}
@@ -327,6 +330,12 @@ class PlayState extends MusicBeatState
 
 		switch(curStage)
 		{
+			case 'junkers':
+				var junkers:FlxSprite = new FlxSprite().loadGraphic(stagePath + 'junkers/Capture.PNG');
+				junkers.setGraphicSize(FlxG.width);
+				junkers.updateHitbox();
+				junkers.scrollFactor.set();
+				add(junkers);
 			case 'spooky':
 				curStage = "spooky";
 				halloweenLevel = true;

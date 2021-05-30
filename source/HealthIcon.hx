@@ -53,6 +53,7 @@ class HealthIcon extends FlxSprite
 		addIcon('racial-pride', 64);
 		addIcon('gandhi', 66);
 		addIcon('skank-n-pronoun', 68);
+		addIcon('junkers', 70);
 		animation.play('radical');
 		animation.play(char);
 		scrollFactor.set();

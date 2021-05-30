@@ -38,7 +38,7 @@ class WeekendMenuState extends MusicBeatState
 		['Start-Conjunction', 'Energy-Lights', 'Telegroove'],
         ['Senpai', 'Roses', 'Thorns'],
         ['the-backyardagains', 'funny'],
-        ['Interrogation', 'Tha-Biscoot', 'Freebeat_1', 'JunkRUs', '3.4', 'Scribble-Street', 'Scary-Junk']
+        ['Interrogation', 'Tha-Biscoot', 'Freebeat_1', 'JunkRUs', '3.4', 'Scribble-Street', 'Scary-Junk', 'Weird-Junk-WTF']
     ];
 
     var weekendChars:Array<String> = [
@@ -229,10 +229,12 @@ class WeekendMenuState extends MusicBeatState
 
         var songsToPlay:Array<String> = [];
 
-        for (i in 0...weekendData.length)
+        for (i in 0...weekendData[curWeekend].length)
         {
             songsToPlay.push(weekendData[curWeekend][i]);
         }
+
+        trace(songsToPlay);
 
 		PlayState.weekendPlaylist = songsToPlay;
         PlayState.initModes();
