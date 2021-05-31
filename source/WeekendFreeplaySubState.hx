@@ -17,7 +17,9 @@ class WeekendFreeplaySubState extends MusicBeatSubstate
 
     var curSelected:Int = 0;
 
-    var allTheseSongsDude:Array<String> = [];
+    var allTheseSongsDude:Array<Array<String>> = [[]];
+    var songsToDisplay:Array<String> = [];
+    var curSection:Int = 0;
 
     var grpSongNames:FlxTypedGroup<FlxText>;
 
@@ -28,15 +30,32 @@ class WeekendFreeplaySubState extends MusicBeatSubstate
 
         var boxWidth:Int = 0;
 
-        allTheseSongsDude = songArray;
+        var songIndex:Int = 0;
+        var songsSection:Int = 0;
 
-        for (i in allTheseSongsDude)
+        for (i in 0...songArray.length)
+        {
+            allTheseSongsDude[songsSection].push(songArray[i]);
+            songIndex++;
+            if (songIndex == 6)
+            {
+                songIndex = 1;
+                allTheseSongsDude[songsSection].push('...');
+                allTheseSongsDude.push(['^^^']);
+                songsSection++;
+            }
+        }
+
+        songsToDisplay = allTheseSongsDude[curSection];
+        //allTheseSongsDude = songArray;
+
+        for (i in songArray)
         {
             if (i.length > boxWidth)
                 boxWidth = i.length;
         }
 
-        testign = new FlxSprite().makeGraphic(boxWidth * 40, allTheseSongsDude.length * 40, FlxColor.BLACK);
+        testign = new FlxSprite().makeGraphic(boxWidth * 40, allTheseSongsDude[0].length * 40, FlxColor.BLACK);
         testign.alpha = 0.5;
         testign.screenCenter();
         add(testign);
@@ -49,13 +68,7 @@ class WeekendFreeplaySubState extends MusicBeatSubstate
         grpSongNames = new FlxTypedGroup<FlxText>();
         add(grpSongNames);
 
-        for (i in 0...allTheseSongsDude.length)
-        {
-            var coolSongName:FlxText = new FlxText(testign.x + 40, testign.y + i * 40 - 6);
-            coolSongName.size = 40;
-            coolSongName.text = allTheseSongsDude[i];
-            grpSongNames.add(coolSongName);
-        }
+        createText();
     }
 
     override function update(elapsed:Float)
@@ -71,16 +84,16 @@ class WeekendFreeplaySubState extends MusicBeatSubstate
             curSelected -= 1;
 
         if (curSelected == -1)
-            curSelected = allTheseSongsDude.length - 1;
+            curSelected = songsToDisplay.length - 1;
 
-        if (curSelected > allTheseSongsDude.length - 1)
+        if (curSelected > songsToDisplay.length - 1)
             curSelected = 0;
 
         funnyArrow.y = testign.y + curSelected * 40 - 6;
 
         grpSongNames.forEach(function(songName:FlxText)
         {
-            if (songName.text == allTheseSongsDude[curSelected])
+            if (songName.text == songsToDisplay[curSelected])
                 songName.color = FlxColor.WHITE;
             else
                 songName.color = 0xFFAAAAAA;
@@ -88,17 +101,50 @@ class WeekendFreeplaySubState extends MusicBeatSubstate
 
         if (controls.ACCEPT)
 		{
-			var poop:String = Highscore.formatSong(allTheseSongsDude[curSelected].toLowerCase(), 1);
+            if (songsToDisplay[curSelected] == '...')
+            {
+                curSection++;
+                songsToDisplay = allTheseSongsDude[curSection];
+                curSelected = 1;
+                createText();
+            }
+            else if (songsToDisplay[curSelected] == '^^^')
+            {
+                curSection--;
+                songsToDisplay = allTheseSongsDude[curSection];
+                curSelected = 5;
+                createText();
+            }
+            else
+            {
+                var poop:String = Highscore.formatSong(songsToDisplay[curSelected].toLowerCase(), 1);
 
-			trace(poop);
-
-			PlayState.SONG = Song.loadFromJson(poop, allTheseSongsDude[curSelected].toLowerCase());
-			PlayState.initModes();
-            PlayState.weekEndFreeplay = true;
-			PlayState.storyDifficulty = 1;
-			FlxG.switchState(new PlayState());
-			if (FlxG.sound.music != null)
-				FlxG.sound.music.stop();
+                trace(poop);
+    
+                PlayState.SONG = Song.loadFromJson(poop, songsToDisplay[curSelected].toLowerCase());
+                PlayState.initModes();
+                PlayState.weekEndFreeplay = true;
+                PlayState.storyDifficulty = 1;
+                FlxG.switchState(new PlayState());
+                if (FlxG.sound.music != null)
+                    FlxG.sound.music.stop();
+            }
 		}
+    }
+
+    function createText()
+    {
+        grpSongNames.forEachAlive(function(spr:FlxText)
+        {
+            spr.kill();
+        });
+
+        for (i in 0...songsToDisplay.length)
+        {
+            var coolSongName:FlxText = new FlxText(testign.x + 40, testign.y + i * 40 - 6);
+            coolSongName.size = 40;
+            coolSongName.text = songsToDisplay[i];
+            grpSongNames.add(coolSongName);
+        }
     }
 }

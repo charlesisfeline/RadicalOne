@@ -120,6 +120,8 @@ class PlayState extends MusicBeatState
 	var phillyTrain:FlxSprite;
 	var trainSound:FlxSound;
 
+	var theBoolYouMade:Bool = false;
+
 	var limo:FlxSprite;
 	var grpLimoDancers:FlxTypedGroup<BackgroundDancer>;
 	var fastCar:FlxSprite;
@@ -3792,6 +3794,13 @@ class PlayState extends MusicBeatState
 		{
 			case 'school':
 				bgGirls.dance();
+
+			case 'your-stage':
+				if (theBoolYouMade == true)
+				{
+					// bopping code here
+				}
+				theBoolYouMade = !theBoolYouMade;
 
 			case 'mall':
 				upperBoppers.animation.play('bop', true);

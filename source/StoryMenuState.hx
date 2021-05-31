@@ -30,6 +30,14 @@ class StoryMenuState extends MusicBeatState
 		['Bustom-Source', 'FL-Keys', 'I-Didnt-Ask']
 	];
 
+	var weekNames:Array<String> = [
+		'real tutorial 100%',
+		'get a job',
+		'minecraft babbys',
+		'test',
+		'te'
+	];
+
 	var curDifficulty:Int = 1;
 
 	public static var weekUnlocked:Array<Bool> = [];
@@ -185,7 +193,7 @@ class StoryMenuState extends MusicBeatState
 
 		scoreText.text = "WEEK SCORE:" + lerpScore;
 
-		//txtWeekTitle.text = weekNames[curWeek].toUpperCase();
+		txtWeekTitle.text = weekNames[curWeek].toUpperCase();
 		txtWeekTitle.x = FlxG.width - (txtWeekTitle.width + 10);
 
 		// FlxG.watch.addQuick('font', scoreText.font);
