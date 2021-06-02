@@ -77,7 +77,7 @@ class BonBonState extends MusicBeatState
     {
         trace('click');
     }  */
-override public function update(elapsed:Float)
+	override function update(elapsed:Float)
 	{
 		if (FlxG.mouse.overlaps(blueButton))
 		{

@@ -261,6 +261,7 @@ class MainMenuState extends MusicBeatState
 
 		yoJunk.forEach(function(ritzDeservedIt:Parents_Christmas)
 		{
+			FlxTween.cancelTweensOf(ritzDeservedIt);
 			FlxTween.tween(ritzDeservedIt, {x: ritzDeservedIt.realX + (ritzDeservedIt.ID - curSelected) * 1200}, 0.4, {ease: FlxEase.backOut});
 		});
 	}

@@ -28,7 +28,7 @@ class OptionsMenu extends MusicBeatState
 
 	override function create()
 	{
-		controlsStrings = ['Input System', doThatThing(FlxG.save.data.DFJK)];
+		controlsStrings = ['Input System', doThatThing(FlxG.save.data.DFJK), doOtherThing(FlxG.save.data.downscroll)];
 		var menuBG:FlxSprite = new FlxSprite().loadGraphic('assets/images/UI/menuDesat.png');
 		menuBG.color = 0xFFea71fd;
 		menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
@@ -88,7 +88,14 @@ class OptionsMenu extends MusicBeatState
 					grpControls.remove(grpControls.members[curSelected]);
 					var stupid:Alphabet = new Alphabet(0, (70 * curSelected) + 30, doThatThing(FlxG.save.data.DFJK), true, false);
 					stupid.isMenuItem = true;
-					stupid.targetY = curSelected - 1;
+					stupid.targetY = 0;
+					grpControls.add(stupid);
+				case 2:
+					FlxG.save.data.downscroll = !FlxG.save.data.downscroll;
+					grpControls.remove(grpControls.members[curSelected]);
+					var stupid:Alphabet = new Alphabet(0, (70 * curSelected) + 30, doOtherThing(FlxG.save.data.downscroll), true, false);
+					stupid.isMenuItem = true;
+					stupid.targetY = 0;
 					grpControls.add(stupid);
 			}
 		}
@@ -158,10 +165,18 @@ class OptionsMenu extends MusicBeatState
 
 	function doThatThing(yesOrNo:Bool)
 	{
-		if (yesOrNo == true)
-			return 'DFJK';
-		else
-			return 'WASD';
+			if (yesOrNo)
+				return 'DFJK';
+			else
+				return 'WASD';
+	}
+
+	function doOtherThing(yesOrNo:Bool)
+	{
+			if (yesOrNo)
+				return 'downscroll on';
+			else
+				return 'downscroll off';
 	}
 
 	function changeSelection(change:Int = 0)

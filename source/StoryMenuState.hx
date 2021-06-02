@@ -59,6 +59,13 @@ class StoryMenuState extends MusicBeatState
 	var leftArrow:FlxSprite;
 	var rightArrow:FlxSprite;
 
+	var yellowBG:FlxSprite;
+	var yellowBGButItsABarLOOL:FlxSprite;
+	var yellowBGCoverLower:FlxSprite;
+	var yellowBGCoverUpper:FlxSprite;
+
+	var rankText:FlxText;
+
 	override function create()
 	{
 		DiscordClient.changePresence("In Story Menu", null, 'sussy', 'racialdiversity');
@@ -80,22 +87,25 @@ class StoryMenuState extends MusicBeatState
 		txtWeekTitle.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, RIGHT);
 		txtWeekTitle.alpha = 0.7;
 
-		var rankText:FlxText = new FlxText(0, 10);
+		rankText = new FlxText(0, 10);
 		rankText.text = 'RANK: GREAT';
 		rankText.setFormat("assets/fonts/vcr.ttf", 32);
 		rankText.size = scoreText.size;
 		rankText.screenCenter(X);
 
 		var ui_tex = FlxAtlasFrames.fromSparrow('assets/images/UI/campaign_menu_UI_assets.png', 'assets/images/UI/campaign_menu_UI_assets.xml');
-		var yellowBG:FlxSprite = new FlxSprite(0, 56).makeGraphic(FlxG.width, 400, 0xFFE9575C);
-		var yellowBGCoverLower:FlxSprite = new FlxSprite(0, 456).makeGraphic(FlxG.width, 1000, 0xFF000000);
-		var yellowBGCoverUpper:FlxSprite = new FlxSprite(0, 0).makeGraphic(FlxG.width, 56, 0xFF000000);
+		yellowBG = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, 0xFFE9575C);
+		yellowBGButItsABarLOOL = new FlxSprite(0, 56).makeGraphic(FlxG.width, 400, 0xFFE9575C);
+		yellowBGCoverLower = new FlxSprite(0, 456).makeGraphic(FlxG.width, FlxG.height, 0xFF000000);
+		yellowBGCoverUpper = new FlxSprite(0, 0).makeGraphic(FlxG.width, 56, FlxColor.BLACK);
+
+		add(yellowBG);
+		add(yellowBGCoverLower);
 
 		grpWeekText = new FlxTypedGroup<MenuItem>();
 		add(grpWeekText);
 
-		var blackBarThingie:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, 56, FlxColor.BLACK);
-		add(blackBarThingie);
+		add(yellowBGCoverUpper);
 
 		grpLocks = new FlxTypedGroup<FlxSprite>();
 		add(grpLocks);
@@ -104,7 +114,7 @@ class StoryMenuState extends MusicBeatState
 
 		for (i in 0...weekData.length)
 		{
-			var weekThing:MenuItem = new MenuItem(0, yellowBG.y + yellowBG.height + 10, i);
+			var weekThing:MenuItem = new MenuItem(0, yellowBGButItsABarLOOL.y + yellowBGButItsABarLOOL.height + 10, i);
 			weekThing.y += ((weekThing.height + 20) * i);
 			weekThing.targetY = i;
 			grpWeekText.add(weekThing);
@@ -161,7 +171,7 @@ class StoryMenuState extends MusicBeatState
 
 		trace("Line 150");
 
-		add(yellowBG);
+		add(yellowBGButItsABarLOOL);
 
 		weekPreviewShad = new FlxSprite();
 		add(weekPreviewShad);
@@ -170,7 +180,7 @@ class StoryMenuState extends MusicBeatState
 		
 		
 
-		txtTracklist = new FlxText(FlxG.width + 50, yellowBG.x + yellowBG.height + 100, 0, "Tracks", 25);
+		txtTracklist = new FlxText(FlxG.width + 50, yellowBGButItsABarLOOL.x + yellowBGButItsABarLOOL.height + 100, 0, "Tracks", 25);
 		txtTracklist.alignment = CENTER;
 		txtTracklist.font = rankText.font;
 		txtTracklist.color = 0xFFe55777;

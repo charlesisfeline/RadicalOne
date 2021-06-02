@@ -18,7 +18,7 @@ class ExtrasMenu extends MusicBeatState
 	var selector:FlxText;
 	var curSelected:Int = 0;
 
-	var controlsStrings:Array<String> = ['SETTINGS', 'WEEKENDS', 'LEVEL RANDOMIZER', 'CREDITS', 'CHARACTERS'];
+	var controlsStrings:Array<String> = ['SETTINGS', 'WEEKENDS', 'OUTFITS', 'LEVEL RANDOMIZER', 'CREDITS', 'CHARACTERS'];
 
 	private var grpControls:FlxTypedGroup<Alphabet>;
 
@@ -80,13 +80,15 @@ class ExtrasMenu extends MusicBeatState
 				case 1:
 					FlxG.switchState(new WeekendMenuState());	
 				case 2:
+					FlxG.switchState(new WardrobeMenu());
+				case 3:
 					PlayState.initModes();
 					PlayState.randomLevel = true;
 					var daSong:String = everySongEver[FlxG.random.int(0, everySongEver.length)].toLowerCase();
 					trace(daSong);
 					PlayState.SONG = Song.loadFromJson(daSong, daSong);
 					FlxG.switchState(new PlayState());
-				case 3:
+				case 4:
 					FlxG.openURL("https://sites.google.com/view/radicalone/home");
 				
 			}

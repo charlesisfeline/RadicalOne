@@ -922,8 +922,35 @@ class PlayState extends MusicBeatState
 			case 'iAmJUNKING':
 				defaultCamZoom = 0.54;
 
-				var thaBiscoot:FlxSprite = new FlxSprite(-1293, -688).loadGraphic(stagePath + 'scarie/placeholderBG.png');
+				var thaBiscoot:FlxSprite = new FlxSprite(-1293, -688).loadGraphic(stagePath + 'scarie/bg back.png');
 				add(thaBiscoot);
+
+				var scrollyCoolOne:FlxSprite = new FlxSprite(-2080, -312).loadGraphic(stagePath + 'scarie/bg scrolly things back.png');
+				scrollyCoolOne.scrollFactor.set(1.5);
+				add(scrollyCoolOne);
+
+				var scrollyCoolTwo:FlxSprite = new FlxSprite(-1763, -256).loadGraphic(stagePath + 'scarie/bg scrolly things front.png');
+				scrollyCoolTwo.scrollFactor.set(1.3);
+				add(scrollyCoolTwo);
+
+				var buttCheek2:FlxSprite = new FlxSprite(-553, -1708).loadGraphic(stagePath + 'scarie/bg pylons.png');
+				buttCheek2.scrollFactor.x = 1.2;
+				buttCheek2.setGraphicSize(Std.int(buttCheek2.width * 0.75));
+				add(buttCheek2);
+
+				var buttCheek3:FlxSprite = new FlxSprite(-553, -1708).loadGraphic(stagePath + 'scarie/bg pylons.png');
+				buttCheek3.scrollFactor.x = 1.2;
+				buttCheek3.setGraphicSize(Std.int(buttCheek2.width * 0.75));
+				buttCheek3.color = FlxColor.BLACK;
+				buttCheek3.alpha = 0.5;
+				add(buttCheek3);
+
+				var buttCheek:FlxSprite = new FlxSprite(-753, -1708).loadGraphic(stagePath + 'scarie/bg pylons.png');
+				buttCheek.scrollFactor.x = 1.1;
+				add(buttCheek);
+
+				var poopInTheSand:FlxSprite = new FlxSprite(-2256, 627).loadGraphic(stagePath + 'scarie/bg ground.png');
+				add(poopInTheSand);
 			default:
 				defaultCamZoom = 1;
 
@@ -1159,20 +1186,21 @@ class PlayState extends MusicBeatState
 				gaming.x = 1230;
 		}
 
-    	if (!isStoryMode && !isWeekend && !randomLevel)
-		{
-			if (FreeplayState.curChar == 'RadicalOne' || FreeplayState.curChar == 'RedBall')
-				boyfriend = new Boyfriend(770, 450, SONG.player1);
-			else
-				boyfriend = new Boyfriend(770, 345, SONG.player1);
-		}
+		if (FlxG.save.data.outfit == 'Old Radical' || FlxG.save.data.outfit == 'Sussy Radical')
+			boyfriend = new Boyfriend(770, 450, SONG.player1);
 		else
 			boyfriend = new Boyfriend(770, 345, SONG.player1);
+
+		if (FlxG.save.data.outfit == 'Sussy Radical') // SO MANY CONDITIONALS HELP
+			boyfriend.y += 25;
 
 		switch (SONG.player1)
 		{
 			case 'red-ball':
-				boyfriend.y += 105;
+				gf.visible = false;
+
+				if (FlxG.save.data.outfit != 'Old Radical' && FlxG.save.data.outfit != 'Sussy Radical') // poop
+					boyfriend.y += 105;
 		}
 
 		//boyfriend = new Boyfriend(770, 450, SONG.player1);
@@ -1242,6 +1270,9 @@ class PlayState extends MusicBeatState
 
 		strumLine = new FlxSprite(0, 50).makeGraphic(FlxG.width, 10);
 		strumLine.scrollFactor.set();
+		
+		if (FlxG.save.data.downscroll)
+			strumLine.y = FlxG.height - 165;
 
 		strumLineNotes = new FlxTypedGroup<FlxSprite>();
 		add(strumLineNotes);
@@ -1289,13 +1320,17 @@ class PlayState extends MusicBeatState
 		if (sheShed != 'job-interview')
 			add(healthBar);
 
-		scoreTxt = new FlxText(healthBarBG.x + healthBarBG.width - 190, healthBarBG.y + 30, 0, "", 20);
+		var downscrollJunky:Int = 1;
+		if (FlxG.save.data.downscroll) // STOLEN STRAIGHT FROM MASHUP LETS GOOOO :sunglasses:
+			downscrollJunky = -1;
+
+		scoreTxt = new FlxText(healthBarBG.x + healthBarBG.width - 190, healthBarBG.y + 30 * downscrollJunky, 0, "", 20);
 		scoreTxt.setFormat("assets/fonts/vcr.ttf", 16, FlxColor.WHITE, RIGHT);
 		scoreTxt.scrollFactor.set();
 		if (sheShed != 'job-interview')
 			add(scoreTxt);
 
-		var penis:FlxText = new FlxText(15, healthBarBG.y + 30, 0, FlxG.save.data.inputSystem + ' Input', 20);
+		var penis:FlxText = new FlxText(15, healthBarBG.y + 30 * downscrollJunky, 0, FlxG.save.data.inputSystem + ' Input', 20);
 		penis.setFormat("assets/fonts/vcr.ttf", 16, FlxColor.WHITE, RIGHT);
 		penis.scrollFactor.set();
 		if (sheShed != 'job-interview')
@@ -1311,32 +1346,32 @@ class PlayState extends MusicBeatState
 		if (sheShed != 'job-interview')
 			add(iconP2);
 
-		if (!isStoryMode && !isWeekend && !weekEndFreeplay && !randomLevel)
-        {
-			if (SONG.player1 == 'radical')
-			{
-				switch (FreeplayState.curChar)
-				{
-					case 'RadicalOne':
-						iconP1.animation.play('old-racial');
-					case 'RedBall':
-						iconP1.animation.play('red-ball');
-					case 'RacialPride':
-						iconP1.animation.play('racial-pride');	
-				}
-			}
+		if (FlxG.save.data.downscroll)
+			iconP2.y = iconP1.y = iconP1.y + 10; // also stolen from mashup
 
-			if (SONG.player2 == 'radical')
+		if (SONG.player1 == 'radical')
+		{
+			switch (FlxG.save.data.outfit)
 			{
-				switch (FreeplayState.curChar)
-				{
-					case 'RadicalOne':
-						iconP2.animation.play('old-racial');
-					case 'RedBall':
-						iconP2.animation.play('red-ball');
-					case 'RacialPride':
-						iconP2.animation.play('racial-pride');	
-				}
+				case 'Old Radical':
+					iconP1.animation.play('old-racial');
+				case 'RedBall':
+					iconP1.animation.play('red-ball');
+				case 'Racial Pride':
+					iconP1.animation.play('racial-pride');	
+			}
+		}
+
+		if (SONG.player2 == 'radical')
+		{
+			switch (FlxG.save.data.outfit)
+			{
+				case 'Old Radical':
+					iconP2.animation.play('old-racial');
+				case 'RedBall':
+					iconP2.animation.play('red-ball');
+				case 'Racial Pride':
+					iconP2.animation.play('racial-pride');	
 			}
 		}
 
@@ -2315,6 +2350,9 @@ class PlayState extends MusicBeatState
 		#if debug
 		if (FlxG.keys.justPressed.EIGHT)
 			FlxG.switchState(new AnimationDebug(SONG.player2));
+
+		if (FlxG.keys.justPressed.SIX)
+			FlxG.switchState(new AnimationDebug(SONG.player1));
 		#end
 
 		if (startingSong)
@@ -2550,12 +2588,15 @@ class PlayState extends MusicBeatState
 							daNote.destroy();
 						}
 
-						daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (0.45 * FlxMath.roundDecimal(PlayState.SONG.speed, 2)));
+						if (FlxG.save.data.downscroll)
+							daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (-0.45 * FlxMath.roundDecimal(PlayState.SONG.speed, 2)));
+						else
+							daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (0.45 * FlxMath.roundDecimal(PlayState.SONG.speed, 2)));
 
 						// WIP interpolation shit? Need to fix the pause issue
 						// daNote.y = (strumLine.y - (songTime - daNote.strumTime) * (0.45 * PlayState.SONG.speed));
 
-						if (daNote.y < -daNote.height)
+						if (daNote.y < -daNote.height && !FlxG.save.data.downscroll || daNote.y >= strumLine.y + 106 && FlxG.save.data.downscroll)
 						{
 							if (daNote.tooLate || !daNote.wasGoodHit)
 							{
@@ -2619,7 +2660,10 @@ class PlayState extends MusicBeatState
 							daNote.destroy();
 						}
 		
-						daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (0.45 * FlxMath.roundDecimal(SONG.speed, 2)));
+						if (FlxG.save.data.downscroll)
+							daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (-0.45 * FlxMath.roundDecimal(PlayState.SONG.speed, 2)));
+						else
+							daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (0.45 * FlxMath.roundDecimal(PlayState.SONG.speed, 2)));
 						//trace(daNote.y);
 						// WIP interpolation shit? Need to fix the pause issue
 						// daNote.y = (strumLine.y - (songTime - daNote.strumTime) * (0.45 * PlayState.SONG.speed));

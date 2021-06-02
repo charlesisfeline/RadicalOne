@@ -89,7 +89,7 @@ class FreeplayState extends MusicBeatState
 		previewBox.frames = FlxAtlasFrames.fromSparrow('assets/images/UI/Preview_Box.png', 'assets/images/UI/Preview_Box.xml');
 		previewBox.animation.addByPrefix('idle', 'Preview Box Movie', 24, true);
 		previewBox.animation.play('idle');
-		add(previewBox);
+		//add(previewBox);
 
 		var actualSopar:Array<String> = ['RadicalOne', 'NewRadical', 'RadiFAIL', 'RedBall', 'RacialPride'];
 
@@ -100,7 +100,7 @@ class FreeplayState extends MusicBeatState
 			charPreviews.animation.addByPrefix(i, i, 24, true);
 		}
 		charPreviews.animation.play('idle');
-		add(charPreviews);
+		//add(charPreviews);
 
 		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
 		// scoreText.autoSize = false;
@@ -121,7 +121,7 @@ class FreeplayState extends MusicBeatState
 		add(diffText);
 
 		add(scoreText);
-		add(charText);
+		//add(charText);
 
 		selector = new FlxText();
 

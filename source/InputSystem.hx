@@ -12,5 +12,8 @@ class InputSystem
 
         if (FlxG.save.data.DFJK == null)
             FlxG.save.data.DFJK = false;
+
+        if (FlxG.save.data.downsroll == null)
+            FlxG.save.data.downsroll = false;
     }
 }

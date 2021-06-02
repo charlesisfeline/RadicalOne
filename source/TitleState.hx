@@ -134,6 +134,7 @@ class TitleState extends MusicBeatState
 		persistentUpdate = true;
 
 		InputSystem.initInputs();
+		WardrobeMenu.initOutfit();
 
 		var bg:FlxSprite = new FlxSprite().loadGraphic('assets/images/prettyRacialCrystals.png');
 		bg.antialiasing = true;

@@ -77,6 +77,9 @@ class WeekendMenuState extends MusicBeatState
                 FlxG.sound.playMusic('assets/music/freakyMenu' + TitleState.soundExt);
         }
 
+        if (Highscore.getWeekendScore(2) > 0)
+            FlxG.save.data.sussyUnlock = true;
+
         //publicWeekendData = weekendData;
 
         scoreText = new FlxText(10, 20, 0, "SCORE: 49324858", 36);
