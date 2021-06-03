@@ -127,33 +127,13 @@ class DialogueBox extends FlxSpriteGroup
 				box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
 				face.setGraphicSize(Std.int(face.width * 6));
 				add(face);
-            case 'radical-vs-masked-babbys':
+            case 'radical-vs-masked-babbys' | 'north':
 				box.frames = FlxAtlasFrames.fromSparrow('assets/images/dialogueJunk/dialogueBox-pixel.png',
 					'assets/images/dialogueJunk/dialogueBox-pixel.xml');
 				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
 				box.animation.addByIndices('normal', 'Text Box Appear', [4], "", 24);
 				box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
-            case 'north':
-				box.frames = FlxAtlasFrames.fromSparrow('assets/images/dialogueJunk/dialogueBox-pixel.png',
-					'assets/images/dialogueJunk/dialogueBox-pixel.xml');
-				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
-				box.animation.addByIndices('normal', 'Text Box Appear', [4], "", 24);
-				box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
-			case 'bonnie-song':
-				box.frames = FlxAtlasFrames.fromSparrow('assets/images/dialogueJunk/dialogueBox-bawn.png',
-					'assets/images/dialogueJunk/dialogueBox-bawn.xml');
-				box.animation.addByPrefix('normalOpen', 'NAMEBE', 24, false);
-				box.animation.addByPrefix('normal', 'NAMEBE', 24, false);
-				box.setGraphicSize(Std.int(box.width * 0.9));
-				box.y += 358;
-			case 'without-you':
-				box.frames = FlxAtlasFrames.fromSparrow('assets/images/dialogueJunk/dialogueBox-bawn.png',
-					'assets/images/dialogueJunk/dialogueBox-bawn.xml');
-				box.animation.addByPrefix('normalOpen', 'NAMEBE', 24, false);
-				box.animation.addByPrefix('normal', 'NAMEBE', 24, false);
-				box.setGraphicSize(Std.int(box.width * 0.9));
-				box.y += 358;
-			case 'bonbon-loool':
+			case 'bonnie-song' | 'without-you' | 'bonbon-loool':
 				box.frames = FlxAtlasFrames.fromSparrow('assets/images/dialogueJunk/dialogueBox-bawn.png',
 					'assets/images/dialogueJunk/dialogueBox-bawn.xml');
 				box.animation.addByPrefix('normalOpen', 'NAMEBE', 24, false);

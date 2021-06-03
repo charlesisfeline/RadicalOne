@@ -41,6 +41,7 @@ import openfl.display.StageQuality;
 import openfl.filters.ShaderFilter;
 import Controls.KeyboardScheme;
 import Discord.DiscordClient;
+import flixel.addons.display.FlxBackdrop;
 
 using StringTools;
 
@@ -136,6 +137,7 @@ class PlayState extends MusicBeatState
 	
 	var vans:FlxSprite;
 	var sun:FlxSprite;
+	var stars:FlxBackdrop;
 
 	var paly2:String;
 	var paly3:String;
@@ -520,6 +522,14 @@ class PlayState extends MusicBeatState
 						sun.setGraphicSize(Std.int(sun.width * 0.2));
 						sun.scrollFactor.set(0.1, 0.1);
 						add(sun);
+					}
+					else
+					{
+						stars = new FlxBackdrop(stagePath + 'namebe/STARS.png', 1, 1, true, true);
+						// stars.setGraphicSize(0, FlxG.height);
+						stars.scale.set(FlxG.width / stars.width, FlxG.height / stars.height);
+						stars.scrollFactor.set(0.1);
+						add(stars);
 					}
 
 					var city:FlxSprite = new FlxSprite(-10).loadGraphic(stagePath + 'namebe/' + sheShed + '/city.png');
@@ -2296,6 +2306,9 @@ class PlayState extends MusicBeatState
 						trainFrameTiming = 0;
 					}
 				}
+
+				if (sheShed == 'destructed')
+					stars.x -= 0.05/(120/60);
 				// phillyCityLights.members[curLight].alpha -= (Conductor.crochet / 1000) * FlxG.elapsed;
 		}
 

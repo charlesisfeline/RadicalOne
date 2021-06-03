@@ -8,6 +8,7 @@ import flixel.group.FlxGroup;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.net.curl.CURLCode;
@@ -54,7 +55,7 @@ class StoryMenuState extends MusicBeatState
 	var grpWeekText:FlxTypedGroup<MenuItem>;
 	var grpLocks:FlxTypedGroup<FlxSprite>;
 
-	var difficultySelectors:FlxGroup;
+	var difficultySelectors:FlxTypedGroup<FlxSprite>;
 	var sprDifficulty:FlxSprite;
 	var leftArrow:FlxSprite;
 	var rightArrow:FlxSprite;
@@ -140,7 +141,7 @@ class StoryMenuState extends MusicBeatState
 
 		trace("Line 96");	
 
-		difficultySelectors = new FlxGroup();
+		difficultySelectors = new FlxTypedGroup<FlxSprite>();
 		add(difficultySelectors);
 
 		trace("Line 124");
@@ -272,7 +273,7 @@ class StoryMenuState extends MusicBeatState
 
 	function selectWeek()
 	{
-		if (0 == 0)
+		if (0 == 0) // poop and fart. both.
 		{
 			if (stopspamming == false)
 			{
@@ -309,7 +310,27 @@ class StoryMenuState extends MusicBeatState
 			PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
 			PlayState.storyWeek = curWeek;
 			PlayState.campaignScore = 0;
-			new FlxTimer().start(1, function(tmr:FlxTimer)
+
+			new FlxTimer().start(0.5, function(tmr:FlxTimer){
+				FlxTween.tween(yellowBGCoverLower, {y: FlxG.height + 10}, 0.5, {ease: FlxEase.quadOut});
+				FlxTween.tween(yellowBGCoverUpper, {y: -yellowBGCoverUpper.height - 10}, 0.5, {ease: FlxEase.quadOut});
+			});
+
+			FlxTween.tween(scoreText, {x: -400}, 0.5, {ease: FlxEase.quadOut});
+			FlxTween.tween(txtTracklist, {x: -400}, 0.5, {ease: FlxEase.quadOut});
+
+			//FlxTween.tween(weekPreview, {y: 0, 'scale.x': FlxG.width / weekPreview.width, 'scale.y': FlxG.height / 400}, 0.5, {ease: FlxEase.quadOut});
+			//FlxTween.tween(weekPreviewShad, {y: 10, 'scale.x': FlxG.width / weekPreviewShad.width, 'scale.y': FlxG.height / 400}, 0.5, {ease: FlxEase.quadOut});
+
+			difficultySelectors.forEach(function(spr:FlxSprite){
+				FlxTween.tween(spr, {x: spr.x + 400}, 0.5, {ease: FlxEase.quadOut});
+			});
+
+			grpWeekText.forEach(function(spr:FlxSprite){
+				FlxTween.tween(spr, {alpha: 0}, 0.35, {ease: FlxEase.quadOut});
+			});
+			
+			new FlxTimer().start(1.5, function(tmr:FlxTimer)
 			{
 				if (FlxG.sound.music != null)
 					FlxG.sound.music.stop();
