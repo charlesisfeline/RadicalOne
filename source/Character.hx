@@ -29,12 +29,13 @@ class Character extends FlxSprite
 		'four', 'x', 'christmas-monkey', 
 		'invisible', '',
 		'salted', 
-		'wow', 'wow2', 
+		'wow', 
 		'austin', 
 		'senpai', 'senpai-angry', 
 		'pronun', 
 		'charlie', 
-		'skank', 'goomba', 'flandre-cool-awesome', 'nadalyn', 'failure', 'red-ball', 'dadamono', '3.4', 'stick', 'skank-n-pronoun', 'junkers'
+		'skank', 'goomba', 'flandre-cool-awesome', 'nadalyn', 'failure', 'red-ball', 'dadamono', '3.4', 'stick', 'skank-n-pronoun', 'junkers', 'pic-nick',
+		'wow2' // lol
 	];
 
 	public function new(x:Float, y:Float, ?character:String = "radical", ?isPlayer:Bool = false)
@@ -394,6 +395,33 @@ class Character extends FlxSprite
 				
 				if (!isPlayer)
 					flipX = true;
+			case 'pic-nick':
+				getFrames('Pic-Nick');
+				animation.addByPrefix('idle', "Pico Idle Dance", 24);
+				animation.addByPrefix('singUP', 'pico Up note0', 24, false);
+				animation.addByPrefix('singDOWN', 'Pico Down Note0', 24, false);
+				if (isPlayer)
+					{
+					animation.addByPrefix('singLEFT', 'Pico NOTE LEFT0', 24, false);
+					animation.addByPrefix('singRIGHT', 'Pico Note Right0', 24, false);
+				}
+				else
+					{
+					// Need to be flipped! REDO THIS LATER!
+					animation.addByPrefix('singLEFT', 'Pico Note Right0', 24, false);
+					animation.addByPrefix('singRIGHT', 'Pico NOTE LEFT0', 24, false);
+					
+				}
+				
+				playAnim('idle');
+				addOffset('idle');
+				addOffset("singUP", -29, 27);
+				addOffset("singRIGHT", -68, -7);
+				addOffset("singLEFT", 65, 9);
+				addOffset("singDOWN", 200, -70);
+				
+				if (!isPlayer)
+					flipX = true;
             case 'gandhi':
 				// DAD ANIMATION LOADING CODE
 				tex = FlxAtlasFrames.fromSparrow(charPath + 'G_Spot.png', charPath + 'G_Spot.xml');
@@ -569,6 +597,8 @@ class Character extends FlxSprite
 					[15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
 				]);
 
+				animation.addByPrefix('spin', 'MONKEY GO SPEEEEN', 24, false);
+
 				setOffsets([
 					[0, 0],
 					[0, 0],
@@ -577,6 +607,8 @@ class Character extends FlxSprite
 					[16, 55],
 					[16, 32],
 				], true);
+
+				addOffset('spin', -22, 43);
 
 				playAnim('danceRight');
 			case 'failure':

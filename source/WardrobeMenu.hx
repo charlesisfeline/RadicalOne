@@ -10,7 +10,7 @@ import Discord.DiscordClient;
 
 class WardrobeMenu extends MusicBeatState
 {
-    var racialDiversity:Array<String> = ['Radical', 'Old Radical', 'Racial Pride', 'RadiFAIL', 'RedBall'];
+    var racialDiversity:Array<String> = ['Radical', 'Old Radical', 'Racial Pride', 'RadiFAIL'];
     var curSelected:Int;
 
     var words:FlxTypedGroup<Alphabet>;
@@ -21,6 +21,9 @@ class WardrobeMenu extends MusicBeatState
 
     override function create()
     {
+        if (FlxG.save.data.redballUnlock)
+            racialDiversity.push('RedBall');
+
         if (FlxG.save.data.sussyUnlock)
             racialDiversity.push('Sussy Radical');
 
@@ -117,5 +120,8 @@ class WardrobeMenu extends MusicBeatState
 
         if (FlxG.save.data.sussyUnlock == null)
             FlxG.save.data.sussyUnlock = false;
+
+        if (FlxG.save.data.redballUnlock == null)
+            FlxG.save.data.redballUnlock = false;
     }
 }

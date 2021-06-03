@@ -17,61 +17,93 @@
 	<SubTexture name="MONKEY DOWN0012" x="2017" y="0" width="675" height="784" frameX="-115" frameY="-136" frameWidth="790" frameHeight="959"/>
 	<SubTexture name="MONKEY DOWN0013" x="2017" y="0" width="675" height="784" frameX="-115" frameY="-136" frameWidth="790" frameHeight="959"/>
 	<SubTexture name="MONKEY DOWN0014" x="2017" y="0" width="675" height="784" frameX="-115" frameY="-136" frameWidth="790" frameHeight="959"/>
-	<SubTexture name="MONKEY SCREAMING WOOWAHAHA0000" x="2697" y="0" width="744" height="743" frameX="-56" frameY="-36" frameWidth="870" frameHeight="785"/>
-	<SubTexture name="MONKEY SCREAMING WOOWAHAHA0001" x="2697" y="0" width="744" height="743" frameX="-56" frameY="-36" frameWidth="870" frameHeight="785"/>
-	<SubTexture name="MONKEY SCREAMING WOOWAHAHA0002" x="0" y="964" width="861" height="771" frameX="-4" frameY="-13" frameWidth="870" frameHeight="785"/>
-	<SubTexture name="MONKEY SCREAMING WOOWAHAHA0003" x="0" y="964" width="861" height="771" frameX="-4" frameY="-13" frameWidth="870" frameHeight="785"/>
-	<SubTexture name="MONKEY SCREAMING WOOWAHAHA0004" x="866" y="964" width="870" height="785"/>
-	<SubTexture name="MONKEY SCREAMING WOOWAHAHA0005" x="866" y="964" width="870" height="785"/>
-	<SubTexture name="MONKEY SCREAMING WOOWAHAHA0006" x="866" y="964" width="870" height="785"/>
-	<SubTexture name="MONKEY SCREAMING WOOWAHAHA0007" x="866" y="964" width="870" height="785"/>
-	<SubTexture name="MONKEY SCREAMING WOOWAHAHA0008" x="866" y="964" width="870" height="785"/>
-	<SubTexture name="mokey left0000" x="1741" y="964" width="636" height="752" frameX="-15" frameY="0" frameWidth="651" frameHeight="752"/>
-	<SubTexture name="mokey left0001" x="1741" y="964" width="636" height="752" frameX="-15" frameY="0" frameWidth="651" frameHeight="752"/>
-	<SubTexture name="mokey left0002" x="2382" y="964" width="607" height="739" frameX="-3" frameY="-13" frameWidth="651" frameHeight="752"/>
-	<SubTexture name="mokey left0003" x="2382" y="964" width="607" height="739" frameX="-3" frameY="-13" frameWidth="651" frameHeight="752"/>
-	<SubTexture name="mokey left0004" x="2994" y="964" width="601" height="736" frameX="0" frameY="-15" frameWidth="651" frameHeight="752"/>
-	<SubTexture name="mokey left0005" x="2994" y="964" width="601" height="736" frameX="0" frameY="-15" frameWidth="651" frameHeight="752"/>
-	<SubTexture name="mokey left0006" x="2994" y="964" width="601" height="736" frameX="0" frameY="-15" frameWidth="651" frameHeight="752"/>
-	<SubTexture name="mokey left0007" x="2994" y="964" width="601" height="736" frameX="0" frameY="-15" frameWidth="651" frameHeight="752"/>
-	<SubTexture name="mokey left0008" x="2994" y="964" width="601" height="736" frameX="0" frameY="-15" frameWidth="651" frameHeight="752"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0000" x="0" y="1754" width="581" height="651" frameX="0" frameY="-38" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0001" x="0" y="1754" width="581" height="651" frameX="0" frameY="-38" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0002" x="586" y="1754" width="477" height="669" frameX="-78" frameY="-21" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0003" x="586" y="1754" width="477" height="669" frameX="-78" frameY="-21" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0004" x="1068" y="1754" width="428" height="684" frameX="-95" frameY="-7" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0005" x="1068" y="1754" width="428" height="684" frameX="-95" frameY="-7" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0006" x="1501" y="1754" width="422" height="691" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0007" x="1501" y="1754" width="422" height="691" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0008" x="1928" y="1754" width="422" height="691" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0009" x="1928" y="1754" width="422" height="691" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0010" x="1928" y="1754" width="422" height="691" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0011" x="1928" y="1754" width="422" height="691" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0012" x="1928" y="1754" width="422" height="691" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0013" x="1928" y="1754" width="422" height="691" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0014" x="1928" y="1754" width="422" height="691" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0015" x="2355" y="1754" width="604" height="671" frameX="-74" frameY="-17" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0016" x="2355" y="1754" width="604" height="671" frameX="-74" frameY="-17" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0017" x="2964" y="1754" width="464" height="667" frameX="-119" frameY="-22" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0018" x="2964" y="1754" width="464" height="667" frameX="-119" frameY="-22" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0019" x="3433" y="1754" width="427" height="675" frameX="-107" frameY="-14" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0020" x="3433" y="1754" width="427" height="675" frameX="-107" frameY="-14" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0021" x="0" y="2450" width="422" height="690" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0022" x="0" y="2450" width="422" height="690" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0023" x="427" y="2450" width="422" height="690" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0024" x="427" y="2450" width="422" height="690" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0025" x="427" y="2450" width="422" height="690" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0026" x="427" y="2450" width="422" height="690" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0027" x="427" y="2450" width="422" height="690" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0028" x="427" y="2450" width="422" height="690" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey idle ooh ooh aah aah0029" x="427" y="2450" width="422" height="690" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
-	<SubTexture name="monkey is right ya know0000" x="854" y="2450" width="543" height="715" frameX="0" frameY="-3" frameWidth="585" frameHeight="718"/>
-	<SubTexture name="monkey is right ya know0001" x="854" y="2450" width="543" height="715" frameX="0" frameY="-3" frameWidth="585" frameHeight="718"/>
-	<SubTexture name="monkey is right ya know0002" x="1402" y="2450" width="563" height="712" frameX="-12" frameY="-5" frameWidth="585" frameHeight="718"/>
-	<SubTexture name="monkey is right ya know0003" x="1402" y="2450" width="563" height="712" frameX="-12" frameY="-5" frameWidth="585" frameHeight="718"/>
-	<SubTexture name="monkey is right ya know0004" x="1970" y="2450" width="568" height="717" frameX="-17" frameY="0" frameWidth="585" frameHeight="718"/>
-	<SubTexture name="monkey is right ya know0005" x="1970" y="2450" width="568" height="717" frameX="-17" frameY="0" frameWidth="585" frameHeight="718"/>
-	<SubTexture name="monkey is right ya know0006" x="1970" y="2450" width="568" height="717" frameX="-17" frameY="0" frameWidth="585" frameHeight="718"/>
-	<SubTexture name="monkey is right ya know0007" x="1970" y="2450" width="568" height="717" frameX="-17" frameY="0" frameWidth="585" frameHeight="718"/>
-	<SubTexture name="monkey is right ya know0008" x="1970" y="2450" width="568" height="717" frameX="-17" frameY="0" frameWidth="585" frameHeight="718"/>
+	<SubTexture name="MONKEY GO SPEEEEN0000" x="2697" y="0" width="410" height="689" frameX="-82" frameY="-45" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0001" x="2697" y="0" width="410" height="689" frameX="-82" frameY="-45" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0002" x="3112" y="0" width="629" height="730" frameX="-9" frameY="-7" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0003" x="3112" y="0" width="629" height="730" frameX="-9" frameY="-7" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0004" x="0" y="964" width="648" height="734" frameX="0" frameY="-3" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0005" x="0" y="964" width="648" height="734" frameX="0" frameY="-3" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0006" x="653" y="964" width="593" height="735" frameX="-26" frameY="0" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0007" x="653" y="964" width="593" height="735" frameX="-26" frameY="0" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0008" x="1251" y="964" width="648" height="733" frameX="0" frameY="-3" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0009" x="1251" y="964" width="648" height="733" frameX="0" frameY="-3" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0010" x="1904" y="964" width="593" height="733" frameX="-26" frameY="-2" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0011" x="1904" y="964" width="593" height="733" frameX="-26" frameY="-2" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0012" x="2502" y="964" width="648" height="734" frameX="0" frameY="-2" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0013" x="2502" y="964" width="648" height="734" frameX="0" frameY="-2" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0014" x="3155" y="964" width="593" height="734" frameX="-26" frameY="-1" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0015" x="3155" y="964" width="593" height="734" frameX="-26" frameY="-1" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0016" x="0" y="1704" width="648" height="734" frameX="0" frameY="-3" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0017" x="0" y="1704" width="648" height="734" frameX="0" frameY="-3" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0018" x="653" y="1704" width="593" height="732" frameX="-26" frameY="-3" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0019" x="653" y="1704" width="593" height="732" frameX="-26" frameY="-3" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0020" x="1251" y="1704" width="648" height="733" frameX="0" frameY="-3" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0021" x="1251" y="1704" width="648" height="733" frameX="0" frameY="-3" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0022" x="653" y="964" width="593" height="735" frameX="-26" frameY="0" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0023" x="653" y="964" width="593" height="735" frameX="-26" frameY="0" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0024" x="1251" y="964" width="648" height="733" frameX="0" frameY="-3" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0025" x="1251" y="964" width="648" height="733" frameX="0" frameY="-3" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0026" x="1904" y="964" width="593" height="733" frameX="-26" frameY="-2" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0027" x="1904" y="964" width="593" height="733" frameX="-26" frameY="-2" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0028" x="2502" y="964" width="648" height="734" frameX="0" frameY="-2" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0029" x="2502" y="964" width="648" height="734" frameX="0" frameY="-2" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0030" x="3155" y="964" width="593" height="734" frameX="-26" frameY="-1" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY GO SPEEEEN0031" x="3155" y="964" width="593" height="734" frameX="-26" frameY="-1" frameWidth="648" frameHeight="737"/>
+	<SubTexture name="MONKEY SCREAMING WOOWAHAHA0000" x="1904" y="1704" width="744" height="743" frameX="-56" frameY="-36" frameWidth="870" frameHeight="785"/>
+	<SubTexture name="MONKEY SCREAMING WOOWAHAHA0001" x="1904" y="1704" width="744" height="743" frameX="-56" frameY="-36" frameWidth="870" frameHeight="785"/>
+	<SubTexture name="MONKEY SCREAMING WOOWAHAHA0002" x="2653" y="1704" width="861" height="771" frameX="-4" frameY="-13" frameWidth="870" frameHeight="785"/>
+	<SubTexture name="MONKEY SCREAMING WOOWAHAHA0003" x="2653" y="1704" width="861" height="771" frameX="-4" frameY="-13" frameWidth="870" frameHeight="785"/>
+	<SubTexture name="MONKEY SCREAMING WOOWAHAHA0004" x="0" y="2480" width="870" height="785"/>
+	<SubTexture name="MONKEY SCREAMING WOOWAHAHA0005" x="0" y="2480" width="870" height="785"/>
+	<SubTexture name="MONKEY SCREAMING WOOWAHAHA0006" x="0" y="2480" width="870" height="785"/>
+	<SubTexture name="MONKEY SCREAMING WOOWAHAHA0007" x="0" y="2480" width="870" height="785"/>
+	<SubTexture name="MONKEY SCREAMING WOOWAHAHA0008" x="0" y="2480" width="870" height="785"/>
+	<SubTexture name="mokey left0000" x="875" y="2480" width="636" height="752" frameX="-15" frameY="0" frameWidth="651" frameHeight="752"/>
+	<SubTexture name="mokey left0001" x="875" y="2480" width="636" height="752" frameX="-15" frameY="0" frameWidth="651" frameHeight="752"/>
+	<SubTexture name="mokey left0002" x="1516" y="2480" width="607" height="739" frameX="-3" frameY="-13" frameWidth="651" frameHeight="752"/>
+	<SubTexture name="mokey left0003" x="1516" y="2480" width="607" height="739" frameX="-3" frameY="-13" frameWidth="651" frameHeight="752"/>
+	<SubTexture name="mokey left0004" x="2128" y="2480" width="601" height="736" frameX="0" frameY="-15" frameWidth="651" frameHeight="752"/>
+	<SubTexture name="mokey left0005" x="2128" y="2480" width="601" height="736" frameX="0" frameY="-15" frameWidth="651" frameHeight="752"/>
+	<SubTexture name="mokey left0006" x="2128" y="2480" width="601" height="736" frameX="0" frameY="-15" frameWidth="651" frameHeight="752"/>
+	<SubTexture name="mokey left0007" x="2128" y="2480" width="601" height="736" frameX="0" frameY="-15" frameWidth="651" frameHeight="752"/>
+	<SubTexture name="mokey left0008" x="2128" y="2480" width="601" height="736" frameX="0" frameY="-15" frameWidth="651" frameHeight="752"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0000" x="2734" y="2480" width="581" height="651" frameX="0" frameY="-38" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0001" x="2734" y="2480" width="581" height="651" frameX="0" frameY="-38" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0002" x="3320" y="2480" width="477" height="669" frameX="-78" frameY="-21" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0003" x="3320" y="2480" width="477" height="669" frameX="-78" frameY="-21" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0004" x="0" y="3270" width="428" height="684" frameX="-95" frameY="-7" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0005" x="0" y="3270" width="428" height="684" frameX="-95" frameY="-7" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0006" x="433" y="3270" width="422" height="691" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0007" x="433" y="3270" width="422" height="691" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0008" x="860" y="3270" width="422" height="691" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0009" x="860" y="3270" width="422" height="691" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0010" x="860" y="3270" width="422" height="691" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0011" x="860" y="3270" width="422" height="691" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0012" x="860" y="3270" width="422" height="691" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0013" x="860" y="3270" width="422" height="691" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0014" x="860" y="3270" width="422" height="691" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0015" x="1287" y="3270" width="604" height="671" frameX="-74" frameY="-17" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0016" x="1287" y="3270" width="604" height="671" frameX="-74" frameY="-17" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0017" x="1896" y="3270" width="464" height="667" frameX="-119" frameY="-22" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0018" x="1896" y="3270" width="464" height="667" frameX="-119" frameY="-22" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0019" x="2365" y="3270" width="427" height="675" frameX="-107" frameY="-14" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0020" x="2365" y="3270" width="427" height="675" frameX="-107" frameY="-14" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0021" x="2797" y="3270" width="422" height="690" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0022" x="2797" y="3270" width="422" height="690" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0023" x="3224" y="3270" width="422" height="690" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0024" x="3224" y="3270" width="422" height="690" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0025" x="3224" y="3270" width="422" height="690" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0026" x="3224" y="3270" width="422" height="690" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0027" x="3224" y="3270" width="422" height="690" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0028" x="3224" y="3270" width="422" height="690" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey idle ooh ooh aah aah0029" x="3224" y="3270" width="422" height="690" frameX="-104" frameY="0" frameWidth="678" frameHeight="691"/>
+	<SubTexture name="monkey is right ya know0000" x="0" y="3966" width="543" height="715" frameX="0" frameY="-3" frameWidth="585" frameHeight="718"/>
+	<SubTexture name="monkey is right ya know0001" x="0" y="3966" width="543" height="715" frameX="0" frameY="-3" frameWidth="585" frameHeight="718"/>
+	<SubTexture name="monkey is right ya know0002" x="548" y="3966" width="563" height="712" frameX="-12" frameY="-5" frameWidth="585" frameHeight="718"/>
+	<SubTexture name="monkey is right ya know0003" x="548" y="3966" width="563" height="712" frameX="-12" frameY="-5" frameWidth="585" frameHeight="718"/>
+	<SubTexture name="monkey is right ya know0004" x="1116" y="3966" width="568" height="717" frameX="-17" frameY="0" frameWidth="585" frameHeight="718"/>
+	<SubTexture name="monkey is right ya know0005" x="1116" y="3966" width="568" height="717" frameX="-17" frameY="0" frameWidth="585" frameHeight="718"/>
+	<SubTexture name="monkey is right ya know0006" x="1116" y="3966" width="568" height="717" frameX="-17" frameY="0" frameWidth="585" frameHeight="718"/>
+	<SubTexture name="monkey is right ya know0007" x="1116" y="3966" width="568" height="717" frameX="-17" frameY="0" frameWidth="585" frameHeight="718"/>
+	<SubTexture name="monkey is right ya know0008" x="1116" y="3966" width="568" height="717" frameX="-17" frameY="0" frameWidth="585" frameHeight="718"/>
 </TextureAtlas>

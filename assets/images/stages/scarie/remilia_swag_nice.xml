@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="remilia_swag_nice.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="up and down woow0000" x="0" y="0" width="2006" height="2125" frameX="0" frameY="-109" frameWidth="2006" frameHeight="2343"/>
+	<SubTexture name="up and down woow0001" x="0" y="0" width="2006" height="2125" frameX="0" frameY="-109" frameWidth="2006" frameHeight="2343"/>
+	<SubTexture name="up and down woow0002" x="0" y="0" width="2006" height="2125" frameX="0" frameY="-55" frameWidth="2006" frameHeight="2343"/>
+	<SubTexture name="up and down woow0003" x="0" y="0" width="2006" height="2125" frameX="0" frameY="-55" frameWidth="2006" frameHeight="2343"/>
+	<SubTexture name="up and down woow0004" x="0" y="0" width="2006" height="2125" frameX="0" frameY="0" frameWidth="2006" frameHeight="2343"/>
+	<SubTexture name="up and down woow0005" x="0" y="0" width="2006" height="2125" frameX="0" frameY="0" frameWidth="2006" frameHeight="2343"/>
+	<SubTexture name="up and down woow0006" x="0" y="0" width="2006" height="2125" frameX="0" frameY="-44" frameWidth="2006" frameHeight="2343"/>
+	<SubTexture name="up and down woow0007" x="0" y="0" width="2006" height="2125" frameX="0" frameY="-44" frameWidth="2006" frameHeight="2343"/>
+	<SubTexture name="up and down woow0008" x="0" y="0" width="2006" height="2125" frameX="0" frameY="-88" frameWidth="2006" frameHeight="2343"/>
+	<SubTexture name="up and down woow0009" x="0" y="0" width="2006" height="2125" frameX="0" frameY="-88" frameWidth="2006" frameHeight="2343"/>
+	<SubTexture name="up and down woow0010" x="0" y="0" width="2006" height="2125" frameX="0" frameY="-130" frameWidth="2006" frameHeight="2343"/>
+	<SubTexture name="up and down woow0011" x="0" y="0" width="2006" height="2125" frameX="0" frameY="-130" frameWidth="2006" frameHeight="2343"/>
+	<SubTexture name="up and down woow0012" x="0" y="0" width="2006" height="2125" frameX="0" frameY="-174" frameWidth="2006" frameHeight="2343"/>
+	<SubTexture name="up and down woow0013" x="0" y="0" width="2006" height="2125" frameX="0" frameY="-174" frameWidth="2006" frameHeight="2343"/>
+	<SubTexture name="up and down woow0014" x="0" y="0" width="2006" height="2125" frameX="0" frameY="-218" frameWidth="2006" frameHeight="2343"/>
+	<SubTexture name="up and down woow0015" x="0" y="0" width="2006" height="2125" frameX="0" frameY="-218" frameWidth="2006" frameHeight="2343"/>
+	<SubTexture name="up and down woow0016" x="0" y="0" width="2006" height="2125" frameX="0" frameY="-174" frameWidth="2006" frameHeight="2343"/>
+	<SubTexture name="up and down woow0017" x="0" y="0" width="2006" height="2125" frameX="0" frameY="-174" frameWidth="2006" frameHeight="2343"/>
+	<SubTexture name="up and down woow0018" x="0" y="0" width="2006" height="2125" frameX="0" frameY="-130" frameWidth="2006" frameHeight="2343"/>
+</TextureAtlas>

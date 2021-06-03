@@ -319,8 +319,12 @@ class StoryMenuState extends MusicBeatState
 			FlxTween.tween(scoreText, {x: -400}, 0.5, {ease: FlxEase.quadOut});
 			FlxTween.tween(txtTracklist, {x: -400}, 0.5, {ease: FlxEase.quadOut});
 
-			//FlxTween.tween(weekPreview, {y: 0, 'scale.x': FlxG.width / weekPreview.width, 'scale.y': FlxG.height / 400}, 0.5, {ease: FlxEase.quadOut});
-			//FlxTween.tween(weekPreviewShad, {y: 10, 'scale.x': FlxG.width / weekPreviewShad.width, 'scale.y': FlxG.height / 400}, 0.5, {ease: FlxEase.quadOut});
+			updateText(true);
+
+			new FlxTimer().start(0.65, function(tmr:FlxTimer){
+				FlxTween.tween(weekPreview, {x: penis[0], y: penis[1]}, 0.5, {ease: FlxEase.quadOut});
+				FlxTween.tween(weekPreviewShad, {x: punis[0], y: punis[1]}, 0.5, {ease: FlxEase.quadOut});
+			});
 
 			difficultySelectors.forEach(function(spr:FlxSprite){
 				FlxTween.tween(spr, {x: spr.x + 400}, 0.5, {ease: FlxEase.quadOut});
@@ -405,7 +409,10 @@ class StoryMenuState extends MusicBeatState
 		updateText();
 	}
 
-	function updateText()
+	var penis:Array<Float>;
+	var punis:Array<Float>;
+
+	function updateText(yellowLeakage:Bool = false)
 	{
 		txtTracklist.text = "Tracks\n";
 
@@ -421,17 +428,26 @@ class StoryMenuState extends MusicBeatState
 		txtTracklist.screenCenter(X);
 		txtTracklist.x -= FlxG.width * 0.35;
 
-		weekPreview.loadGraphic('assets/images/UI/weekPreview/week' + Std.string(curWeek) + '.png');
+		var brownLeakage:String;
+
+		if (!yellowLeakage)
+			brownLeakage = Std.string(curWeek);
+		else
+			brownLeakage = Std.string(curWeek) + 'junk';
+
+		weekPreview.loadGraphic('assets/images/UI/weekPreview/week' + brownLeakage + '.png');
 		if (weekPreview.height < 400)
 			weekPreview.antialiasing = true;
 		else
 			weekPreview.antialiasing = false;
 		weekPreview.setGraphicSize(0, 400);
 		weekPreview.updateHitbox();
-		weekPreview.screenCenter(X);
+		weekPreview.screenCenter();
+		penis = [weekPreview.x, weekPreview.y];
+		punis = [weekPreview.x + 10, weekPreview.y + 10];
 		weekPreview.y = 56;
 
-		weekPreviewShad.loadGraphic('assets/images/UI/weekPreview/week' + Std.string(curWeek) + '.png');
+		weekPreviewShad.loadGraphic('assets/images/UI/weekPreview/week' + brownLeakage + '.png');
 		weekPreviewShad.color = FlxColor.BLACK;
 		weekPreviewShad.alpha = 0.5;
 		if (weekPreviewShad.height < 400)
