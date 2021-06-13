@@ -7,6 +7,8 @@ import lime.utils.Assets;
 
 using StringTools;
 
+// WHAT IS THIS LOOL I HAVE NO MEMORY OF ADDING THSI
+
 typedef NameMap =
 {
 	var song:String;

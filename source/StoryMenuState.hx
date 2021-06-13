@@ -264,8 +264,13 @@ class StoryMenuState extends MusicBeatState
 			FlxG.switchState(new MainMenuState());
 		}
 
+		if (camZooming)
+			FlxG.camera.zoom = FlxMath.lerp(1.5, FlxG.camera.zoom, 0.95);
+
 		super.update(elapsed);
 	}
+
+	var camZooming:Bool = false;
 
 	var movedBack:Bool = false;
 	var selectedWeek:Bool = false;
@@ -324,6 +329,7 @@ class StoryMenuState extends MusicBeatState
 			new FlxTimer().start(0.65, function(tmr:FlxTimer){
 				FlxTween.tween(weekPreview, {x: penis[0], y: penis[1]}, 0.5, {ease: FlxEase.quadOut});
 				FlxTween.tween(weekPreviewShad, {x: punis[0], y: punis[1]}, 0.5, {ease: FlxEase.quadOut});
+				camZooming = true;
 			});
 
 			difficultySelectors.forEach(function(spr:FlxSprite){

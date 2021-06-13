@@ -11,9 +11,6 @@ class HealthIcon extends FlxSprite
 		loadIcon(char);
 		antialiasing = true;
 
-		// animation.add('normal', [0], 0, false);
-		// animation.add('losing', [1], 0, false);
-
 		animation.play('normal');
 
 		flipX = isPlayer;
@@ -27,6 +24,8 @@ class HealthIcon extends FlxSprite
 		{
 			case 'wow2':
 				loadGraphic(Character.charPath + 'icons/wow.png', true, 150, 150);
+			case 'gaming-speakers' | 'pc' | 'gaming-gunpoint':
+				loadGraphic(Character.charPath + 'icons/gaming.png', true, 150, 150);
 			case 'christmas-monkey' | 'senpai' | 'senpai-angry':
 				loadGraphic(Character.charPath + 'icons/monkey-sprite.png', true, 150, 150);
 			case 'spirit':

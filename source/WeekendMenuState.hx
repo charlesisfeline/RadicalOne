@@ -38,7 +38,7 @@ class WeekendMenuState extends MusicBeatState
 		['Start-Conjunction', 'Energy-Lights', 'Telegroove'],
         ['Senpai', 'Roses', 'Thorns'],
         ['the-backyardagains', 'funny'],
-        ['Interrogation', 'Tha-Biscoot', '3.4', 'Scribble-Street', 'Scary-Junk', 'Weird-Junk-WTF'],
+        ['Interrogation', 'Tha-Biscoot', 'Among-Us-Happy-Meal', 'Chuckie', '3.4', 'Scribble-Street', 'Scary-Junk', 'Thanos-Rumble', 'Weird-Junk-WTF'],
         ['Freebeat_1', 'JunkRUs', 'Picnic-Rumble']
     ];
 

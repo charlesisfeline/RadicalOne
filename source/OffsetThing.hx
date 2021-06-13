@@ -31,7 +31,7 @@ class OffsetThing extends MusicBeatSubstate
     {
         if (controls.LEFT_P)
         {
-            REALANDCCANON -= 1;
+            REALANDCCANON--;
         }
 
         if(REALANDCCANON < -20)
@@ -42,7 +42,7 @@ class OffsetThing extends MusicBeatSubstate
 
         if (controls.RIGHT_P)
         {
-            REALANDCCANON += 1;
+            REALANDCCANON++;
         }
 
         FlxG.save.data.offset = REALANDCCANON / 10;

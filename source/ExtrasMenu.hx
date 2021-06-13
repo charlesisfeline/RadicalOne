@@ -84,7 +84,7 @@ class ExtrasMenu extends MusicBeatState
 				case 3:
 					PlayState.initModes();
 					PlayState.randomLevel = true;
-					var daSong:String = everySongEver[FlxG.random.int(0, everySongEver.length)].toLowerCase();
+					var daSong:String = everySongEver[FlxG.random.int(0, everySongEver.length - 1)].toLowerCase();
 					trace(daSong);
 					PlayState.SONG = Song.loadFromJson(daSong, daSong);
 					FlxG.switchState(new PlayState());

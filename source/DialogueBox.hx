@@ -276,47 +276,76 @@ class DialogueBox extends FlxSpriteGroup
 		swagDialogue.resetText(dialogueList[0]);
 		swagDialogue.start(0.04, true);
 
-		switch (curCharacter)
+		if (curCharacter == 'dad')
 		{
-			case 'dad':
-			    trace('dad');
-				portraitRight.visible = false;
-				portraitLeft.visible = false;
-				if (!portraitLeft.visible)
-				{
-					portraitLeftPixel.visible = true;
-					portraitLeftPixel.animation.play('enter');
-				}
-			case 'radical':
-			    trace('bf');
-				rightPort('Racial');
-			case 'gaming':
-			    trace('bf');
-				rightPort('Gaming');
-			case 'bab':
-			    trace('bab');
-                leftPort('Babby_Pissed_Off');
-            case 'bob':
-			    trace('bab');
-                leftPort('Babby_Pissed_On');
-            case 'monkey':
-			    trace('monkey');
-                leftPort('Funny_Monkey');
-			case 'namebe':
-			    trace('namebe');
-                leftPort('Nambe_Pissed_Off');
-			case 'boygirl':
-			    trace('namebe boy-girl');
-                leftPort('Boy_Girl');
-			case 'wtf':
-			    trace('namebe gf face');
-                leftPort('wtf');
-			case 'gspot':
-			    trace('gandhi');
-                leftPort('G_Spot');
-			case 'bon':
-			    trace('bonbon');
-                leftPort('LANCEY_IS_GOING_TO_DO_A_TEST_CHART_OF_OIL_ZIG_ZAG_BEING_SWAGGER');
+			trace('dad');
+			portraitRight.visible = false;
+			portraitLeft.visible = false;
+			if (!portraitLeft.visible)
+			{
+				portraitLeftPixel.visible = true;
+				portraitLeftPixel.animation.play('enter');
+			}
+		}
+		else
+		{
+			var loser:Array<String> = curCharacter.split('-');
+
+			if (loser.length == 1)
+				loser.push('left');
+
+			switch (loser[0])
+			{
+				case 'radical':
+					trace('bf');
+					loser[0] = 'Racial';
+				case 'gaming':
+					trace('bf');
+					loser[0] = 'Gaming';
+				case 'bab':
+					trace('bab');
+					loser[0] = 'Babby_Pissed_Off';
+				case 'bob':
+					trace('bab');
+					loser[0] = 'Babby_Pissed_On';
+				case 'monkey':
+					trace('monkey');
+					loser[0] = 'Funny_Monkey';
+				case 'namebe':
+					trace('namebe');
+					loser[0] = 'Nambe_Pissed_Off';
+				case 'boygirl':
+					trace('namebe boy-girl');
+					loser[0] = 'Boy_Girl';
+				case 'wtf':
+					trace('namebe gf face');
+					loser[0] = 'wtf';
+				case 'gspot':
+					trace('gandhi');
+					loser[0] = 'G_Spot';
+				case 'bon':
+					trace('bonbon');
+					loser[0] = 'LANCEY_IS_GOING_TO_DO_A_TEST_CHART_OF_OIL_ZIG_ZAG_BEING_SWAGGER';
+			}
+
+			var wow2Time:Bool = false;
+
+			if (loser.length == 3)
+			{
+				if (loser[2] == 'flip')
+					wow2Time = true;
+				else
+					wow2Time = false;
+			}
+			else
+				trace('no flip?');
+
+			if (loser[1] == 'left')
+				leftPort(loser[0], wow2Time)
+			else if (loser[1] == 'right')
+				rightPort(loser[0], wow2Time)
+			else
+				trace('INVALID PORTRAIT');
 		}
 	}
 

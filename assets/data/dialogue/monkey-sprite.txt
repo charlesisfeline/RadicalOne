@@ -1,7 +1,7 @@
-:monkey:*monkey noises*
-:bab:Woah dude, who's this?
-:bob:I dont know, but he looks cool!
-:monkey:*monkey gestures*
-:gaming:Bro that thing is kinda threatening!
-:radical:Yeah lemme take care of it..
-:monkey:*monkey's funny doings*
+:monkey-left:*monkey noises*
+:pogbab-left:Woah dude, who's this?
+:pogbob-left-flip:I dont know, but he looks cool!
+:monkey-left:*monkey gestures*
+:gaming-right:Bro that thing is kinda threatening!
+:radical-right:Yeah lemme take care of it..
+:monkey-left:*monkey's funny doings*
