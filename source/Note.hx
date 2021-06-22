@@ -107,6 +107,28 @@ class Note extends FlxSprite
 				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
 				updateHitbox();
 
+			case 'picnic' | 'junk' | 'freebeat':
+				frames = FlxAtlasFrames.fromSparrow('assets/images/UI/red/NOTE_assets.png', 'assets/images/UI/red/NOTE_assets.xml');
+
+				animation.addByPrefix('greenScroll', 'green0');
+				animation.addByPrefix('redScroll', 'red0');
+				animation.addByPrefix('blueScroll', 'blue0');
+				animation.addByPrefix('purpleScroll', 'purple0');
+
+				animation.addByPrefix('purpleholdend', 'pruple end hold');
+				animation.addByPrefix('greenholdend', 'green hold end');
+				animation.addByPrefix('redholdend', 'red hold end');
+				animation.addByPrefix('blueholdend', 'blue hold end');
+
+				animation.addByPrefix('purplehold', 'purple hold piece');
+				animation.addByPrefix('greenhold', 'green hold piece');
+				animation.addByPrefix('redhold', 'red hold piece');
+				animation.addByPrefix('bluehold', 'blue hold piece');
+
+				setGraphicSize(Std.int(width * 0.7));
+				updateHitbox();
+				antialiasing = true;
+
 			default:
 				frames = FlxAtlasFrames.fromSparrow('assets/images/UI/NOTE_assets.png', 'assets/images/UI/NOTE_assets.xml');
 
@@ -192,6 +214,9 @@ class Note extends FlxSprite
 				prevNote.scale.y *= (2.25 * FlxMath.roundDecimal(PlayState.SONG.speed, 1));
 				// prevNote.setGraphicSize();
 			}
+
+			if (FlxG.save.data.downscroll)
+				flipY = true;
 		}
 	}
 

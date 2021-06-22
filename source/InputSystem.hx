@@ -15,5 +15,8 @@ class InputSystem
 
         if (FlxG.save.data.downsroll == null)
             FlxG.save.data.downsroll = false;
+
+        if (FlxG.save.data.missNoise == null)
+            FlxG.save.data.missNoise = true;
     }
 }

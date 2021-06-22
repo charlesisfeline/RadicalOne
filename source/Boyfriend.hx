@@ -10,6 +10,7 @@ using StringTools;
 class Boyfriend extends Character
 {
 	public var stunned:Bool = false;
+	public var invuln:Bool = false;
 
 	public function new(x:Float, y:Float, ?char:String = 'radical')
 	{
@@ -29,7 +30,10 @@ class Boyfriend extends Character
 
 			if (animation.curAnim.name.endsWith('miss') && animation.curAnim.finished && !debugMode)
 			{
-				playAnim('idle', true, false, 10);
+				if (PlayState.whatInputSystem == 'FPS Plus')
+					idleEnd();
+				else
+					playAnim('idle', true, false, 10);
 			}
 
 			if (animation.curAnim.name == 'firstDeath' && animation.curAnim.finished)
@@ -39,5 +43,17 @@ class Boyfriend extends Character
 		}
 
 		super.update(elapsed);
+	}
+
+	public function idleEnd(?ignoreDebug:Bool = false)
+	{
+		if (!debugMode || ignoreDebug)
+		{
+			switch (curCharacter)
+			{
+				default:
+					playAnim('idle', true, false, animation.getByName('idle').numFrames - 1);
+			}
+		}
 	}
 }

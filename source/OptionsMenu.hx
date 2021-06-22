@@ -28,7 +28,7 @@ class OptionsMenu extends MusicBeatState
 
 	override function create()
 	{
-		controlsStrings = ['Input System', doThatThing(FlxG.save.data.DFJK), doOtherThing(FlxG.save.data.downscroll)];
+		controlsStrings = ['Input System', doThatThing(FlxG.save.data.DFJK), doOtherThing(FlxG.save.data.downscroll), iDontNeedToDoFunctionsButIForgotThatOneThingThatDoesTheSameThingAsThisFunctionShutUp(FlxG.save.data.missNoise)];
 		var menuBG:FlxSprite = new FlxSprite().loadGraphic('assets/images/UI/menuDesat.png');
 		menuBG.color = 0xFFea71fd;
 		menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
@@ -74,10 +74,17 @@ class OptionsMenu extends MusicBeatState
 		{
 			switch(curSelected) {
 				case 0:
-					if (FlxG.save.data.inputSystem == 'RadicalOne')
-						FlxG.save.data.inputSystem = 'Kade Engine';
-					else if (FlxG.save.data.inputSystem == 'Kade Engine')
-						FlxG.save.data.inputSystem = 'RadicalOne';
+					switch (FlxG.save.data.inputSystem)
+					{
+						case 'RadicalOne':
+							FlxG.save.data.inputSystem = 'Kade Engine';
+						case 'Kade Engine':
+							FlxG.save.data.inputSystem = 'FNF Pre Week 5';
+						case 'FNF Pre Week 5':
+							FlxG.save.data.inputSystem = 'FPS Plus';
+						case 'FPS Plus':
+							FlxG.save.data.inputSystem = 'RadicalOne';
+					}
 					trace(FlxG.save.data.inputSystem);
 					inputSysTxt.text = FlxG.save.data.inputSystem;
 					inputSysTxt.screenCenter();
@@ -97,15 +104,22 @@ class OptionsMenu extends MusicBeatState
 					stupid.isMenuItem = true;
 					stupid.targetY = 0;
 					grpControls.add(stupid);
+				case 3:
+					FlxG.save.data.missNoise = !FlxG.save.data.missNoise;
+					grpControls.remove(grpControls.members[curSelected]);
+					var stupid:Alphabet = new Alphabet(0, (70 * curSelected) + 30, iDontNeedToDoFunctionsButIForgotThatOneThingThatDoesTheSameThingAsThisFunctionShutUp(FlxG.save.data.missNoise), true, false);
+					stupid.isMenuItem = true;
+					stupid.targetY = 0;
+					grpControls.add(stupid);
 			}
-		}
+		} // FlxG.save.data.missNoise
 
 		if (FlxG.save.data.inputSystem == 'Kade Engine' && curSelected == 0)
 			pressThis.visible = true;
 		else
 			pressThis.visible = false;
 
-		if (FlxG.keys.justPressed.G)
+		if (FlxG.keys.justPressed.G && pressThis.visible)
 		{
 			openSubState(new OffsetThing());
 		}
@@ -161,6 +175,14 @@ class OptionsMenu extends MusicBeatState
 		{
 			isSettingControl = true;
 		}
+	}
+
+	function iDontNeedToDoFunctionsButIForgotThatOneThingThatDoesTheSameThingAsThisFunctionShutUp(p:Bool)
+	{
+		if (p)
+			return 'MISS SOUNDS ON';
+		else
+			return 'MISS SOUNDS OFF';
 	}
 
 	function doThatThing(yesOrNo:Bool)
