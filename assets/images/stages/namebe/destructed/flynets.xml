@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="flynets.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="dog dance left right0000" x="0" y="0" width="819" height="657" frameX="-318" frameY="0" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0001" x="0" y="0" width="819" height="657" frameX="-318" frameY="0" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0002" x="824" y="0" width="786" height="638" frameX="-322" frameY="-19" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0003" x="824" y="0" width="786" height="638" frameX="-322" frameY="-19" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0004" x="0" y="662" width="773" height="628" frameX="-324" frameY="-38" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0005" x="0" y="662" width="773" height="628" frameX="-324" frameY="-38" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0006" x="778" y="662" width="768" height="625" frameX="-324" frameY="-40" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0007" x="778" y="662" width="768" height="625" frameX="-324" frameY="-40" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0008" x="0" y="1295" width="768" height="624" frameX="-324" frameY="-41" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0009" x="773" y="1295" width="482" height="475" frameX="-335" frameY="-189" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0010" x="773" y="1295" width="482" height="475" frameX="-335" frameY="-189" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0011" x="1260" y="1295" width="482" height="478" frameX="-335" frameY="-186" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0012" x="1260" y="1295" width="482" height="478" frameX="-335" frameY="-186" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0013" x="1260" y="1295" width="482" height="478" frameX="-335" frameY="-186" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0014" x="1260" y="1295" width="482" height="478" frameX="-335" frameY="-186" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0015" x="0" y="1924" width="819" height="657" frameX="0" frameY="0" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0016" x="0" y="1924" width="819" height="657" frameX="0" frameY="0" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0017" x="824" y="1924" width="786" height="638" frameX="-29" frameY="-19" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0018" x="824" y="1924" width="786" height="638" frameX="-29" frameY="-19" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0019" x="0" y="2586" width="774" height="628" frameX="-39" frameY="-38" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0020" x="0" y="2586" width="774" height="628" frameX="-39" frameY="-38" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0021" x="779" y="2586" width="767" height="625" frameX="-45" frameY="-40" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0022" x="779" y="2586" width="767" height="625" frameX="-45" frameY="-40" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0023" x="0" y="3219" width="767" height="624" frameX="-45" frameY="-41" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0024" x="772" y="3219" width="481" height="475" frameX="-320" frameY="-189" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0025" x="772" y="3219" width="481" height="475" frameX="-320" frameY="-189" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0026" x="1258" y="3219" width="481" height="478" frameX="-320" frameY="-186" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0027" x="1258" y="3219" width="481" height="478" frameX="-320" frameY="-186" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0028" x="1258" y="3219" width="481" height="478" frameX="-320" frameY="-186" frameWidth="1137" frameHeight="666"/>
+	<SubTexture name="dog dance left right0029" x="1258" y="3219" width="481" height="478" frameX="-320" frameY="-186" frameWidth="1137" frameHeight="666"/>
+</TextureAtlas>

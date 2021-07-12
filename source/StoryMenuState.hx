@@ -2,6 +2,7 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxSprite;
+//pico ok drip dick drip new week plzplzplzplzpzlzplzp lz uit is week 3 plzplzplz ninjamuuffin plzzzzz
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.group.FlxGroup;
@@ -24,12 +25,12 @@ class StoryMenuState extends MusicBeatState
 		['Tutorial'],
 		['Job-Interview', 'Working-Hard', 'Gamings-Congrats'],
 		['North', 'Radical-vs-Masked-Babbys', 'Monkey-Sprite'],
-		['Namebe', 'FNAF-at-Phillys', "Destructed"],
-		['BonBon-LOOOL', "Without-You", "Bonnie-Song"],
+		['Namebe', 'Bouncy-Drop', "Destructed"],
+	];
+	/*['BonBon-LOOOL', "Without-You", "Bonnie-Song"],
 		['Cocoa', 'Eggnog', 'Winter-Horrorland'],
 		['Ceast'],
-		['Bustom-Source', 'FL-Keys', 'I-Didnt-Ask']
-	];
+		['Bustom-Source', 'FL-Keys', 'I-Didnt-Ask']*/
 
 	var weekNames:Array<String> = [
 		'real tutorial 100%',
@@ -39,9 +40,12 @@ class StoryMenuState extends MusicBeatState
 		'te'
 	];
 
-	var curDifficulty:Int = 1;
+	var curDifficulty:Int = 2;
 
 	public static var weekUnlocked:Array<Bool> = [];
+
+	public static var justUnlockedSkin:Bool = false;
+	public static var skin2Unlock:String = 'Radical';
 
 	var txtWeekTitle:FlxText;
 
@@ -66,6 +70,13 @@ class StoryMenuState extends MusicBeatState
 	var yellowBGCoverUpper:FlxSprite;
 
 	var rankText:FlxText;
+
+	var unlockedThing:FlxSprite;
+
+	var regRacial:WardrobeCharacter;
+	var newRacial:WardrobeCharacter;
+	var regIcon:HealthIcon;
+	var newIcon:HealthIcon;
 
 	override function create()
 	{
@@ -99,6 +110,21 @@ class StoryMenuState extends MusicBeatState
 		yellowBGButItsABarLOOL = new FlxSprite(0, 56).makeGraphic(FlxG.width, 400, 0xFFE9575C);
 		yellowBGCoverLower = new FlxSprite(0, 456).makeGraphic(FlxG.width, FlxG.height, 0xFF000000);
 		yellowBGCoverUpper = new FlxSprite(0, 0).makeGraphic(FlxG.width, 56, FlxColor.BLACK);
+
+		unlockedThing = new FlxSprite().loadGraphic('assets/images/UI/soparatic.png');
+		unlockedThing.setGraphicSize(Std.int(unlockedThing.width * 0.65));
+		unlockedThing.updateHitbox(); // 417, 370
+		unlockedThing.screenCenter();
+
+		regRacial = new WardrobeCharacter(417, 2370, 'Radical');
+		regRacial.setGraphicSize(0, 225);
+		regRacial.updateHitbox();
+
+		// regIcon = new HealthIcon();
+
+		newRacial = new WardrobeCharacter(regRacial.x + 300, 2370, skin2Unlock);
+		newRacial.setGraphicSize(0, 225);
+		newRacial.updateHitbox();
 
 		add(yellowBG);
 		add(yellowBGCoverLower);
@@ -142,7 +168,7 @@ class StoryMenuState extends MusicBeatState
 		trace("Line 96");	
 
 		difficultySelectors = new FlxTypedGroup<FlxSprite>();
-		add(difficultySelectors);
+		// add(difficultySelectors);
 
 		trace("Line 124");
 
@@ -190,12 +216,35 @@ class StoryMenuState extends MusicBeatState
 		add(scoreText);
 		//add(txtWeekTitle);
 
+		var daY:Float = unlockedThing.y;
+		unlockedThing.y += 2000;
+		if (justUnlockedSkin)
+		{
+			justUnlockedSkin = false;
+			add(unlockedThing);
+			add(regRacial);
+			add(newRacial);
+			canSelect = false;
+			new FlxTimer().start(0.75, function(tmr:FlxTimer){
+				FlxTween.tween(unlockedThing, {y: daY}, 1.5, {ease: FlxEase.quintOut, onComplete: function(twn:FlxTween){
+					new FlxTimer().start(0.5, function(tmr:FlxTimer){
+						canExitUnlock = true;
+					});
+				}});
+				FlxTween.tween(regRacial, {y: 370}, 1.5, {ease: FlxEase.quintOut});
+				FlxTween.tween(newRacial, {y: 370}, 1.5, {ease: FlxEase.quintOut});
+			});
+		}
+
 		updateText();
 
 		trace("Line 165");
 
 		super.create();
 	}
+
+	var canSelect:Bool = true;
+	var canExitUnlock:Bool = false;
 
 	override function update(elapsed:Float)
 	{
@@ -216,16 +265,29 @@ class StoryMenuState extends MusicBeatState
 			lock.y = grpWeekText.members[lock.ID].y;
 		});
 
+		if (!canSelect && canExitUnlock)
+		{
+			if (controls.ACCEPT)
+			{
+				new FlxTimer().start(0.5, function(junk:FlxTimer){
+					canSelect = true;
+				});
+				FlxTween.tween(unlockedThing, {alpha: 0}, 1, {ease: FlxEase.quintOut});
+				FlxTween.tween(regRacial, {alpha: 0}, 1, {ease: FlxEase.quintOut});
+				FlxTween.tween(newRacial, {alpha: 0}, 1, {ease: FlxEase.quintOut});
+			}
+		}
+
 		if (!movedBack)
 		{
 			if (!selectedWeek)
 			{
-				if (controls.UP_P)
+				if (controls.UP_P && canSelect)
 				{
 					changeWeek(-1);
 				}
 
-				if (controls.DOWN_P)
+				if (controls.DOWN_P && canSelect)
 				{
 					changeWeek(1);
 				}
@@ -240,24 +302,19 @@ class StoryMenuState extends MusicBeatState
 				else
 					leftArrow.animation.play('idle');
 
-				if (controls.RIGHT_P)
+				if (controls.RIGHT_P && canSelect)
 					changeDifficulty(1);
-				if (controls.LEFT_P)
+				if (controls.LEFT_P && canSelect)
 					changeDifficulty(-1);
 			}
 
-			if (controls.ACCEPT)
+			if (controls.ACCEPT && canSelect)
 			{
 				selectWeek();
 			}
 		}
 
-		if (FlxG.keys.justPressed.F)
-		{
-			FlxG.fullscreen = !FlxG.fullscreen;
-		}
-
-		if (controls.BACK && !movedBack && !selectedWeek)
+		if (controls.BACK && !movedBack && !selectedWeek && canSelect)
 		{
 			FlxG.sound.play('assets/sounds/cancelMenu' + TitleState.soundExt);
 			movedBack = true;
@@ -265,7 +322,7 @@ class StoryMenuState extends MusicBeatState
 		}
 
 		if (camZooming)
-			FlxG.camera.zoom = FlxMath.lerp(1.5, FlxG.camera.zoom, 0.95);
+			FlxG.camera.zoom = FlxMath.lerp(1.5, FlxG.camera.zoom, 0.975);
 
 		super.update(elapsed);
 	}
@@ -351,7 +408,7 @@ class StoryMenuState extends MusicBeatState
 
 	function changeDifficulty(change:Int = 0):Void
 	{
-		curDifficulty += change;
+		curDifficulty = 2;
 
 		if (curDifficulty < 0)
 			curDifficulty = 2;
@@ -436,12 +493,22 @@ class StoryMenuState extends MusicBeatState
 
 		var brownLeakage:String;
 
+		var outfitModifier:String = '';
+
+		switch (FlxG.save.data.outfit)
+		{
+			case 'RedBall':
+				outfitModifier = 'redball/';
+			case 'Sussy Radical':
+				outfitModifier = 'sus/';
+		}
+
 		if (!yellowLeakage)
 			brownLeakage = Std.string(curWeek);
 		else
 			brownLeakage = Std.string(curWeek) + 'junk';
 
-		weekPreview.loadGraphic('assets/images/UI/weekPreview/week' + brownLeakage + '.png');
+		weekPreview.loadGraphic('assets/images/UI/weekPreview/${outfitModifier}week' + brownLeakage + '.png');
 		if (weekPreview.height < 400)
 			weekPreview.antialiasing = true;
 		else
@@ -453,7 +520,7 @@ class StoryMenuState extends MusicBeatState
 		punis = [weekPreview.x + 10, weekPreview.y + 10];
 		weekPreview.y = 56;
 
-		weekPreviewShad.loadGraphic('assets/images/UI/weekPreview/week' + brownLeakage + '.png');
+		weekPreviewShad.loadGraphic('assets/images/UI/weekPreview/${outfitModifier}week' + brownLeakage + '.png');
 		weekPreviewShad.color = FlxColor.BLACK;
 		weekPreviewShad.alpha = 0.5;
 		if (weekPreviewShad.height < 400)

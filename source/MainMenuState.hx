@@ -14,6 +14,7 @@ import flixel.util.FlxTimer;
 import io.newgrounds.NG;
 import lime.app.Application;
 import Discord.DiscordClient;
+import Controls.KeyboardScheme;
 
 using StringTools;
 
@@ -40,6 +41,9 @@ class MainMenuState extends MusicBeatState
 	override function create()
 	{
 		DiscordClient.changePresence("On Main Menu", null, 'sussy', 'racialdiversity');
+
+		Controls.initControls();
+		controls.setKeyboardScheme(KeyboardScheme.Solo, true);
 
 		if (!FlxG.sound.music.playing)
 		{
@@ -229,11 +233,6 @@ class MainMenuState extends MusicBeatState
 		{
 			spr.screenCenter(X);
 		});
-
-		if (FlxG.keys.justPressed.F)
-		{
-			FlxG.fullscreen = !FlxG.fullscreen;
-		}
 	}
 
 

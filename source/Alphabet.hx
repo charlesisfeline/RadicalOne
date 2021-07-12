@@ -6,6 +6,7 @@ import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxSpriteGroup;
 import flixel.math.FlxMath;
 import flixel.util.FlxTimer;
+import openfl.Lib;
 
 using StringTools;
 
@@ -20,6 +21,8 @@ class Alphabet extends FlxSpriteGroup
 	// for menu shit
 	public var targetY:Float = 0;
 	public var isMenuItem:Bool = false;
+	public var isFreeplaySelection:Bool = false;
+	public var freeplayIcon:String = 'radical';
 
 	public var text:String = "";
 
@@ -40,12 +43,14 @@ class Alphabet extends FlxSpriteGroup
 
 	var isBold:Bool = false;
 
-	public function new(x:Float, y:Float, text:String = "", ?bold:Bool = false, typed:Bool = false)
+	public function new(x:Float, y:Float, text:String = "", ?bold:Bool = false, typed:Bool = false, isFreeplaySelection:Bool = false, freeplayIcon:String = 'radical')
 	{
 		super(x, y);
 
 		_finalText = text;
 		this.text = text;
+		this.isFreeplaySelection = isFreeplaySelection;
+		this.freeplayIcon = freeplayIcon;
 		isBold = bold;
 
 		if (text != "")
@@ -107,6 +112,14 @@ class Alphabet extends FlxSpriteGroup
 			}
 
 			// loopNum += 1;
+		}
+		if (isFreeplaySelection)
+		{
+			// trace('ADD DA ICON');
+			var coolIcon:HealthIcon = new HealthIcon(freeplayIcon);
+			coolIcon.x = xPos + 50;
+			coolIcon.y -= 50;
+			add(coolIcon);
 		}
 	}
 
@@ -226,8 +239,8 @@ class Alphabet extends FlxSpriteGroup
 		{
 			var scaledY = FlxMath.remapToRange(targetY, 0, 1, 0, 1.3);
 
-			y = FlxMath.lerp(y, (scaledY * 120) + (FlxG.height * 0.48), 0.16);
-			x = FlxMath.lerp(x, (targetY * 20) + 90, 0.16);
+			y = FlxMath.lerp(y, (scaledY * 120) + (FlxG.height * 0.48), 0.16 * (60 / (cast (Lib.current.getChildAt(0), Main)).getFPS()));
+			x = FlxMath.lerp(x, (targetY * 20) + 90, 0.16 * (60 / (cast (Lib.current.getChildAt(0), Main)).getFPS()));
 		}
 
 		super.update(elapsed);

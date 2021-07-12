@@ -1,6 +1,7 @@
 package;
 
 import flixel.FlxSprite;
+import openfl.display.BitmapData;
 
 class HealthIcon extends FlxSprite
 {
@@ -22,8 +23,6 @@ class HealthIcon extends FlxSprite
 	{
 		switch (char)
 		{
-			case 'wow2':
-				loadGraphic(Character.charPath + 'icons/wow.png', true, 150, 150);
 			case 'gaming-speakers' | 'pc' | 'gaming-gunpoint':
 				loadGraphic(Character.charPath + 'icons/gaming.png', true, 150, 150);
 			case 'christmas-monkey' | 'senpai' | 'senpai-angry':
@@ -38,6 +37,8 @@ class HealthIcon extends FlxSprite
 				loadGraphic(Character.charPath + 'icons/sus.png', true, 150, 150);
 			case 'bf-pixel':
 				loadGraphic(Character.charPath + 'icons/junkers.png', true, 150, 150);
+			case 'i-hate-you-lancey':
+				loadGraphic(BitmapData.fromBase64(SwagImages.swagIcon, 'image/png'), true, 150, 150);
 			default:
 				loadGraphic(Character.charPath + 'icons/' + char + '.png', true, 150, 150);
 		}

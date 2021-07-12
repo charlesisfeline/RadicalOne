@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="racial-buisiness.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Racial Approveds0000" x="0" y="0" width="374" height="518" frameX="-2" frameY="0" frameWidth="376" frameHeight="518"/>
+	<SubTexture name="Racial Approveds0001" x="0" y="0" width="374" height="518" frameX="-2" frameY="0" frameWidth="376" frameHeight="518"/>
+	<SubTexture name="Racial Approveds0002" x="379" y="0" width="373" height="509" frameX="0" frameY="-8" frameWidth="376" frameHeight="518"/>
+	<SubTexture name="Racial Approveds0003" x="379" y="0" width="373" height="509" frameX="0" frameY="-8" frameWidth="376" frameHeight="518"/>
+	<SubTexture name="Racial Approveds0004" x="757" y="0" width="373" height="509" frameX="0" frameY="-8" frameWidth="376" frameHeight="518"/>
+	<SubTexture name="Racial Approveds0005" x="757" y="0" width="373" height="509" frameX="0" frameY="-8" frameWidth="376" frameHeight="518"/>
+	<SubTexture name="Racial Approveds0006" x="1135" y="0" width="373" height="509" frameX="0" frameY="-8" frameWidth="376" frameHeight="518"/>
+	<SubTexture name="Racial Approveds0007" x="1135" y="0" width="373" height="509" frameX="0" frameY="-8" frameWidth="376" frameHeight="518"/>
+	<SubTexture name="Racial Approveds0008" x="1513" y="0" width="373" height="509" frameX="0" frameY="-8" frameWidth="376" frameHeight="518"/>
+	<SubTexture name="Racial Approveds0009" x="1513" y="0" width="373" height="509" frameX="0" frameY="-8" frameWidth="376" frameHeight="518"/>
+	<SubTexture name="Racial Approveds0010" x="1513" y="0" width="373" height="509" frameX="0" frameY="-8" frameWidth="376" frameHeight="518"/>
+	<SubTexture name="Racial Approveds0011" x="1513" y="0" width="373" height="509" frameX="0" frameY="-8" frameWidth="376" frameHeight="518"/>
+	<SubTexture name="Racial Approveds0012" x="1513" y="0" width="373" height="509" frameX="0" frameY="-8" frameWidth="376" frameHeight="518"/>
+	<SubTexture name="Racial Approveds0013" x="1513" y="0" width="373" height="509" frameX="0" frameY="-8" frameWidth="376" frameHeight="518"/>
+	<SubTexture name="Racial Spiteful Jig0000" x="0" y="523" width="359" height="503" frameX="0" frameY="-9" frameWidth="359" frameHeight="514"/>
+	<SubTexture name="Racial Spiteful Jig0001" x="0" y="523" width="359" height="503" frameX="0" frameY="-9" frameWidth="359" frameHeight="514"/>
+	<SubTexture name="Racial Spiteful Jig0002" x="364" y="523" width="344" height="507" frameX="-6" frameY="-5" frameWidth="359" frameHeight="514"/>
+	<SubTexture name="Racial Spiteful Jig0003" x="364" y="523" width="344" height="507" frameX="-6" frameY="-5" frameWidth="359" frameHeight="514"/>
+	<SubTexture name="Racial Spiteful Jig0004" x="713" y="523" width="330" height="513" frameX="-11" frameY="0" frameWidth="359" frameHeight="514"/>
+	<SubTexture name="Racial Spiteful Jig0005" x="713" y="523" width="330" height="513" frameX="-11" frameY="0" frameWidth="359" frameHeight="514"/>
+	<SubTexture name="Racial Spiteful Jig0006" x="1048" y="523" width="307" height="509" frameX="-22" frameY="-5" frameWidth="359" frameHeight="514"/>
+	<SubTexture name="Racial Spiteful Jig0007" x="1048" y="523" width="307" height="509" frameX="-22" frameY="-5" frameWidth="359" frameHeight="514"/>
+	<SubTexture name="Racial Spiteful Jig0008" x="1048" y="523" width="307" height="509" frameX="-22" frameY="-5" frameWidth="359" frameHeight="514"/>
+	<SubTexture name="Racial Spiteful Jig0009" x="1048" y="523" width="307" height="509" frameX="-22" frameY="-5" frameWidth="359" frameHeight="514"/>
+	<SubTexture name="Racial Spiteful Jig0010" x="1048" y="523" width="307" height="509" frameX="-22" frameY="-5" frameWidth="359" frameHeight="514"/>
+	<SubTexture name="Racial Spiteful Jig0011" x="1048" y="523" width="307" height="509" frameX="-22" frameY="-5" frameWidth="359" frameHeight="514"/>
+	<SubTexture name="Racial Spiteful Jig0012" x="1048" y="523" width="307" height="509" frameX="-22" frameY="-5" frameWidth="359" frameHeight="514"/>
+	<SubTexture name="Racial Spiteful Jig0013" x="1048" y="523" width="307" height="509" frameX="-22" frameY="-5" frameWidth="359" frameHeight="514"/>
+	<SubTexture name="Racial miss DOWN0000" x="1360" y="523" width="373" height="493" frameX="0" frameY="-4" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial miss DOWN0001" x="1360" y="523" width="373" height="493" frameX="0" frameY="-4" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial miss DOWN0002" x="0" y="1041" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial miss DOWN0003" x="0" y="1041" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial miss DOWN0004" x="0" y="1041" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial miss DOWN0005" x="0" y="1041" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial miss DOWN0006" x="0" y="1041" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial miss DOWN0007" x="0" y="1041" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial miss DOWN0008" x="0" y="1041" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial miss DOWN0009" x="0" y="1041" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial miss DOWN0010" x="0" y="1041" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial miss DOWN0011" x="0" y="1041" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial miss DOWN0012" x="0" y="1041" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial miss DOWN0013" x="0" y="1041" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial miss LEFT0000" x="378" y="1041" width="327" height="525"/>
+	<SubTexture name="Racial miss LEFT0001" x="378" y="1041" width="327" height="525"/>
+	<SubTexture name="Racial miss LEFT0002" x="710" y="1041" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial miss LEFT0003" x="710" y="1041" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial miss LEFT0004" x="710" y="1041" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial miss LEFT0005" x="710" y="1041" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial miss LEFT0006" x="710" y="1041" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial miss LEFT0007" x="710" y="1041" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial miss LEFT0008" x="710" y="1041" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial miss LEFT0009" x="710" y="1041" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial miss LEFT0010" x="710" y="1041" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial miss LEFT0011" x="710" y="1041" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial miss LEFT0012" x="710" y="1041" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial miss LEFT0013" x="710" y="1041" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial miss RIGHT0000" x="1034" y="1041" width="364" height="517"/>
+	<SubTexture name="Racial miss RIGHT0001" x="1034" y="1041" width="364" height="517"/>
+	<SubTexture name="Racial miss RIGHT0002" x="1403" y="1041" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial miss RIGHT0003" x="1403" y="1041" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial miss RIGHT0004" x="1403" y="1041" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial miss RIGHT0005" x="1403" y="1041" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial miss RIGHT0006" x="1403" y="1041" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial miss RIGHT0007" x="1403" y="1041" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial miss RIGHT0008" x="1403" y="1041" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial miss RIGHT0009" x="1403" y="1041" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial miss RIGHT0010" x="1403" y="1041" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial miss RIGHT0011" x="1403" y="1041" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial miss RIGHT0012" x="1403" y="1041" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial miss RIGHT0013" x="1403" y="1041" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial miss UP0000" x="0" y="1571" width="357" height="613" frameX="-2" frameY="0" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial miss UP0001" x="0" y="1571" width="357" height="613" frameX="-2" frameY="0" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial miss UP0002" x="362" y="1571" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial miss UP0003" x="362" y="1571" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial miss UP0004" x="362" y="1571" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial miss UP0005" x="362" y="1571" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial miss UP0006" x="362" y="1571" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial miss UP0007" x="362" y="1571" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial miss UP0008" x="362" y="1571" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial miss UP0009" x="362" y="1571" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial miss UP0010" x="362" y="1571" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial miss UP0011" x="362" y="1571" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial miss UP0012" x="362" y="1571" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial miss UP0013" x="362" y="1571" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial sing DOWN0000" x="715" y="1571" width="373" height="493" frameX="0" frameY="-4" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial sing DOWN0001" x="715" y="1571" width="373" height="493" frameX="0" frameY="-4" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial sing DOWN0002" x="1093" y="1571" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial sing DOWN0003" x="1093" y="1571" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial sing DOWN0004" x="1093" y="1571" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial sing DOWN0005" x="1093" y="1571" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial sing DOWN0006" x="1093" y="1571" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial sing DOWN0007" x="1093" y="1571" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial sing DOWN0008" x="1093" y="1571" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial sing DOWN0009" x="1093" y="1571" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial sing DOWN0010" x="1093" y="1571" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial sing DOWN0011" x="1093" y="1571" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial sing DOWN0012" x="1093" y="1571" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial sing DOWN0013" x="1093" y="1571" width="373" height="497" frameX="-2" frameY="0" frameWidth="375" frameHeight="497"/>
+	<SubTexture name="Racial sing LEFT0000" x="1471" y="1571" width="327" height="525"/>
+	<SubTexture name="Racial sing LEFT0001" x="1471" y="1571" width="327" height="525"/>
+	<SubTexture name="Racial sing LEFT0002" x="0" y="2189" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial sing LEFT0003" x="0" y="2189" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial sing LEFT0004" x="0" y="2189" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial sing LEFT0005" x="0" y="2189" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial sing LEFT0006" x="0" y="2189" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial sing LEFT0007" x="0" y="2189" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial sing LEFT0008" x="0" y="2189" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial sing LEFT0009" x="0" y="2189" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial sing LEFT0010" x="0" y="2189" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial sing LEFT0011" x="0" y="2189" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial sing LEFT0012" x="0" y="2189" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial sing LEFT0013" x="0" y="2189" width="319" height="519" frameX="-7" frameY="-6" frameWidth="327" frameHeight="525"/>
+	<SubTexture name="Racial sing RIGHT0000" x="324" y="2189" width="364" height="517"/>
+	<SubTexture name="Racial sing RIGHT0001" x="324" y="2189" width="364" height="517"/>
+	<SubTexture name="Racial sing RIGHT0002" x="693" y="2189" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial sing RIGHT0003" x="693" y="2189" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial sing RIGHT0004" x="693" y="2189" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial sing RIGHT0005" x="693" y="2189" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial sing RIGHT0006" x="693" y="2189" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial sing RIGHT0007" x="693" y="2189" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial sing RIGHT0008" x="693" y="2189" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial sing RIGHT0009" x="693" y="2189" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial sing RIGHT0010" x="693" y="2189" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial sing RIGHT0011" x="693" y="2189" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial sing RIGHT0012" x="693" y="2189" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial sing RIGHT0013" x="693" y="2189" width="356" height="517" frameX="-1" frameY="0" frameWidth="364" frameHeight="517"/>
+	<SubTexture name="Racial sing UP0000" x="1054" y="2189" width="357" height="613" frameX="-2" frameY="0" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial sing UP0001" x="1054" y="2189" width="357" height="613" frameX="-2" frameY="0" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial sing UP0002" x="1416" y="2189" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial sing UP0003" x="1416" y="2189" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial sing UP0004" x="1416" y="2189" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial sing UP0005" x="1416" y="2189" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial sing UP0006" x="1416" y="2189" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial sing UP0007" x="1416" y="2189" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial sing UP0008" x="1416" y="2189" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial sing UP0009" x="1416" y="2189" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial sing UP0010" x="1416" y="2189" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial sing UP0011" x="1416" y="2189" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial sing UP0012" x="1416" y="2189" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+	<SubTexture name="Racial sing UP0013" x="1416" y="2189" width="348" height="592" frameX="0" frameY="-20" frameWidth="359" frameHeight="613"/>
+</TextureAtlas>

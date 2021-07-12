@@ -84,6 +84,11 @@ class WardrobeCharacter extends FlxSprite
                 playAnim('idle');
                 
                 flipX = true;
+            case 'Business Radical':
+                frames = FlxAtlasFrames.fromSparrow(Character.charPath + 'racial-buisiness.png', Character.charPath + 'racial-buisiness.xml');
+                animation.addByPrefix('idle', 'Racial Spiteful Jig', 24);
+                playAnim('idle');
+                flipX = true;
         }
 
         flipX = !flipX;

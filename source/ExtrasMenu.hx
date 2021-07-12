@@ -84,12 +84,24 @@ class ExtrasMenu extends MusicBeatState
 				case 3:
 					PlayState.initModes();
 					PlayState.randomLevel = true;
-					var daSong:String = everySongEver[FlxG.random.int(0, everySongEver.length - 1)].toLowerCase();
+					var daSong:String = everySongEver[FlxG.random.int(0, everySongEver.length - 1)];
+					var isStoryLevel:Bool = false;
+					for (juk in 0...StoryMenuState.weekData.length)
+					{
+						if (StoryMenuState.weekData[juk].contains(daSong)){trace('yeah, $daSong');
+							isStoryLevel = true;}
+					}
+					daSong = daSong.toLowerCase();
 					trace(daSong);
-					PlayState.SONG = Song.loadFromJson(daSong, daSong);
+					if (isStoryLevel)
+						PlayState.SONG = Song.loadFromJson('$daSong-hard', daSong);
+					else
+						PlayState.SONG = Song.loadFromJson(daSong, daSong);
 					FlxG.switchState(new PlayState());
 				case 4:
 					FlxG.openURL("https://sites.google.com/view/radicalone/home");
+				case 5:
+					FlxG.switchState(new CharacterMenu());
 				
 			}
 		//	var funnystring = Std.string(curSelected);

@@ -10,6 +10,7 @@ import flixel.input.actions.FlxActionSet;
 import flixel.input.gamepad.FlxGamepadButton;
 import flixel.input.gamepad.FlxGamepadInputID;
 import flixel.input.keyboard.FlxKey;
+import flixel.input.keyboard.FlxKeyList;
 
 #if (haxe >= "4.0.0")
 enum abstract Action(String) to String from String
@@ -112,6 +113,10 @@ class Controls extends FlxActionSet
 	var _pause = new FlxActionDigital(Action.PAUSE);
 	var _reset = new FlxActionDigital(Action.RESET);
 	var _cheat = new FlxActionDigital(Action.CHEAT);
+
+	public static var KeysNotToBindTo:Array<FlxKey> = [
+		FlxKey.LEFT, FlxKey.DOWN, FlxKey.UP, FlxKey.RIGHT, FlxKey.ENTER, FlxKey.SPACE, FlxKey.BACKSPACE, FlxKey.ESCAPE
+	];
 
 	#if (haxe >= "4.0.0")
 	var byName:Map<String, FlxActionDigital> = [];
@@ -488,6 +493,46 @@ class Controls extends FlxActionSet
 		}
 	}
 
+	public static var realControls:Array<String> = [
+		'A',
+		'S',
+		'W',
+		'D',
+		'R'
+	];
+
+	public static function initControls():Void
+	{
+		if (FlxG.save.data.leftJunk == null)
+			FlxG.save.data.leftJunk = 'A';
+		if (FlxG.save.data.upJunk == null)
+			FlxG.save.data.upJunk = 'W';
+		if (FlxG.save.data.downJunk == null)
+			FlxG.save.data.downJunk = 'S';
+		if (FlxG.save.data.rightJunk == null)
+			FlxG.save.data.rightJunk = 'D';
+		if (FlxG.save.data.resetJunk == null)
+			FlxG.save.data.resetJunk = 'R';
+
+		realControls = [
+			FlxG.save.data.leftJunk,
+			FlxG.save.data.downJunk,
+			FlxG.save.data.upJunk,
+			FlxG.save.data.rightJunk,
+			FlxG.save.data.resetJunk
+		];
+	}
+
+	public static function reloadControls():Void
+	{
+		FlxG.save.data.leftJunk = realControls[0];
+		FlxG.save.data.downJunk = realControls[1];
+		FlxG.save.data.upJunk = realControls[2];
+		FlxG.save.data.rightJunk = realControls[3];
+		FlxG.save.data.resetJunk = realControls[4];
+		FlxG.save.flush();
+	}
+
 	public function setKeyboardScheme(scheme:KeyboardScheme, reset = true)
 	{
 		if (reset)
@@ -499,14 +544,14 @@ class Controls extends FlxActionSet
 		switch (scheme)
 		{
 			case Solo:
-				inline bindKeys(Control.UP, [W, FlxKey.UP]);
-				inline bindKeys(Control.DOWN, [S, FlxKey.DOWN]);
-				inline bindKeys(Control.LEFT, [A, FlxKey.LEFT]);
-				inline bindKeys(Control.RIGHT, [D, FlxKey.RIGHT]);
+				inline bindKeys(Control.UP, [realControls[2], FlxKey.UP]);
+				inline bindKeys(Control.DOWN, [realControls[1], FlxKey.DOWN]);
+				inline bindKeys(Control.LEFT, [realControls[0], FlxKey.LEFT]);
+				inline bindKeys(Control.RIGHT, [realControls[3], FlxKey.RIGHT]);
 				inline bindKeys(Control.ACCEPT, [Z, SPACE, ENTER]);
 				inline bindKeys(Control.BACK, [BACKSPACE, ESCAPE]);
 				inline bindKeys(Control.PAUSE, [P, ENTER, ESCAPE]);
-				inline bindKeys(Control.RESET, [R]);
+				inline bindKeys(Control.RESET, [realControls[4]]);
 			case DeeEffJayKay:
 				inline bindKeys(Control.UP, [J, FlxKey.UP]);
 				inline bindKeys(Control.DOWN, [F, FlxKey.DOWN]);
@@ -535,20 +580,20 @@ class Controls extends FlxActionSet
 				inline bindKeys(Control.PAUSE, [ENTER]);
 				inline bindKeys(Control.RESET, [BACKSPACE]);
 			case None: // nothing
-			case Custom: // nothing
+			case Custom: //nothign
 		}
 		#else
 		switch (scheme)
 		{
 			case Solo:
-				bindKeys(Control.UP, [W, FlxKey.UP]);
-				bindKeys(Control.DOWN, [S, FlxKey.DOWN]);
-				bindKeys(Control.LEFT, [A, FlxKey.LEFT]);
-				bindKeys(Control.RIGHT, [D, FlxKey.RIGHT]);
+				bindKeys(Control.UP, [realControls[2], FlxKey.UP]);
+				bindKeys(Control.DOWN, [realControls[1], FlxKey.DOWN]);
+				bindKeys(Control.LEFT, [realControls[0], FlxKey.LEFT]);
+				bindKeys(Control.RIGHT, [realControls[3], FlxKey.RIGHT]);
 				bindKeys(Control.ACCEPT, [Z, SPACE, ENTER]);
 				bindKeys(Control.BACK, [BACKSPACE, ESCAPE]);
 				bindKeys(Control.PAUSE, [P, ENTER, ESCAPE]);
-				bindKeys(Control.RESET, [R]);
+				bindKeys(Control.RESET, [realControls[4]]);
 			case Duo(true):
 				bindKeys(Control.UP, [W]);
 				bindKeys(Control.DOWN, [S]);
@@ -568,7 +613,15 @@ class Controls extends FlxActionSet
 				bindKeys(Control.PAUSE, [ENTER]);
 				bindKeys(Control.RESET, [BACKSPACE]);
 			case None: // nothing
-			case Custom: // nothing
+			case Custom:
+				inline bindKeys(Control.UP, [realControls[2], FlxKey.UP]);
+				inline bindKeys(Control.DOWN, [realControls[1], FlxKey.DOWN]);
+				inline bindKeys(Control.LEFT, [realControls[0], FlxKey.LEFT]);
+				inline bindKeys(Control.RIGHT, [realControls[3], FlxKey.RIGHT]);
+				inline bindKeys(Control.ACCEPT, [Z, SPACE, ENTER]);
+				inline bindKeys(Control.BACK, [BACKSPACE, ESCAPE]);
+				inline bindKeys(Control.PAUSE, [P, ENTER, ESCAPE]);
+				inline bindKeys(Control.RESET, [realControls[4]]);
 		}
 		#end
 	}

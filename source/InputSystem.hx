@@ -18,5 +18,8 @@ class InputSystem
 
         if (FlxG.save.data.missNoise == null)
             FlxG.save.data.missNoise = true;
+
+        if (FlxG.save.data.ludumRating == null)
+            FlxG.save.data.ludumRating = false;
     }
 }

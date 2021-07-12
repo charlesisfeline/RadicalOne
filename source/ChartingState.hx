@@ -245,7 +245,17 @@ class ChartingState extends MusicBeatState
 
 		var reloadSongJson:FlxButton = new FlxButton(reloadSong.x, saveButton.y + 30, "Reload JSON", function()
 		{
-			loadJson(_song.song.toLowerCase());
+			var daSong = _song.song;
+			var isStoryLevel:Bool = false;
+			for (juk in 0...StoryMenuState.weekData.length)
+			{
+				if (StoryMenuState.weekData[juk].contains(daSong)){trace('yeah, $daSong');
+					isStoryLevel = true;}
+			}
+			if (isStoryLevel)
+				loadJsonHard(_song.song.toLowerCase());
+			else
+				loadJson(_song.song.toLowerCase());
 		});
 
 		var loadAutosaveBtn:FlxButton = new FlxButton(reloadSongJson.x, reloadSongJson.y + 30, 'load autosave', loadAutosave);
@@ -311,6 +321,7 @@ class ChartingState extends MusicBeatState
 
 	var stepperLength:FlxUINumericStepper;
 	var check_mustHitSection:FlxUICheckBox;
+	var check_getComboSection:FlxUICheckBox;
 	var check_changeBPM:FlxUICheckBox;
 	var stepperSectionBPM:FlxUINumericStepper;
 	var check_altAnim:FlxUICheckBox;
@@ -330,11 +341,23 @@ class ChartingState extends MusicBeatState
 		stepperSectionBPM.value = Conductor.bpm;
 		stepperSectionBPM.name = 'section_bpm';
 
+		check_getComboSection = new FlxUICheckBox(10, 90, null, null, "Receive Combo Rating", 100);
+		check_getComboSection.name = 'check_getCombo';
+		check_getComboSection.checked = false;
+
 		var stepperCopy:FlxUINumericStepper = new FlxUINumericStepper(110, 130, 1, 1, -999, 999, 0);
 
-		var copyButton:FlxButton = new FlxButton(10, 130, "Copy last section", function()
+		var copyLastButton:FlxButton = new FlxButton(10, 130, "Copy last section", function()
 		{
-			copySection(Std.int(stepperCopy.value));
+			copyLastSection(Std.int(stepperCopy.value));
+		});
+
+		var copyButton:FlxButton = new FlxButton(200, 130, "Copy Section to Clipboard", function(){
+			copySection();
+		});
+
+		var pasteButton:FlxButton = new FlxButton(200, 160, "Paste Section from Clipboard", function(){
+			pasteSection();
 		});
 
 		var clearSectionButton:FlxButton = new FlxButton(10, 150, "Clear", clearSection);
@@ -371,11 +394,14 @@ class ChartingState extends MusicBeatState
 		tab_group_section.add(stepperSectionBPM);
 		tab_group_section.add(stepperCopy);
 		tab_group_section.add(check_mustHitSection);
+		tab_group_section.add(check_getComboSection);
 		tab_group_section.add(check_altAnim);
 		tab_group_section.add(check_gspotAnim);
 		tab_group_section.add(check_dontplayAnim);
 		tab_group_section.add(check_changeBPM);
+		tab_group_section.add(copyLastButton);
 		tab_group_section.add(copyButton);
+		tab_group_section.add(pasteButton);
 		tab_group_section.add(clearSectionButton);
 		tab_group_section.add(swapSection);
 
@@ -458,6 +484,9 @@ class ChartingState extends MusicBeatState
 					_song.notes[curSection].mustHitSection = check.checked;
 
 					updateHeads();
+
+				case 'Receive Combo Rating':
+					_song.notes[curSection].getComboSection = check.checked;
 
 				case 'Change BPM':
 					_song.notes[curSection].changeBPM = check.checked;
@@ -821,7 +850,36 @@ class ChartingState extends MusicBeatState
 		}
 	}
 
-	function copySection(?sectionNum:Int = 1)
+	var curCopiedSection:Array<Array<Dynamic>> = [];
+
+	function pasteSection()
+	{
+		for (note in curCopiedSection)
+		{
+			var newStrum = note[0] + (Conductor.stepCrochet * (_song.notes[curSection].lengthInSteps * curSection));
+
+			var newNote:Array<Dynamic> = [newStrum, note[1], note[2]];
+			trace('PASTING NOTE $newNote');
+			_song.notes[curSection].sectionNotes.push(newNote);
+		}
+		trace(_song.notes[curSection].sectionNotes);
+		updateGrid();
+	}
+
+	function copySection()
+	{
+		curCopiedSection = [];
+		for (note in _song.notes[curSection].sectionNotes)
+		{
+			var strum = note[0] - (Conductor.stepCrochet * (_song.notes[curSection].lengthInSteps * curSection));
+
+			var copiedNote:Array<Dynamic> = [strum, note[1], note[2]];
+			curCopiedSection.push(copiedNote);
+		}
+		trace(curCopiedSection);
+	}
+
+	function copyLastSection(?sectionNum:Int = 1)
 	{
 		var daSec = FlxMath.maxInt(curSection, sectionNum);
 
@@ -842,6 +900,7 @@ class ChartingState extends MusicBeatState
 
 		stepperLength.value = sec.lengthInSteps;
 		check_mustHitSection.checked = sec.mustHitSection;
+		check_getComboSection.checked = sec.getComboSection;
 		check_altAnim.checked = sec.altAnim;
 		check_gspotAnim.checked = sec.gspotAnim;
 		check_dontplayAnim.checked = sec.dontplayAnim;
@@ -855,13 +914,13 @@ class ChartingState extends MusicBeatState
 	{
 		if (check_mustHitSection.checked)
 		{
-			leftIcon.animation.play(_song.player1);
-			rightIcon.animation.play(_song.player2);
+			leftIcon.loadIcon(_song.player1);
+			rightIcon.loadIcon(_song.player2);
 		}
 		else
 		{
-			leftIcon.animation.play(_song.player2);
-			rightIcon.animation.play(_song.player1);
+			leftIcon.loadIcon(_song.player2);
+			rightIcon.loadIcon(_song.player1);
 		}
 	}
 
@@ -940,6 +999,7 @@ class ChartingState extends MusicBeatState
 			changeBPM: false,
 			mustHitSection: true,
 			sectionNotes: [],
+			getComboSection: false,
 			bustomMaps: [],
 			typeOfSection: 0,
 			altAnim: false,
@@ -1094,6 +1154,12 @@ class ChartingState extends MusicBeatState
 		}
 
 		return noteData;
+	}
+
+	function loadJsonHard(song:String):Void
+	{
+		PlayState.SONG = Song.loadFromJson(song.toLowerCase() + '-hard', song.toLowerCase());
+		FlxG.resetState();
 	}
 
 	function loadJson(song:String):Void

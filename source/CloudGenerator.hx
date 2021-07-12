@@ -43,7 +43,7 @@ class CloudGenerator extends FlxGroup
     override function update(elapsed:Float)
     {
         clouds.forEach(function(cloud:FlxSprite){
-            cloud.x -= stupidUglyArray[cloud.ID] / 60;
+            cloud.x -= stupidUglyArray[cloud.ID] / 120;
             if (cloud.x < startX)
                 cloud.x = endX;
         });

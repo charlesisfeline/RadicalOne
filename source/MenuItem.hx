@@ -4,6 +4,7 @@ import flixel.FlxSprite;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxSpriteGroup;
 import flixel.math.FlxMath;
+import openfl.Lib;
 
 class MenuItem extends FlxSpriteGroup
 {
@@ -36,6 +37,6 @@ class MenuItem extends FlxSpriteGroup
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		y = FlxMath.lerp(y, (targetY * 120) + 480, 0.17);
+		y = FlxMath.lerp(y, (targetY * 120) + 480, 0.17 * (60 / (cast (Lib.current.getChildAt(0), Main)).getFPS()));
 	}
 }

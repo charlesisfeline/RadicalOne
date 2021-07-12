@@ -87,11 +87,6 @@ class PauseSubState extends MusicBeatSubstate
 			}
 		}
 
-		if (FlxG.keys.justPressed.F)
-		{
-			FlxG.fullscreen = !FlxG.fullscreen;
-		}
-
 		if (FlxG.keys.justPressed.J)
 		{
 			// for reference later!
@@ -102,11 +97,6 @@ class PauseSubState extends MusicBeatSubstate
 	override function destroy()
 	{
 		pauseMusic.destroy();
-
-		if (FlxG.save.data.DFJK)
-			controls.setKeyboardScheme(KeyboardScheme.DeeEffJayKay, true);
-		else
-			controls.setKeyboardScheme(KeyboardScheme.Solo, true);
 
 		super.destroy();
 	}

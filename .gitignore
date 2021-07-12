@@ -2,6 +2,7 @@ export/
 assets_flynet/
 assets_old/
 assets_older/
+assets_everything/
 flynets source/
 .vscode/
 APIStuff.hx

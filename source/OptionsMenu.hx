@@ -28,7 +28,12 @@ class OptionsMenu extends MusicBeatState
 
 	override function create()
 	{
-		controlsStrings = ['Input System', doThatThing(FlxG.save.data.DFJK), doOtherThing(FlxG.save.data.downscroll), iDontNeedToDoFunctionsButIForgotThatOneThingThatDoesTheSameThingAsThisFunctionShutUp(FlxG.save.data.missNoise)];
+		controlsStrings = ['Input System', 
+		'BIND KEYS', 
+		'${FlxG.save.data.downscroll ? 'DOWN' : 'UP'}SCROLL', 
+		'MISS NOISE ${FlxG.save.data.missNoise ? 'ON' : 'OFF'}', 
+		FlxG.save.data.ludumRating ? 'LUDUM DARE RATING SYSTEM' : 'NORMAL RATING SYSTEM'];
+
 		var menuBG:FlxSprite = new FlxSprite().loadGraphic('assets/images/UI/menuDesat.png');
 		menuBG.color = 0xFFea71fd;
 		menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
@@ -91,33 +96,32 @@ class OptionsMenu extends MusicBeatState
 					inputSysTxt.x += 300;
 					FlxG.sound.play('assets/sounds/scrollMenu' + TitleState.soundExt, 0.4);
 				case 1:
-					FlxG.save.data.DFJK = !FlxG.save.data.DFJK;
-					grpControls.remove(grpControls.members[curSelected]);
-					var stupid:Alphabet = new Alphabet(0, (70 * curSelected) + 30, doThatThing(FlxG.save.data.DFJK), true, false);
-					stupid.isMenuItem = true;
-					stupid.targetY = 0;
-					grpControls.add(stupid);
+					FlxG.switchState(new KeyBindState());
 				case 2:
 					FlxG.save.data.downscroll = !FlxG.save.data.downscroll;
 					grpControls.remove(grpControls.members[curSelected]);
-					var stupid:Alphabet = new Alphabet(0, (70 * curSelected) + 30, doOtherThing(FlxG.save.data.downscroll), true, false);
+					var stupid:Alphabet = new Alphabet(0, (70 * curSelected) + 30, '${FlxG.save.data.downscroll ? 'DOWN' : 'UP'}SCROLL', true, false);
 					stupid.isMenuItem = true;
 					stupid.targetY = 0;
 					grpControls.add(stupid);
 				case 3:
 					FlxG.save.data.missNoise = !FlxG.save.data.missNoise;
 					grpControls.remove(grpControls.members[curSelected]);
-					var stupid:Alphabet = new Alphabet(0, (70 * curSelected) + 30, iDontNeedToDoFunctionsButIForgotThatOneThingThatDoesTheSameThingAsThisFunctionShutUp(FlxG.save.data.missNoise), true, false);
+					var stupid:Alphabet = new Alphabet(0, (70 * curSelected) + 30, 'MISS NOISE ${FlxG.save.data.missNoise ? 'ON' : 'OFF'}', true, false);
+					stupid.isMenuItem = true;
+					stupid.targetY = 0;
+					grpControls.add(stupid);
+				case 4:
+					FlxG.save.data.ludumRating = !FlxG.save.data.ludumRating;
+					grpControls.remove(grpControls.members[curSelected]);
+					var stupid:Alphabet = new Alphabet(0, (70 * curSelected) + 30, FlxG.save.data.ludumRating ? 'LUDUM DARE RATING SYSTEM' : 'NORMAL RATING SYSTEM', true, false);
 					stupid.isMenuItem = true;
 					stupid.targetY = 0;
 					grpControls.add(stupid);
 			}
 		} // FlxG.save.data.missNoise
 
-		if (FlxG.save.data.inputSystem == 'Kade Engine' && curSelected == 0)
-			pressThis.visible = true;
-		else
-			pressThis.visible = false;
+		pressThis.visible = (FlxG.save.data.inputSystem == 'Kade Engine' && curSelected == 0);
 
 		if (FlxG.keys.justPressed.G && pressThis.visible)
 		{
@@ -175,30 +179,6 @@ class OptionsMenu extends MusicBeatState
 		{
 			isSettingControl = true;
 		}
-	}
-
-	function iDontNeedToDoFunctionsButIForgotThatOneThingThatDoesTheSameThingAsThisFunctionShutUp(p:Bool)
-	{
-		if (p)
-			return 'MISS SOUNDS ON';
-		else
-			return 'MISS SOUNDS OFF';
-	}
-
-	function doThatThing(yesOrNo:Bool)
-	{
-			if (yesOrNo)
-				return 'DFJK';
-			else
-				return 'WASD';
-	}
-
-	function doOtherThing(yesOrNo:Bool)
-	{
-			if (yesOrNo)
-				return 'downscroll on';
-			else
-				return 'downscroll off';
 	}
 
 	function changeSelection(change:Int = 0)

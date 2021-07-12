@@ -26,6 +26,7 @@ import openfl.Assets;
 import polymod.Polymod;
 import Discord.DiscordClient;
 import sys.thread.Thread;
+import Controls.KeyboardScheme;
 
 using StringTools;
 
@@ -46,13 +47,15 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
-		Polymod.init({modRoot: "mods", dirs: ['introMod']});
+		Polymod.init({modRoot: "assets/images/", dirs: ['characterMenu']});
 
 		#if (!web)
 		TitleState.soundExt = '.ogg';
 		#end
 
+		Controls.initControls();
 		PlayerSettings.init();
+		controls.setKeyboardScheme(KeyboardScheme.Solo, true);
 
 		DiscordClient.initialize();
 

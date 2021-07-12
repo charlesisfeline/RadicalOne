@@ -38,8 +38,8 @@ class WeekendMenuState extends MusicBeatState
 		['Start-Conjunction', 'Energy-Lights', 'Telegroove'],
         ['Senpai', 'Roses', 'Thorns'],
         ['the-backyardagains', 'funny'],
-        ['Interrogation', 'Tha-Biscoot', 'Among-Us-Happy-Meal', 'Chuckie', '3.4', 'Scribble-Street', 'Scary-Junk', 'Thanos-Rumble', 'Weird-Junk-WTF'],
-        ['Freebeat_1', 'JunkRUs', 'Picnic-Rumble']
+        ['Interrogation', 'Tha-Biscoot', 'Among-Us-Happy-Meal', 'Chuckie', '3.4', 'Scribble-Street', 'Scary-Junk', 'Thanos-Rumble', 'Normal-Ghost'],
+        ['Freebeat_1', 'JunkRUs', 'Picnic-Rumble', 'Dawgee-Want-Food', 'Dream']
     ];
 
     var weekendChars:Array<String> = [
@@ -191,11 +191,6 @@ class WeekendMenuState extends MusicBeatState
                 if (Highscore.getWeekendScore(curWeekend) > 0)
                     openSubState(new WeekendFreeplaySubState(weekendData[curWeekend]));
             }
-        }
-
-        if (FlxG.keys.justPressed.F && !paused)
-        {
-            FlxG.fullscreen = !FlxG.fullscreen;
         }
     
         if (controls.BACK && !movedBack && !selectedWeekend && !paused)

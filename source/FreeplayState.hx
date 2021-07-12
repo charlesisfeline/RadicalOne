@@ -21,7 +21,7 @@ class FreeplayState extends MusicBeatState
 
 	var selector:FlxText;
 	var curSelected:Int = 0;
-	var curDifficulty:Int = 1;
+	var curDifficulty:Int = 2;
 
 	var scoreText:FlxText;
 	var charText:FlxText;
@@ -76,7 +76,7 @@ class FreeplayState extends MusicBeatState
 
 		for (i in 0...songs.length)
 		{
-			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i], true, false);
+			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i], true, false, true, Song.loadFromJson('${songs[i].toLowerCase()}-hard', songs[i].toLowerCase()).player2);
 			songText.isMenuItem = true;
 			songText.targetY = i;
 			grpSongs.add(songText);
@@ -118,7 +118,6 @@ class FreeplayState extends MusicBeatState
 
 		diffText = new FlxText(scoreText.x, scoreText.y + 36, 0, "", 24);
 		diffText.font = scoreText.font;
-		add(diffText);
 
 		add(scoreText);
 		//add(charText);
@@ -229,16 +228,11 @@ class FreeplayState extends MusicBeatState
 			if (FlxG.sound.music != null)
 				FlxG.sound.music.stop();
 		}
-
-		if (FlxG.keys.justPressed.F)
-		{
-			FlxG.fullscreen = !FlxG.fullscreen;
-		}
 	}
 
 	function changeDiff(change:Int = 0)
 	{
-		curDifficulty += change;
+		curDifficulty = 2;
 
 		if (curDifficulty < 0)
 			curDifficulty = 2;
