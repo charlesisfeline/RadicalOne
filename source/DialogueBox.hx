@@ -9,6 +9,7 @@ import flixel.input.FlxKeyManager;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
+import Dialogue.TextManager;
 
 using StringTools;
 
@@ -18,13 +19,8 @@ class DialogueBox extends FlxSpriteGroup
 
 	var curCharacter:String = '';
 
-	var dialogue:Alphabet;
+	var dialogue:Dialogue;
 	var dialogueList:Array<String> = [];
-
-	// SECOND DIALOGUE FOR THE PIXEL SHIT INSTEAD???
-	var swagDialogue:FlxTypeText;
-
-	var dropText:FlxText;
 
 	public var finishThing:Void->Void;
 
@@ -154,6 +150,7 @@ class DialogueBox extends FlxSpriteGroup
 		add(box);
 
 		handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic('assets/images/UI/pixelUI/hand_textbox.png');
+		handSelect.scale.set(6, 6);
 		add(handSelect);
 
 		box.screenCenter(X);
@@ -165,20 +162,17 @@ class DialogueBox extends FlxSpriteGroup
 			// box.flipX = true;
 		}
 
-		dropText = new FlxText(242, 502, Std.int(FlxG.width * 0.6), "", 32);
-		dropText.font = 'Pixel Arial 11 Bold';
-		dropText.color = 0xFFD89494;
-		add(dropText);
+		switch (PlayState.sheShed)
+		{
+			case 'north' | 'radical-vs-masked-babbys' | 'monkey-sprite' | 'senpai' | 'roses' | 'thorns':
+				dialogue = new Dialogue(Pixel);
+			default:
+				dialogue = new Dialogue(Regular);
+		}
 
-		swagDialogue = new FlxTypeText(240, 500, Std.int(FlxG.width * 0.6), "", 32);
-		swagDialogue.font = 'Pixel Arial 11 Bold';
-		swagDialogue.color = 0xFF3F2021;
-		swagDialogue.sounds = [FlxG.sound.load('assets/sounds/pixelText' + TitleState.soundExt, 0.6)];
-		add(swagDialogue);
-
-		dialogue = new Alphabet(0, 80, "", false, true);
+		// dialogue = new Alphabet(0, 80, "", false, true);
 		// dialogue.x = 90;
-		// add(dialogue);
+		add(dialogue);
 
 		this.dialogueList = dialogueList;
 	}
@@ -194,11 +188,7 @@ class DialogueBox extends FlxSpriteGroup
 		if (PlayState.SONG.song.toLowerCase() == 'thorns')
 		{
 			portraitLeft.color = FlxColor.BLACK;
-			swagDialogue.color = FlxColor.WHITE;
-			dropText.color = FlxColor.BLACK;
 		}
-
-		dropText.text = swagDialogue.text;
 
 		if (box.animation.curAnim != null)
 		{
@@ -221,8 +211,6 @@ class DialogueBox extends FlxSpriteGroup
 
 		if (FlxG.keys.justPressed.ANY)
 		{
-			remove(dialogue);
-
 			FlxG.sound.play('assets/sounds/clickText' + TitleState.soundExt, 0.8);
 
 			if (dialogueList[1] == null)
@@ -241,8 +229,8 @@ class DialogueBox extends FlxSpriteGroup
 						portraitLeft.visible = false;
 						portraitLeftPixel.visible = false;
 						portraitRight.visible = false;
-						swagDialogue.alpha -= 1 / 5;
-						dropText.alpha = swagDialogue.alpha;
+						dialogue.alpha -= 1 / 5;
+						TextManager.coolWidth = 0;
 					}, 5);
 
 					new FlxTimer().start(1.2, function(tmr:FlxTimer)
@@ -273,8 +261,7 @@ class DialogueBox extends FlxSpriteGroup
 		// add(theDialog);
 
 		// swagDialogue.text = ;
-		swagDialogue.resetText(dialogueList[0]);
-		swagDialogue.start(0.04, true);
+		dialogue.start(0.04, dialogueList[0]);
 
 		if (curCharacter == 'dad')
 		{

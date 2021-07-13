@@ -56,6 +56,8 @@
 
 
 	<assets path="assets/fonts/vcr.ttf" embed="true" />
+	<assets path="assets/fonts/donuts.ttf" embed="true" />
+	<assets path="assets/fonts/pixel.otf" embed="true" />
 
 	<!-- _______________________________ Libraries ______________________________ -->
 

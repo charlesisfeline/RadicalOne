@@ -34,9 +34,13 @@ class MenuItem extends FlxSpriteGroup
 		week.updateHitbox();
 	}
 
+	var lerpFrame:Bool = true;
+
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		y = FlxMath.lerp(y, (targetY * 120) + 480, 0.17 * (60 / (cast (Lib.current.getChildAt(0), Main)).getFPS()));
+		if (lerpFrame)
+			y = FlxMath.lerp(y, (targetY * 120) + 480, 0.17);
+		lerpFrame = !lerpFrame;
 	}
 }
