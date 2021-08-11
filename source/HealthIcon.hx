@@ -23,7 +23,7 @@ class HealthIcon extends FlxSprite
 	{
 		switch (char)
 		{
-			case 'gaming-speakers' | 'pc' | 'gaming-gunpoint':
+			case 'gaming-speakers' | 'pc' | 'gaming-gunpoint' | 'gaming-namebe':
 				loadGraphic(Character.charPath + 'icons/gaming.png', true, 150, 150);
 			case 'christmas-monkey' | 'senpai' | 'senpai-angry':
 				loadGraphic(Character.charPath + 'icons/monkey-sprite.png', true, 150, 150);

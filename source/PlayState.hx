@@ -190,6 +190,7 @@ class PlayState extends MusicBeatState
 		0xFF9e3923, // monkey sprite
 		0xFF3cff00, // namebe
 		0xFFff00e1, // gandhi
+		0xFF24ff45, // gaming namebe
 		0xFF24ff45, // gaming standing
 		0xFF000000, // invisible
 		0xFF000000, // null
@@ -215,6 +216,10 @@ class PlayState extends MusicBeatState
 		0xFFd78df2, // thanos dad
 		0xFFeff556, // community night funkin
 		0xFF4a412a, // stupid ugly
+		0xFFff4548, // red ball dream
+		0xFF472fbd, // failure dream
+		0xFFdfff4f, // dawgee
+		0xFFffffff // ghost
 	];
 
 	/*var charColors:Array<FlxColor> = [
@@ -1202,6 +1207,9 @@ class PlayState extends MusicBeatState
 					gfVersion = 'namebe-speakers';
 				else
 					gfVersion = 'gaming-gunpoint';
+
+			case 'namebe':
+				gfVersion = 'gaming-namebe';
 		}
 
 		if (randomLevel)
@@ -1464,6 +1472,9 @@ class PlayState extends MusicBeatState
 				boyfriend.x += 125;
 			case 'susmeal':
 				gf.visible = false;
+			case 'namebe':
+				gf.x += 56;
+				gf.y += 92;
 		}
 
 		add(gf);
@@ -2281,7 +2292,7 @@ class PlayState extends MusicBeatState
 			{
 				for (map in section.bustomMaps)
 				{
-					trace('bustom map');
+					trace('bustom map: $map');
 				}
 			}
 

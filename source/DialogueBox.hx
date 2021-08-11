@@ -101,6 +101,8 @@ class DialogueBox extends FlxSpriteGroup
 				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
 				box.animation.addByPrefix('normal', 'Text Box Appear', 24, false);
 				box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
+
+				box.animation.play('normalOpen');
 			case 'roses':
 				FlxG.sound.play('assets/sounds/ANGRY_TEXT_BOX' + TitleState.soundExt);
 
@@ -109,11 +111,15 @@ class DialogueBox extends FlxSpriteGroup
 				box.animation.addByPrefix('normalOpen', 'SENPAI ANGRY IMPACT SPEECH', 24, false);
 				box.animation.addByIndices('normal', 'SENPAI ANGRY IMPACT SPEECH', [4], "", 24);
 				box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
+
+				box.animation.play('normalOpen');
 			case 'monkey-sprite':
 				box.frames = FlxAtlasFrames.fromSparrow('assets/images/dialogueJunk/scary.png', 'assets/images/dialogueJunk/dialogueBox-evil.xml');
 				box.animation.addByPrefix('normalOpen', 'Spirit Textbox spawn', 24, false);
 				box.animation.addByIndices('normal', 'Spirit Textbox spawn', [11], "", 24);
 				box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
+
+				box.animation.play('normalOpen');
 			case 'thorns':
 				box.frames = FlxAtlasFrames.fromSparrow('assets/images/dialogueJunk/dialogueBox-evil.png', 'assets/images/dialogueJunk/dialogueBox-evil.xml');
 				box.animation.addByPrefix('normalOpen', 'Spirit Textbox spawn', 24, false);
@@ -122,13 +128,13 @@ class DialogueBox extends FlxSpriteGroup
 				var face:FlxSprite = new FlxSprite(320, 170).loadGraphic('assets/images/dialogueJunk/spiritFaceForward.png');
 				box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
 				face.setGraphicSize(Std.int(face.width * 6));
+
+				box.animation.play('normalOpen');
 				add(face);
             case 'radical-vs-masked-babbys' | 'north':
-				box.frames = FlxAtlasFrames.fromSparrow('assets/images/dialogueJunk/dialogueBox-pixel.png',
-					'assets/images/dialogueJunk/dialogueBox-pixel.xml');
-				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
-				box.animation.addByIndices('normal', 'Text Box Appear', [4], "", 24);
+				box.loadGraphic('assets/images/dialogueJunk/babbyBox.png');
 				box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
+				babbyBox = true;
 			case 'bonnie-song' | 'without-you' | 'bonbon-loool':
 				box.frames = FlxAtlasFrames.fromSparrow('assets/images/dialogueJunk/dialogueBox-bawn.png',
 					'assets/images/dialogueJunk/dialogueBox-bawn.xml');
@@ -136,6 +142,8 @@ class DialogueBox extends FlxSpriteGroup
 				box.animation.addByPrefix('normal', 'NAMEBE', 24, false);
 				box.setGraphicSize(Std.int(box.width * 0.9));
 				box.y += 358;
+
+				box.animation.play('normalOpen');
             default:
 				box.frames = FlxAtlasFrames.fromSparrow('assets/images/dialogueJunk/dialogueBox-namebe.png',
 					'assets/images/dialogueJunk/dialogueBox-namebe.xml');
@@ -143,9 +151,10 @@ class DialogueBox extends FlxSpriteGroup
 				box.animation.addByPrefix('normal', 'NAMEBE', 24, false);
 				box.setGraphicSize(Std.int(box.width * 0.9));
 				box.y += 358;
+				
+				box.animation.play('normalOpen');
 		}
 
-		box.animation.play('normalOpen');
 		box.updateHitbox();
 		add(box);
 
@@ -179,6 +188,7 @@ class DialogueBox extends FlxSpriteGroup
 
 	var dialogueOpened:Bool = false;
 	var dialogueStarted:Bool = false;
+	var babbyBox:Bool = false;
 
 	override function update(elapsed:Float)
 	{
@@ -189,6 +199,9 @@ class DialogueBox extends FlxSpriteGroup
 		{
 			portraitLeft.color = FlxColor.BLACK;
 		}
+
+		if (babbyBox)
+			dialogueOpened = true;
 
 		if (box.animation.curAnim != null)
 		{
@@ -276,7 +289,7 @@ class DialogueBox extends FlxSpriteGroup
 		}
 		else
 		{
-			var loser:Array<String> = curCharacter.split('-');
+			var loser:Array<String> = curCharacter.split('>');
 
 			if (loser.length == 1)
 				loser.push('left');
@@ -286,9 +299,25 @@ class DialogueBox extends FlxSpriteGroup
 				case 'radical':
 					trace('bf');
 					loser[0] = 'Racial';
+				case 'racial-portrait-silly':
+					loser[0] = 'Racial_Portrait_Silly';
+				case 'radical-point':
+					loser[0] = 'Racial_Kinda_Pointing_WTF';
+				case 'radical-pissed':
+					loser[0] = 'Racial_Pissey_Mood';
+				case 'radical-sweat':
+					loser[0] = 'Racial_Why_So_Serious';
+				case 'radical-ugh':
+					loser[0] = 'Racial_Is_Over_It';
+				case 'radical-what':
+					loser[0] = 'failing_idiot';
 				case 'gaming':
 					trace('bf');
 					loser[0] = 'Gaming';
+				case 'gaming-poop':
+					loser[0] = 'Gaming_Pissey_Mood';
+				case 'gaming-epic':
+					loser[0] = 'Gaming_Epic';
 				case 'bab':
 					trace('bab');
 					loser[0] = 'Babby_Pissed_Off';

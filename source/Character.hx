@@ -41,14 +41,20 @@ class Character extends FlxSprite
 		'radical', 'gaming-speakers',
 		'interviewer', 'machine',
 		'babbys', 'monkey-sprite', 
-		'namebe', 'gandhi', 
+		'namebe', 'gandhi', 'gaming-namebe', 
 		'gaming',
 		'invisible', '',
 		'salted', 
 		'wow', 'wow2',
 		'austin', 
 		'senpai', 'senpai-angry',  
-		'skank', 'goomba', 'flandre-cool-awesome', 'nadalyn', 'failure', 'red-ball', 'dadamono', '3.4', 'stick', 'skank-n-pronoun', 'junkers', 'pic-nick', 'pc', 'thanos-dad', 'community-night-funkin', 'i-hate-you-lancey', 'red-ball-dream', 'failure-dream', 'dawgee', 'joe-bidens-dog'
+		'skank', 'goomba', 'flandre-cool-awesome', // jo junk
+		'nadalyn', 'failure', 'red-ball', 
+		'dadamono', '3.4', 'stick', 
+		'skank-n-pronoun', 'junkers', 'pic-nick', 
+		'pc', 'thanos-dad', 'community-night-funkin', // end jo junk
+		'i-hate-you-lancey', 'red-ball-dream', 'failure-dream', 
+		'dawgee', 'joe-bidens-dog'
 	];
 
 	public function new(x:Float, y:Float, ?character:String = "radical", ?isPlayer:Bool = false)
@@ -89,14 +95,20 @@ class Character extends FlxSprite
 				addOffset('danceLeft', 50, 71);
 				addOffset('danceRight', 50, 71);
 
-				addOffset("singUP", 0, 4);
-				addOffset("singRIGHT", 0, -20);
-				addOffset("singLEFT", 0, -19);
-				addOffset("singDOWN", 0, -20);
+				addOffset("singUP", 48, 106);
+				addOffset("singRIGHT", 48, 71);
+				addOffset("singLEFT", 48, 75);
+				addOffset("singDOWN", 48, 71);
 				addOffset('hairBlow', 45, -8);
 				addOffset('hairFall', 0, -9);
 
 				addOffset('scared', -2, -17);
+
+				playAnim('danceRight');
+			case 'gaming-namebe':
+				getFrames('Gaming_Summer_Mood');
+				animation.addByIndices('danceLeft', 'GF Dancing Beat', [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27], "", 18, false);
+				animation.addByIndices('danceRight', 'GF Dancing Beat', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], "", 18, false);
 
 				playAnim('danceRight');
 			case 'gaming-gunpoint':
@@ -1399,7 +1411,7 @@ class Character extends FlxSprite
 			{
 				switch (curCharacter)
 				{
-					case 'gaming-speakers' | 'jack' | 'gaming-gunpoint' | 'namebe-speakers':
+					case 'gaming-speakers' | 'jack' | 'gaming-gunpoint' | 'namebe-speakers' | 'gaming-namebe':
 						if (!animation.curAnim.name.startsWith('hair'))
 						{
 							danced = !danced;

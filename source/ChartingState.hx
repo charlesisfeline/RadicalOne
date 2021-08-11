@@ -34,6 +34,7 @@ import openfl.net.FileReference;
 import openfl.utils.ByteArray;
 import Controls.KeyboardScheme;
 import Discord.DiscordClient;
+import flixel.util.FlxTimer;
 
 using StringTools;
 
@@ -221,6 +222,14 @@ class ChartingState extends MusicBeatState
 			trace('CHECKED!');
 		};
 
+		var check_record = new FlxUICheckBox(200, 600, null, null, "Record Key Presses", 100);
+		check_record.checked = false;
+		check_record.callback = function() recording = check_record.checked;
+
+		var check_record_snap = new FlxUICheckBox(200, 625, null, null, "Snap Recorded Notes to Grid", 100);
+		check_record_snap.checked = true;
+		check_record_snap.callback = function() recSnap = check_record_snap.checked;
+
 		var check_mute_inst = new FlxUICheckBox(10, 200, null, null, "Mute Instrumental (in editor)", 100);
 		check_mute_inst.checked = false;
 		check_mute_inst.callback = function()
@@ -301,6 +310,8 @@ class ChartingState extends MusicBeatState
 		tab_group_song.add(UI_songTitle);
 
 		tab_group_song.add(check_voices);
+		tab_group_song.add(check_record);
+		tab_group_song.add(check_record_snap);
 		tab_group_song.add(check_mute_inst);
 		tab_group_song.add(saveButton);
 		tab_group_song.add(reloadSong);
@@ -543,6 +554,13 @@ class ChartingState extends MusicBeatState
 			return _song.notes[curSection].lengthInSteps;
 	}
 
+	var recording:Bool = false;
+	var recSnap:Bool = true;
+	var leftHold:Int = 0;
+	var rightHold:Int = 0;
+	var upHold:Int = 0;
+	var downHold:Int = 0;
+
 	override function update(elapsed:Float)
 	{
 		curStep = recalculateSteps();
@@ -636,16 +654,16 @@ class ChartingState extends MusicBeatState
 			FlxG.switchState(new PlayState());
 		}
 
-		if (FlxG.keys.justPressed.E)
+		if (FlxG.keys.justPressed.E && !recording)
 		{
 			changeNoteSustain(Conductor.stepCrochet);
 		}
-		if (FlxG.keys.justPressed.Q)
+		if (FlxG.keys.justPressed.Q && !recording)
 		{
 			changeNoteSustain(-Conductor.stepCrochet);
 		}
 
-		if (FlxG.keys.justPressed.TAB)
+		if (FlxG.keys.justPressed.TAB && !recording)
 		{
 			if (FlxG.keys.pressed.SHIFT)
 			{
@@ -677,7 +695,53 @@ class ChartingState extends MusicBeatState
 				}
 			}
 
-			if (FlxG.keys.justPressed.R)
+			if (recording && FlxG.sound.music.playing)
+			{
+				if (controls.LEFT)
+					leftHold++;
+				else
+					leftHold = 0;
+
+				if (controls.DOWN)
+					downHold++;
+				else
+					downHold = 0;
+
+				if (controls.UP)
+					upHold++;
+				else
+					upHold = 0;
+
+				if (controls.RIGHT)
+					rightHold++;
+				else
+					rightHold = 0;
+
+				if (!recSnap)
+				{
+					if (controls.LEFT_P)
+						addNoteFromKeyPress(FlxG.sound.music.time, 0);
+					if (controls.DOWN_P)
+						addNoteFromKeyPress(FlxG.sound.music.time, 1);
+					if (controls.UP_P)
+						addNoteFromKeyPress(FlxG.sound.music.time, 2);
+					if (controls.RIGHT_P)
+						addNoteFromKeyPress(FlxG.sound.music.time, 3);
+				}
+				else
+				{
+					if (controls.LEFT_P)
+						addNoteFromKeyPress((curStep + 1) * Conductor.stepCrochet, 0);
+					if (controls.DOWN_P)
+						addNoteFromKeyPress((curStep + 1) * Conductor.stepCrochet, 1);
+					if (controls.UP_P)
+						addNoteFromKeyPress((curStep + 1) * Conductor.stepCrochet, 2);
+					if (controls.RIGHT_P)
+						addNoteFromKeyPress((curStep + 1) * Conductor.stepCrochet, 3);
+				}
+			}
+
+			if (FlxG.keys.justPressed.R && !recording)
 			{
 				if (FlxG.keys.pressed.SHIFT)
 					resetSection(true);
@@ -685,7 +749,7 @@ class ChartingState extends MusicBeatState
 					resetSection();
 			}
 
-			if (FlxG.mouse.wheel != 0)
+			if (FlxG.mouse.wheel != 0 && !recording)
 			{
 				FlxG.sound.music.pause();
 				vocals.pause();
@@ -694,7 +758,7 @@ class ChartingState extends MusicBeatState
 				vocals.time = FlxG.sound.music.time;
 			}
 
-			if (!FlxG.keys.pressed.SHIFT)
+			if (!FlxG.keys.pressed.SHIFT && !recording)
 			{
 				if (FlxG.keys.pressed.W || FlxG.keys.pressed.S)
 				{
@@ -713,7 +777,7 @@ class ChartingState extends MusicBeatState
 					vocals.time = FlxG.sound.music.time;
 				}
 			}
-			else
+			else if (!recording)
 			{
 				if (FlxG.keys.justPressed.W || FlxG.keys.justPressed.S)
 				{
@@ -744,9 +808,9 @@ class ChartingState extends MusicBeatState
 		var shiftThing:Int = 1;
 		if (FlxG.keys.pressed.SHIFT)
 			shiftThing = 4;
-		if (FlxG.keys.justPressed.RIGHT || FlxG.keys.justPressed.D)
+		if (FlxG.keys.justPressed.RIGHT && !recording || FlxG.keys.justPressed.D && !recording)
 			changeSection(curSection + shiftThing);
-		if (FlxG.keys.justPressed.LEFT || FlxG.keys.justPressed.A)
+		if (FlxG.keys.justPressed.LEFT && !recording || FlxG.keys.justPressed.A && !recording)
 			changeSection(curSection - shiftThing);
 
 		bpmTxt.text = bpmTxt.text = Std.string(FlxMath.roundDecimal(Conductor.songPosition / 1000, 2))
@@ -1078,6 +1142,32 @@ class ChartingState extends MusicBeatState
 		}
 
 		updateGrid();
+	}
+
+	private function addNoteFromKeyPress(strumTime:Float, noteData:Int, noteSus:Float = 0):Void
+	{
+		_song.notes[curSection].sectionNotes.push([strumTime, noteData, noteSus]);
+
+		curSelectedNote = _song.notes[curSection].sectionNotes[_song.notes[curSection].sectionNotes.length - 1];
+
+		trace('RECORDED NOTE!! \nstrumTime: $strumTime \nnoteData: $noteData \nlength: $noteSus');
+
+		updateGrid();
+		updateNoteUI();
+
+		var coolNote = curSelectedNote;
+
+		switch (noteData)
+		{
+			case 0:
+				new FlxTimer().start(0.001, function(offsetTmr:FlxTimer){
+					new FlxTimer().start(0, function(tmr:FlxTimer){
+						coolNote[2] = leftHold;
+						if (leftHold > 0)
+							tmr.reset();
+					});
+				});
+		}
 	}
 
 	private function addNote():Void
