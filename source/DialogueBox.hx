@@ -10,6 +10,7 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import Dialogue.TextManager;
+import flash.display.BitmapData;
 
 using StringTools;
 
@@ -30,6 +31,9 @@ class DialogueBox extends FlxSpriteGroup
 
 	var handSelect:FlxSprite;
 	var bgFade:FlxSprite;
+
+	var images:Bool = false;
+	var image:FlxSprite;
 
 	public function new(talkingRight:Bool = true, ?dialogueList:Array<String>)
 	{
@@ -65,6 +69,13 @@ class DialogueBox extends FlxSpriteGroup
 		bgFade.alpha = 0;
 		add(bgFade);
 
+		var black:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+		black.visible = false;
+		add(black);
+
+		image = new FlxSprite();
+		add(image);
+
 		new FlxTimer().start(0.83, function(tmr:FlxTimer)
 		{
 			bgFade.alpha += (1 / 5) * 0.7;
@@ -95,24 +106,11 @@ class DialogueBox extends FlxSpriteGroup
 
 		switch (PlayState.sheShed)
 		{
-			case 'senpai':
-				box.frames = FlxAtlasFrames.fromSparrow('assets/images/dialogueJunk/dialogueBox-pixel.png',
-					'assets/images/dialogueJunk/dialogueBox-pixel.xml');
-				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
-				box.animation.addByPrefix('normal', 'Text Box Appear', 24, false);
+			case 'senpai' | 'roses' | 'thorns':
+				box.loadGraphic('assets/images/dialogueJunk/wow.png');
 				box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
-
-				box.animation.play('normalOpen');
-			case 'roses':
-				FlxG.sound.play('assets/sounds/ANGRY_TEXT_BOX' + TitleState.soundExt);
-
-				box.frames = FlxAtlasFrames.fromSparrow('assets/images/dialogueJunk/dialogueBox-senpaiMad.png',
-					'assets/images/dialogueJunk/dialogueBox-senpaiMad.xml');
-				box.animation.addByPrefix('normalOpen', 'SENPAI ANGRY IMPACT SPEECH', 24, false);
-				box.animation.addByIndices('normal', 'SENPAI ANGRY IMPACT SPEECH', [4], "", 24);
-				box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
-
-				box.animation.play('normalOpen');
+				babbyBox = true;
+				images = true;
 			case 'monkey-sprite':
 				box.frames = FlxAtlasFrames.fromSparrow('assets/images/dialogueJunk/scary.png', 'assets/images/dialogueJunk/dialogueBox-evil.xml');
 				box.animation.addByPrefix('normalOpen', 'Spirit Textbox spawn', 24, false);
@@ -120,17 +118,6 @@ class DialogueBox extends FlxSpriteGroup
 				box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
 
 				box.animation.play('normalOpen');
-			case 'thorns':
-				box.frames = FlxAtlasFrames.fromSparrow('assets/images/dialogueJunk/dialogueBox-evil.png', 'assets/images/dialogueJunk/dialogueBox-evil.xml');
-				box.animation.addByPrefix('normalOpen', 'Spirit Textbox spawn', 24, false);
-				box.animation.addByIndices('normal', 'Spirit Textbox spawn', [11], "", 24);
-
-				var face:FlxSprite = new FlxSprite(320, 170).loadGraphic('assets/images/dialogueJunk/spiritFaceForward.png');
-				box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
-				face.setGraphicSize(Std.int(face.width * 6));
-
-				box.animation.play('normalOpen');
-				add(face);
             case 'radical-vs-masked-babbys' | 'north':
 				box.loadGraphic('assets/images/dialogueJunk/babbyBox.png');
 				box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
@@ -161,6 +148,19 @@ class DialogueBox extends FlxSpriteGroup
 		handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic('assets/images/UI/pixelUI/hand_textbox.png');
 		handSelect.scale.set(6, 6);
 		add(handSelect);
+
+		if (images)
+		{
+			black.visible = true;
+			coolTextBox = new FlxSprite(-500).makeGraphic(200, 60);
+			add(coolTextBox);
+			swagText = new FlxText(-500, 0, Std.int(FlxG.width * 0.6), "", 24);
+			swagText.color = FlxColor.BLACK;
+			swagText.font = 'Pixel Arial 11 Bold';
+			add(swagText);
+			coolTextBox.screenCenter(Y);
+			swagText.y = coolTextBox.y + 10;
+		}
 
 		box.screenCenter(X);
 	/*	portraitZBab.screenCenter(X);
@@ -265,6 +265,9 @@ class DialogueBox extends FlxSpriteGroup
 
 	var isEnding:Bool = false;
 
+	var coolTextBox:FlxSprite;
+	var swagText:FlxText;
+
 	function startDialogue():Void
 	{
 		cleanDialog();
@@ -290,6 +293,25 @@ class DialogueBox extends FlxSpriteGroup
 		else
 		{
 			var loser:Array<String> = curCharacter.split('>');
+
+			if (images)
+			{
+				image.loadGraphic(BitmapData.fromFile('assets/images/dialogueJunk/images/${loser[1]}.png'));
+				image.setGraphicSize(0, 440);
+				image.updateHitbox();
+				image.screenCenter(X);
+				coolTextBox.screenCenter(X);
+				var daChar:Array<String> = loser[0].split('-');
+				switch (daChar[0].toLowerCase())
+				{
+					case 'radical': coolTextBox.x += 450;
+					default: coolTextBox.x -= 450;
+				}
+				coolTextBox.color = FlxColor.fromString(daChar[1]);
+				swagText.x = coolTextBox.x + 10;
+				swagText.text = daChar[0];
+				return;
+			}
 
 			if (loser.length == 1)
 				loser.push('left');

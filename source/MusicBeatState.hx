@@ -31,6 +31,8 @@ class MusicBeatState extends FlxUIState
 		#end
 
 		super.create();
+
+		FlxG.save.flush();
 	}
 
 	override function update(elapsed:Float)

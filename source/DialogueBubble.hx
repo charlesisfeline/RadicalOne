@@ -45,7 +45,6 @@ class DialogueBubble extends FlxSpriteGroup
 
 		this.dialogueList = dialogueList;
 	}
-
 	var dialogueOpened:Bool = false;
 	var dialogueStarted:Bool = false;
 
@@ -53,22 +52,8 @@ class DialogueBubble extends FlxSpriteGroup
 	{
 		if (box.animation.curAnim != null)
 		{
-			if (box.animation.curAnim.name == 'normalOpen' && box.animation.curAnim.finished)
-			{
-				box.animation.play('normal');
-				dialogueOpened = true;
-			}
-			else if (box.animation.curAnim.name == 'loudOpen' && box.animation.curAnim.finished)
-			{
-				box.animation.play('loud');
-				dialogueOpened = true;
-			}
-			else if (box.animation.curAnim.name == 'gamingOpen' && box.animation.curAnim.finished)
-			{
-				trace('GAMING SPEECH BUBBLE');
-				box.animation.play('gaming');
-				dialogueOpened = true;
-			}
+			box.animation.play(box.animation.curAnim.name.substring(0, box.animation.curAnim.name.indexOf('Open')));
+			dialogueOpened = true;
 		}
 
 		if (box.animation.curAnim.name.startsWith('normal'))
