@@ -3797,7 +3797,11 @@ class PlayState extends MusicBeatState
 				gf.playAnim('sad');
 			}
 			combo = 0;
-			misses++;
+			if (!justMissed)
+			{
+				misses++;
+				justMissed = true;
+			}
 
 			songScore -= 10;
 
@@ -4080,11 +4084,15 @@ class PlayState extends MusicBeatState
 			note.wasGoodHit = true;
 			vocals.volume = 1;
 
+			justMissed = false;
+
 			note.kill();
 			notes.remove(note, true);
 			note.destroy();
 		}
 	}
+
+	private var justMissed:Bool = false;
 
 	function goodNoteHitKade(note:Note, resetMashViolation = true):Void
 		{
@@ -4944,7 +4952,11 @@ class PlayState extends MusicBeatState
 								if (combo > 5)
 									gf.playAnim('sad');
 								combo = 0;
-								misses++;
+								if (!justMissed)
+								{
+									misses++;
+									justMissed = true;
+								}	
 							}
 
 							daNote.active = false;
