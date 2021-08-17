@@ -35,7 +35,8 @@ import flixel.util.FlxSort;
 import flixel.util.FlxStringUtil;
 import flixel.util.FlxTimer;
 import haxe.Json;
-import lime.utils.Assets;
+import lime.utils.Assets as LimeAssets;
+import openfl.utils.Assets;
 import openfl.display.BlendMode;
 import openfl.display.StageQuality;
 import openfl.filters.ShaderFilter;
@@ -46,6 +47,7 @@ import flixel.addons.display.FlxStarField;
 import flixel.addons.effects.FlxClothSprite; // just me messing around with flixel-addons
 import flixel.effects.FlxFlicker;
 import openfl.Lib;
+// import swf.SWF;
 
 using StringTools;
 
@@ -1525,7 +1527,17 @@ class PlayState extends MusicBeatState
 				case 'job-interview':
 					camFollow.x = 640;
 					camFollow.y = 360;
-					schoolIntro(doof);
+					var cutsceneAudio:FlxSound = new FlxSound().loadEmbedded('assets/music/cut.ogg');
+					Assets.loadLibrary('week1cutscene').onComplete(function(_) {
+						var clip = Assets.getMovieClip('week1cutscene:');
+						(cast (Lib.current.getChildAt(0), Main)).addChild(clip);
+
+						cutsceneAudio.onComplete = function() {
+							initJobInterview();
+							(cast (Lib.current.getChildAt(0), Main)).removeChild(clip);
+						}
+						cutsceneAudio.play();
+					});
 				default:
 					startCountdown();
 			}
@@ -1881,49 +1893,6 @@ class PlayState extends MusicBeatState
 							}
 						});
 					}
-					else if (sheShed == 'job-interview')
-					{
-
-						var junkrus:FlxSprite = new FlxSprite(-480, 515).loadGraphic('assets/images/cutscenes/week1/Tween_3.png');
-						junkrus.antialiasing = true;
-						add(junkrus);
-
-						var thing:FlxSprite = new FlxSprite(junkrus.x + 1, -290);
-						thing.frames = FlxAtlasFrames.fromSparrow('assets/images/cutscenes/week1/Tween_3_copy.png', 'assets/images/cutscenes/week1/Tween_3_copy.xml');
-						thing.animation.addByPrefix('doThat', 'Tween 3 copy', 24, false);
-						thing.animation.play('doThat');
-						thing.visible = false;
-						thing.antialiasing = true;
-						add(thing);
-
-						new FlxTimer().start(0.3, function(swagTimer:FlxTimer)
-						{
-							remove(blackOffice);
-							new FlxTimer().start(2.6, function(tmr:FlxTimer){
-								FlxTween.tween(junkrus, {y: -290}, 0.8, {ease: FlxEase.quintOut, 
-								onComplete: function(twn:FlxTween){
-									thing.visible = true;
-									thing.animation.play('doThat');
-									junkrus.kill();
-									new FlxTimer().start(0, function(tmr:FlxTimer){
-										if (thing.animation.curAnim.curFrame == 48)
-											thing.kill();
-										else
-											tmr.reset();
-									});
-								}});
-							});
-							FlxG.sound.play('assets/music/cut' + TitleState.soundExt, 1, false, null, true, function()
-							{
-								add(healthBarBG);
-								add(scoreTxt);
-								add(healthBar);
-								add(iconP1);
-								add(iconP2);
-								startCountdown();
-							});
-						});
-					}
 					else
 					{
 						add(dialogueBox);
@@ -1935,6 +1904,16 @@ class PlayState extends MusicBeatState
 				remove(black);
 			}
 		});
+	}
+
+	function initJobInterview():Void
+	{
+		add(healthBarBG);
+		add(scoreTxt);
+		add(healthBar);
+		add(iconP1);
+		add(iconP2);
+		startCountdown();
 	}
 
 	function flynetIntro(?dialogueBubble:DialogueBubble):Void
@@ -3022,6 +3001,7 @@ class PlayState extends MusicBeatState
 							else
 							{
 								noteCheckSimple(controlArray, possibleNotes);
+								trace("SIMPLE NOTE CHECK");
 							}
 						}
 						else // regular notes?
@@ -3942,6 +3922,11 @@ class PlayState extends MusicBeatState
 		}
 	}
 
+	function missAllDirections():Void
+	{
+		for (dir in 0...4) noteMiss(dir);
+	}
+
 	function noteCheckSimple(keyArray:Array<Bool>, possibleNotes:Array<Note>):Void
 	{
 		for (curKey in 0...4)
@@ -3956,7 +3941,8 @@ class PlayState extends MusicBeatState
 			
 			if (poop.length > possibleNotes.length) // blatant mashing
 			{
-				badNoteCheck();
+				missAllDirections();
+				break;
 			}
 			else if (keyArray[curKey])
 			{
@@ -3973,25 +3959,14 @@ class PlayState extends MusicBeatState
 
 	function noteCheckOG(keyArray:Array<Bool>, note:Note):Void
 	{
-		if (keyArray[note.noteData])
-			goodNoteHit(note);
-		else
-			badNoteCheck();
+		keyArray[note.noteData] ? goodNoteHit(note) : badNoteCheck();
 	}
 
 	function noteCheck(keyP:Bool, note:Note):Void
 	{
-		if (keyP)
-		{
-			if (whatInputSystem == 'FPS Plus')
-				goodNoteHitPlus(note);
-			else
-				goodNoteHit(note);
-		}
-		else
-		{
-			badNoteCheck();
-		}
+		keyP ? {
+			whatInputSystem == 'FPS Plus' ? goodNoteHitPlus(note) : goodNoteHit(note);
+		} : badNoteCheck();	
 	}
 
 	var mashing:Int = 0;

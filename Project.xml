@@ -50,7 +50,7 @@
 	<assets path="assets/music" include="*.ogg" unless="web"/>
 	<assets path="assets/sounds" include="*.mp3" if="web" />
 	<assets path="assets/sounds" include="*.ogg" unless="web" />
-	<!--assets path="assets/videos" include="*.ogg" /-->
+	<library path="assets/swf/job interview cutscene.swf" preload="true" id="week1cutscene"/>
 
 	<assets path="CHANGELOG.md"/>
 
@@ -75,8 +75,6 @@
 	<haxelib name="polymod"/>
 	<haxelib name="swf"/>
 	<haxelib name="discord_rpc"/>
-	<!--haxelib name="actuate" />
-	<haxelib name="extension-webm" /-->
 
 	<!-- <haxelib name="markdown" /> -->
 	<!-- <haxelib name="HtmlParser" /> -->
