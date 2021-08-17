@@ -114,6 +114,8 @@ class PlayState extends MusicBeatState
 	private var healthBarBG:FlxSprite;
 	private var healthBar:FlxBar;
 
+	private var penis:FlxText;
+
 	private var generatedMusic:Bool = false;
 	private var startingSong:Bool = false;
 
@@ -1406,7 +1408,7 @@ class PlayState extends MusicBeatState
 		scoreTxt.setFormat("assets/fonts/vcr.ttf", 20, FlxColor.WHITE, RIGHT, OUTLINE, FlxColor.BLACK);
 		scoreTxt.scrollFactor.set();
 
-		var penis:FlxText = new FlxText(15, healthBarBG.y + 30 * downscrollJunky, 0, FlxG.save.data.inputSystem + ' Input', 20);
+		penis = new FlxText(15, healthBarBG.y + 30 * downscrollJunky, 0, FlxG.save.data.inputSystem + ' Input', 20);
 		penis.setFormat("assets/fonts/vcr.ttf", 16, FlxColor.WHITE, RIGHT, OUTLINE, FlxColor.BLACK);
 		penis.scrollFactor.set();
 		if (sheShed != 'job-interview')
@@ -1527,17 +1529,7 @@ class PlayState extends MusicBeatState
 				case 'job-interview':
 					camFollow.x = 640;
 					camFollow.y = 360;
-					var cutsceneAudio:FlxSound = new FlxSound().loadEmbedded('assets/music/cut.ogg');
-					Assets.loadLibrary('week1cutscene').onComplete(function(_) {
-						var clip = Assets.getMovieClip('week1cutscene:');
-						(cast (Lib.current.getChildAt(0), Main)).addChild(clip);
-
-						cutsceneAudio.onComplete = function() {
-							initJobInterview();
-							(cast (Lib.current.getChildAt(0), Main)).removeChild(clip);
-						}
-						cutsceneAudio.play();
-					});
+					new SwfVideo('week1cutscene', 'assets/music/cut.ogg', function() this.initJobInterview());
 				default:
 					startCountdown();
 			}
@@ -1562,13 +1554,7 @@ class PlayState extends MusicBeatState
 			switch (curSong.toLowerCase())
 			{
 				case 'job-interview':
-					add(healthBarBG);
-					add(healthBar);
-					add(iconP1);
-					add(iconP2);
-					add(scoreTxt);
-					add(penis);
-					startCountdown();
+					initJobInterview();
 				default:
 					startCountdown();
 			}
@@ -1913,6 +1899,7 @@ class PlayState extends MusicBeatState
 		add(healthBar);
 		add(iconP1);
 		add(iconP2);
+		add(penis);
 		startCountdown();
 	}
 
