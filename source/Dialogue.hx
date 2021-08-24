@@ -12,6 +12,7 @@ import flixel.util.FlxTimer;
 import flixel.FlxBasic;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
+import flixel.system.FlxSound;
 
 using StringTools;
 
@@ -19,11 +20,19 @@ enum DialogueType
 {
     Pixel;
     Regular;
+    Tutorial;
+}
+
+enum Dudes
+{
+    Radical;
+    Gaming;
+    Namebe;
 }
 
 class Dialogue extends FlxSpriteGroup
 {
-    var type:DialogueType;
+    public var type:DialogueType;
 
     var swagDialogue:FlxTypeText;
     var dropText:FlxText;
@@ -31,6 +40,10 @@ class Dialogue extends FlxSpriteGroup
     var daText:TextManager;
 
     public var dialogueColor:FlxColor = FlxColor.BLACK;
+
+    public var whosTalking:Dudes = Radical;
+
+    var diaSounds:Array<FlxSound>;
 
     public function new(type:DialogueType)
     {
@@ -40,6 +53,18 @@ class Dialogue extends FlxSpriteGroup
 
         switch (type)
         {
+            case Tutorial:
+                swagDialogue = new FlxTypeText(240, 500, Std.int(FlxG.width * 0.6), "", 32);
+                swagDialogue.color = 0xFF3F2021;
+                swagDialogue.sounds = [FlxG.sound.load('assets/sounds/pixelText' + TitleState.soundExt, 0.6)];
+
+                dropText = new FlxText(242, 502, Std.int(FlxG.width * 0.6), "", 32);
+                dropText.color = 0xFFD89494;
+
+                add(dropText);
+                add(swagDialogue);
+
+                dropText.font = swagDialogue.font = 'Comic Sans MS';
             case Pixel:
                 swagDialogue = new FlxTypeText(240, 500, Std.int(FlxG.width * 0.6), "", 32);
                 swagDialogue.color = 0xFF3F2021;
@@ -60,8 +85,25 @@ class Dialogue extends FlxSpriteGroup
 
     public function start(time:Float = 0.04, text:String = 'swag')
     {
+        diaSounds = [
+            for (i in 1...5) 
+                FlxG.sound.load('assets/sounds/'
+            + (switch (whosTalking) {
+                case Radical:
+                    'racial';
+                case Gaming:
+                    'gaming';
+                case Namebe:
+                    'namebe';
+            }) + '_$i'
+            + TitleState.soundExt, 0.6)];
+        
         switch(type)
         {
+            case Tutorial:
+                swagDialogue.sounds = diaSounds;
+                swagDialogue.resetText(text);
+                swagDialogue.start(time, true);
             case Pixel:
                 swagDialogue.resetText(text);
                 swagDialogue.start(time, true);
@@ -110,11 +152,13 @@ class TextManager extends FlxSpriteGroup
         var splitText:Array<String> = text.split('');
         var splitWords:Array<String> = text.split(' ');
 
+        var realIndex:Int = 0;
+
         for (i in 0...splitText.length)
         {
             if (coolWidth == 0 && splitText[i] == ' ')
                 continue;
-            var daChar:DiaChar = new DiaChar(splitText[i], coolWidth + offsetX, offsetY, time * i);
+            var daChar:DiaChar = new DiaChar(splitText[i], coolWidth + offsetX, offsetY, time * realIndex);
             add(daChar);
             txtArray.push(daChar);
             if (coolWidth + 42 >= daWidth)
@@ -122,6 +166,8 @@ class TextManager extends FlxSpriteGroup
                 coolWidth = 0;
                 offsetY += 42;
             }
+
+            realIndex++;
         }
     }
 }

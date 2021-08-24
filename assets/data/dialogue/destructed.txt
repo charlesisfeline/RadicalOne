@@ -1,7 +1,10 @@
-:gspot:Wait! Namebe! These guys are not bad!
-:namebe:Wait... then who are the bad guys?
-:gspot:There are none, Orangey Ore's lab was hacked and that was a fake transmission!
-:wtf:Oh no! Sorry for the trouble guys! It looks like you aren't bad guys.
-:radical:It's no trouble. I always appreciate a good rap battle!
-:gspot:Well then, why not let me join in!
-:gaming:This is totally junkirific!
+:gspot>left:Namebe! Dude! You got   the wrong guys!
+:wtf>left:Oh crap! Then who are   those criminals we were warned about?
+:gspot>left:There are none,
+:gspot>left:We traced those        messages back... 
+:gspot>left:and it turns out they   are from some pretty   sketchy sources...
+:wtf>left:Oh no! Sorry for the    trouble guys! It looks    like you aren't          terrorists.
+:radical-ugh>right:I thought so...
+:radical>right:It's no trouble. I always appreciate a good rap   battle!
+:gspot>left:Well then, why not let   me join in!
+:gaming>right:This is totally junkirific!

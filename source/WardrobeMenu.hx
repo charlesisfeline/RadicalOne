@@ -30,6 +30,9 @@ class WardrobeMenu extends MusicBeatState
         if (FlxG.save.data.businessUnlock)
             racialDiversity.push('Business Radical');
 
+        if (FlxG.save.data.babbyUnlock)
+            racialDiversity.push('Radical Babby');
+
         curSelected = racialDiversity.indexOf(FlxG.save.data.outfit);
 
         DiscordClient.changePresence("In Wardrobe", null, 'sussy', 'racialdiversity');

@@ -35,6 +35,18 @@ class WardrobeCharacter extends FlxSprite
                 flipX = true;
 
                 isLikeBF = true;
+            case 'Radical Babby':
+                var tex = FlxAtlasFrames.fromSparrow(Character.charPath + 'babRad.png', Character.charPath + 'babRad.xml');
+                frames = tex;
+                animation.addByPrefix('idle', 'idle', 24, true);
+                
+                addOffset('idle', -5);
+                
+                playAnim('idle');
+                
+                flipX = true;
+
+                isLikeBF = true;
             case 'Sussy Radical':
                 var tex = FlxAtlasFrames.fromSparrow(Character.charPath + 'SUSSY_RACIAL.png', Character.charPath + 'SUSSY_RACIAL.xml');
                 frames = tex;
@@ -48,15 +60,13 @@ class WardrobeCharacter extends FlxSprite
 
                 isLikeBF = true;
             case 'RedBall':
-                var tex = FlxAtlasFrames.fromSparrow(Character.charPath + 'radicalball.png', Character.charPath + 'racial.xml');
+                var tex = FlxAtlasFrames.fromSparrow(Character.charPath + 'radicalball.png', Character.charPath + 'radicalball.xml');
                 frames = tex;
-                animation.addByPrefix('idle', 'Racial Spiteful Jig', 24, true);
+                animation.addByPrefix('idle', 'Dad idle dance', 24, true);
                 
-                addOffset('idle');
+                addOffset('idle', 215 - 144, -57 + 28);
                 
                 playAnim('idle');
-                
-                flipX = true;
             case 'Radical':
                 frames = FlxAtlasFrames.fromSparrow(Character.charPath + 'racial.png', Character.charPath + 'racial.xml');
                 animation.addByPrefix('idle', 'Racial Spiteful Jig', 24);

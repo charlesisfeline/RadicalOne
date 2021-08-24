@@ -21,25 +21,15 @@ class Boyfriend extends Character
 	{
 		if (!debugMode)
 		{
-			if (animation.curAnim.name.startsWith('sing'))
-			{
-				holdTimer += elapsed;
-			}
-			else
-				holdTimer = 0;
+			animation.curAnim.name.startsWith('sing') ?
+			holdTimer += elapsed:
+			holdTimer = 0;
 
 			if (animation.curAnim.name.endsWith('miss') && animation.curAnim.finished && !debugMode)
-			{
-				if (PlayState.whatInputSystem == 'FPS Plus')
-					idleEnd();
-				else
-					playAnim('idle', true, false, 10);
-			}
+				idleEnd();
 
 			if (animation.curAnim.name == 'firstDeath' && animation.curAnim.finished)
-			{
 				playAnim('deathLoop');
-			}
 		}
 
 		super.update(elapsed);
@@ -49,11 +39,10 @@ class Boyfriend extends Character
 	{
 		if (!debugMode || ignoreDebug)
 		{
-			switch (curCharacter)
-			{
-				default:
-					playAnim('idle', true, false, animation.getByName('idle').numFrames - 1);
-			}
+			isSpooky ? {
+			playAnim(danced ? 'danceRight' : 'danceLeft', true, false, animation.getByName(danced ? 'danceRight' : 'danceLeft').numFrames - 1);
+			} :
+			playAnim('idle', true, false, animation.getByName('idle').numFrames - 1);
 		}
 	}
 }

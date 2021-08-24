@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="dialogueBox-namebe.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="NAMEBE0000" x="0" y="0" width="1331" height="376"/>
+	<SubTexture name="NAMEBE0001" x="0" y="0" width="1331" height="376"/>
+	<SubTexture name="NAMEBE0002" x="0" y="0" width="1331" height="376"/>
+	<SubTexture name="NAMEBE0003" x="0" y="0" width="1331" height="376"/>
+	<SubTexture name="NAMEBE0004" x="0" y="0" width="1331" height="376"/>
+</TextureAtlas>

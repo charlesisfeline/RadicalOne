@@ -35,16 +35,16 @@ class WeekendMenuState extends MusicBeatState
 
     public static var weekendData:Array<Dynamic> = [
         ['Nadalyn-Sings-Spookeez', 'Nadbattle', 'Nadders'],
-		['Start-Conjunction', 'Energy-Lights', 'Telegroove'],
+		// ['Start-Conjunction', 'Energy-Lights', 'Telegroove'],
         ['Senpai', 'Roses', 'Thorns'],
         ['the-backyardagains', 'funny'],
-        ['Interrogation', 'Tha-Biscoot', 'Among-Us-Happy-Meal', 'Chuckie', '3.4', 'Scribble-Street', 'Scary-Junk', 'Thanos-Rumble', 'Normal-Ghost'],
-        ['Freebeat_1', 'JunkRUs', 'Picnic-Rumble', 'Dawgee-Want-Food', 'Dream']
+        ['Interrogation', 'Tha-Biscoot', 'Among-Us-Happy-Meal', 'Chuckie', '3.4', 'Scribble-Street', 'Scary-Junk', 'Thanos-Rumble', 'Normal-Ghost', 'Plush-Factory'],
+        ['Freebeat_1', 'JunkRUs', 'Picnic-Rumble']
     ];
 
     var weekendChars:Array<String> = [
         'nadalyn',
-        'salted',
+        // 'salted',
         'wow',
         'austin',
         'questioning',
@@ -53,7 +53,7 @@ class WeekendMenuState extends MusicBeatState
 
     var weekendDescriptions:Array<String> = [
         'She/her \nI make sparta remixes.',
-        'Rap against the most wicked \nmusic producer of all time, \nLightly Satled Beans!',
+        // 'Rap against the most wicked \nmusic producer of all time, \nLightly Satled Beans!',
         'Uh oh! Looks like a RACIAL \nVIRUS has infected week 6!! \nDo you have the wits to \nsurvive?',
         'He played a little joke on \nyou in the past, but he\'s \nnot messin\' around this time!',
         'Just random one-off levels \nwe made. Expect some crazy \nand zany things!I mean my \nJunk.',
@@ -62,14 +62,14 @@ class WeekendMenuState extends MusicBeatState
 
     var weekendNames:Array<String> = [
         'Nadalyn',
-        'LSB',
+        // 'LSB',
         'Wow',
         'FNAF',
         'Jo Junk',
         'Redball'
     ];
 
-    var curWeekend:Int = 3;
+    var curWeekend:Int = 2;
 
     override function create()
     {
@@ -81,10 +81,10 @@ class WeekendMenuState extends MusicBeatState
                 FlxG.sound.playMusic('assets/music/freakyMenu' + TitleState.soundExt);
         }
 
-        if (Highscore.getWeekendScore(2) > 0)
+        if (Highscore.getWeekendScore(weekendNames.indexOf('Wow')) > 0)
             FlxG.save.data.sussyUnlock = true;
 
-        if (Highscore.getWeekendScore(5) > 0)
+        if (Highscore.getWeekendScore(weekendNames.indexOf('Redball')) > 0)
             FlxG.save.data.redballUnlock = true;
 
         //publicWeekendData = weekendData;
@@ -291,7 +291,7 @@ class WeekendMenuState extends MusicBeatState
                 suckers.y = 140;
         }
 
-        if (curWeekend == 4)
+        if (curWeekend == 3)
             trackList.text = 'SONGS: ???';
         else
             trackList.text = getWeekData();

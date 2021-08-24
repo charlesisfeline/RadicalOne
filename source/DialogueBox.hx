@@ -111,6 +111,15 @@ class DialogueBox extends FlxSpriteGroup
 				box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
 				babbyBox = true;
 				images = true;
+			case 'tutorial':
+				box.frames = FlxAtlasFrames.fromSparrow('assets/images/dialogueJunk/junk.png',
+					'assets/images/dialogueJunk/junk.xml');
+				box.animation.addByPrefix('normalOpen', 'NAMEBE', 24, false);
+				box.animation.addByPrefix('normal', 'NAMEBE', 24, false);
+				box.setGraphicSize(Std.int(box.width * 0.9));
+				box.y += 358;
+				
+				box.animation.play('normalOpen');
 			case 'monkey-sprite':
 				box.frames = FlxAtlasFrames.fromSparrow('assets/images/dialogueJunk/scary.png', 'assets/images/dialogueJunk/dialogueBox-evil.xml');
 				box.animation.addByPrefix('normalOpen', 'Spirit Textbox spawn', 24, false);
@@ -173,6 +182,8 @@ class DialogueBox extends FlxSpriteGroup
 
 		switch (PlayState.sheShed)
 		{
+			case 'tutorial':
+				dialogue = new Dialogue(Tutorial);
 			case 'north' | 'radical-vs-masked-babbys' | 'monkey-sprite' | 'senpai' | 'roses' | 'thorns':
 				dialogue = new Dialogue(Pixel);
 			default:
@@ -277,6 +288,14 @@ class DialogueBox extends FlxSpriteGroup
 		// add(theDialog);
 
 		// swagDialogue.text = ;
+
+		if (curCharacter.toLowerCase().startsWith('radical') || curCharacter.toLowerCase().startsWith('racial'))
+			dialogue.whosTalking = Radical;
+		else if (curCharacter.toLowerCase().startsWith('gaming'))
+			dialogue.whosTalking = Gaming;
+		else if (['namebe', 'boygirl', 'wtf'].contains(curCharacter.split('>')[0].toLowerCase()))
+			dialogue.whosTalking = Namebe;
+		
 		dialogue.start(0.04, dialogueList[0]);
 
 		if (curCharacter == 'dad')

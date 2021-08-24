@@ -173,7 +173,8 @@ class PlayState extends MusicBeatState
 		'senpai', 'roses', 'thorns', 
 		'north', 'radical-vs-masked-babbys', 'monkey-sprite', 
 		'namebe', 'bouncy-drop', 'destructed', 
-		'the-backyardagains', 'funny'
+		'the-backyardagains', 'funny',
+		'tutorial'
 	];
 
 	public static var campaignScore:Int = 0;
@@ -226,7 +227,8 @@ class PlayState extends MusicBeatState
 		0xFFff4548, // red ball dream
 		0xFF472fbd, // failure dream
 		0xFFdfff4f, // dawgee
-		0xFFffffff // ghost
+		0xFFffffff, // ghost
+		0xFFf98aff
 	];
 
 	/*var charColors:Array<FlxColor> = [
@@ -457,6 +459,16 @@ class PlayState extends MusicBeatState
 				halloweenBG.animation.play('idle');
 				halloweenBG.antialiasing = true;
 				add(halloweenBG);
+			case 'nerd':
+				var hallowTex = FlxAtlasFrames.fromSparrow(stagePath + 'babbys/non_babby_junk/nerdcave.png', stagePath + 'babbys/normal.xml');
+	
+				halloweenBG = new FlxSprite(-200, -100);
+				halloweenBG.frames = hallowTex;
+				halloweenBG.animation.addByPrefix('idle', 'halloweem bg0');
+				halloweenBG.animation.addByPrefix('lightning', 'halloweem bg lightning strike', 24, false);
+				halloweenBG.animation.play('idle');
+				halloweenBG.antialiasing = true;
+				add(halloweenBG);
 			case 'dawgee':
 
 				var hallowTex = FlxAtlasFrames.fromSparrow(stagePath + 'babbys/non_babby_junk/dawgee_house.png', stagePath + 'babbys/normal.xml');
@@ -517,13 +529,15 @@ class PlayState extends MusicBeatState
 					sun = new FlxSprite(720, -280).loadGraphic(stagePath + 'namebe/SUN.png');
 				else if (sheShed == 'bouncy-drop')
 					sun = new FlxSprite(720, -230).loadGraphic(stagePath + 'namebe/SUN2.png');
+				else
+					sun = new FlxSprite(720, -180).loadGraphic(stagePath + 'namebe/MOON.png');
 				
+				sun.setGraphicSize(Std.int(sun.width * 0.2));
+				sun.scrollFactor.set(0.1, 0.1);
+				add(sun);
+
 				if (SONG.song != 'Destructed')
 				{	
-					sun.setGraphicSize(Std.int(sun.width * 0.2));
-					sun.scrollFactor.set(0.1, 0.1);
-					add(sun);
-
 					var cloudJunk:CloudGenerator = new CloudGenerator(-400, 0, FlxG.width + 400, FlxG.height, stagePath + 'namebe/cloud-$sheShed.png', 0.1, 30);
 					add(cloudJunk);
 				}
@@ -1113,7 +1127,7 @@ class PlayState extends MusicBeatState
 			case "babbys":
 				dad.y += 200;
 				dad.x += 100;
-			case 'skank-n-pronoun' | 'dawgee' | 'i-hate-you-lancey':
+			case 'skank-n-pronoun' | 'dawgee' | 'i-hate-you-lancey' | 'nerd':
 				dad.y += 200;
 			case "skank":
 				dad.y += 200;
@@ -1264,6 +1278,9 @@ class PlayState extends MusicBeatState
 		if (FlxG.save.data.outfit == 'Sussy Radical' && !SONG.player1.startsWith('red-ball') && SONG.player1 != 'community-night-funkin') // SO MANY CONDITIONALS HELP
 			boyfriend.y += 25;
 
+		if (FlxG.save.data.outfit == 'Radical Babby' && !SONG.player1.startsWith('red-ball') && SONG.player1 != 'community-night-funkin') // SO MANY CONDITIONALS HELP v2
+			boyfriend.y += 105;
+
 		switch (SONG.player1)
 		{
 			case 'red-ball' | 'red-ball-dream':
@@ -1272,8 +1289,14 @@ class PlayState extends MusicBeatState
 				if (FlxG.save.data.outfit == 'Old Radical' || FlxG.save.data.outfit == 'Sussy Radical') // poop
 					boyfriend.y -= 105;
 
+				if (FlxG.save.data.outfit == 'Radical Babby') // poop v3
+					boyfriend.y -= 105;
+
 			case 'community-night-funkin':
 				if (FlxG.save.data.outfit != 'Old Radical' && FlxG.save.data.outfit != 'Sussy Radical') // poop v2
+					boyfriend.y += 105;
+
+				if (FlxG.save.data.outfit == 'Radical Babby') // poop v4
 					boyfriend.y += 105;
 		}
 
@@ -1434,38 +1457,10 @@ class PlayState extends MusicBeatState
 		}
 
 		if (SONG.player1 == 'radical')
-		{
-			switch (FlxG.save.data.outfit)
-			{
-				case 'Old Radical':
-					iconP1.loadIcon('racial');
-				case 'RedBall':
-					iconP1.loadIcon('radball');
-				case 'Racial Pride':
-					iconP1.loadIcon('racial-pride');
-				case 'Sussy Radical':
-					iconP1.loadIcon('sus');
-				case 'Business Radical':
-					iconP1.loadIcon('radical-suit');
-			}
-		}
+			resetIcon(iconP1);
 
 		if (SONG.player2 == 'radical')
-		{
-			switch (FlxG.save.data.outfit)
-			{
-				case 'Old Radical':
-					iconP2.loadIcon('racial');
-				case 'RedBall':
-					iconP2.loadIcon('radball');
-				case 'Racial Pride':
-					iconP2.loadIcon('racial-pride');
-				case 'Sussy Radical':
-					iconP2.loadIcon('sus');
-				case 'Business Radical':
-					iconP2.loadIcon('radical-suit');
-			}
-		}
+			resetIcon(iconP2);
 
 		strumLineNotes.cameras = [camHUD];
 		notes.cameras = [camHUD];
@@ -1520,7 +1515,7 @@ class PlayState extends MusicBeatState
 				case 'north':
 				    camFollow.x += 200;
                     schoolIntro(doof);
-                case 'radical-vs-masked-babbys' | 'monkey-sprite' | 'namebe' | 'bouncy-drop' | 'bonnie-song' | 'bonbon-loool' | 'without-you':
+                case 'radical-vs-masked-babbys' | 'monkey-sprite' | 'namebe' | 'bouncy-drop' | 'bonnie-song' | 'bonbon-loool' | 'without-you' | 'tutorial':
                     schoolIntro(doof);
                 case 'destructed':
                     camFollow.x -= 350;
@@ -1660,7 +1655,7 @@ class PlayState extends MusicBeatState
 			gf.dance();
 
 		if (!boyfriend.animation.curAnim.name.startsWith("sing"))
-			boyfriend.playAnim('idle');
+			boyfriend.dance();
 
 		stageSpecificBeatHit();
 	}
@@ -2000,7 +1995,7 @@ class PlayState extends MusicBeatState
 			dad.dance();
 			gf.dance();
 			gspot.dance();
-			boyfriend.playAnim('idle');
+			boyfriend.dance();
 
 			var introAssets:Map<String, Array<String>> = new Map<String, Array<String>>();
 			introAssets.set('default', ['UI/ready.png', "UI/set.png", "UI/go.png"]);
@@ -2561,6 +2556,11 @@ class PlayState extends MusicBeatState
 							StoryMenuState.justUnlockedSkin = true;
 						StoryMenuState.skin2Unlock = 'Business Radical';
 						FlxG.save.data.businessUnlock = true;
+					case 2:
+						if (!FlxG.save.data.babbyUnlock)
+							StoryMenuState.justUnlockedSkin = true;
+						StoryMenuState.skin2Unlock = 'Radical Babby';
+						FlxG.save.data.babbyUnlock = true;
 				}
 
 				// if ()
@@ -3060,7 +3060,7 @@ class PlayState extends MusicBeatState
 				{
 					if (boyfriend.animation.curAnim.name.startsWith('sing') && !boyfriend.animation.curAnim.name.endsWith('miss'))
 					{
-						boyfriend.playAnim('idle');
+						boyfriend.dance();
 					}
 				}
 
@@ -3222,7 +3222,7 @@ class PlayState extends MusicBeatState
 							{
 								if (boyfriend.animation.curAnim.name.startsWith('sing') && !boyfriend.animation.curAnim.name.endsWith('miss'))
 								{
-									boyfriend.playAnim('idle');
+									boyfriend.dance();
 								}
 							}
 					
@@ -3370,7 +3370,7 @@ class PlayState extends MusicBeatState
 				{
 					if (boyfriend.animation.curAnim.name.startsWith('sing') && !boyfriend.animation.curAnim.name.endsWith('miss'))
 					{
-						boyfriend.playAnim('idle');
+						boyfriend.dance();
 					}
 				}
 
@@ -4383,6 +4383,12 @@ class PlayState extends MusicBeatState
 				camFollow.y = boyfriend.getMidpoint().y - 230;
 		}
 
+		if (FlxG.save.data.outfit == 'RedBall')
+		{
+			camFollow.x -= 124;
+			camFollow.y -= 236;
+		}
+
 		if (sheShed == 'tutorial' || sheShed == 'interrogation')
 		{
 			FlxTween.tween(FlxG.camera, {zoom: 1}, (Conductor.stepCrochet * 4 / 1000), {ease: FlxEase.elasticInOut});
@@ -4596,9 +4602,7 @@ class PlayState extends MusicBeatState
 					trainStart();
 				}
 			case 'namebe':
-				if (sheShed == 'namebe' || sheShed == 'bouncy-drop')
-                    sun.y += 0.35;
-				else
+				if (sheShed == 'destructed')
 				{
 					wolves.forEach(function(wolfyWannaCry:FlxSprite){
 						wolfyWannaCry.animation.play(totalBeats % 2 == 0 ? 'danceRIGHT' : 'danceLEFT');
@@ -4636,10 +4640,9 @@ class PlayState extends MusicBeatState
 	{
 		if (FlxG.keys.justPressed.NINE)
 		{
-			if (iconJunky)
-				iconP1.loadIcon(SONG.player1);
-			else
-				iconP1.loadIcon('bf-old');
+			iconJunky ?
+				resetIcon(iconP1):
+			iconP1.loadIcon('bf-old');
 
 			iconJunky = !iconJunky;
 		}
@@ -4788,6 +4791,14 @@ class PlayState extends MusicBeatState
 					}
 				}
 				// phillyCityLights.members[curLight].alpha -= (Conductor.crochet / 1000) * FlxG.elapsed;
+			case 'namebe':
+				if (!inCutscene)
+				{
+					sheShed == 'destructed' ?
+					sun.y -= 0.01 / (120 / 60):
+					sun.y += 0.01 / (120 / 60);
+				}
+				
 		}
 
 		if (curSong == 'Fresh')
@@ -5298,7 +5309,8 @@ class PlayState extends MusicBeatState
 			'rumble',
 			'dreaming',
 			'dawgee',
-			'interview'
+			'interview',
+			'nerd'
 		];
 
 		if (!randomLevel)
@@ -5365,6 +5377,8 @@ class PlayState extends MusicBeatState
 					curStage = 'interview';
 				case 'normal-ghost':
 					curStage = 'blank';
+				case 'plush-factory':
+					curStage = 'nerd';
 				default:
 					curStage = 'stage';
 			}
@@ -5379,7 +5393,7 @@ class PlayState extends MusicBeatState
 		{
 			switch (sheShed)
 			{
-				case 'tutorial':
+				case 'tutorial-funkin':
 					dialogue = ["Hey you're pretty cute.", 'Use the arrow keys to keep up \nwith me singing.'];
 				case 'bopeebo':
 					dialogue = [
@@ -5413,6 +5427,25 @@ class PlayState extends MusicBeatState
 				default:
 					setDialogue(sheShed);
 			}
+		}
+	}
+
+	function resetIcon(icon:HealthIcon):Void
+	{
+		switch (FlxG.save.data.outfit)
+		{
+			case 'Old Radical':
+				icon.loadIcon('racial');
+			case 'RedBall':
+				icon.loadIcon('radball');
+			case 'Racial Pride':
+				icon.loadIcon('racial-pride');
+			case 'Sussy Radical':
+				icon.loadIcon('sus');
+			case 'Radical Babby':
+				icon.loadIcon('radical-babby');
+			case 'Business Radical':
+				icon.loadIcon('radical-suit');
 		}
 	}
 
