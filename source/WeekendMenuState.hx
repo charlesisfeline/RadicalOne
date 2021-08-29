@@ -38,7 +38,7 @@ class WeekendMenuState extends MusicBeatState
 		// ['Start-Conjunction', 'Energy-Lights', 'Telegroove'],
         ['Senpai', 'Roses', 'Thorns'],
         ['the-backyardagains', 'funny'],
-        ['Interrogation', 'Tha-Biscoot', 'Among-Us-Happy-Meal', 'Chuckie', '3.4', 'Scribble-Street', 'Scary-Junk', 'Thanos-Rumble', 'Normal-Ghost', 'Plush-Factory'],
+        ['Interrogation', 'Tha-Biscoot', 'Among-Us-Happy-Meal', 'Chuckie', '3.4', 'Scribble-Street', 'Scary-Junk', 'Thanos-Rumble', 'Normal-Ghost', 'Plush-Factory', 'Spoar-Travel'],
         ['Freebeat_1', 'JunkRUs', 'Picnic-Rumble']
     ];
 

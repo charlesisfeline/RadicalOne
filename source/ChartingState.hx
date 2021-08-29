@@ -259,6 +259,8 @@ class ChartingState extends MusicBeatState
 			loadSong(_song.song);
 		});
 
+		var charVisi:FlxButton = new FlxButton(120, 340, 'toggle char visibility', function() char1.visible = char2.visible = !char2.visible);
+
 		var reloadSongJson:FlxButton = new FlxButton(reloadSong.x, saveButton.y + 30, "Reload JSON", function()
 		{
 			var daSong = _song.song;
@@ -323,6 +325,7 @@ class ChartingState extends MusicBeatState
 		tab_group_song.add(saveButton);
 		tab_group_song.add(reloadSong);
 		tab_group_song.add(reloadSongJson);
+		tab_group_song.add(charVisi);
 		tab_group_song.add(loadAutosaveBtn);
 		tab_group_song.add(stepperBPM);
 		tab_group_song.add(stepperSpeed);

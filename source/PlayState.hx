@@ -476,6 +476,20 @@ class PlayState extends MusicBeatState
 				halloweenBG.animation.play('idle');
 				halloweenBG.antialiasing = true;
 				add(halloweenBG);
+			case 'spoar':
+				var deez:FlxSprite = new FlxSprite().makeGraphic(1280, 720, 0xFF00DAFF);
+				deez.scrollFactor.set();
+				add(deez);
+
+				var hallowTex = FlxAtlasFrames.fromSparrow(stagePath + 'babbys/non_babby_junk/spoar.png', stagePath + 'babbys/normal.xml');
+	
+				halloweenBG = new FlxSprite(-200, -100);
+				halloweenBG.frames = hallowTex;
+				halloweenBG.animation.addByPrefix('idle', 'halloweem bg0');
+				halloweenBG.animation.addByPrefix('lightning', 'halloweem bg lightning strike', 24, false);
+				halloweenBG.animation.play('idle');
+				halloweenBG.antialiasing = true;
+				add(halloweenBG);
 			case 'dawgee':
 
 				var hallowTex = FlxAtlasFrames.fromSparrow(stagePath + 'babbys/non_babby_junk/dawgee_house.png', stagePath + 'babbys/normal.xml');
@@ -1198,6 +1212,9 @@ class PlayState extends MusicBeatState
 			case 'flandre-cool-awesome':
 				dad.x -= 650;
 				dad.y -= 80;
+			case 'spoar-man':
+				dad.x -= 820;
+				dad.y -= 200;
 		}
 		
 		if (curStage == 'limo')
@@ -1377,7 +1394,7 @@ class PlayState extends MusicBeatState
 		darf.finishThing = startCountdown;
 
 		Conductor.songPosition = -5000;
-		songTime = Conductor.songPosition;
+		songTime = -5000;
 
 		strumLine = new FlxSprite(0, 50).makeGraphic(FlxG.width, 10);
 		strumLine.scrollFactor.set();
@@ -2025,7 +2042,8 @@ class PlayState extends MusicBeatState
 		startedCountdown = true;
 		Conductor.songPosition = 0;
 		Conductor.songPosition -= Conductor.crochet * 5;
-		songTime = Conductor.songPosition;
+		songTime = 0;
+		songTime -= Conductor.crochet * 5;
 
 		var swagCounter:Int = 0;
 
@@ -2201,7 +2219,7 @@ class PlayState extends MusicBeatState
 
 	var previousFrameTime:Int = 0;
 	var lastReportedPlayheadPosition:Int = 0;
-	var songTime:Float = 0;
+	public var songTime:Float = 0;
 
 	function startSong():Void
 	{
@@ -2214,6 +2232,13 @@ class PlayState extends MusicBeatState
 			FlxG.sound.playMusic("assets/music/" + SONG.song + "_Inst" + TitleState.soundExt, 1, false);
 		FlxG.sound.music.onComplete = endSong;
 		vocals.play();
+
+		while (songTime != Conductor.songPosition) {
+			FlxG.sound.music.pause();
+			resyncVocals();
+		}
+
+		openSubState(new ResyncSubState());
 	}
 
 	var debugNum:Int = 0;
@@ -2512,7 +2537,7 @@ class PlayState extends MusicBeatState
 
 		FlxG.sound.music.play();
 		Conductor.songPosition = FlxG.sound.music.time;
-		songTime = Conductor.songPosition;
+		songTime = FlxG.sound.music.time;
 		vocals.time = Conductor.songPosition;
 		vocals.play();
 	}
@@ -2976,7 +3001,7 @@ class PlayState extends MusicBeatState
 
 					notes.forEachAlive(function(daNote:Note)
 					{
-						if (daNote.canBeHit && daNote.mustPress && !daNote.tooLate)
+						if (daNote.canBeHit && daNote.mustPress && !daNote.tooLate && !daNote.wasGoodHit)
 						{
 							// the sorting probably doesn't need to be in here? who cares lol
 							possibleNotes.push(daNote);
@@ -4794,6 +4819,11 @@ class PlayState extends MusicBeatState
 
 			if (!paused)
 			{
+				if (lastSongTime != songTime)
+				{
+					songTime = (songTime + Conductor.songPosition) / 2;
+					lastSongTime = songTime;
+				}
 				//songTime += FlxG.game.ticks - previousFrameTime;
 				//previousFrameTime = FlxG.game.ticks;
 
@@ -4810,6 +4840,8 @@ class PlayState extends MusicBeatState
 			// Conductor.lastSongPos = FlxG.sound.music.time;
 		}
 	}
+
+	public var lastSongTime:Float = 0;
 
 	function cameraJunk():Void
 	{
@@ -5323,6 +5355,7 @@ class PlayState extends MusicBeatState
 	}
 
 	public static var deezSpeed:Float = 1;
+	public static var instance:PlayState;
 
 	function initVars():Void
 	{
@@ -5354,6 +5387,8 @@ class PlayState extends MusicBeatState
 
 		sheShed = SONG.song.toLowerCase();
 		deezSpeed = SONG.speed;
+		songTime = 0;
+		trace(Conductor.safeZoneOffset);
 
 		/*			'limo', 
 			'mall', 'mallEvil', 'nunjunk', 
@@ -5382,7 +5417,8 @@ class PlayState extends MusicBeatState
 			'dreaming',
 			'dawgee',
 			'interview',
-			'nerd'
+			'nerd',
+			'spoar'
 		];
 
 		if (!randomLevel)
@@ -5449,6 +5485,8 @@ class PlayState extends MusicBeatState
 					curStage = 'interview';
 				case 'normal-ghost':
 					curStage = 'blank';
+				case 'spoar-travel':
+					curStage = 'spoar';
 				case 'plush-factory':
 					curStage = 'nerd';
 				default:
@@ -5457,6 +5495,8 @@ class PlayState extends MusicBeatState
 		}
 		else
 			curStage = allThemStages[FlxG.random.int(0, allThemStages.length)];
+
+		instance = this;
 	}
 
 	function initDialog():Void

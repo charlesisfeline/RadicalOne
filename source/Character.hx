@@ -54,7 +54,7 @@ class Character extends FlxSprite
 		'skank-n-pronoun', 'junkers', 'pic-nick', 
 		'pc', 'thanos-dad', 'community-night-funkin', // end jo junk
 		'i-hate-you-lancey', 'red-ball-dream', 'failure-dream', 
-		'dawgee', 'joe-bidens-dog', 'nerd'
+		'dawgee', 'joe-bidens-dog', 'nerd', 'spoar-man'
 	];
 
 	public function new(x:Float, y:Float, ?character:String = "radical", ?isPlayer:Bool = false)
@@ -1343,6 +1343,17 @@ class Character extends FlxSprite
 				case 'nerd':
 					getFrames('nerd');
 					spookyCharacter();
+				case 'spoar-man':
+					getFrames('Real_Spoar_Man');
+					setNormalAnims(['idlee', 'up', 'down', 'left', 'right'], false);
+					setOffsets([
+						[0, 0],
+						[-20, 420],
+						[-30, -140],
+						[60, 0],
+						[-80, 20]
+					]);
+					playAnim('idle');
 		}
 
 		dance();
