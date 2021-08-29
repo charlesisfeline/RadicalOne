@@ -32,6 +32,7 @@ enum abstract Action(String) to String from String
 	var PAUSE = "pause";
 	var RESET = "reset";
 	var CHEAT = "cheat";
+	var SS = "ss";
 }
 #else
 @:enum
@@ -54,6 +55,7 @@ abstract Action(String) to String from String
 	var PAUSE = "pause";
 	var RESET = "reset";
 	var CHEAT = "cheat";
+	var SS = "ss";
 }
 #end
 
@@ -79,6 +81,7 @@ enum Control
 	BACK;
 	PAUSE;
 	CHEAT;
+	SS;
 }
 
 enum KeyboardScheme
@@ -113,6 +116,7 @@ class Controls extends FlxActionSet
 	var _pause = new FlxActionDigital(Action.PAUSE);
 	var _reset = new FlxActionDigital(Action.RESET);
 	var _cheat = new FlxActionDigital(Action.CHEAT);
+	var _ss = new FlxActionDigital(Action.SS);
 
 	public static var KeysNotToBindTo:Array<FlxKey> = [
 		FlxKey.LEFT, FlxKey.DOWN, FlxKey.UP, FlxKey.RIGHT, FlxKey.ENTER, FlxKey.SPACE, FlxKey.BACKSPACE, FlxKey.ESCAPE
@@ -212,6 +216,11 @@ class Controls extends FlxActionSet
 	inline function get_CHEAT()
 		return _cheat.check();
 
+	public var SS(get, never):Bool;
+
+	inline function get_SS()
+		return _ss.check();
+
 	#if (haxe >= "4.0.0")
 	public function new(name, scheme = None)
 	{
@@ -234,6 +243,7 @@ class Controls extends FlxActionSet
 		add(_pause);
 		add(_reset);
 		add(_cheat);
+		add(_ss);
 
 		for (action in digitalActions)
 			byName[action.name] = action;
@@ -262,6 +272,7 @@ class Controls extends FlxActionSet
 		add(_pause);
 		add(_reset);
 		add(_cheat);
+		add(_ss);
 
 		for (action in digitalActions)
 			byName[action.name] = action;
@@ -316,6 +327,7 @@ class Controls extends FlxActionSet
 			case PAUSE: _pause;
 			case RESET: _reset;
 			case CHEAT: _cheat;
+			case SS: _ss;
 		}
 	}
 
@@ -361,6 +373,8 @@ class Controls extends FlxActionSet
 				func(_reset, JUST_PRESSED);
 			case CHEAT:
 				func(_cheat, JUST_PRESSED);
+			case SS:
+				func(_ss, JUST_PRESSED);
 		}
 	}
 
@@ -513,13 +527,16 @@ class Controls extends FlxActionSet
 			FlxG.save.data.rightJunk = 'D';
 		if (FlxG.save.data.resetJunk == null)
 			FlxG.save.data.resetJunk = 'R';
+		if (FlxG.save.data.ssJunk == null)
+			FlxG.save.data.ssJunk = 'P';
 
 		realControls = [
 			FlxG.save.data.leftJunk,
 			FlxG.save.data.downJunk,
 			FlxG.save.data.upJunk,
 			FlxG.save.data.rightJunk,
-			FlxG.save.data.resetJunk
+			FlxG.save.data.resetJunk,
+			FlxG.save.data.ssJunk
 		];
 	}
 
@@ -530,6 +547,7 @@ class Controls extends FlxActionSet
 		FlxG.save.data.upJunk = realControls[2];
 		FlxG.save.data.rightJunk = realControls[3];
 		FlxG.save.data.resetJunk = realControls[4];
+		FlxG.save.data.ssJunk = realControls[5];
 		FlxG.save.flush();
 	}
 
@@ -552,6 +570,7 @@ class Controls extends FlxActionSet
 				inline bindKeys(Control.BACK, [BACKSPACE, ESCAPE]);
 				inline bindKeys(Control.PAUSE, [P, ENTER, ESCAPE]);
 				inline bindKeys(Control.RESET, [realControls[4]]);
+				inline bindKeys(Control.SS, [realControls[5]]);
 			case DeeEffJayKay:
 				inline bindKeys(Control.UP, [J, FlxKey.UP]);
 				inline bindKeys(Control.DOWN, [F, FlxKey.DOWN]);
@@ -594,6 +613,7 @@ class Controls extends FlxActionSet
 				bindKeys(Control.BACK, [BACKSPACE, ESCAPE]);
 				bindKeys(Control.PAUSE, [P, ENTER, ESCAPE]);
 				bindKeys(Control.RESET, [realControls[4]]);
+				bindKeys(Control.SS, [realControls[5]]);
 			case Duo(true):
 				bindKeys(Control.UP, [W]);
 				bindKeys(Control.DOWN, [S]);

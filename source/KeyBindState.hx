@@ -17,7 +17,7 @@ class KeyBindState extends MusicBeatState
 {
     var isWaitingInput:Bool = false;
 
-    var daControls:Array<String> = ['LEFT TO ${Controls.realControls[0]}', 'DOWN TO ${Controls.realControls[1]}', 'UP TO ${Controls.realControls[2]}', 'RIGHT TO ${Controls.realControls[3]}', 'RESET TO ${Controls.realControls[4]}'];
+    var daControls:Array<String> = ['LEFT TO ${Controls.realControls[0]}', 'DOWN TO ${Controls.realControls[1]}', 'UP TO ${Controls.realControls[2]}', 'RIGHT TO ${Controls.realControls[3]}', 'RESET TO ${Controls.realControls[4]}', 'SCREENSHOT TO ${Controls.realControls[5]}'];
 
     var thoseThings:FlxTypedGroup<Alphabet>;
 
@@ -141,7 +141,7 @@ class KeyBindState extends MusicBeatState
             Controls.reloadControls();
 
             controls.setKeyboardScheme(KeyboardScheme.Solo, true);
-            daControls = ['LEFT TO ${Controls.realControls[0]}', 'DOWN TO ${Controls.realControls[1]}', 'UP TO ${Controls.realControls[2]}', 'RIGHT TO ${Controls.realControls[3]}', 'RESET TO ${Controls.realControls[4]}'];
+            daControls = ['LEFT TO ${Controls.realControls[0]}', 'DOWN TO ${Controls.realControls[1]}', 'UP TO ${Controls.realControls[2]}', 'RIGHT TO ${Controls.realControls[3]}', 'RESET TO ${Controls.realControls[4]}', 'SCREENSHOT TO ${Controls.realControls[5]}'];
 
             thoseThings.remove(thoseThings.members[curSelected]);
             var controlLabel:Alphabet = new Alphabet(0, (70 * curSelected) + 30, daControls[curSelected], true, false);
@@ -165,7 +165,7 @@ class KeyBindState extends MusicBeatState
             Controls.reloadControls();
 
             controls.setKeyboardScheme(KeyboardScheme.Solo, true);
-            daControls = ['LEFT TO ${Controls.realControls[0]}', 'DOWN TO ${Controls.realControls[1]}', 'UP TO ${Controls.realControls[2]}', 'RIGHT TO ${Controls.realControls[3]}', 'RESET TO ${Controls.realControls[4]}'];
+            daControls = ['LEFT TO ${Controls.realControls[0]}', 'DOWN TO ${Controls.realControls[1]}', 'UP TO ${Controls.realControls[2]}', 'RIGHT TO ${Controls.realControls[3]}', 'RESET TO ${Controls.realControls[4]}', 'SCREENSHOT TO ${Controls.realControls[5]}'];
             thoseThings.remove(thoseThings.members[curSelected]);
             var controlLabel:Alphabet = new Alphabet(0, (70 * curSelected) + 30, daControls[curSelected], true, false);
             controlLabel.isMenuItem = true;

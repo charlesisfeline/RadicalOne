@@ -240,10 +240,10 @@ class Character extends FlxSprite
                     playAnim('idle');
                                 
  					addOffset('idle');
-					addOffset("singUP");
-					addOffset("singRIGHT");
-					addOffset("singLEFT");
-					addOffset("singDOWN");
+					addOffset("singUP", -10, 4);
+					addOffset("singRIGHT", -9, 21);
+					addOffset("singLEFT", 44, 23);
+					addOffset("singDOWN", -5, -129);
 
             case 'salted':
 				tex = FlxAtlasFrames.fromSparrow(charPath + 'Beans.png', charPath + 'Beans.xml');
