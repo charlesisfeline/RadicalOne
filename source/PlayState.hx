@@ -2772,7 +2772,7 @@ class PlayState extends MusicBeatState
 
 	private function popUpScore(strumtime:Float):Void
 	{
-				var noteDiff:Float = Math.abs(strumtime - songTime);
+				var noteDiff:Float = Math.abs(strumtime - Conductor.songPosition);
 				// boyfriend.playAnim('hey');
 				vocals.volume = 1;
 
@@ -3764,7 +3764,7 @@ class PlayState extends MusicBeatState
 
 			var amongUs:NoteSplash = new NoteSplash((FlxG.width / 2) + 50 + (Note.swagWidth * note.noteData), strumLine.y, note.noteData);
 			amongUs.cameras = [camHUD];
-			if (Math.abs(note.strumTime - songTime) <= Conductor.safeZoneOffset * 0.3)
+			if (Math.abs(note.strumTime - Conductor.songPosition) <= Conductor.safeZoneOffset * 0.3)
 				add(amongUs);
 
 			if (note.noteData >= 0){
@@ -4067,7 +4067,7 @@ class PlayState extends MusicBeatState
 
 			var amongUs:NoteSplash = new NoteSplash((FlxG.width / 2) + 50 + (Note.swagWidth * note.noteData), strumLine.y, note.noteData);
 			amongUs.cameras = [camHUD];
-			if (Math.abs(note.strumTime - songTime) <= Conductor.safeZoneOffset * 0.3)
+			if (Math.abs(note.strumTime - Conductor.songPosition) <= Conductor.safeZoneOffset * 0.3)
 				add(amongUs);
 
 			if (note.noteData >= 0)
@@ -4129,7 +4129,7 @@ class PlayState extends MusicBeatState
 
 				var amongUs:NoteSplash = new NoteSplash((FlxG.width / 2) + 50 + (Note.swagWidth * note.noteData), strumLine.y, note.noteData);
 				amongUs.cameras = [camHUD];
-				if (Math.abs(note.strumTime - songTime) <= Conductor.safeZoneOffset * 0.3)
+				if (Math.abs(note.strumTime - Conductor.songPosition) <= Conductor.safeZoneOffset * 0.3)
 					add(amongUs);
 
 
@@ -4915,7 +4915,7 @@ class PlayState extends MusicBeatState
 
 		if (unspawnNotes[0] != null)
 		{
-			if (unspawnNotes[0].strumTime - songTime < 1500)
+			if (unspawnNotes[0].strumTime - Conductor.songPosition < 1500)
 			{
 				var dunceNote:Note = unspawnNotes[0];
 				notes.add(dunceNote);
