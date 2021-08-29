@@ -88,9 +88,6 @@ class MusicBeatState extends FlxUIState
 
 	public function stepHit():Void
 	{
-		var tempStep = lastStep;
-		lastStep = Conductor.songPosition;
-		FlxG.watch.addQuick('timeFromLastStep', lastStep - tempStep);
 		if (curStep % 4 == 0)
 			beatHit();
 	}
@@ -98,8 +95,8 @@ class MusicBeatState extends FlxUIState
 	public function beatHit():Void
 	{
 		var tempBeat = lastBeat;
-		lastBeat = Conductor.songPosition;
-		FlxG.watch.addQuick('timeFromLastBeat', lastBeat - tempBeat);
+		lastBeat += Conductor.crochet;
+		FlxG.watch.addQuick('BEAT JUNKRUS', lastBeat - tempBeat);
 		totalBeats += 1;
 	}
 }

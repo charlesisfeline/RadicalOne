@@ -18,7 +18,7 @@ class ExtrasMenu extends MusicBeatState
 	var selector:FlxText;
 	var curSelected:Int = 0;
 
-	var controlsStrings:Array<String> = ['SETTINGS', 'WEEKENDS', 'OUTFITS', 'LEVEL RANDOMIZER', 'CREDITS', 'CHARACTERS'];
+	var controlsStrings:Array<String> = ['SETTINGS', 'WEEKENDS', 'OUTFITS', 'LEVEL RANDOMIZER', 'CREDITS', 'CHARACTERS', 'test'];
 
 	private var grpControls:FlxTypedGroup<Alphabet>;
 
@@ -102,6 +102,8 @@ class ExtrasMenu extends MusicBeatState
 					FlxG.openURL("https://sites.google.com/view/radicalone/home");
 				case 5:
 					FlxG.switchState(new CharacterMenu());
+				case 6:
+					FlxG.switchState(new TestState());
 				
 			}
 		//	var funnystring = Std.string(curSelected);

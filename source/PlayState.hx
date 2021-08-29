@@ -1377,6 +1377,7 @@ class PlayState extends MusicBeatState
 		darf.finishThing = startCountdown;
 
 		Conductor.songPosition = -5000;
+		songTime = Conductor.songPosition;
 
 		strumLine = new FlxSprite(0, 50).makeGraphic(FlxG.width, 10);
 		strumLine.scrollFactor.set();
@@ -1672,16 +1673,17 @@ class PlayState extends MusicBeatState
 
 	override function beatHit()
 	{
+		super.beatHit();
+
 		if (curStage == 'schoolEvil')
 			wiggleShit.update(Conductor.crochet);
-		super.beatHit();
 
 		if (generatedMusic)
 			notes.sort(FlxSort.byY, FlxSort.DESCENDING);
 
 		if (SONG.notes[sectionNum] != null)
 		{
-			checkBpmChange(sectionNum);
+			checkBpmChange(curSection);
 
 			makeNpcsDance();
 
@@ -1699,8 +1701,8 @@ class PlayState extends MusicBeatState
 
 		tweenIcons();
 
-		if (curBeat % gfSpeed == 0)
-			gf.dance();
+		// if (curBeat % gfSpeed == 0)
+		gf.dance();
 
 		if (!boyfriend.animation.curAnim.name.startsWith("sing"))
 			boyfriend.dance();
@@ -2023,6 +2025,7 @@ class PlayState extends MusicBeatState
 		startedCountdown = true;
 		Conductor.songPosition = 0;
 		Conductor.songPosition -= Conductor.crochet * 5;
+		songTime = Conductor.songPosition;
 
 		var swagCounter:Int = 0;
 
@@ -2509,6 +2512,7 @@ class PlayState extends MusicBeatState
 
 		FlxG.sound.music.play();
 		Conductor.songPosition = FlxG.sound.music.time;
+		songTime = Conductor.songPosition;
 		vocals.time = Conductor.songPosition;
 		vocals.play();
 	}
@@ -2768,7 +2772,7 @@ class PlayState extends MusicBeatState
 
 	private function popUpScore(strumtime:Float):Void
 	{
-				var noteDiff:Float = Math.abs(strumtime - Conductor.songPosition);
+				var noteDiff:Float = Math.abs(strumtime - songTime);
 				// boyfriend.playAnim('hey');
 				vocals.volume = 1;
 
@@ -3760,7 +3764,7 @@ class PlayState extends MusicBeatState
 
 			var amongUs:NoteSplash = new NoteSplash((FlxG.width / 2) + 50 + (Note.swagWidth * note.noteData), strumLine.y, note.noteData);
 			amongUs.cameras = [camHUD];
-			if (Math.abs(note.strumTime - Conductor.songPosition) <= Conductor.safeZoneOffset * 0.3)
+			if (Math.abs(note.strumTime - songTime) <= Conductor.safeZoneOffset * 0.3)
 				add(amongUs);
 
 			if (note.noteData >= 0){
@@ -4063,7 +4067,7 @@ class PlayState extends MusicBeatState
 
 			var amongUs:NoteSplash = new NoteSplash((FlxG.width / 2) + 50 + (Note.swagWidth * note.noteData), strumLine.y, note.noteData);
 			amongUs.cameras = [camHUD];
-			if (Math.abs(note.strumTime - Conductor.songPosition) <= Conductor.safeZoneOffset * 0.3)
+			if (Math.abs(note.strumTime - songTime) <= Conductor.safeZoneOffset * 0.3)
 				add(amongUs);
 
 			if (note.noteData >= 0)
@@ -4125,7 +4129,7 @@ class PlayState extends MusicBeatState
 
 				var amongUs:NoteSplash = new NoteSplash((FlxG.width / 2) + 50 + (Note.swagWidth * note.noteData), strumLine.y, note.noteData);
 				amongUs.cameras = [camHUD];
-				if (Math.abs(note.strumTime - Conductor.songPosition) <= Conductor.safeZoneOffset * 0.3)
+				if (Math.abs(note.strumTime - songTime) <= Conductor.safeZoneOffset * 0.3)
 					add(amongUs);
 
 
@@ -4524,21 +4528,21 @@ class PlayState extends MusicBeatState
 		FlxTween.tween(iconP2, {"scale.x": 1, "scale.y": 1}, Conductor.stepCrochet / 500, {ease: FlxEase.cubeOut});
 	}
 
-	private function checkBpmChange(secNum:Int)
+	private function checkBpmChange(sec:SwagSection)
 	{
-		if (SONG.notes[secNum].changeBPM)
+		if (sec.changeBPM)
 		{
-			Conductor.changeBPM(SONG.notes[secNum].bpm);
+			Conductor.changeBPM(sec.bpm);
 			FlxG.log.add('CHANGED BPM!');
 		}
-		else {
+		/*else {
 			//get last bpm
 			var daBPM:Int = SONG.bpm;
 			for (i in 0...sectionNum)
 				if (SONG.notes[i].changeBPM)
 					daBPM = SONG.notes[i].bpm;
 			Conductor.changeBPM(daBPM);
-		}
+		}*/
 	}
 
 	private function makeNpcsDance():Void
@@ -4775,6 +4779,7 @@ class PlayState extends MusicBeatState
 			if (startedCountdown)
 			{
 				Conductor.songPosition += FlxG.elapsed * 1000;
+				songTime += FlxG.elapsed * 1000;
 				if (Conductor.songPosition >= 0)
 				{
 					sectionNum = 0;
@@ -4784,22 +4789,22 @@ class PlayState extends MusicBeatState
 		}
 		else
 		{
-			// Conductor.songPosition = FlxG.sound.music.time;
-			Conductor.songPosition += FlxG.elapsed * 1000;
+			Conductor.songPosition = FlxG.sound.music.time;
+			songTime += FlxG.elapsed * 1000;
 
 			if (!paused)
 			{
-				songTime += FlxG.game.ticks - previousFrameTime;
-				previousFrameTime = FlxG.game.ticks;
+				//songTime += FlxG.game.ticks - previousFrameTime;
+				//previousFrameTime = FlxG.game.ticks;
 
 				// Interpolation type beat
-				if (Conductor.lastSongPos != Conductor.songPosition)
-				{
-					songTime = (songTime + Conductor.songPosition) / 2;
+				//if (Conductor.lastSongPos != Conductor.songPosition)
+				//{
+					//songTime = (songTime + Conductor.songPosition) / 2;
 					Conductor.lastSongPos = Conductor.songPosition;
 					// Conductor.songPosition += FlxG.elapsed * 1000;
 					// trace('MISSED FRAME');
-				}
+				//}
 			}
 
 			// Conductor.lastSongPos = FlxG.sound.music.time;
@@ -4910,7 +4915,7 @@ class PlayState extends MusicBeatState
 
 		if (unspawnNotes[0] != null)
 		{
-			if (unspawnNotes[0].strumTime - Conductor.songPosition < 1500)
+			if (unspawnNotes[0].strumTime - songTime < 1500)
 			{
 				var dunceNote:Note = unspawnNotes[0];
 				notes.add(dunceNote);
@@ -4972,9 +4977,9 @@ class PlayState extends MusicBeatState
 						}
 
 						if (FlxG.save.data.downscroll)
-							daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (-0.45 * FlxMath.roundDecimal(PlayState.deezSpeed, 2)));
+							daNote.y = (strumLine.y - (songTime - daNote.strumTime) * (-0.45 * FlxMath.roundDecimal(PlayState.deezSpeed, 2)));
 						else
-							daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (0.45 * FlxMath.roundDecimal(PlayState.deezSpeed, 2)));
+							daNote.y = (strumLine.y - (songTime - daNote.strumTime) * (0.45 * FlxMath.roundDecimal(PlayState.deezSpeed, 2)));
 
 						// WIP interpolation shit? Need to fix the pause issue
 						// daNote.y = (strumLine.y - (songTime - daNote.strumTime) * (0.45 * PlayState.deezSpeed));
@@ -5054,9 +5059,9 @@ class PlayState extends MusicBeatState
 						}
 		
 						if (FlxG.save.data.downscroll)
-							daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (-0.45 * FlxMath.roundDecimal(PlayState.deezSpeed, 2)));
+							daNote.y = (strumLine.y - (songTime - daNote.strumTime) * (-0.45 * FlxMath.roundDecimal(PlayState.deezSpeed, 2)));
 						else
-							daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (0.45 * FlxMath.roundDecimal(PlayState.deezSpeed, 2)));
+							daNote.y = (strumLine.y - (songTime - daNote.strumTime) * (0.45 * FlxMath.roundDecimal(PlayState.deezSpeed, 2)));
 						//trace(daNote.y);
 						// WIP interpolation shit? Need to fix the pause issue
 						// daNote.y = (strumLine.y - (songTime - daNote.strumTime) * (0.45 * PlayState.deezSpeed));
@@ -5135,9 +5140,9 @@ class PlayState extends MusicBeatState
 						}
 
 						if (FlxG.save.data.downscroll)
-							daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (-0.45 * FlxMath.roundDecimal(PlayState.deezSpeed, 2)));
+							daNote.y = (strumLine.y - (songTime - daNote.strumTime) * (-0.45 * FlxMath.roundDecimal(PlayState.deezSpeed, 2)));
 						else
-							daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (0.45 * FlxMath.roundDecimal(PlayState.deezSpeed, 2)));
+							daNote.y = (strumLine.y - (songTime - daNote.strumTime) * (0.45 * FlxMath.roundDecimal(PlayState.deezSpeed, 2)));
 						// WIP interpolation shit? Need to fix the pause issue
 						// daNote.y = (strumLine.y - (songTime - daNote.strumTime) * (0.45 * PlayState.deezSpeed));
 
@@ -5207,10 +5212,10 @@ class PlayState extends MusicBeatState
 							}
 			
 							if(FlxG.save.data.downscroll){
-								daNote.y = (strumLine.y + (Conductor.songPosition - daNote.strumTime) * (0.45 * FlxMath.roundDecimal(PlayState.deezSpeed, 2)));
+								daNote.y = (strumLine.y + (songTime - daNote.strumTime) * (0.45 * FlxMath.roundDecimal(PlayState.deezSpeed, 2)));
 							}
 							else {
-								daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (0.45 * FlxMath.roundDecimal(PlayState.deezSpeed, 2)));
+								daNote.y = (strumLine.y - (songTime - daNote.strumTime) * (0.45 * FlxMath.roundDecimal(PlayState.deezSpeed, 2)));
 							}
 			
 							// WIP interpolation shit? Need to fix the pause issue
