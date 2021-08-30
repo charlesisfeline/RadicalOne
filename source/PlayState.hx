@@ -2233,11 +2233,6 @@ class PlayState extends MusicBeatState
 		FlxG.sound.music.onComplete = endSong;
 		vocals.play();
 
-		while (songTime != Conductor.songPosition) {
-			FlxG.sound.music.pause();
-			resyncVocals();
-		}
-
 		openSubState(new ResyncSubState());
 	}
 
