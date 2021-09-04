@@ -18,7 +18,7 @@ class ExtrasMenu extends MusicBeatState
 	var selector:FlxText;
 	var curSelected:Int = 0;
 
-	var controlsStrings:Array<String> = ['SETTINGS', 'WEEKENDS', 'OUTFITS', 'LEVEL RANDOMIZER', 'CREDITS', 'CHARACTERS', 'test'];
+	var controlsStrings:Array<String> = ['SETTINGS', 'WEEKENDS', 'OUTFITS', 'LEVEL RANDOMIZER', 'CREDITS', 'CHARACTERS'#if debug , 'test' #end];
 
 	private var grpControls:FlxTypedGroup<Alphabet>;
 

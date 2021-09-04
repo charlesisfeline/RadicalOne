@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="them.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="gmae0000" x="0" y="0" width="562" height="564" frameX="-2" frameY="-18" frameWidth="597" frameHeight="582"/>
+	<SubTexture name="gmae0001" x="567" y="0" width="588" height="581" frameX="-4" frameY="0" frameWidth="597" frameHeight="582"/>
+	<SubTexture name="gmae0002" x="567" y="0" width="588" height="581" frameX="-4" frameY="0" frameWidth="597" frameHeight="582"/>
+	<SubTexture name="gmae0003" x="1160" y="0" width="596" height="575" frameX="-1" frameY="-7" frameWidth="597" frameHeight="582"/>
+	<SubTexture name="gmae0004" x="1160" y="0" width="596" height="575" frameX="-1" frameY="-7" frameWidth="597" frameHeight="582"/>
+	<SubTexture name="gmae0005" x="0" y="586" width="568" height="569" frameX="0" frameY="-13" frameWidth="597" frameHeight="582"/>
+	<SubTexture name="gmae0006" x="0" y="586" width="568" height="569" frameX="0" frameY="-13" frameWidth="597" frameHeight="582"/>
+	<SubTexture name="gmae0007" x="573" y="586" width="564" height="567" frameX="0" frameY="-15" frameWidth="597" frameHeight="582"/>
+	<SubTexture name="gmae0008" x="573" y="586" width="564" height="567" frameX="0" frameY="-15" frameWidth="597" frameHeight="582"/>
+	<SubTexture name="gmae0009" x="573" y="586" width="564" height="567" frameX="0" frameY="-15" frameWidth="597" frameHeight="582"/>
+	<SubTexture name="gmae0010" x="573" y="586" width="564" height="567" frameX="0" frameY="-15" frameWidth="597" frameHeight="582"/>
+	<SubTexture name="gmae0011" x="573" y="586" width="564" height="567" frameX="0" frameY="-15" frameWidth="597" frameHeight="582"/>
+	<SubTexture name="gmae0012" x="573" y="586" width="564" height="567" frameX="0" frameY="-15" frameWidth="597" frameHeight="582"/>
+	<SubTexture name="gmae0013" x="573" y="586" width="564" height="567" frameX="0" frameY="-15" frameWidth="597" frameHeight="582"/>
+	<SubTexture name="gmae0014" x="573" y="586" width="564" height="567" frameX="0" frameY="-15" frameWidth="597" frameHeight="582"/>
+	<SubTexture name="gmae0015" x="573" y="586" width="564" height="567" frameX="0" frameY="-15" frameWidth="597" frameHeight="582"/>
+	<SubTexture name="raci0000" x="1142" y="586" width="514" height="537" frameX="-32" frameY="-16" frameWidth="562" frameHeight="554"/>
+	<SubTexture name="raci0001" x="0" y="1160" width="562" height="543" frameX="0" frameY="-11" frameWidth="562" frameHeight="554"/>
+	<SubTexture name="raci0002" x="0" y="1160" width="562" height="543" frameX="0" frameY="-11" frameWidth="562" frameHeight="554"/>
+	<SubTexture name="raci0003" x="567" y="1160" width="542" height="553" frameX="-12" frameY="0" frameWidth="562" frameHeight="554"/>
+	<SubTexture name="raci0004" x="567" y="1160" width="542" height="553" frameX="-12" frameY="0" frameWidth="562" frameHeight="554"/>
+	<SubTexture name="raci0005" x="1114" y="1160" width="512" height="538" frameX="-28" frameY="-15" frameWidth="562" frameHeight="554"/>
+	<SubTexture name="raci0006" x="1114" y="1160" width="512" height="538" frameX="-28" frameY="-15" frameWidth="562" frameHeight="554"/>
+	<SubTexture name="raci0007" x="0" y="1718" width="512" height="538" frameX="-28" frameY="-16" frameWidth="562" frameHeight="554"/>
+	<SubTexture name="raci0008" x="0" y="1718" width="512" height="538" frameX="-28" frameY="-16" frameWidth="562" frameHeight="554"/>
+	<SubTexture name="raci0009" x="0" y="1718" width="512" height="538" frameX="-28" frameY="-16" frameWidth="562" frameHeight="554"/>
+	<SubTexture name="raci0010" x="0" y="1718" width="512" height="538" frameX="-28" frameY="-16" frameWidth="562" frameHeight="554"/>
+	<SubTexture name="raci0011" x="0" y="1718" width="512" height="538" frameX="-28" frameY="-16" frameWidth="562" frameHeight="554"/>
+	<SubTexture name="raci0012" x="0" y="1718" width="512" height="538" frameX="-28" frameY="-16" frameWidth="562" frameHeight="554"/>
+	<SubTexture name="raci0013" x="0" y="1718" width="512" height="538" frameX="-28" frameY="-16" frameWidth="562" frameHeight="554"/>
+	<SubTexture name="raci0014" x="0" y="1718" width="512" height="538" frameX="-28" frameY="-16" frameWidth="562" frameHeight="554"/>
+	<SubTexture name="raci0015" x="0" y="1718" width="512" height="538" frameX="-28" frameY="-16" frameWidth="562" frameHeight="554"/>
+</TextureAtlas>
