@@ -7,6 +7,7 @@ import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
 import haxe.Json;
 import lime.utils.Assets;
+import animateatlas.AtlasFrameMaker;
 
 using StringTools;
 
@@ -21,10 +22,12 @@ class TextureAtlasTest extends MusicBeatState
             tex.addAtlasFrame(new FlxRect(frameData.x, frameData.y, frameData.w, frameData.h), new FlxPoint(1024, 1024), new FlxPoint(0, 0), frameData.name);
         }
         var test:FlxSprite = new FlxSprite();
-        test.frames = tex;
-        test.animation.addByPrefix('idle', '0007', 24, false);
+        var tex2 = AtlasFrameMaker.construct(Character.charPath + 'monkey_sprite', ['Idle']);
+        test.frames = tex2;
+        trace(tex2);
+        test.animation.addByPrefix('idle', 'Idle', 24, false);
         test.animation.play('idle');
-        trace(tex);
+        //trace(tex);
         add(test);
         super.create();
     }

@@ -76,6 +76,7 @@
 	<haxelib name="polymod"/>
 	<haxelib name="swf"/>
 	<haxelib name="discord_rpc"/>
+	<haxelib name="flixel-textureatlas"/>
 
 	<!-- <haxelib name="markdown" /> -->
 	<!-- <haxelib name="HtmlParser" /> -->

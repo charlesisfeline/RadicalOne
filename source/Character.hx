@@ -41,7 +41,7 @@ class Character extends FlxSprite
 		'radical', 'gaming-speakers',
 		'interviewer', 'machine',
 		'babbys', 'monkey-sprite', 
-		'namebe', 'gandhi', 'gaming-namebe', 
+		'namebe', 'namebe-piss', 'gandhi', 'gaming-namebe', 
 		'gaming',
 		'invisible', '',
 		'salted', 
@@ -54,7 +54,7 @@ class Character extends FlxSprite
 		'skank-n-pronoun', 'junkers', 'pic-nick', 
 		'pc', 'thanos-dad', 'community-night-funkin', // end jo junk
 		'i-hate-you-lancey', 'red-ball-dream', 'failure-dream', 
-		'dawgee', 'joe-bidens-dog', 'nerd', 'spoar-man'
+		'dawgee', 'joe-bidens-dog', 'nerd', 'spoar-man' // yeah no jo junk is still going on im NOT moving these over
 	];
 
 	public function new(x:Float, y:Float, ?character:String = "radical", ?isPlayer:Bool = false)
@@ -740,7 +740,29 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 				flipX = true;
+			case 'namebe-piss':
+				getFrames('Namebe_Pissy_Mood');
 
+				setNormalAnims([
+					'pissy idle',
+					'namebe up',
+					'namebe down',
+					'namebe left',
+					'namebe right'
+				], false);
+
+				animation.remove('idle');
+				animation.addByPrefix('idle', 'pissy idle', 24, false, true);
+
+				setOffsets([
+					[0, 0],
+					[-60, 120],
+					[0, -50],
+					[90, -20],
+					[-40, -130]
+				]);
+
+				playAnim('idle');
 			case 'radical':
 			        if (0 == 0) // too lazy to reindent everything LOOL
 			        {

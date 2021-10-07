@@ -203,7 +203,7 @@ class PlayState extends MusicBeatState
 		0xFFffbd2e, // machine
 		0xFF19fca2, // babbys
 		0xFF9e3923, // monkey sprite
-		0xFF3cff00, // namebe
+		0xFF3cff00, 0xFF3cff00, // namebe and pissy namebe
 		0xFFff00e1, // gandhi
 		0xFF24ff45, // gaming namebe
 		0xFF24ff45, // gaming standing
@@ -1162,7 +1162,7 @@ class PlayState extends MusicBeatState
 				dad.y += 130;
 			case 'interviewer':
 				camPos.x += 400;
-			case 'namebe':
+			case 'namebe' | 'namebe-piss':
 				camPos.x += 600;
 				dad.x -= 65;
 				dad.y += 250;
@@ -2233,11 +2233,14 @@ class PlayState extends MusicBeatState
 		FlxG.sound.music.onComplete = endSong;
 		vocals.play();
 
-		openSubState(new ResyncSubState());
+		if (!transitioning)
+			openSubState(new ResyncSubState());
 	}
 
 	var debugNum:Int = 0;
 	var totalNotes:Int = 0;
+
+	var transitioning:Bool = false;
 
 	private function generateSong(dataPath:String):Void
 	{
@@ -4483,7 +4486,7 @@ class PlayState extends MusicBeatState
 			case 'senpai' | 'senpai-angry':
 				camFollow.y = spr.getMidpoint().y - 430;
 				camFollow.x = spr.getMidpoint().x - 100;
-			case 'namebe':
+			case 'namebe' | 'namebe-piss':
 				camFollow.x = spr.getMidpoint().x + 300;
 			case 'babbys':
 				camFollow.setPosition(spr.getMidpoint().x - 320, spr.getMidpoint().y - 195);
@@ -4757,6 +4760,7 @@ class PlayState extends MusicBeatState
 	{
 		if (FlxG.keys.justPressed.ENTER && startedCountdown && canPause)
 		{
+			transitioning = true;
 			persistentUpdate = false;
 			persistentDraw = true;
 			paused = true;
@@ -4764,21 +4768,30 @@ class PlayState extends MusicBeatState
 			openSubState(new PauseSubState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 		}
 
-		if (FlxG.keys.justPressed.SEVEN)
+		if (FlxG.keys.justPressed.SEVEN) {
+			transitioning = true;
 			FlxG.switchState(new ChartingState());
+		}
+			
 
 		if (controls.SS)
 			screenshot();
 
 		#if debug
-		if (FlxG.keys.justPressed.EIGHT)
+		if (FlxG.keys.justPressed.EIGHT) {
+			transitioning = true;
 			FlxG.switchState(new AnimationDebug(SONG.player2));
+		}
 
-		if (FlxG.keys.justPressed.SIX)
+		if (FlxG.keys.justPressed.SIX) {
+			transitioning = true;
 			FlxG.switchState(new AnimationDebug(SONG.player1));
+		}
 
-		if (FlxG.keys.justPressed.ONE)
+		if (FlxG.keys.justPressed.ONE) {
+			transitioning = true;
 			endSong();
+		}		
 		#end
 	}
 
@@ -5334,6 +5347,7 @@ class PlayState extends MusicBeatState
 	{
 		if (health <= 0)
 		{
+			transitioning = true;
 			boyfriend.stunned = true;
 
 			persistentUpdate = false;

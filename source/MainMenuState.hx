@@ -67,6 +67,8 @@ class MainMenuState extends MusicBeatState
 			FlxG.sound.playMusic('assets/music/freakyMenu' + TitleState.soundExt);
 		}
 
+		if (Conductor.bpm != 102) Conductor.changeBPM(102);
+
 		persistentUpdate = persistentDraw = true;
 
 		var ui_tex = FlxAtlasFrames.fromSparrow('assets/images/UI/campaign_menu_UI_assets.png', 'assets/images/UI/campaign_menu_UI_assets.xml');
