@@ -8,6 +8,7 @@ import flixel.group.FlxGroup;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.net.curl.CURLCode;
@@ -34,7 +35,7 @@ class WeekendMenuState extends MusicBeatState
     var suckers:FlxSprite;
 
     public static var weekendData:Array<Dynamic> = [
-        ['Nadalyn-Sings-Spookeez', 'Nadbattle', 'Nadders'],
+        // ['Nadalyn-Sings-Spookeez', 'Nadbattle', 'Nadders'],
 		// ['Start-Conjunction', 'Energy-Lights', 'Telegroove'],
         ['Senpai', 'Roses', 'Thorns'],
         ['the-backyardagains', 'funny'],
@@ -43,7 +44,7 @@ class WeekendMenuState extends MusicBeatState
     ];
 
     var weekendChars:Array<String> = [
-        'nadalyn',
+        // 'nadalyn',
         // 'salted',
         'wow',
         'austin',
@@ -52,7 +53,7 @@ class WeekendMenuState extends MusicBeatState
     ];
 
     var weekendDescriptions:Array<String> = [
-        'She/her \nI make sparta remixes.',
+        // 'She/her \nI make sparta remixes.',
         // 'Rap against the most wicked \nmusic producer of all time, \nLightly Satled Beans!',
         'Uh oh! Looks like a RACIAL \nVIRUS has infected week 6!! \nDo you have the wits to \nsurvive?',
         'He played a little joke on \nyou in the past, but he\'s \nnot messin\' around this time!',
@@ -61,7 +62,7 @@ class WeekendMenuState extends MusicBeatState
     ];
 
     var weekendNames:Array<String> = [
-        'Nadalyn',
+        // 'Nadalyn',
         // 'LSB',
         'Wow',
         'FNAF',
@@ -69,7 +70,7 @@ class WeekendMenuState extends MusicBeatState
         'Redball'
     ];
 
-    var curWeekend:Int = 2;
+    var curWeekend:Int = 1;
 
     override function create()
     {
@@ -131,6 +132,21 @@ class WeekendMenuState extends MusicBeatState
         suckers.updateHitbox();
         add(suckers);
 
+        regRacial = new WardrobeCharacter(417, 2370, 'Radical');
+		regRacial.setGraphicSize(0, 225);
+		regRacial.updateHitbox();
+
+		// regIcon = new HealthIcon();
+
+        unlockedThing = new FlxSprite().loadGraphic('assets/images/UI/soparatic.png');
+		unlockedThing.setGraphicSize(Std.int(unlockedThing.width * 0.65));
+		unlockedThing.updateHitbox(); // 417, 370
+		unlockedThing.screenCenter();
+
+		newRacial = new WardrobeCharacter(regRacial.x + 300, 2370, skin2Unlock);
+		newRacial.setGraphicSize(0, 225);
+		newRacial.updateHitbox();
+
         add(txtWeekendTitle);
         add(txtDesc);
         add(trackList);
@@ -144,8 +160,38 @@ class WeekendMenuState extends MusicBeatState
             paused = false;
         });
 
+        var daY:Float = unlockedThing.y;
+		unlockedThing.y += 2000;
+		if (justUnlockedSkin)
+		{
+			justUnlockedSkin = false;
+			add(unlockedThing);
+			add(regRacial);
+			add(newRacial);
+			canSelect = false;
+			new FlxTimer().start(0.75, function(tmr:FlxTimer){
+				FlxTween.tween(unlockedThing, {y: daY}, 1.5, {ease: FlxEase.quintOut, onComplete: function(twn:FlxTween){
+					new FlxTimer().start(0.5, function(tmr:FlxTimer){
+						canExitUnlock = true;
+					});
+				}});
+				FlxTween.tween(regRacial, {y: 370}, 1.5, {ease: FlxEase.quintOut});
+				FlxTween.tween(newRacial, {y: 370}, 1.5, {ease: FlxEase.quintOut});
+			});
+		}
+
         super.create();
     }
+
+    var canSelect:Bool = true;
+	var canExitUnlock:Bool = false;
+    var unlockedThing:FlxSprite;
+
+	var regRacial:WardrobeCharacter;
+	var newRacial:WardrobeCharacter;
+
+    public static var justUnlockedSkin:Bool = false;
+	public static var skin2Unlock:String = 'Radical';
 
     override function update(elapsed:Float)
     {
@@ -156,7 +202,20 @@ class WeekendMenuState extends MusicBeatState
         txtWeekendTitle.text = weekendNames[curWeekend];
         txtDesc.text = weekendDescriptions[curWeekend];
 
-        if (!movedBack && !paused)
+        if (!canSelect && canExitUnlock)
+		{
+			if (controls.ACCEPT)
+			{
+				new FlxTimer().start(0.5, function(junk:FlxTimer){
+					canSelect = true;
+				});
+				FlxTween.tween(unlockedThing, {alpha: 0}, 1, {ease: FlxEase.quintOut});
+				FlxTween.tween(regRacial, {alpha: 0}, 1, {ease: FlxEase.quintOut});
+				FlxTween.tween(newRacial, {alpha: 0}, 1, {ease: FlxEase.quintOut});
+			}
+		}
+
+        if (!movedBack && !paused && canSelect)
         {
             if (!selectedWeekend)
             {
@@ -193,7 +252,7 @@ class WeekendMenuState extends MusicBeatState
             }
         }
     
-        if (controls.BACK && !movedBack && !selectedWeekend && !paused)
+        if (controls.BACK && !movedBack && !selectedWeekend && !paused && canSelect)
         {
             FlxG.sound.play('assets/sounds/cancelMenu' + TitleState.soundExt);
             movedBack = true;
@@ -244,6 +303,7 @@ class WeekendMenuState extends MusicBeatState
 		PlayState.weekendPlaylist = songsToPlay;
         PlayState.initModes();
         PlayState.isWeekend = true;
+        PlayState.weekendName = weekendNames[curWeekend];
 		selectedWeekend = true;
 
         PlayState.SONG = Song.loadFromJson(PlayState.weekendPlaylist[0].toLowerCase(), PlayState.weekendPlaylist[0].toLowerCase());
@@ -291,7 +351,7 @@ class WeekendMenuState extends MusicBeatState
                 suckers.y = 140;
         }
 
-        if (curWeekend == 3)
+        if (curWeekend == 2)
             trackList.text = 'SONGS: ???';
         else
             trackList.text = getWeekData();

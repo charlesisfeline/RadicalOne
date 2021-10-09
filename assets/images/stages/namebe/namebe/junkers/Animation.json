@@ -1,0 +1,1426 @@
+{
+    "ANIMATION": {
+        "name": "namebe bg dunkers",
+        "SYMBOL_name": "fetuses",
+        "TIMELINE": {
+            "LAYERS": [
+                {
+                    "Layer_name": "Layer_1",
+                    "Frames": [
+                        {
+                            "name": "tumblr",
+                            "index": 0,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "SYMBOL_Instance": {
+                                        "SYMBOL_name": "tankman",
+                                        "Instance_Name": "InstName",
+                                        "symbolType": "graphic",
+                                        "firstFrame": 0,
+                                        "loop": "loop",
+                                        "transformationPoint": {
+                                            "x": 270,
+                                            "y": 142.05
+                                        },
+                                        "Matrix3D": {
+                                            "m00": 1,
+                                            "m01": 0,
+                                            "m02": 0,
+                                            "m03": 0,
+                                            "m10": 0,
+                                            "m11": 1,
+                                            "m12": 0,
+                                            "m13": 0,
+                                            "m20": 0,
+                                            "m21": 0,
+                                            "m22": 1,
+                                            "m23": 0,
+                                            "m30": -6,
+                                            "m31": 20.95,
+                                            "m32": 0,
+                                            "m33": 1
+                                        },
+                                        "DecomposedMatrix": {
+                                            "Position": {
+                                                "x": -6,
+                                                "y": 20.95,
+                                                "z": 0
+                                            },
+                                            "Rotation": {
+                                                "x": 0,
+                                                "y": -0,
+                                                "z": 0
+                                            },
+                                            "Scaling": {
+                                                "x": 1,
+                                                "y": 1,
+                                                "z": 1
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 1,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "SYMBOL_Instance": {
+                                        "SYMBOL_name": "tankman",
+                                        "Instance_Name": "InstName",
+                                        "symbolType": "graphic",
+                                        "firstFrame": 1,
+                                        "loop": "loop",
+                                        "transformationPoint": {
+                                            "x": 270,
+                                            "y": 142.05
+                                        },
+                                        "Matrix3D": {
+                                            "m00": 1,
+                                            "m01": 0,
+                                            "m02": 0,
+                                            "m03": 0,
+                                            "m10": 0,
+                                            "m11": 1,
+                                            "m12": 0,
+                                            "m13": 0,
+                                            "m20": 0,
+                                            "m21": 0,
+                                            "m22": 1,
+                                            "m23": 0,
+                                            "m30": -6,
+                                            "m31": 20.95,
+                                            "m32": 0,
+                                            "m33": 1
+                                        },
+                                        "DecomposedMatrix": {
+                                            "Position": {
+                                                "x": -6,
+                                                "y": 20.95,
+                                                "z": 0
+                                            },
+                                            "Rotation": {
+                                                "x": 0,
+                                                "y": -0,
+                                                "z": 0
+                                            },
+                                            "Scaling": {
+                                                "x": 1,
+                                                "y": 1,
+                                                "z": 1
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "SYMBOL_Instance": {
+                                        "SYMBOL_name": "tankman",
+                                        "Instance_Name": "InstName",
+                                        "symbolType": "graphic",
+                                        "firstFrame": 2,
+                                        "loop": "loop",
+                                        "transformationPoint": {
+                                            "x": 270,
+                                            "y": 142.05
+                                        },
+                                        "Matrix3D": {
+                                            "m00": 1,
+                                            "m01": 0,
+                                            "m02": 0,
+                                            "m03": 0,
+                                            "m10": 0,
+                                            "m11": 1,
+                                            "m12": 0,
+                                            "m13": 0,
+                                            "m20": 0,
+                                            "m21": 0,
+                                            "m22": 1,
+                                            "m23": 0,
+                                            "m30": -6,
+                                            "m31": 20.95,
+                                            "m32": 0,
+                                            "m33": 1
+                                        },
+                                        "DecomposedMatrix": {
+                                            "Position": {
+                                                "x": -6,
+                                                "y": 20.95,
+                                                "z": 0
+                                            },
+                                            "Rotation": {
+                                                "x": 0,
+                                                "y": -0,
+                                                "z": 0
+                                            },
+                                            "Scaling": {
+                                                "x": 1,
+                                                "y": 1,
+                                                "z": 1
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 3,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "SYMBOL_Instance": {
+                                        "SYMBOL_name": "tankman",
+                                        "Instance_Name": "InstName",
+                                        "symbolType": "graphic",
+                                        "firstFrame": 3,
+                                        "loop": "loop",
+                                        "transformationPoint": {
+                                            "x": 270,
+                                            "y": 142.05
+                                        },
+                                        "Matrix3D": {
+                                            "m00": 1,
+                                            "m01": 0,
+                                            "m02": 0,
+                                            "m03": 0,
+                                            "m10": 0,
+                                            "m11": 1,
+                                            "m12": 0,
+                                            "m13": 0,
+                                            "m20": 0,
+                                            "m21": 0,
+                                            "m22": 1,
+                                            "m23": 0,
+                                            "m30": -6,
+                                            "m31": 20.95,
+                                            "m32": 0,
+                                            "m33": 1
+                                        },
+                                        "DecomposedMatrix": {
+                                            "Position": {
+                                                "x": -6,
+                                                "y": 20.95,
+                                                "z": 0
+                                            },
+                                            "Rotation": {
+                                                "x": 0,
+                                                "y": -0,
+                                                "z": 0
+                                            },
+                                            "Scaling": {
+                                                "x": 1,
+                                                "y": 1,
+                                                "z": 1
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 4,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "SYMBOL_Instance": {
+                                        "SYMBOL_name": "tankman",
+                                        "Instance_Name": "InstName",
+                                        "symbolType": "graphic",
+                                        "firstFrame": 4,
+                                        "loop": "loop",
+                                        "transformationPoint": {
+                                            "x": 270,
+                                            "y": 142.05
+                                        },
+                                        "Matrix3D": {
+                                            "m00": 1,
+                                            "m01": 0,
+                                            "m02": 0,
+                                            "m03": 0,
+                                            "m10": 0,
+                                            "m11": 1,
+                                            "m12": 0,
+                                            "m13": 0,
+                                            "m20": 0,
+                                            "m21": 0,
+                                            "m22": 1,
+                                            "m23": 0,
+                                            "m30": -6,
+                                            "m31": 20.95,
+                                            "m32": 0,
+                                            "m33": 1
+                                        },
+                                        "DecomposedMatrix": {
+                                            "Position": {
+                                                "x": -6,
+                                                "y": 20.95,
+                                                "z": 0
+                                            },
+                                            "Rotation": {
+                                                "x": 0,
+                                                "y": -0,
+                                                "z": 0
+                                            },
+                                            "Scaling": {
+                                                "x": 1,
+                                                "y": 1,
+                                                "z": 1
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 5,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "SYMBOL_Instance": {
+                                        "SYMBOL_name": "tankman",
+                                        "Instance_Name": "InstName",
+                                        "symbolType": "graphic",
+                                        "firstFrame": 5,
+                                        "loop": "loop",
+                                        "transformationPoint": {
+                                            "x": 270,
+                                            "y": 142.05
+                                        },
+                                        "Matrix3D": {
+                                            "m00": 1,
+                                            "m01": 0,
+                                            "m02": 0,
+                                            "m03": 0,
+                                            "m10": 0,
+                                            "m11": 1,
+                                            "m12": 0,
+                                            "m13": 0,
+                                            "m20": 0,
+                                            "m21": 0,
+                                            "m22": 1,
+                                            "m23": 0,
+                                            "m30": -6,
+                                            "m31": 20.95,
+                                            "m32": 0,
+                                            "m33": 1
+                                        },
+                                        "DecomposedMatrix": {
+                                            "Position": {
+                                                "x": -6,
+                                                "y": 20.95,
+                                                "z": 0
+                                            },
+                                            "Rotation": {
+                                                "x": 0,
+                                                "y": -0,
+                                                "z": 0
+                                            },
+                                            "Scaling": {
+                                                "x": 1,
+                                                "y": 1,
+                                                "z": 1
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 6,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "SYMBOL_Instance": {
+                                        "SYMBOL_name": "tankman",
+                                        "Instance_Name": "InstName",
+                                        "symbolType": "graphic",
+                                        "firstFrame": 6,
+                                        "loop": "loop",
+                                        "transformationPoint": {
+                                            "x": 270,
+                                            "y": 142.05
+                                        },
+                                        "Matrix3D": {
+                                            "m00": 1,
+                                            "m01": 0,
+                                            "m02": 0,
+                                            "m03": 0,
+                                            "m10": 0,
+                                            "m11": 1,
+                                            "m12": 0,
+                                            "m13": 0,
+                                            "m20": 0,
+                                            "m21": 0,
+                                            "m22": 1,
+                                            "m23": 0,
+                                            "m30": -6,
+                                            "m31": 20.95,
+                                            "m32": 0,
+                                            "m33": 1
+                                        },
+                                        "DecomposedMatrix": {
+                                            "Position": {
+                                                "x": -6,
+                                                "y": 20.95,
+                                                "z": 0
+                                            },
+                                            "Rotation": {
+                                                "x": 0,
+                                                "y": -0,
+                                                "z": 0
+                                            },
+                                            "Scaling": {
+                                                "x": 1,
+                                                "y": 1,
+                                                "z": 1
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 7,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "SYMBOL_Instance": {
+                                        "SYMBOL_name": "tankman",
+                                        "Instance_Name": "InstName",
+                                        "symbolType": "graphic",
+                                        "firstFrame": 7,
+                                        "loop": "loop",
+                                        "transformationPoint": {
+                                            "x": 270,
+                                            "y": 142.05
+                                        },
+                                        "Matrix3D": {
+                                            "m00": 1,
+                                            "m01": 0,
+                                            "m02": 0,
+                                            "m03": 0,
+                                            "m10": 0,
+                                            "m11": 1,
+                                            "m12": 0,
+                                            "m13": 0,
+                                            "m20": 0,
+                                            "m21": 0,
+                                            "m22": 1,
+                                            "m23": 0,
+                                            "m30": -6,
+                                            "m31": 20.95,
+                                            "m32": 0,
+                                            "m33": 1
+                                        },
+                                        "DecomposedMatrix": {
+                                            "Position": {
+                                                "x": -6,
+                                                "y": 20.95,
+                                                "z": 0
+                                            },
+                                            "Rotation": {
+                                                "x": 0,
+                                                "y": -0,
+                                                "z": 0
+                                            },
+                                            "Scaling": {
+                                                "x": 1,
+                                                "y": 1,
+                                                "z": 1
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SYMBOL_DICTIONARY": {
+        "Symbols": [
+            {
+                "SYMBOL_name": "tankman",
+                "TIMELINE": {
+                    "LAYERS": [
+                        {
+                            "Layer_name": "Layer_2",
+                            "Frames": [
+                                {
+                                    "index": 0,
+                                    "duration": 1,
+                                    "elements": [
+                                        {
+                                            "SYMBOL_Instance": {
+                                                "SYMBOL_name": "Symbol 1",
+                                                "Instance_Name": "",
+                                                "bitmap": {
+                                                    "name": "0000",
+                                                    "Position": {
+                                                        "x": 0,
+                                                        "y": 0
+                                                    }
+                                                },
+                                                "symbolType": "movieclip",
+                                                "transformationPoint": {
+                                                    "x": 128.8,
+                                                    "y": 134.85
+                                                },
+                                                "Matrix3D": {
+                                                    "m00": 1,
+                                                    "m01": 0,
+                                                    "m02": 0,
+                                                    "m03": 0,
+                                                    "m10": 0,
+                                                    "m11": 1,
+                                                    "m12": 0,
+                                                    "m13": 0,
+                                                    "m20": 0,
+                                                    "m21": 0,
+                                                    "m22": 1,
+                                                    "m23": 0,
+                                                    "m30": 276.45,
+                                                    "m31": 42.2,
+                                                    "m32": 0,
+                                                    "m33": 1
+                                                },
+                                                "DecomposedMatrix": {
+                                                    "Position": {
+                                                        "x": 276.45,
+                                                        "y": 42.2,
+                                                        "z": 0
+                                                    },
+                                                    "Rotation": {
+                                                        "x": 0,
+                                                        "y": -0,
+                                                        "z": 0
+                                                    },
+                                                    "Scaling": {
+                                                        "x": 1,
+                                                        "y": 1,
+                                                        "z": 1
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "index": 1,
+                                    "duration": 1,
+                                    "elements": [
+                                        {
+                                            "SYMBOL_Instance": {
+                                                "SYMBOL_name": "Symbol 1",
+                                                "Instance_Name": "",
+                                                "bitmap": {
+                                                    "name": "0000",
+                                                    "Position": {
+                                                        "x": 0,
+                                                        "y": 0
+                                                    }
+                                                },
+                                                "symbolType": "movieclip",
+                                                "transformationPoint": {
+                                                    "x": 128.8,
+                                                    "y": 134.85
+                                                },
+                                                "Matrix3D": {
+                                                    "m00": 1,
+                                                    "m01": 0,
+                                                    "m02": 0,
+                                                    "m03": 0,
+                                                    "m10": 0,
+                                                    "m11": 1,
+                                                    "m12": 0,
+                                                    "m13": 0,
+                                                    "m20": 0,
+                                                    "m21": 0,
+                                                    "m22": 1,
+                                                    "m23": 0,
+                                                    "m30": 276.45,
+                                                    "m31": 30.8,
+                                                    "m32": 0,
+                                                    "m33": 1
+                                                },
+                                                "DecomposedMatrix": {
+                                                    "Position": {
+                                                        "x": 276.45,
+                                                        "y": 30.8,
+                                                        "z": 0
+                                                    },
+                                                    "Rotation": {
+                                                        "x": 0,
+                                                        "y": -0,
+                                                        "z": 0
+                                                    },
+                                                    "Scaling": {
+                                                        "x": 1,
+                                                        "y": 1,
+                                                        "z": 1
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "index": 2,
+                                    "duration": 1,
+                                    "elements": [
+                                        {
+                                            "SYMBOL_Instance": {
+                                                "SYMBOL_name": "Symbol 1",
+                                                "Instance_Name": "",
+                                                "bitmap": {
+                                                    "name": "0000",
+                                                    "Position": {
+                                                        "x": 0,
+                                                        "y": 0
+                                                    }
+                                                },
+                                                "symbolType": "movieclip",
+                                                "transformationPoint": {
+                                                    "x": 128.8,
+                                                    "y": 134.85
+                                                },
+                                                "Matrix3D": {
+                                                    "m00": 1,
+                                                    "m01": 0,
+                                                    "m02": 0,
+                                                    "m03": 0,
+                                                    "m10": 0,
+                                                    "m11": 1,
+                                                    "m12": 0,
+                                                    "m13": 0,
+                                                    "m20": 0,
+                                                    "m21": 0,
+                                                    "m22": 1,
+                                                    "m23": 0,
+                                                    "m30": 276.45,
+                                                    "m31": 19.35,
+                                                    "m32": 0,
+                                                    "m33": 1
+                                                },
+                                                "DecomposedMatrix": {
+                                                    "Position": {
+                                                        "x": 276.45,
+                                                        "y": 19.35,
+                                                        "z": 0
+                                                    },
+                                                    "Rotation": {
+                                                        "x": 0,
+                                                        "y": -0,
+                                                        "z": 0
+                                                    },
+                                                    "Scaling": {
+                                                        "x": 1,
+                                                        "y": 1,
+                                                        "z": 1
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "index": 3,
+                                    "duration": 1,
+                                    "elements": [
+                                        {
+                                            "SYMBOL_Instance": {
+                                                "SYMBOL_name": "Symbol 1",
+                                                "Instance_Name": "",
+                                                "bitmap": {
+                                                    "name": "0000",
+                                                    "Position": {
+                                                        "x": 0,
+                                                        "y": 0
+                                                    }
+                                                },
+                                                "symbolType": "movieclip",
+                                                "transformationPoint": {
+                                                    "x": 128.8,
+                                                    "y": 134.85
+                                                },
+                                                "Matrix3D": {
+                                                    "m00": 1,
+                                                    "m01": 0,
+                                                    "m02": 0,
+                                                    "m03": 0,
+                                                    "m10": 0,
+                                                    "m11": 1,
+                                                    "m12": 0,
+                                                    "m13": 0,
+                                                    "m20": 0,
+                                                    "m21": 0,
+                                                    "m22": 1,
+                                                    "m23": 0,
+                                                    "m30": 276.45,
+                                                    "m31": 7.95,
+                                                    "m32": 0,
+                                                    "m33": 1
+                                                },
+                                                "DecomposedMatrix": {
+                                                    "Position": {
+                                                        "x": 276.45,
+                                                        "y": 7.95,
+                                                        "z": 0
+                                                    },
+                                                    "Rotation": {
+                                                        "x": 0,
+                                                        "y": -0,
+                                                        "z": 0
+                                                    },
+                                                    "Scaling": {
+                                                        "x": 1,
+                                                        "y": 1,
+                                                        "z": 1
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "index": 4,
+                                    "duration": 1,
+                                    "elements": [
+                                        {
+                                            "SYMBOL_Instance": {
+                                                "SYMBOL_name": "Symbol 1",
+                                                "Instance_Name": "",
+                                                "bitmap": {
+                                                    "name": "0000",
+                                                    "Position": {
+                                                        "x": 0,
+                                                        "y": 0
+                                                    }
+                                                },
+                                                "symbolType": "movieclip",
+                                                "transformationPoint": {
+                                                    "x": 128.8,
+                                                    "y": 134.85
+                                                },
+                                                "Matrix3D": {
+                                                    "m00": 1,
+                                                    "m01": 0,
+                                                    "m02": 0,
+                                                    "m03": 0,
+                                                    "m10": 0,
+                                                    "m11": 1,
+                                                    "m12": 0,
+                                                    "m13": 0,
+                                                    "m20": 0,
+                                                    "m21": 0,
+                                                    "m22": 1,
+                                                    "m23": 0,
+                                                    "m30": 276.45,
+                                                    "m31": -2.05,
+                                                    "m32": 0,
+                                                    "m33": 1
+                                                },
+                                                "DecomposedMatrix": {
+                                                    "Position": {
+                                                        "x": 276.45,
+                                                        "y": -2.05,
+                                                        "z": 0
+                                                    },
+                                                    "Rotation": {
+                                                        "x": 0,
+                                                        "y": -0,
+                                                        "z": 0
+                                                    },
+                                                    "Scaling": {
+                                                        "x": 1,
+                                                        "y": 1,
+                                                        "z": 1
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "index": 5,
+                                    "duration": 1,
+                                    "elements": [
+                                        {
+                                            "SYMBOL_Instance": {
+                                                "SYMBOL_name": "Symbol 1",
+                                                "Instance_Name": "",
+                                                "bitmap": {
+                                                    "name": "0000",
+                                                    "Position": {
+                                                        "x": 0,
+                                                        "y": 0
+                                                    }
+                                                },
+                                                "symbolType": "movieclip",
+                                                "transformationPoint": {
+                                                    "x": 128.8,
+                                                    "y": 134.85
+                                                },
+                                                "Matrix3D": {
+                                                    "m00": 1,
+                                                    "m01": 0,
+                                                    "m02": 0,
+                                                    "m03": 0,
+                                                    "m10": 0,
+                                                    "m11": 1,
+                                                    "m12": 0,
+                                                    "m13": 0,
+                                                    "m20": 0,
+                                                    "m21": 0,
+                                                    "m22": 1,
+                                                    "m23": 0,
+                                                    "m30": 276.45,
+                                                    "m31": -10.65,
+                                                    "m32": 0,
+                                                    "m33": 1
+                                                },
+                                                "DecomposedMatrix": {
+                                                    "Position": {
+                                                        "x": 276.45,
+                                                        "y": -10.65,
+                                                        "z": 0
+                                                    },
+                                                    "Rotation": {
+                                                        "x": 0,
+                                                        "y": -0,
+                                                        "z": 0
+                                                    },
+                                                    "Scaling": {
+                                                        "x": 1,
+                                                        "y": 1,
+                                                        "z": 1
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "index": 6,
+                                    "duration": 1,
+                                    "elements": [
+                                        {
+                                            "SYMBOL_Instance": {
+                                                "SYMBOL_name": "Symbol 1",
+                                                "Instance_Name": "",
+                                                "bitmap": {
+                                                    "name": "0000",
+                                                    "Position": {
+                                                        "x": 0,
+                                                        "y": 0
+                                                    }
+                                                },
+                                                "symbolType": "movieclip",
+                                                "transformationPoint": {
+                                                    "x": 128.8,
+                                                    "y": 134.85
+                                                },
+                                                "Matrix3D": {
+                                                    "m00": 1,
+                                                    "m01": 0,
+                                                    "m02": 0,
+                                                    "m03": 0,
+                                                    "m10": 0,
+                                                    "m11": 1,
+                                                    "m12": 0,
+                                                    "m13": 0,
+                                                    "m20": 0,
+                                                    "m21": 0,
+                                                    "m22": 1,
+                                                    "m23": 0,
+                                                    "m30": 276.45,
+                                                    "m31": -19.2,
+                                                    "m32": 0,
+                                                    "m33": 1
+                                                },
+                                                "DecomposedMatrix": {
+                                                    "Position": {
+                                                        "x": 276.45,
+                                                        "y": -19.2,
+                                                        "z": 0
+                                                    },
+                                                    "Rotation": {
+                                                        "x": 0,
+                                                        "y": -0,
+                                                        "z": 0
+                                                    },
+                                                    "Scaling": {
+                                                        "x": 1,
+                                                        "y": 1,
+                                                        "z": 1
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "index": 7,
+                                    "duration": 1,
+                                    "elements": [
+                                        {
+                                            "SYMBOL_Instance": {
+                                                "SYMBOL_name": "Symbol 1",
+                                                "Instance_Name": "",
+                                                "bitmap": {
+                                                    "name": "0000",
+                                                    "Position": {
+                                                        "x": 0,
+                                                        "y": 0
+                                                    }
+                                                },
+                                                "symbolType": "movieclip",
+                                                "transformationPoint": {
+                                                    "x": 128.8,
+                                                    "y": 134.85
+                                                },
+                                                "Matrix3D": {
+                                                    "m00": 1,
+                                                    "m01": 0,
+                                                    "m02": 0,
+                                                    "m03": 0,
+                                                    "m10": 0,
+                                                    "m11": 1,
+                                                    "m12": 0,
+                                                    "m13": 0,
+                                                    "m20": 0,
+                                                    "m21": 0,
+                                                    "m22": 1,
+                                                    "m23": 0,
+                                                    "m30": 276.45,
+                                                    "m31": -27.8,
+                                                    "m32": 0,
+                                                    "m33": 1
+                                                },
+                                                "DecomposedMatrix": {
+                                                    "Position": {
+                                                        "x": 276.45,
+                                                        "y": -27.8,
+                                                        "z": 0
+                                                    },
+                                                    "Rotation": {
+                                                        "x": 0,
+                                                        "y": -0,
+                                                        "z": 0
+                                                    },
+                                                    "Scaling": {
+                                                        "x": 1,
+                                                        "y": 1,
+                                                        "z": 1
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Layer_name": "Layer_1",
+                            "Frames": [
+                                {
+                                    "index": 0,
+                                    "duration": 1,
+                                    "elements": [
+                                        {
+                                            "SYMBOL_Instance": {
+                                                "SYMBOL_name": "Symbol 2",
+                                                "Instance_Name": "",
+                                                "bitmap": {
+                                                    "name": "0001",
+                                                    "Position": {
+                                                        "x": 0,
+                                                        "y": 0
+                                                    }
+                                                },
+                                                "symbolType": "movieclip",
+                                                "transformationPoint": {
+                                                    "x": 113.5,
+                                                    "y": 125.8
+                                                },
+                                                "Matrix3D": {
+                                                    "m00": 1,
+                                                    "m01": 0,
+                                                    "m02": 0,
+                                                    "m03": 0,
+                                                    "m10": 0,
+                                                    "m11": 1,
+                                                    "m12": 0,
+                                                    "m13": 0,
+                                                    "m20": 0,
+                                                    "m21": 0,
+                                                    "m22": 1,
+                                                    "m23": 0,
+                                                    "m30": 5.9,
+                                                    "m31": -21.25,
+                                                    "m32": 0,
+                                                    "m33": 1
+                                                },
+                                                "DecomposedMatrix": {
+                                                    "Position": {
+                                                        "x": 5.9,
+                                                        "y": -21.25,
+                                                        "z": 0
+                                                    },
+                                                    "Rotation": {
+                                                        "x": 0,
+                                                        "y": -0,
+                                                        "z": 0
+                                                    },
+                                                    "Scaling": {
+                                                        "x": 1,
+                                                        "y": 1,
+                                                        "z": 1
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "index": 1,
+                                    "duration": 1,
+                                    "elements": [
+                                        {
+                                            "SYMBOL_Instance": {
+                                                "SYMBOL_name": "Symbol 2",
+                                                "Instance_Name": "",
+                                                "bitmap": {
+                                                    "name": "0001",
+                                                    "Position": {
+                                                        "x": 0,
+                                                        "y": 0
+                                                    }
+                                                },
+                                                "symbolType": "movieclip",
+                                                "transformationPoint": {
+                                                    "x": 113.5,
+                                                    "y": 125.8
+                                                },
+                                                "Matrix3D": {
+                                                    "m00": 1,
+                                                    "m01": 0,
+                                                    "m02": 0,
+                                                    "m03": 0,
+                                                    "m10": 0,
+                                                    "m11": 1,
+                                                    "m12": 0,
+                                                    "m13": 0,
+                                                    "m20": 0,
+                                                    "m21": 0,
+                                                    "m22": 1,
+                                                    "m23": 0,
+                                                    "m30": 5.9,
+                                                    "m31": -9.85,
+                                                    "m32": 0,
+                                                    "m33": 1
+                                                },
+                                                "DecomposedMatrix": {
+                                                    "Position": {
+                                                        "x": 5.9,
+                                                        "y": -9.85,
+                                                        "z": 0
+                                                    },
+                                                    "Rotation": {
+                                                        "x": 0,
+                                                        "y": -0,
+                                                        "z": 0
+                                                    },
+                                                    "Scaling": {
+                                                        "x": 1,
+                                                        "y": 1,
+                                                        "z": 1
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "index": 2,
+                                    "duration": 1,
+                                    "elements": [
+                                        {
+                                            "SYMBOL_Instance": {
+                                                "SYMBOL_name": "Symbol 2",
+                                                "Instance_Name": "",
+                                                "bitmap": {
+                                                    "name": "0001",
+                                                    "Position": {
+                                                        "x": 0,
+                                                        "y": 0
+                                                    }
+                                                },
+                                                "symbolType": "movieclip",
+                                                "transformationPoint": {
+                                                    "x": 113.5,
+                                                    "y": 125.8
+                                                },
+                                                "Matrix3D": {
+                                                    "m00": 1,
+                                                    "m01": 0,
+                                                    "m02": 0,
+                                                    "m03": 0,
+                                                    "m10": 0,
+                                                    "m11": 1,
+                                                    "m12": 0,
+                                                    "m13": 0,
+                                                    "m20": 0,
+                                                    "m21": 0,
+                                                    "m22": 1,
+                                                    "m23": 0,
+                                                    "m30": 5.9,
+                                                    "m31": 1.6,
+                                                    "m32": 0,
+                                                    "m33": 1
+                                                },
+                                                "DecomposedMatrix": {
+                                                    "Position": {
+                                                        "x": 5.9,
+                                                        "y": 1.6,
+                                                        "z": 0
+                                                    },
+                                                    "Rotation": {
+                                                        "x": 0,
+                                                        "y": -0,
+                                                        "z": 0
+                                                    },
+                                                    "Scaling": {
+                                                        "x": 1,
+                                                        "y": 1,
+                                                        "z": 1
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "index": 3,
+                                    "duration": 1,
+                                    "elements": [
+                                        {
+                                            "SYMBOL_Instance": {
+                                                "SYMBOL_name": "Symbol 2",
+                                                "Instance_Name": "",
+                                                "bitmap": {
+                                                    "name": "0001",
+                                                    "Position": {
+                                                        "x": 0,
+                                                        "y": 0
+                                                    }
+                                                },
+                                                "symbolType": "movieclip",
+                                                "transformationPoint": {
+                                                    "x": 113.5,
+                                                    "y": 125.8
+                                                },
+                                                "Matrix3D": {
+                                                    "m00": 1,
+                                                    "m01": 0,
+                                                    "m02": 0,
+                                                    "m03": 0,
+                                                    "m10": 0,
+                                                    "m11": 1,
+                                                    "m12": 0,
+                                                    "m13": 0,
+                                                    "m20": 0,
+                                                    "m21": 0,
+                                                    "m22": 1,
+                                                    "m23": 0,
+                                                    "m30": 5.9,
+                                                    "m31": 13,
+                                                    "m32": 0,
+                                                    "m33": 1
+                                                },
+                                                "DecomposedMatrix": {
+                                                    "Position": {
+                                                        "x": 5.9,
+                                                        "y": 13,
+                                                        "z": 0
+                                                    },
+                                                    "Rotation": {
+                                                        "x": 0,
+                                                        "y": -0,
+                                                        "z": 0
+                                                    },
+                                                    "Scaling": {
+                                                        "x": 1,
+                                                        "y": 1,
+                                                        "z": 1
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "index": 4,
+                                    "duration": 1,
+                                    "elements": [
+                                        {
+                                            "SYMBOL_Instance": {
+                                                "SYMBOL_name": "Symbol 2",
+                                                "Instance_Name": "",
+                                                "bitmap": {
+                                                    "name": "0001",
+                                                    "Position": {
+                                                        "x": 0,
+                                                        "y": 0
+                                                    }
+                                                },
+                                                "symbolType": "movieclip",
+                                                "transformationPoint": {
+                                                    "x": 113.5,
+                                                    "y": 125.8
+                                                },
+                                                "Matrix3D": {
+                                                    "m00": 1,
+                                                    "m01": 0,
+                                                    "m02": 0,
+                                                    "m03": 0,
+                                                    "m10": 0,
+                                                    "m11": 1,
+                                                    "m12": 0,
+                                                    "m13": 0,
+                                                    "m20": 0,
+                                                    "m21": 0,
+                                                    "m22": 1,
+                                                    "m23": 0,
+                                                    "m30": 5.9,
+                                                    "m31": 23,
+                                                    "m32": 0,
+                                                    "m33": 1
+                                                },
+                                                "DecomposedMatrix": {
+                                                    "Position": {
+                                                        "x": 5.9,
+                                                        "y": 23,
+                                                        "z": 0
+                                                    },
+                                                    "Rotation": {
+                                                        "x": 0,
+                                                        "y": -0,
+                                                        "z": 0
+                                                    },
+                                                    "Scaling": {
+                                                        "x": 1,
+                                                        "y": 1,
+                                                        "z": 1
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "index": 5,
+                                    "duration": 1,
+                                    "elements": [
+                                        {
+                                            "SYMBOL_Instance": {
+                                                "SYMBOL_name": "Symbol 2",
+                                                "Instance_Name": "",
+                                                "bitmap": {
+                                                    "name": "0001",
+                                                    "Position": {
+                                                        "x": 0,
+                                                        "y": 0
+                                                    }
+                                                },
+                                                "symbolType": "movieclip",
+                                                "transformationPoint": {
+                                                    "x": 113.5,
+                                                    "y": 125.8
+                                                },
+                                                "Matrix3D": {
+                                                    "m00": 1,
+                                                    "m01": 0,
+                                                    "m02": 0,
+                                                    "m03": 0,
+                                                    "m10": 0,
+                                                    "m11": 1,
+                                                    "m12": 0,
+                                                    "m13": 0,
+                                                    "m20": 0,
+                                                    "m21": 0,
+                                                    "m22": 1,
+                                                    "m23": 0,
+                                                    "m30": 5.9,
+                                                    "m31": 31.6,
+                                                    "m32": 0,
+                                                    "m33": 1
+                                                },
+                                                "DecomposedMatrix": {
+                                                    "Position": {
+                                                        "x": 5.9,
+                                                        "y": 31.6,
+                                                        "z": 0
+                                                    },
+                                                    "Rotation": {
+                                                        "x": 0,
+                                                        "y": -0,
+                                                        "z": 0
+                                                    },
+                                                    "Scaling": {
+                                                        "x": 1,
+                                                        "y": 1,
+                                                        "z": 1
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "index": 6,
+                                    "duration": 1,
+                                    "elements": [
+                                        {
+                                            "SYMBOL_Instance": {
+                                                "SYMBOL_name": "Symbol 2",
+                                                "Instance_Name": "",
+                                                "bitmap": {
+                                                    "name": "0001",
+                                                    "Position": {
+                                                        "x": 0,
+                                                        "y": 0
+                                                    }
+                                                },
+                                                "symbolType": "movieclip",
+                                                "transformationPoint": {
+                                                    "x": 113.5,
+                                                    "y": 125.8
+                                                },
+                                                "Matrix3D": {
+                                                    "m00": 1,
+                                                    "m01": 0,
+                                                    "m02": 0,
+                                                    "m03": 0,
+                                                    "m10": 0,
+                                                    "m11": 1,
+                                                    "m12": 0,
+                                                    "m13": 0,
+                                                    "m20": 0,
+                                                    "m21": 0,
+                                                    "m22": 1,
+                                                    "m23": 0,
+                                                    "m30": 5.9,
+                                                    "m31": 40.15,
+                                                    "m32": 0,
+                                                    "m33": 1
+                                                },
+                                                "DecomposedMatrix": {
+                                                    "Position": {
+                                                        "x": 5.9,
+                                                        "y": 40.15,
+                                                        "z": 0
+                                                    },
+                                                    "Rotation": {
+                                                        "x": 0,
+                                                        "y": -0,
+                                                        "z": 0
+                                                    },
+                                                    "Scaling": {
+                                                        "x": 1,
+                                                        "y": 1,
+                                                        "z": 1
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "index": 7,
+                                    "duration": 1,
+                                    "elements": [
+                                        {
+                                            "SYMBOL_Instance": {
+                                                "SYMBOL_name": "Symbol 2",
+                                                "Instance_Name": "",
+                                                "bitmap": {
+                                                    "name": "0001",
+                                                    "Position": {
+                                                        "x": 0,
+                                                        "y": 0
+                                                    }
+                                                },
+                                                "symbolType": "movieclip",
+                                                "transformationPoint": {
+                                                    "x": 113.5,
+                                                    "y": 125.8
+                                                },
+                                                "Matrix3D": {
+                                                    "m00": 1,
+                                                    "m01": 0,
+                                                    "m02": 0,
+                                                    "m03": 0,
+                                                    "m10": 0,
+                                                    "m11": 1,
+                                                    "m12": 0,
+                                                    "m13": 0,
+                                                    "m20": 0,
+                                                    "m21": 0,
+                                                    "m22": 1,
+                                                    "m23": 0,
+                                                    "m30": 5.9,
+                                                    "m31": 48.75,
+                                                    "m32": 0,
+                                                    "m33": 1
+                                                },
+                                                "DecomposedMatrix": {
+                                                    "Position": {
+                                                        "x": 5.9,
+                                                        "y": 48.75,
+                                                        "z": 0
+                                                    },
+                                                    "Rotation": {
+                                                        "x": 0,
+                                                        "y": -0,
+                                                        "z": 0
+                                                    },
+                                                    "Scaling": {
+                                                        "x": 1,
+                                                        "y": 1,
+                                                        "z": 1
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Layer_name": "Layer_1",
+                            "Frames": [
+                                {
+                                    "index": 0,
+                                    "duration": 1,
+                                    "elements": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "metadata": {
+        "framerate": 24
+    }
+}

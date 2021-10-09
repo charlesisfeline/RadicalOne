@@ -55,6 +55,7 @@ import lime.ui.FileDialog;
 import sys.io.File;
 import haxe.io.Bytes;
 import sys.FileSystem;
+import animateatlas.AtlasFrameMaker;
 
 using StringTools;
 
@@ -175,6 +176,7 @@ class PlayState extends MusicBeatState
 	var wolves:FlxTypedGroup<FlxSprite>;
 
 	var sway:Array<FlxSprite> = [];
+	var walkyDudes:FlxSprite;
 
 	var songsWithDialogue:Array<String> = [
 		'senpai', 'roses', 'thorns', 
@@ -589,6 +591,25 @@ class PlayState extends MusicBeatState
 				// var cityLights:FlxSprite = new FlxSprite().loadGraphic(AssetPaths.win0.png);
 				
 				var street:FlxSprite = new FlxSprite(-40, 50).loadGraphic(stagePath + 'namebe/' + sheShed + '/street.png');
+
+				if (sheShed == 'namebe') {
+					trace("DEEEEEZ!!!");
+					walkyDudes = new FlxSprite(1280 * 1.5, FlxG.height / 2 - 75);
+					walkyDudes.frames = AtlasFrameMaker.construct(stagePath + 'namebe/namebe/junkers', ['tumblr']);
+					walkyDudes.animation.addByPrefix('idle', 'tumblr', 24 * 2, false);
+					walkyDudes.animation.play('idle');
+					walkyDudes.scrollFactor.set(0.8,  0.8);
+					add(walkyDudes);
+				}
+				else {
+					walkyDudes = new FlxSprite(1280 * 1.5, FlxG.height / 2 - 75);
+					walkyDudes.frames = AtlasFrameMaker.construct(stagePath + 'namebe/bouncy-drop/rubyJustMadeAFartingNoise', ['kevin french\'s fault']);
+					walkyDudes.animation.addByPrefix('idle', 'kevin french\'s fault', Std.int(24 * 1.25), false);
+					walkyDudes.animation.play('idle');
+					if (sheShed != 'destructed') add(walkyDudes);
+				}
+
+
 				add(street);
 				if (sheShed == 'destructed')
 				{	
@@ -613,7 +634,7 @@ class PlayState extends MusicBeatState
 					vans = new FlxSprite(-1386, 196);
 					vans.frames = FlxAtlasFrames.fromSparrow(stagePath + 'namebe/van.png', stagePath + 'namebe/van.xml');
 					vans.animation.addByPrefix('close', 'van vroom', 24, false);
-					vans.animation.addByIndices('closed', 'van vroom', [65], '', 24, false);
+					vans.animation.addByIndices('closed', 'van vroom', [72], '', 24, false);
 					vans.animation.play('close');
 					vans.setGraphicSize(Std.int(vans.width * 1.4));
 					vans.antialiasing = true;
@@ -1295,6 +1316,10 @@ class PlayState extends MusicBeatState
 				gaming.x = 1230;
 		}
 
+		/**
+			i sincerely apologize for all of the code below
+		**/
+
 		if (FlxG.save.data.outfit == 'Old Radical' || FlxG.save.data.outfit == 'Sussy Radical')
 			boyfriend = new Boyfriend(770, 450, SONG.player1);
 		else
@@ -1324,6 +1349,14 @@ class PlayState extends MusicBeatState
 				if (FlxG.save.data.outfit == 'Radical Babby') // poop v4
 					boyfriend.y += 105;
 		}
+
+		var poopyCharacters:Array<String> = ['red-ball', 'red-ball-dream', 'community-night-funkin'];
+
+		if (FlxG.save.data.outfit == 'Chaotic Radical' && !poopyCharacters.contains(SONG.player1)) boyfriend.y -= 50;
+
+		/**
+			end apology
+		**/
 
 		//boyfriend = new Boyfriend(770, 450, SONG.player1);
 
@@ -1567,7 +1600,7 @@ class PlayState extends MusicBeatState
 				case 'the-backyardagains' | 'funny':
 					flynetIntro(darf);
 				default:
-					if (WeekendMenuState.weekendData[3].contains(SONG.song)) {
+					if (WeekendMenuState.weekendData[2].contains(SONG.song)) {
 						inCutscene = true;
 						var lvlImg:String = switch (sheShed) {
 							case 'interrogation': 'interrogation';
@@ -1596,8 +1629,8 @@ class PlayState extends MusicBeatState
 						add(pooperBackground);
 						add(deezImg);
 						FlxTween.tween(deezImg, {alpha: 1}, 1, {startDelay: 2, onComplete: function(twn:FlxTween) {
-							trace(WeekendMenuState.weekendData[3].indexOf(SONG.song) % 4);
-							FlxG.sound.play('assets/sounds/jojunk_${WeekendMenuState.weekendData[3].indexOf(SONG.song) % 4}.ogg');
+							trace(WeekendMenuState.weekendData[2].indexOf(SONG.song) % 4);
+							FlxG.sound.play('assets/sounds/jojunk_${WeekendMenuState.weekendData[2].indexOf(SONG.song) % 4}.ogg');
 							FlxTween.tween(deezImg, {alpha: 0}, 2, {startDelay: 2.5, onComplete: function(twn:FlxTween){
 								FlxTween.tween(pooperBackground, {alpha:0}, 1.25, {onComplete: function(twn:FlxTween){
 									deezImg.kill();
@@ -2636,6 +2669,11 @@ class PlayState extends MusicBeatState
 
 				switch(storyWeek)
 				{
+					case 0:
+						if (!FlxG.save.data.gamingUnlock)
+							StoryMenuState.justUnlockedSkin = true;
+						StoryMenuState.skin2Unlock = 'Gaming Radical';
+						FlxG.save.data.gamingUnlock = true;
 					case 1:
 						if (!FlxG.save.data.businessUnlock)
 							StoryMenuState.justUnlockedSkin = true;
@@ -2711,6 +2749,19 @@ class PlayState extends MusicBeatState
 				FlxG.sound.playMusic('assets/music/freakyMenu' + TitleState.soundExt);
 
 				FlxG.switchState(new WeekendMenuState());
+
+				switch (weekendName) {
+					case 'Wow':
+						if (!FlxG.save.data.chaosUnlock)
+							WeekendMenuState.justUnlockedSkin = true;
+						WeekendMenuState.skin2Unlock = 'Chaotic Radical';
+						FlxG.save.data.chaosUnlock = true;
+					case 'Jo Junk':
+						if (!FlxG.save.data.sussyUnlock)
+							WeekendMenuState.justUnlockedSkin = true;
+						WeekendMenuState.skin2Unlock = 'Sussy Radical';
+						FlxG.save.data.sussyUnlock = true;
+				}
 
 				if (SONG.validScore)
 				{
@@ -2793,6 +2844,8 @@ class PlayState extends MusicBeatState
 			FlxG.switchState(new FreeplayState());
 		}
 	}
+
+	public static var weekendName:String = '';
 
 	var endingSong:Bool = false;
 
@@ -4697,11 +4750,22 @@ class PlayState extends MusicBeatState
 					trainStart();
 				}
 			case 'namebe':
-				if (sheShed == 'destructed')
-				{
+				if (sheShed == 'destructed') {
 					wolves.forEach(function(wolfyWannaCry:FlxSprite){
 						wolfyWannaCry.animation.play(curBeat % 2 == 0 ? 'danceRIGHT' : 'danceLEFT');
 					});
+				}
+
+				if (sheShed == 'namebe') {
+					walkyDudes.animation.play('idle', true, curBeat % 2 == 0);
+					FlxTween.tween(walkyDudes, {x: walkyDudes.x - 75}, Conductor.crochet / 1500, {ease: FlxEase.quadOut, onComplete: function(twn:FlxTween){
+						// trace(walkyDudes.x);
+						if (walkyDudes.x < -400) walkyDudes.x = 1280 * 2.25;
+					}});
+				}
+				else {
+					walkyDudes.animation.play('idle', true, curBeat % 2 == 0);
+					FlxTween.tween(walkyDudes, {y: curBeat % 2 == 0 ? walkyDudes.y - 39 : walkyDudes.y + 39}, Conductor.crochet / 1250, {ease: FlxEase.quadOut});
 				}
 			case 'bustom':
 				if (sheShed == 'bustom-source')
@@ -4887,6 +4951,8 @@ class PlayState extends MusicBeatState
 		}
 	}
 
+	var tweeningDudes:Bool = false;
+
 	function stageSpecificUpdate(elapsed:Float):Void
 	{
 		if (curStage == 'water')
@@ -4915,6 +4981,16 @@ class PlayState extends MusicBeatState
 					sheShed == 'destructed' ?
 					sun.y -= 0.01 / (120 / 60):
 					sun.y += 0.01 / (120 / 60);
+
+					if (!tweeningDudes && sheShed != 'namebe' && !startingSong) {
+						tweeningDudes = true;
+						FlxTween.tween(walkyDudes, {x: -550}, 3.25, {onComplete: function(twn:FlxTween){
+							new FlxTimer().start(FlxG.random.int(6, 15), function(tmr:FlxTimer){
+								walkyDudes.x = 1280 * 1.5;
+								tweeningDudes = false;
+							});
+						}});
+					}
 				}
 				
 		}

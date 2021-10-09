@@ -21,17 +21,23 @@ class WardrobeMenu extends MusicBeatState
 
     override function create()
     {
-        if (FlxG.save.data.redballUnlock)
-            racialDiversity.push('RedBall');
-
-        if (FlxG.save.data.sussyUnlock)
-            racialDiversity.push('Sussy Radical');
+        if (FlxG.save.data.gamingUnlock)
+            racialDiversity.push('Gaming Radical');
 
         if (FlxG.save.data.businessUnlock)
             racialDiversity.push('Business Radical');
 
         if (FlxG.save.data.babbyUnlock)
             racialDiversity.push('Radical Babby');
+        
+        if (FlxG.save.data.redballUnlock)
+            racialDiversity.push('RedBall');
+
+        if (FlxG.save.data.sussyUnlock)
+            racialDiversity.push('Sussy Radical');
+
+        if (FlxG.save.data.chaosUnlock)
+            racialDiversity.push('Chaotic Radical');
 
         curSelected = racialDiversity.indexOf(FlxG.save.data.outfit);
 

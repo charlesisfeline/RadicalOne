@@ -59,6 +59,16 @@ class WardrobeCharacter extends FlxSprite
                 flipX = true;
 
                 isLikeBF = true;
+            case 'Chaotic Radical':
+                var tex = FlxAtlasFrames.fromSparrow(Character.charPath + 'Chaotic_Radical.png', Character.charPath + 'Chaotic_Radical.xml');
+                frames = tex;
+                animation.addByPrefix('idle', 'Idle', 24, true);
+                
+                addOffset('idle', 0, 0);
+                
+                playAnim('idle');
+                
+                flipX = true;
             case 'RedBall':
                 var tex = FlxAtlasFrames.fromSparrow(Character.charPath + 'radicalball.png', Character.charPath + 'radicalball.xml');
                 frames = tex;
@@ -72,6 +82,15 @@ class WardrobeCharacter extends FlxSprite
                 animation.addByPrefix('idle', 'Racial Spiteful Jig', 24);
                 
                 addOffset('idle', 0, 0);
+                
+                playAnim('idle');
+                
+                flipX = true;
+            case 'Gaming Radical':
+                frames = FlxAtlasFrames.fromSparrow(Character.charPath + 'gaming_racial.png', Character.charPath + 'gaming_racial.xml');
+                animation.addByPrefix('idle', 'Racial Spiteful Jig', 24);
+                
+                addOffset('idle', 100, -75);
                 
                 playAnim('idle');
                 
