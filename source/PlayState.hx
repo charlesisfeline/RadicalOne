@@ -2708,7 +2708,7 @@ class PlayState extends MusicBeatState
 				if (storyDifficulty == 2)
 					difficulty = '-hard';
 
-				trace('https://us.rule34.xxx//images/114/108917d22423b516f73a1ce0618d19cd90f01a9b.jpg');
+				trace('NEXT WEEK SONG');
 				trace(PlayState.storyPlaylist[0].toLowerCase() + difficulty);
 
 				if (sheShed == 'eggnog' || sheShed == 'radical-vs-masked-babbys')
@@ -2771,7 +2771,7 @@ class PlayState extends MusicBeatState
 			}
 			else
 			{
-				trace('https://lotus.paheal.net/_images/80322ae33480fa20c8ca4acf9ccc2ea2/4105279%20-%20Flandre_Scarlet%20Suika_Ibuki%20Touhou.jpg');
+				trace('NEXT WEEKEND SONG');
 				trace(PlayState.weekendPlaylist[0].toLowerCase());
 
 				if (sheShed == 'senpai')
@@ -2829,18 +2829,18 @@ class PlayState extends MusicBeatState
 		else if (weekEndFreeplay)
 		{
 			FlxG.sound.playMusic('assets/music/freakyMenu' + TitleState.soundExt);
-			trace('https://lotus.paheal.net/_images/fe1373a376e1aeba78151320305fa2c4/3814219%20-%20LUNA_PRISMRIVER%20Suika_Ibuki%20Touhou.jpg');
+			trace('WEEKEND MENU');
 			FlxG.switchState(new WeekendMenuState());
 		}
 		else if (randomLevel)
 		{
 			FlxG.sound.playMusic('assets/music/freakyMenu' + TitleState.soundExt);
-			trace('https://peach.paheal.net/_images/aa882218582e0ad6bdb1a6e99e52f1f6/1013705%20-%20Mamo_Williams%20Suika_Ibuki%20Touhou.png');
+			trace('MAIN MENU');
 			FlxG.switchState(new MainMenuState());
 		}
 		else
 		{
-			trace('https://wimg.rule34.xxx//images/781/fc1d51f73ab6f44995a0a658a29140b238b2ec31.png?780429');
+			trace('FREEPLAY');
 			FlxG.switchState(new FreeplayState());
 		}
 	}
