@@ -577,7 +577,7 @@ class PlayState extends MusicBeatState
 				city.updateHitbox();
 				add(city);
 				
-				if (sheShed == 'bouncy-drop' && FlxG.random.bool(15))
+				if (sheShed == 'bouncy-drop' && FlxG.random.bool(15) && !isStoryMode)
 					city.loadGraphic(stagePath + 'namebe/' + sheShed + '/BigOlBunny.png');
 				
 				phillyTrain = new FlxSprite(2000, 360).loadGraphic(stagePath + 'namebe/' + sheShed + '/train.png');
@@ -594,7 +594,7 @@ class PlayState extends MusicBeatState
 				{	
 					wolves = new FlxTypedGroup<FlxSprite>();
 					add(wolves);
-					if (FlxG.random.bool(22))
+					if (FlxG.random.bool(22) && !isStoryMode)
 					{
 						for (i in 0...3)
 						{
@@ -2299,7 +2299,7 @@ class PlayState extends MusicBeatState
 				else
 					oldNote = null;
 
-				var swagNote:Note = new Note(daStrumTime, daNoteData, oldNote);
+				var swagNote = new NamebeNote(daStrumTime, daNoteData, oldNote);
 				swagNote.sustainLength = songNotes[2];
 				swagNote.scrollFactor.set(0, 0);
 
