@@ -1,7 +1,8 @@
-:monkey-left:*monkey noises*
-:pogbab-left:Woah dude, who's this?
-:pogbob-left-flip:I dont know, but he looks cool!
-:monkey-left:*monkey gestures*
-:gaming-right:Bro that thing is kinda threatening!
-:radical-right:Yeah lemme take care of it..
-:monkey-left:*monkey's funny doings*
+:monkey>left:*monkey noises*
+:pogbab>left:Woah dude, who's this?
+:pogbob>left:I dont know, but he looks cool!
+:monkey>left:*monkey gestures*
+:gaming>right:Eek! A scary monster!
+:radical-pissed>right:Calm down gaming...
+:radical-point>right:I can take care of this!
+:monkey>left:*monkey's funny doings*

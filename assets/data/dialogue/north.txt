@@ -1,6 +1,6 @@
-:bab:Hey! We have been told you're trying to ruin our game of catch!
-:bab:Real big meanies you are! Don't even THINK about ruining our 6 year world record!
-:radical:Dude I just got a new job.
-:radical:Why would I spend my time messing with babbys?
-:bob:Ya hear that? they have jobs! Jobs are boring!
-:bab:Yeah let's get em!
+:bab>left:Hey! We have been told you're trying to ruin our game of catch!
+:bab>left:Real big meanies you are! Don't even THINK about ruining our 7 year world record!
+:radical-sweat>right:Dude I just got a new job.
+:radical-ugh>right:Why would I spend my time messing with babbys?
+:bob>left:Ya hear that? they have jobs! Jobs are boring!
+:bab>left:Yeah let's get em!

@@ -1,5 +1,5 @@
-:bab:Woah! These "employed" people aren't messin' around!
-:ballbob:Yeah! I think we better bring out the big balls!
-:radical-right:...
-:gunbob:Guns, rather.
-:musket-right:Muskets even!
+:babjunk>left:Woah! These "employed" people aren't messin' around!
+:ballbob>left:Yeah! I think we better bring out the big balls!
+:radical-sweat>right:...
+:gunbob>left:Guns, rather.
+:musket>right:Muskets even!
