@@ -2299,14 +2299,22 @@ class PlayState extends MusicBeatState
 				else
 					oldNote = null;
 
-				var swagNote = new NamebeNote(daStrumTime, daNoteData, oldNote);
+				var nameNote:Bool = false;
+
+				var swagNote = new Note(daStrumTime, daNoteData, oldNote);
 				swagNote.sustainLength = songNotes[2];
 				swagNote.scrollFactor.set(0, 0);
+
+				var largePill:NamebeNote = new NamebeNote(daStrumTime, daNoteData, oldNote);
+				largePill.sustainLength = songNotes[2];
+				largePill.scrollFactor.set(0, 0);
 
 				var susLength:Float = swagNote.sustainLength;
 
 				susLength = susLength / Conductor.stepCrochet;
-				unspawnNotes.push(swagNote);
+				songNotes[3] ?
+					unspawnNotes.push(largePill):
+					unspawnNotes.push(swagNote);
 
 				for (susNote in 0...Math.floor(susLength))
 				{
@@ -2325,10 +2333,12 @@ class PlayState extends MusicBeatState
 				}
 
 				swagNote.mustPress = gottaHitNote;
+				largePill.mustPress = gottaHitNote;
 
 				if (swagNote.mustPress)
 				{
 					swagNote.x += FlxG.width / 2; // general offset
+					largePill.x += FlxG.width / 2; // general offset
 				}
 				else
 				{
