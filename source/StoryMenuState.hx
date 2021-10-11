@@ -220,6 +220,7 @@ class StoryMenuState extends MusicBeatState
 		unlockedThing.y += 2000;
 		if (justUnlockedSkin)
 		{
+			if (PlayState.sheShed == 'destructed') squishFCedAmongUsHappyMeal = true;
 			justUnlockedSkin = false;
 			add(unlockedThing);
 			add(regRacial);
@@ -242,6 +243,8 @@ class StoryMenuState extends MusicBeatState
 
 		super.create();
 	}
+
+	var squishFCedAmongUsHappyMeal:Bool = false;
 
 	var canSelect:Bool = true;
 	var canExitUnlock:Bool = false;
@@ -270,7 +273,25 @@ class StoryMenuState extends MusicBeatState
 			if (controls.ACCEPT)
 			{
 				new FlxTimer().start(0.5, function(junk:FlxTimer){
-					canSelect = true;
+					if (squishFCedAmongUsHappyMeal) {
+						canSelect = false;
+						var thingLOL:FlxSprite = new FlxSprite().loadGraphic('assets/images/UI/theManOfSecrets.png');
+						thingLOL.screenCenter();
+						thingLOL.alpha = 0;
+						add(thingLOL);
+						FlxTween.tween(thingLOL, {alpha: 1}, 0.45, {onComplete: function(twn:FlxTween){
+							new FlxTimer().start(0, function(tmr:FlxTimer){
+								if (FlxG.keys.justPressed.SPACE) {
+									thingLOL.alpha = 0;
+									canSelect = true;
+								}
+								else
+									tmr.reset();
+							});
+						}});
+					}
+					else
+						canSelect = true;
 				});
 				FlxTween.tween(unlockedThing, {alpha: 0}, 1, {ease: FlxEase.quintOut});
 				FlxTween.tween(regRacial, {alpha: 0}, 1, {ease: FlxEase.quintOut});

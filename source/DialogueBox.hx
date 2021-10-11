@@ -46,10 +46,10 @@ class DialogueBox extends FlxSpriteGroup
 				FlxG.sound.music.fadeIn(1, 0, 0.8);
 			case 'north':
 				FlxG.sound.playMusic('assets/music/Lunchbox' + TitleState.soundExt, 0);
-				FlxG.sound.music.fadeIn(1, 0, 0.8);
+				FlxG.sound.music.fadeIn(1, 0, 0.3);
 			case 'namebe':
 				FlxG.sound.playMusic('assets/music/Lunchbox' + TitleState.soundExt, 0);
-				FlxG.sound.music.fadeIn(1, 0, 0.8);
+				FlxG.sound.music.fadeIn(1, 0, 0.3);
 			case 'thorns':
 				FlxG.sound.playMusic('assets/music/LunchboxScary' + TitleState.soundExt, 0);
 				FlxG.sound.music.fadeIn(1, 0, 0.8);
@@ -291,10 +291,16 @@ class DialogueBox extends FlxSpriteGroup
 
 		if (curCharacter.toLowerCase().startsWith('radical') || curCharacter.toLowerCase().startsWith('racial'))
 			dialogue.whosTalking = Radical;
-		else if (curCharacter.toLowerCase().startsWith('gaming'))
+		else if (curCharacter.toLowerCase().startsWith('gaming') || curCharacter.split('>')[0].toLowerCase() == 'musket')
 			dialogue.whosTalking = Gaming;
-		else if (['namebe', 'boygirl', 'wtf'].contains(curCharacter.split('>')[0].toLowerCase()))
+		else if (['namebe', 'boygirl', 'wtf', 'namebe_pissed_off'].contains(curCharacter.split('>')[0].toLowerCase()))
 			dialogue.whosTalking = Namebe;
+		else if (['bab', 'bob', 'babjunk', 'ballbob', 'gunbob', 'pogbab', 'pogbob'].contains(curCharacter.split('>')[0].toLowerCase()))
+			dialogue.whosTalking = Babbys;
+		else if (curCharacter.toLowerCase().startsWith('monkey'))
+			dialogue.whosTalking = Monkey;
+		else if (curCharacter.split('>')[0].toLowerCase() == 'gspot')
+			dialogue.whosTalking = Gspot;
 		
 		dialogue.start(0.04, dialogueList[0]);
 

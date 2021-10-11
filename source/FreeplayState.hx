@@ -179,6 +179,10 @@ class FreeplayState extends MusicBeatState
 		var downP = controls.DOWN_P;
 		var accepted = controls.ACCEPT;
 
+		grpSongs.forEach(function(song:Alphabet){
+			song.screenCenter(X);
+		});
+
     	if (FlxG.keys.justPressed.NINE)
 		{
 			switch (curChar)

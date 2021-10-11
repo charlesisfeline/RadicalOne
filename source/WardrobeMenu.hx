@@ -29,6 +29,9 @@ class WardrobeMenu extends MusicBeatState
 
         if (FlxG.save.data.babbyUnlock)
             racialDiversity.push('Radical Babby');
+
+        if (FlxG.save.data.nameUnlock)
+            racialDiversity.push('Namebe Radical');
         
         if (FlxG.save.data.redballUnlock)
             racialDiversity.push('RedBall');

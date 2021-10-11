@@ -39,7 +39,7 @@ class WeekendMenuState extends MusicBeatState
 		// ['Start-Conjunction', 'Energy-Lights', 'Telegroove'],
         ['Senpai', 'Roses', 'Thorns'],
         ['the-backyardagains', 'funny'],
-        ['Interrogation', 'Tha-Biscoot', 'Among-Us-Happy-Meal', 'Chuckie', '3.4', 'Scribble-Street', 'Scary-Junk', 'Thanos-Rumble', 'Normal-Ghost', 'Plush-Factory', 'Spoar-Travel'],
+        ['Interrogation', 'Tha-Biscoot', 'Among-Us-Happy-Meal', 'Chuckie', '4.3', 'Scribble-Street', 'Scary-Junk', 'Thanos-Rumble', 'Normal-Ghost', 'Plush-Factory', 'Spoar-Travel'],
         ['Freebeat_1', 'JunkRUs', 'Picnic-Rumble']
     ];
 
@@ -72,6 +72,8 @@ class WeekendMenuState extends MusicBeatState
 
     var curWeekend:Int = 1;
 
+    var pic:FlxSprite;
+
     override function create()
     {
         DiscordClient.changePresence("In Weekend Menu", null, 'sussy', 'racialdiversity');
@@ -82,11 +84,8 @@ class WeekendMenuState extends MusicBeatState
                 FlxG.sound.playMusic('assets/music/freakyMenu' + TitleState.soundExt);
         }
 
-        if (Highscore.getWeekendScore(weekendNames.indexOf('Wow')) > 0)
-            FlxG.save.data.sussyUnlock = true;
-
-        if (Highscore.getWeekendScore(weekendNames.indexOf('Redball')) > 0)
-            FlxG.save.data.redballUnlock = true;
+        if (FlxG.save.data.skipFlash == null) FlxG.save.data.skipFlash = false;
+        if (FlxG.save.data.skipCopy == null) FlxG.save.data.skipCopy = false;
 
         //publicWeekendData = weekendData;
 
@@ -112,6 +111,9 @@ class WeekendMenuState extends MusicBeatState
         var blackBarTwo:FlxSprite = new FlxSprite(460, 200).makeGraphic(850, 10, 0xFF000000); // pretty sure theres a better way to do this?
         add(blackBarTwo);                                                                       // there isnt lol
 
+        pic = new FlxSprite(0, 83);
+        add(pic);
+
         squish = new FlxSprite(410, 610 - 2);
         squish.frames = FlxAtlasFrames.fromSparrow('assets/images/UI/scrolly_thing.png', 'assets/images/UI/scrolly_thing.xml');
         squish.animation.addByPrefix('idle', 'scroll squish', 24, true);
@@ -120,6 +122,7 @@ class WeekendMenuState extends MusicBeatState
         squish.animation.play('idle');
         add(squish);
 
+        /*
         suckers = new FlxSprite(10, 85);
         suckers.frames = FlxAtlasFrames.fromSparrow('assets/images/UI/weekendSuckers.png', 'assets/images/UI/weekendSuckers.xml');
         for (i in 0...weekendChars.length)
@@ -131,6 +134,7 @@ class WeekendMenuState extends MusicBeatState
         suckers.antialiasing = true;
         suckers.updateHitbox();
         add(suckers);
+        */
 
         regRacial = new WardrobeCharacter(417, 2370, 'Radical');
 		regRacial.setGraphicSize(0, 225);
@@ -179,6 +183,8 @@ class WeekendMenuState extends MusicBeatState
 				FlxTween.tween(newRacial, {y: 370}, 1.5, {ease: FlxEase.quintOut});
 			});
 		}
+
+        updateText();
 
         super.create();
     }
@@ -242,7 +248,18 @@ class WeekendMenuState extends MusicBeatState
     
             if (controls.ACCEPT)
             {
-                selectWeekend();
+                switch (curWeekend) {
+                    case 0:
+                        FlxG.save.data.skipFlash ?
+                        selectWeekend():
+                        flashWarning('flashy');
+                    case 1 | 2:
+                        FlxG.save.data.skipCopy ?
+                        selectWeekend():
+                        flashWarning('copyright');
+                    default:
+                        selectWeekend();
+                }
             }
 
             if (FlxG.keys.justPressed.G)
@@ -282,7 +299,39 @@ class WeekendMenuState extends MusicBeatState
         }
 		super.closeSubState();
 	}
-    
+
+    function flashWarning(img:String):Void
+    {
+        canSelect = false;
+        var warn:FlxSprite = new FlxSprite().loadGraphic('assets/images/UI/$img.png');
+        warn.screenCenter();
+        warn.alpha = 0;
+        add(warn);
+        FlxTween.tween(warn, {alpha: 1}, 0.45, {onComplete: function(twn:FlxTween){
+            new FlxTimer().start(0, function(tmr:FlxTimer){
+                if (FlxG.keys.justPressed.ENTER) {
+                    warn.alpha = 0;
+                    selectWeekend();
+                }
+                else if (FlxG.keys.justPressed.P) {
+                    img == 'flash' ?
+                    FlxG.save.data.skipFlash = true:
+                    FlxG.save.data.skipCopy = true;
+                    warn.alpha = 0;
+                    selectWeekend();
+                }
+                else if (FlxG.keys.justPressed.ESCAPE) {
+                    warn.kill();
+                    new FlxTimer().start(0.001, function(t:FlxTimer){
+                        canSelect = true;
+                    });
+                }
+                else
+                    tmr.reset();
+            });
+        }});
+    }
+
     function selectWeekend()
     {
         if (stopspamming == false)
@@ -305,6 +354,8 @@ class WeekendMenuState extends MusicBeatState
         PlayState.isWeekend = true;
         PlayState.weekendName = weekendNames[curWeekend];
 		selectedWeekend = true;
+
+        FlxG.camera.flash(FlxColor.WHITE, 1);
 
         PlayState.SONG = Song.loadFromJson(PlayState.weekendPlaylist[0].toLowerCase(), PlayState.weekendPlaylist[0].toLowerCase());
 		PlayState.weekend = curWeekend;
@@ -334,22 +385,9 @@ class WeekendMenuState extends MusicBeatState
     function updateText()
     {
         intendedScore = Highscore.getWeekendScore(curWeekend);
-        suckers.animation.play(weekendChars[curWeekend]);
-        switch (weekendChars[curWeekend])
-        {
-            case 'austin':
-                suckers.x = 10;
-                suckers.y = 85;
-            case 'nadalyn':
-                suckers.x = 0;
-                suckers.y = 140;
-            case 'wow':
-                suckers.x = 25;
-                suckers.y = 155;
-            default:
-                suckers.x = 10;
-                suckers.y = 140;
-        }
+        pic.loadGraphic('assets/images/UI/weekPreview/weekend$curWeekend.png');
+        pic.setGraphicSize(460, 550);
+        pic.updateHitbox();
 
         if (curWeekend == 2)
             trackList.text = 'SONGS: ???';

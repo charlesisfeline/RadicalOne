@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="ball.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="ball0000" x="0" y="0" width="1041" height="1026"/>
+	<SubTexture name="ball0001" x="0" y="0" width="1041" height="1026"/>
+	<SubTexture name="ball0002" x="0" y="1031" width="1008" height="1010" frameX="-15" frameY="-6" frameWidth="1041" frameHeight="1026"/>
+	<SubTexture name="ball0003" x="0" y="1031" width="1008" height="1010" frameX="-15" frameY="-6" frameWidth="1041" frameHeight="1026"/>
+	<SubTexture name="ball0004" x="1013" y="1031" width="1027" height="1023" frameX="-6" frameY="0" frameWidth="1041" frameHeight="1026"/>
+	<SubTexture name="ball0005" x="1013" y="1031" width="1027" height="1023" frameX="-6" frameY="0" frameWidth="1041" frameHeight="1026"/>
+</TextureAtlas>

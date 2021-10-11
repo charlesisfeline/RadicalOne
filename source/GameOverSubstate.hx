@@ -30,6 +30,8 @@ class GameOverSubstate extends MusicBeatSubstate
 			case 'red-ball':
 				daBf = 'red-ball';
 			default:
+				FlxG.save.data.outfit == 'Radical Babby'?
+				daBf = 'babrad-dead':
 				daBf = 'radical';
 		}
 

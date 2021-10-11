@@ -59,6 +59,7 @@
 	<assets path="assets/fonts/donuts.ttf" embed="true" />
 	<assets path="assets/fonts/pixel.otf" embed="true" />
 	<assets path="assets/fonts/COMIC.ttf" embed="true" />
+	<assets path="assets/fonts/Bouncy-Thin.otf" embed="true"/>
 
 	<!-- _______________________________ Libraries ______________________________ -->
 

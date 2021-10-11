@@ -1,7 +1,7 @@
 :radical-sweat>right:Will that be all?
-:radical-sweat>right:Its starting to get a bit too late for lunch and  we are pretty hungry.
-:gaming-poop>right:Yeah i want my grilled   cheese!
-:Nambe_Pissed_Off>left:Your getting me real    mad!
-:Nambe_Pissed_Off>left:You should surrender    before i have to use    force!
-:radical-pissed>right:Im being framed!
-:gaming-poop>right:And im hungry
+:radical-sweat>right:It's starting to get a bit too late for lunch, and we're pretty hungry.
+:gaming-poop>right:Yeah, I want my grilled cheese!
+:namebe>left:You're getting me real mad!
+:namebe>left:You should surrender before I have to use force!
+:radical-pissed>right:I'm being framed!
+:gaming-poop>right:And I'm hungry.

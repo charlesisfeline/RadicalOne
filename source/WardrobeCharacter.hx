@@ -64,7 +64,7 @@ class WardrobeCharacter extends FlxSprite
                 frames = tex;
                 animation.addByPrefix('idle', 'Idle', 24, true);
                 
-                addOffset('idle', 0, 0);
+                addOffset('idle', -85, -65);
                 
                 playAnim('idle');
                 
@@ -90,7 +90,16 @@ class WardrobeCharacter extends FlxSprite
                 frames = FlxAtlasFrames.fromSparrow(Character.charPath + 'gaming_racial.png', Character.charPath + 'gaming_racial.xml');
                 animation.addByPrefix('idle', 'Racial Spiteful Jig', 24);
                 
-                addOffset('idle', 100, -75);
+                addOffset('idle', -65, -45);
+                
+                playAnim('idle');
+                
+                flipX = true;
+            case 'Namebe Radical':
+                frames = FlxAtlasFrames.fromSparrow(Character.charPath + 'Radical_Namebe.png', Character.charPath + 'Radical_Namebe.xml');
+                animation.addByPrefix('idle', 'Racial Spiteful Jig', 24);
+                
+                addOffset('idle', -65, -45);
                 
                 playAnim('idle');
                 

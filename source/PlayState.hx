@@ -177,6 +177,7 @@ class PlayState extends MusicBeatState
 
 	var sway:Array<FlxSprite> = [];
 	var walkyDudes:FlxSprite;
+	var ball:FlxSprite;
 
 	var songsWithDialogue:Array<String> = [
 		'senpai', 'roses', 'thorns', 
@@ -1070,25 +1071,39 @@ class PlayState extends MusicBeatState
 			default:
 				defaultCamZoom = 1;
 
-				var iAmActuallyDunkingMyJunk:FlxSprite = new FlxSprite(-270, 50).loadGraphic(stagePath + 'office/STAGELAYER3.png');
-				iAmActuallyDunkingMyJunk.setGraphicSize(1828);
+				var iAmActuallyDunkingMyJunk:FlxSprite = new FlxSprite(-1348, -961).loadGraphic(stagePath + 'office/discotime.png');
+				iAmActuallyDunkingMyJunk.setGraphicSize(3999);
 				iAmActuallyDunkingMyJunk.updateHitbox();
 				iAmActuallyDunkingMyJunk.antialiasing = true;
 				iAmActuallyDunkingMyJunk.scrollFactor.set(0.8, 0.8);
 				add(iAmActuallyDunkingMyJunk);
 
-				var stageFront:FlxSprite = new FlxSprite(-270, 50).loadGraphic(stagePath + 'office/STAGELAYER2.png');
-				stageFront.setGraphicSize(1828);
+				var stageFront:FlxSprite = new FlxSprite(-1634, 50).loadGraphic(stagePath + 'office/gunk.png');
+				stageFront.setGraphicSize(4599);
 				stageFront.updateHitbox();
 				stageFront.antialiasing = true;
 				stageFront.scrollFactor.set(0.9, 0.9);
 				add(stageFront);
 
-				var bg:FlxSprite = new FlxSprite(-270, 50).loadGraphic(stagePath + 'office/STAGELAYER1.png');
-				bg.setGraphicSize(1828);
+				var bg:FlxSprite = new FlxSprite(-3326, 50).loadGraphic(stagePath + 'office/soapy.png');
+				bg.setGraphicSize(7976);
 				bg.updateHitbox();
 				bg.antialiasing = true;
+
+				var pumpkinsCatJustPoopedOnTheFloor:FlxSprite = new FlxSprite(-3326, -961).loadGraphic(stagePath + 'office/soapy2.png');
+				pumpkinsCatJustPoopedOnTheFloor.setGraphicSize(7976, 961 + 50 + 5 /*offset of 5!!!!*/);
+				pumpkinsCatJustPoopedOnTheFloor.updateHitbox();
+				pumpkinsCatJustPoopedOnTheFloor.antialiasing = true;
+				add(pumpkinsCatJustPoopedOnTheFloor);
 				add(bg);
+
+				ball = new FlxSprite(508, -314);
+				ball.frames = FlxAtlasFrames.fromSparrow(stagePath + 'office/ball.png', stagePath + 'office/ball.xml');
+				ball.animation.addByPrefix('idle', 'ball', 24, true);
+				ball.animation.play('idle');
+				ball.setGraphicSize(304);
+				ball.updateHitbox();
+				add(ball);
 
 				var stageCurtains:FlxSprite = new FlxSprite(-500, -300).loadGraphic(stagePath + 'office/stagecurtains.png');
 				stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
@@ -1195,7 +1210,7 @@ class PlayState extends MusicBeatState
 			case 'wow':
 			    camPos.x += 600;
                 dad.y += 300;
-			case 'goomba' | 'pic-nick' | 'pc' | 'stick' | 'joe-bidens-dog':
+			case 'goomba' | 'pc' | 'stick' | 'joe-bidens-dog':
 				camPos.x += 600;
                 dad.y += 300;
 			case 'wow2':
@@ -1414,6 +1429,13 @@ class PlayState extends MusicBeatState
 		add(gaming);
 		add(boyfriend);
 
+		egg = new FlxSprite().makeGraphic(1280, 720);
+		egg.scrollFactor.set(0, 0);
+		egg.cameras = [camHUD];
+		egg.alpha = 0.3;
+		egg.visible = false;
+		if (sheShed == 'working-hard') add(egg);
+
 		var doof:DialogueBox = new DialogueBox(false, dialogue);
 		// doof.x += 70;
 		// doof.y = FlxG.height * 0.5;
@@ -1607,12 +1629,13 @@ class PlayState extends MusicBeatState
 							case 'tha-biscoot': 'armpit';
 							case 'among-us-happy-meal': 'Among';
 							case 'chuckie': 'call';
-							case '3.4': 'alittlegirl';
+							case '4.3': 'alittlegirl';
 							case 'scribble-street': 'acity';
 							case 'scary-junk': 'deez';
 							case 'thanos-rumble': 'anoldjunk';
 							case 'normal-ghost': 'aghost';
 							case 'plush-factory': 'agrouponerds';
+							case 'spoar-travel': 'spoar';
 							default: '';
 						}
 						var pooperBackground:FlxSprite = new FlxSprite().makeGraphic(1280, 720, FlxColor.BLACK);
@@ -1703,6 +1726,8 @@ class PlayState extends MusicBeatState
 	override function stepHit()
 	{
 		super.stepHit();
+
+		stageSpecificStepHit();
 
 		if (SONG.needsVoices)
 		{
@@ -2121,6 +2146,21 @@ class PlayState extends MusicBeatState
 				'UI/red/set.png',
 				'UI/red/go.png'
 			]);
+			introAssets.set('picnic', [
+				'UI/red/ready.png',
+				'UI/red/set.png',
+				'UI/red/go.png'
+			]);
+			introAssets.set('picnic', [
+				'UI/red/ready.png',
+				'UI/red/set.png',
+				'UI/red/go.png'
+			]);
+			introAssets.set('flynets', [
+				'UI/flynets/ready.png',
+				'UI/flynets/set.png',
+				'UI/flynets/go.png'
+			]);
 
 			var introAlts:Array<String> = introAssets.get('default');
 			var altSuffix:String = "";
@@ -2190,14 +2230,9 @@ class PlayState extends MusicBeatState
 						go.scrollFactor.set();
 						go.setGraphicSize(Std.int(go.width * daPixelZoom));
 					}
-					else if (curStage.startsWith('freebeat') || curStage == 'junk')
+					else if (curStage.startsWith('freebeat') || curStage == 'junk' || curStage.startsWith('flynets'))
 					{
 						go = new FlxSprite().loadGraphic('assets/images/' + introAlts[2]);
-						go.scrollFactor.set();
-					}
-					else if (curStage.startsWith('flynets'))
-					{
-						go = new FlxSprite().loadGraphic('assets/images/UI/go.png');
 						go.scrollFactor.set();
 					}
 					else
@@ -2684,6 +2719,11 @@ class PlayState extends MusicBeatState
 							StoryMenuState.justUnlockedSkin = true;
 						StoryMenuState.skin2Unlock = 'Radical Babby';
 						FlxG.save.data.babbyUnlock = true;
+					case 3:
+						if (!FlxG.save.data.nameUnlock)
+							StoryMenuState.justUnlockedSkin = true;
+						StoryMenuState.skin2Unlock = 'Namebe Radical';
+						FlxG.save.data.nameUnlock = true;
 				}
 
 				// if ()
@@ -2710,24 +2750,6 @@ class PlayState extends MusicBeatState
 
 				trace('NEXT WEEK SONG');
 				trace(PlayState.storyPlaylist[0].toLowerCase() + difficulty);
-
-				if (sheShed == 'eggnog' || sheShed == 'radical-vs-masked-babbys')
-				{
-					var blackShit:FlxSprite = new FlxSprite(-FlxG.width * FlxG.camera.zoom,
-						-FlxG.height * FlxG.camera.zoom).makeGraphic(FlxG.width * 3, FlxG.height * 3, FlxColor.BLACK);
-					blackShit.scrollFactor.set();
-					add(blackShit);
-					camHUD.visible = false;
-
-					FlxG.sound.play('assets/sounds/Lights_Shut_off' + TitleState.soundExt);
-				}
-
-				if (sheShed == 'north')
-				{
-					transIn = null;
-					transOut = null;
-					prevCamFollow = camFollow;
-				}
 
 				PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]);
 				FlxG.sound.music.stop();
@@ -3749,6 +3771,7 @@ class PlayState extends MusicBeatState
 				}
 				combo = 0;
 				misses++;
+				curMisses++;
 	
 				songScore -= 25;
 				
@@ -3804,6 +3827,7 @@ class PlayState extends MusicBeatState
 			}
 			combo = 0;
 			misses++;
+			curMisses++;
 
 			songScore -= 100;
 			
@@ -3904,6 +3928,7 @@ class PlayState extends MusicBeatState
 			combo = 0;
 			if (!justMissed)
 			{
+				curMisses++;
 				misses++;
 				justMissed = true;
 			}
@@ -3940,6 +3965,7 @@ class PlayState extends MusicBeatState
 			}
 			combo = 0;
 			misses++;
+			curMisses++;
 
 			songScore -= 10;
 
@@ -3980,6 +4006,7 @@ class PlayState extends MusicBeatState
 				gf.playAnim('sad');
 			}
 			combo = 0;
+			curMisses++;
 			misses++;
 
 			songScore -= 10;
@@ -4326,7 +4353,8 @@ class PlayState extends MusicBeatState
 
 	function lightningStrikeShit():Void
 	{
-		FlxG.sound.play('assets/sounds/thunder_' + FlxG.random.int(1, 2) + TitleState.soundExt);
+		if (sheShed == 'north' || sheShed == 'radical-vs-masked-babbys')
+			FlxG.sound.play('assets/sounds/thunder_' + FlxG.random.int(1, 2) + TitleState.soundExt);
 		halloweenBG.animation.play('lightning');
 
 		lightningStrikeBeat = curBeat;
@@ -4345,17 +4373,17 @@ class PlayState extends MusicBeatState
 	{
 		var daRating:String = '';
 
-		if (sicks > goods + bads + shits + curMisses)
+		if (combo > 60)
 			daRating = 'sick';
-		else if (goods > bads + shits + curMisses)
+		else if (combo > 12)
 			daRating = 'good';
-		else if (bads > shits + curMisses || sicks == goods && goods == bads && bads == shits && shits == curMisses)
+		else if (combo > 4)
 			daRating = 'bad';
 		else
 			daRating = 'shit';
 		var rating:FlxSprite = new FlxSprite();
 
-		rating.loadGraphic('assets/images/$daRating.png');
+		rating.loadGraphic('assets/images/UI/$daRating.png');
 		rating.screenCenter();
 		rating.x -= 40;
 		rating.y -= 60;
@@ -4497,6 +4525,8 @@ class PlayState extends MusicBeatState
 			gspotTurn = true;
 		}
 
+		if (partyTime) camFollow.y -= 175;
+
 		if (dad.curCharacter == 'bonbon')
 			vocals.volume = 1;
 
@@ -4528,6 +4558,13 @@ class PlayState extends MusicBeatState
 			camFollow.x -= 124;
 			camFollow.y -= 236;
 		}
+
+		if (FlxG.save.data.outfit == 'Chaotic Radical') {
+			camFollow.x -= 150;
+			camFollow.y -= 50;
+		}
+
+		if (partyTime) camFollow.y -= 175;
 
 		if (sheShed == 'tutorial' || sheShed == 'interrogation')
 		{
@@ -4561,6 +4598,8 @@ class PlayState extends MusicBeatState
 				camFollow.y = spr.getMidpoint().y - 175;
 			case 'machine':
 				camFollow.setPosition(spr.getMidpoint().x + 200, spr.getMidpoint().y);
+			case 'pic-nick':
+				camFollow.x += 150;
 		}
 	}
 
@@ -4666,6 +4705,9 @@ class PlayState extends MusicBeatState
 		}
 	}
 
+	var egg:FlxSprite;
+	var colors:Array<FlxColor> = [FlxColor.MAGENTA, FlxColor.BLUE, FlxColor.PURPLE, FlxColor.GREEN];
+
 	private function stageSpecificBeatHit():Void
 	{
 		// HARDCODING FOR MILF ZOOMS!
@@ -4689,6 +4731,11 @@ class PlayState extends MusicBeatState
 			{
 				dad.playAnim('cheer', true);
 			}
+		}
+
+		if (partyTime) {
+			egg.visible = true;
+			egg.color = colors[curBeat % 4];
 		}
 
 		switch (curStage)
@@ -4760,7 +4807,7 @@ class PlayState extends MusicBeatState
 					walkyDudes.animation.play('idle', true, curBeat % 2 == 0);
 					FlxTween.tween(walkyDudes, {x: walkyDudes.x - 75}, Conductor.crochet / 1500, {ease: FlxEase.quadOut, onComplete: function(twn:FlxTween){
 						// trace(walkyDudes.x);
-						if (walkyDudes.x < -400) walkyDudes.x = 1280 * 2.25;
+						if (walkyDudes.x < -400) walkyDudes.x = 1280 * FlxG.random.float(2.25, 4.25);
 					}});
 				}
 				else {
@@ -4788,7 +4835,11 @@ class PlayState extends MusicBeatState
 					moveRem();
 				}
 			default:
-				if (sheShed == 'working-hard' && curBeat == 130) deezSpeed = 2.5;
+				if (sheShed == 'working-hard' && curBeat == 130) {
+					deezSpeed = 2.5;
+					defaultCamZoom = 0.7;
+					partyTime = true;
+				}
 		}
 
 		if (isHalloween && FlxG.random.bool(10) && curBeat > lightningStrikeBeat + lightningOffset)
@@ -4796,6 +4847,16 @@ class PlayState extends MusicBeatState
 			lightningStrikeShit();
 		}
 	}
+
+	function stageSpecificStepHit():Void
+	{
+		if (partyTime) {
+			if (curStep % 2 == 0)
+				FlxTween.tween(ball, {y: ball.y + (curStep % 4 == 0 ? -25 : 25)}, Conductor.stepCrochet / 1000, {ease: FlxEase.quadOut});
+		}
+	}
+
+	var partyTime:Bool = false;
 
 	function iconJunk():Void
 	{
@@ -5122,6 +5183,7 @@ class PlayState extends MusicBeatState
 								if (!justMissed)
 								{
 									misses++;
+									curMisses++;
 									justMissed = true;
 								}	
 							}
@@ -5278,6 +5340,7 @@ class PlayState extends MusicBeatState
 							{
 								health -= 0.045;
 								vocals.volume = 0;
+								curMisses++;
 								misses++;
 							}
 
@@ -5534,7 +5597,7 @@ class PlayState extends MusicBeatState
 					curStage = 'dreaming';
 				case 'dawgee-want-food':
 					curStage = 'dawgee';
-				case '3.4':
+				case '4.3':
 					curStage = '3.4';
 				case 'nadalyn-sings-spookeez' | 'nadbattle' | 'nadders':
 					curStage = 'nadalyn';
@@ -5643,6 +5706,12 @@ class PlayState extends MusicBeatState
 		{
 			case 'Old Radical':
 				icon.loadIcon('racial');
+			case 'Namebe Radical':
+				icon.loadIcon('radical-namebe');
+			case 'Gaming Radical':
+				icon.loadIcon('radical-tastic');
+			case 'Chaotic Radical':
+				icon.loadIcon('pooper-mcscooper');
 			case 'RedBall':
 				icon.loadIcon('radball');
 			case 'Racial Pride':

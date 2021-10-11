@@ -28,6 +28,9 @@ enum Dudes
     Radical;
     Gaming;
     Namebe;
+    Monkey;
+    Babbys;
+    Gspot;
 }
 
 class Dialogue extends FlxSpriteGroup
@@ -78,13 +81,20 @@ class Dialogue extends FlxSpriteGroup
 
                 dropText.font = swagDialogue.font = 'Pixel Arial 11 Bold';
             case Regular:
-                daText = new TextManager(144, 473, 1020, 32);
-                add(daText);
+                swagDialogue = new FlxTypeText(240, 500, Std.int(FlxG.width * 0.6), "", 48);
+                swagDialogue.color = FlxColor.BLACK;
+                swagDialogue.sounds = [FlxG.sound.load('assets/sounds/pixelText' + TitleState.soundExt, 0.6)];
+
+                add(swagDialogue);
+
+                swagDialogue.font = 'Bouncy Thin PERSONAL USE ONLY';
         }
     }
 
     public function start(time:Float = 0.04, text:String = 'swag')
     {
+        whosTalking == Gspot ?
+        diaSounds = [FlxG.sound.load('assets/sounds/gspot.ogg', 0.6)]:
         diaSounds = [
             for (i in 1...5) 
                 FlxG.sound.load('assets/sounds/'
@@ -95,22 +105,18 @@ class Dialogue extends FlxSpriteGroup
                     'gaming';
                 case Namebe:
                     'namebe';
+                case Monkey:
+                    'monkey';
+                case Babbys:
+                    'babby';
+                case Gspot:
+                    'gspot';
             }) + '_$i'
             + TitleState.soundExt, 0.6)];
         
-        switch(type)
-        {
-            case Tutorial:
-                swagDialogue.sounds = diaSounds;
-                swagDialogue.resetText(text);
-                swagDialogue.start(time, true);
-            case Pixel:
-                swagDialogue.resetText(text);
-                swagDialogue.start(time, true);
-            case Regular:
-                daText.text = text;
-                daText.start(time);
-        }
+        swagDialogue.sounds = diaSounds;
+        swagDialogue.resetText(text);
+        swagDialogue.start(time, true);
     }
 
     override function update(t:Float)

@@ -1,8 +1,8 @@
-:right:Oh no! This guys a real ~threat!
-:left-loud:Thats right! now you best get going ~before your as purple as me!
-:gaming:Its fine if ~we have to do ~something ~else today
+:right:Oh no! This guy's a real ~threat!
+:left-loud:That's right! Now you best get going ~before you're as purple as me!
+:gaming:It's fine if ~we have to do ~something ~else today.
 :gaming:Please dont ~risk your life ~for whatever ~this is!
 :right:I must!
-:right:Its such a good suprise!
-:left:Dont be too sure the difficulty ~wont increase
+:right:It's such a good surprise!
+:left:Don't be too sure the difficulty ~won't increase.
 :left-loud:I brought my guard dogs this time!

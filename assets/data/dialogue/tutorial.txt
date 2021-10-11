@@ -1,13 +1,10 @@
-:gaming>left:Are you sure your still rusty?
-:gaming>left:You where the one who sang the chunky fried chicken jingle for 4 years
-:radical-ugh>right:Yeah but
-:radical-sweat>right:That was one song and it was just a few seconds long
+:gaming>left:Are you sure you're still rusty?
+:gaming>left:You were the one who sang the Chunky Fried Chicken jingle for 4 years.
+:radical-ugh>right:Yeah, but..
+:radical-sweat>right:That was one song, and it was just a few seconds long.
 :gaming>left:Well even if thats true,
-:gaming>left:You know how much even a bit of singing talent will get you
+:gaming>left:You know how much even a bit of singing talent will get you!
 :gaming>left:Remember that blue haired guy on the news?
-:radical>right:Yeah, i guess i could give it another try
+:radical>right:Yeah, I guess I could give it another try.
 :racial-portrait-silly>right:But can you help me practice?
 :gaming>left:I have just the perfect song!
-:namebe>left:Hey guys im here too!
-:namebe>left:for sor por or wortor portorplortor!!!!!!!!!!!!!!!!!!!!!!!!!
-:Radical-red>junk5:Ugh ideot go eway
