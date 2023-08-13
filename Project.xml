@@ -4,9 +4,6 @@
 
 	<app title="RadicalOne" file="RadicalOne" packageName="com.ninjamuffin99.funkin" main="Main" version="0" company="ninjamuffin99" />
 
-	<!--Switch Export with Unique ApplicationID and Icon-->
-	<set name="APP_ID" value="0x0100f6c013bbc000" />
-
 	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
 		or you can set the actual size of your file manually at "FlxPreloaderBase-onUpdate-bytesTotal"-->
 	<!-- <app preloader="Preloader" resizable="true" /> -->
@@ -28,9 +25,6 @@
 
 	<!--Mobile-specific-->
 	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" />
-
-	<!--Switch-specific-->
-	<window if="switch" orientation="landscape" fullscreen="true" width="0" height="0" resizable="true" />
 
 	<!-- _____________________________ Path Settings ____________________________ -->
 
@@ -55,11 +49,11 @@
 	<assets path="CHANGELOG.md"/>
 
 
-	<assets path="assets/fonts/vcr.ttf" embed="true" />
-	<assets path="assets/fonts/donuts.ttf" embed="true" />
-	<assets path="assets/fonts/pixel.otf" embed="true" />
-	<assets path="assets/fonts/COMIC.ttf" embed="true" />
-	<assets path="assets/fonts/Bouncy-Thin.otf" embed="true"/>
+	<assets path="assets/fonts/vcr.ttf" />
+	<assets path="assets/fonts/donuts.ttf" />
+	<assets path="assets/fonts/pixel.otf" />
+	<assets path="assets/fonts/COMIC.ttf" />
+	<assets path="assets/fonts/Bouncy-Thin.otf" />
 
 	<!-- _______________________________ Libraries ______________________________ -->
 
@@ -73,7 +67,7 @@
 	<!--In case you want to use the ui package-->
 	<haxelib name="flixel-ui" />
 	<haxelib name="newgrounds"/>
-	<haxelib name="faxe" if='switch'/>
+	<!--<haxelib name="faxe" if='switch'/>-->
 	<haxelib name="polymod"/>
 	<haxelib name="swf"/>
 	<haxelib name="discord_rpc"/>
@@ -88,7 +82,7 @@
 	<!-- ______________________________ Haxedefines _____________________________ -->
 
 	<!--Enable the Flixel core recording system-->
-	<!--<haxedef name="FLX_RECORD" />-->
+	<haxedef name="FLX_RECORD" />
 
 	<!--Disable the right and middle mouse buttons-->
 	<!-- <haxedef name="FLX_NO_MOUSE_ADVANCED" /> -->

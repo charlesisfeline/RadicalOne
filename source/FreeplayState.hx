@@ -28,7 +28,9 @@ class FreeplayState extends MusicBeatState
 	var diffText:FlxText;
 	var lerpScore:Int = 0;
 	var intendedScore:Int = 0;
+
 	public static var curChar:String = 'NewRadical';
+
 	var previewBox:FlxSprite;
 	var charPreviews:FlxSprite;
 
@@ -39,7 +41,7 @@ class FreeplayState extends MusicBeatState
 	{
 		DiscordClient.changePresence("In Freeplay", null, 'sussy', 'racialdiversity');
 
-		//songs = CoolUtil.coolTextFile('assets/data/freeplaySonglist.txt');
+		// songs = CoolUtil.coolTextFile('assets/data/freeplaySonglist.txt');
 
 		/* 
 			if (FlxG.sound.music != null)
@@ -53,8 +55,8 @@ class FreeplayState extends MusicBeatState
 
 		for (i in 0...StoryMenuState.weekData.length)
 		{
-			var sub2Grantare:Array<String> = StoryMenuState.weekData[i];
-			for (i in sub2Grantare)
+			var sub2SkyFactorial:Array<String> = StoryMenuState.weekData[i];
+			for (i in sub2SkyFactorial:)
 			{
 				songs.push(i);
 			}
@@ -76,11 +78,11 @@ class FreeplayState extends MusicBeatState
 
 		for (i in 0...songs.length)
 		{
-			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i], true, false, true, Song.loadFromJson('${songs[i].toLowerCase()}-hard', songs[i].toLowerCase()).player2);
+			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i], true, false, true,
+				Song.loadFromJson('${songs[i].toLowerCase()}-hard', songs[i].toLowerCase()).player2);
 			songText.isMenuItem = true;
 			songText.targetY = i;
 			grpSongs.add(songText);
-			// songText.x += 40;
 			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
 			// songText.screenCenter(X);
 		}
@@ -89,7 +91,6 @@ class FreeplayState extends MusicBeatState
 		previewBox.frames = FlxAtlasFrames.fromSparrow('assets/images/UI/Preview_Box.png', 'assets/images/UI/Preview_Box.xml');
 		previewBox.animation.addByPrefix('idle', 'Preview Box Movie', 24, true);
 		previewBox.animation.play('idle');
-		//add(previewBox);
 
 		var actualSopar:Array<String> = ['RadicalOne', 'NewRadical', 'RadiFAIL', 'RedBall', 'RacialPride'];
 
@@ -100,17 +101,12 @@ class FreeplayState extends MusicBeatState
 			charPreviews.animation.addByPrefix(i, i, 24, true);
 		}
 		charPreviews.animation.play('idle');
-		//add(charPreviews);
 
 		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
-		// scoreText.autoSize = false;
 		scoreText.setFormat("assets/fonts/vcr.ttf", 32, FlxColor.WHITE, RIGHT);
-		// scoreText.alignment = RIGHT;
-		
+
 		charText = new FlxText(FlxG.width * 0.7, 520, 0, "", 32);
-		// scoreText.autoSize = false;
 		charText.setFormat("assets/fonts/vcr.ttf", 32, FlxColor.WHITE, RIGHT);
-		// scoreText.alignment = RIGHT;
 
 		var scoreBG:FlxSprite = new FlxSprite(scoreText.x - 6, 0).makeGraphic(Std.int(FlxG.width * 0.35), 66, 0xFF000000);
 		scoreBG.alpha = 0.6;
@@ -120,38 +116,16 @@ class FreeplayState extends MusicBeatState
 		diffText.font = scoreText.font;
 
 		add(scoreText);
-		//add(charText);
 
 		selector = new FlxText();
 
 		selector.size = 40;
 		selector.text = ">";
-		// add(selector);
 
 		changeSelection();
 		changeDiff();
 
-		// FlxG.sound.playMusic('assets/music/title' + TitleState.soundExt, 0);
-		// FlxG.sound.music.fadeIn(2, 0, 0.8);
-
 		var swag:Alphabet = new Alphabet(1, 0, "swag");
-
-		// JUST DOIN THIS SHIT FOR TESTING!!!
-		/* 
-			var md:String = Markdown.markdownToHtml(Assets.getText('CHANGELOG.md'));
-
-			var texFel:TextField = new TextField();
-			texFel.width = FlxG.width;
-			texFel.height = FlxG.height;
-			// texFel.
-			texFel.htmlText = md;
-
-			FlxG.stage.addChild(texFel);
-
-			// scoreText.textField.htmlText = md;
-
-			trace(md);
-		 */
 
 		super.create();
 	}
@@ -179,24 +153,25 @@ class FreeplayState extends MusicBeatState
 		var downP = controls.DOWN_P;
 		var accepted = controls.ACCEPT;
 
-		grpSongs.forEach(function(song:Alphabet){
+		grpSongs.forEach(function(song:Alphabet)
+		{
 			song.screenCenter(X);
 		});
 
-    	if (FlxG.keys.justPressed.NINE)
+		if (FlxG.keys.justPressed.NINE)
 		{
 			switch (curChar)
 			{
-			case 'NewRadical':	
-				curChar = 'RadicalOne';
-			case 'RadicalOne':
-				curChar = 'RadiFAIL';
-			case 'RadiFAIL':
-				curChar = 'RedBall';
-			case 'RedBall':
-				curChar = 'RacialPride';
-			case 'RacialPride':
-				curChar = 'NewRadical';	
+				case 'NewRadical':
+					curChar = 'RadicalOne';
+				case 'RadicalOne':
+					curChar = 'RadiFAIL';
+				case 'RadiFAIL':
+					curChar = 'RedBall';
+				case 'RedBall':
+					curChar = 'RacialPride';
+				case 'RacialPride':
+					curChar = 'NewRadical';
 			}
 		}
 		if (upP)
@@ -254,17 +229,12 @@ class FreeplayState extends MusicBeatState
 			case 1:
 				diffText.text = 'NORMAL';
 			case 2:
-				diffText.text = "RADICAL";
+				diffText.text = "RADICAL"; // uhh why not hard?
 		}
 	}
 
 	function changeSelection(change:Int = 0)
 	{
-	/*	#if !switch
-		NGio.logEvent('Fresh');
-		#end    */
-
-		// NGio.logEvent('Fresh');
 		FlxG.sound.play('assets/sounds/scrollMenu' + TitleState.soundExt, 0.4);
 
 		curSelected += change;
@@ -274,11 +244,8 @@ class FreeplayState extends MusicBeatState
 		if (curSelected >= songs.length)
 			curSelected = 0;
 
-		//selector.y = (70 * curSelected) + 30;
-
 		#if !switch
 		intendedScore = Highscore.getScore(songs[curSelected], curDifficulty);
-		// lerpScore = 0;
 		#end
 
 		FlxG.sound.playMusic('assets/music/' + songs[curSelected] + "_Inst" + TitleState.soundExt, 0);
@@ -291,12 +258,10 @@ class FreeplayState extends MusicBeatState
 			bullShit++;
 
 			item.alpha = 0.6;
-			// item.setGraphicSize(Std.int(item.width * 0.8));
 
 			if (item.targetY == 0)
 			{
 				item.alpha = 1;
-				// item.setGraphicSize(Std.int(item.width));
 			}
 		}
 	}

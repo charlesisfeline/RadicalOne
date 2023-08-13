@@ -1,8 +1,10 @@
+package;
+
 import flixel.FlxG;
 
-class InputSystem
+class RadicalPrefs
 {
-    static public function initInputs()
+    static public function initPrefs()
     {
         if (FlxG.save.data.inputSystem == null)
             FlxG.save.data.inputSystem = 'RadicalOne';
@@ -21,5 +23,8 @@ class InputSystem
 
         if (FlxG.save.data.ludumRating == null)
             FlxG.save.data.ludumRating = false;
+
+        if (FlxG.save.data.hitsounds == null)
+            FlxG.save.data.hitsounds = false;
     }
 }

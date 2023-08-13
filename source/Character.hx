@@ -14,6 +14,7 @@ class Character extends FlxSprite
 
 	public var isPlayer:Bool = false;
 	public var curCharacter:String = 'radical';
+
 	var radicalChar = FreeplayState.curChar;
 
 	public var holdTimer:Float = 0;
@@ -21,40 +22,63 @@ class Character extends FlxSprite
 	public static var charPath:String = 'assets/images/characters/';
 
 	/*public static var charArray:Array<String> = [
-		'radical', 'gaming-speakers',
-		'interviewer', 'machine',
-		'babbys', 'monkey-sprite', 
-		'namebe', 'gandhi', 
-		'bonbon', 'gaming', 
-		'four', 'x', 'christmas-monkey', 
-		'invisible', '',
-		'salted', 
-		'wow', 'wow2',
-		'austin', 
-		'senpai', 'senpai-angry', 
-		'pronun', 
-		'charlie', 
-		'skank', 'goomba', 'flandre-cool-awesome', 'nadalyn', 'failure', 'red-ball', 'dadamono', '3.4', 'stick', 'skank-n-pronoun', 'junkers', 'pic-nick', 'pc', 'thanos-dad', 'community-night-funkin'
-	];*/
-
+			'radical', 'gaming-speakers',
+			'interviewer', 'machine',
+			'babbys', 'monkey-sprite', 
+			'namebe', 'gandhi', 
+			'bonbon', 'gaming', 
+			'four', 'x', 'christmas-monkey', 
+			'invisible', '',
+			'salted', 
+			'wow', 'wow2',
+			'austin', 
+			'senpai', 'senpai-angry', 
+			'pronun', 
+			'charlie', 
+			'skank', 'goomba', 'flandre-cool-awesome', 'nadalyn', 'failure', 'red-ball', 'dadamono', '3.4', 'stick', 'skank-n-pronoun', 'junkers', 'pic-nick', 'pc', 'thanos-dad', 'community-night-funkin'
+		]; */
 	public static var charArray:Array<String> = [
-		'radical', 'gaming-speakers',
-		'interviewer', 'machine',
-		'babbys', 'monkey-sprite', 
-		'namebe', 'namebe-piss', 'gandhi', 'gaming-namebe', 
+		'radical',
+		'gaming-speakers',
+		'interviewer',
+		'machine',
+		'babbys',
+		'monkey-sprite',
+		'namebe',
+		'namebe-piss',
+		'gandhi',
+		'gaming-namebe',
 		'gaming',
-		'invisible', '',
-		'salted', 
-		'wow', 'wow2',
-		'austin', 
-		'senpai', 'senpai-angry',  
-		'skank', 'goomba', 'flandre-cool-awesome', // jo junk
-		'nadalyn', 'failure', 'red-ball', 
-		'dadamono', '3.4', 'stick', 
-		'skank-n-pronoun', 'junkers', 'pic-nick', 
-		'pc', 'thanos-dad', 'community-night-funkin', // end jo junk
-		'i-hate-you-lancey', 'red-ball-dream', 'failure-dream', 
-		'dawgee', 'joe-bidens-dog', 'nerd', 'spoar-man' // yeah no jo junk is still going on im NOT moving these over
+		'invisible',
+		'',
+		'salted',
+		'wow',
+		'wow2',
+		'austin',
+		'senpai',
+		'senpai-angry',
+		'skank',
+		'goomba',
+		'flandre-cool-awesome', // jo junk
+		'nadalyn',
+		'failure',
+		'red-ball',
+		'dadamono',
+		'3.4',
+		'stick',
+		'skank-n-pronoun',
+		'junkers',
+		'pic-nick',
+		'pc',
+		'thanos-dad',
+		'community-night-funkin', // end jo junk
+		'i-hate-you-lancey',
+		'red-ball-dream',
+		'failure-dream',
+		'dawgee',
+		'joe-bidens-dog',
+		'nerd',
+		'spoar-man' // yeah no jo junk is still going on im NOT moving these over
 	];
 
 	public function new(x:Float, y:Float, ?character:String = "radical", ?isPlayer:Bool = false)
@@ -106,7 +130,8 @@ class Character extends FlxSprite
 
 				playAnim('danceRight');
 			case 'gaming-namebe':
-				getFrames(switch (PlayState.sheShed) {
+				getFrames(switch (PlayState.sheShed)
+				{
 					case 'namebe':
 						'Gaming_Sunny_Day';
 					case 'destructed':
@@ -134,7 +159,7 @@ class Character extends FlxSprite
 				frames = tex;
 				animation.addByIndices('danceLeft', 'Namebe Speakers Twirl', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 				animation.addByIndices('danceRight', 'Namebe Speakers Twirl', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
-	
+
 				playAnim('danceRight');
 			case 'jack':
 				tex = FlxAtlasFrames.fromSparrow(charPath + 'jack.png', charPath + 'jack.xml');
@@ -185,30 +210,30 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 0, -30);
 
 				playAnim('idle');
-            case 'gaming':
-                frames = FlxAtlasFrames.fromSparrow(charPath + 'gamingChar.png', charPath + 'gamingChar.xml');
-                animation.addByPrefix('idle', 'gamingLeft', 24, false);
-                animation.addByPrefix('singUP', 'upAnim', 24, false);
-                animation.addByPrefix('singDOWN', 'downAnim', 24, false);
-                animation.addByPrefix('singLEFT', 'leftAnim', 24, false);
-                animation.addByPrefix('singRIGHT', 'rightAnim', 24, false);
-                                
-                addOffset('idle');
+			case 'gaming':
+				frames = FlxAtlasFrames.fromSparrow(charPath + 'gamingChar.png', charPath + 'gamingChar.xml');
+				animation.addByPrefix('idle', 'gamingLeft', 24, false);
+				animation.addByPrefix('singUP', 'upAnim', 24, false);
+				animation.addByPrefix('singDOWN', 'downAnim', 24, false);
+				animation.addByPrefix('singLEFT', 'leftAnim', 24, false);
+				animation.addByPrefix('singRIGHT', 'rightAnim', 24, false);
+
+				addOffset('idle');
 				addOffset('singUP', 100, 75);
 				addOffset('singRIGHT', -10, 0);
 				addOffset('singLEFT');
 				addOffset('singDOWN');
-				
+
 				if (!isPlayer)
 					flipX = true;
 			case 'invisible':
-            	tex = FlxAtlasFrames.fromSparrow('assets/data/ridge/sus_books.png', charPath + 'sus.xml');
+				tex = FlxAtlasFrames.fromSparrow('assets/data/ridge/sus_books.png', charPath + 'sus.xml');
 				frames = tex;
 				animation.addByPrefix('idle', "Pico Idle Dance", 24);
 				visible = false;
 				addOffset('idle', 9048753, 329847);
 				playAnim('idle');
-            case 'nadalyn':
+			case 'nadalyn':
 				tex = FlxAtlasFrames.fromSparrow(charPath + 'nadalyn.png', charPath + 'nadalyn.xml');
 				frames = tex;
 				animation.addByPrefix('singUP', 'spooky UP NOTE', 24, false);
@@ -227,25 +252,25 @@ class Character extends FlxSprite
 				addOffset("singDOWN", -20, 0);
 
 				playAnim('danceRight');
-            case 'machine':
-                    tex = FlxAtlasFrames.fromSparrow(charPath + 'machine_assets.png', charPath + 'machine_assets.xml');
-                    frames = tex;
-                                
-                    animation.addByPrefix('idle', "idle", 24, false);
-                    animation.addByPrefix('singUP', "up", 24, false);
-                    animation.addByPrefix('singDOWN', "down", 24, false);
-                    animation.addByPrefix('singLEFT', "left", 24, false);
-                    animation.addByPrefix('singRIGHT', "right", 24, false);
-                                
-                    playAnim('idle');
-                                
- 					addOffset('idle');
-					addOffset("singUP", -10, 4);
-					addOffset("singRIGHT", -9, 21);
-					addOffset("singLEFT", 44, 23);
-					addOffset("singDOWN", -5, -129);
+			case 'machine':
+				tex = FlxAtlasFrames.fromSparrow(charPath + 'machine_assets.png', charPath + 'machine_assets.xml');
+				frames = tex;
 
-            case 'salted':
+				animation.addByPrefix('idle', "idle", 24, false);
+				animation.addByPrefix('singUP', "up", 24, false);
+				animation.addByPrefix('singDOWN', "down", 24, false);
+				animation.addByPrefix('singLEFT', "left", 24, false);
+				animation.addByPrefix('singRIGHT', "right", 24, false);
+
+				playAnim('idle');
+
+				addOffset('idle');
+				addOffset("singUP", -10, 4);
+				addOffset("singRIGHT", -9, 21);
+				addOffset("singLEFT", 44, 23);
+				addOffset("singDOWN", -5, -129);
+
+			case 'salted':
 				tex = FlxAtlasFrames.fromSparrow(charPath + 'Beans.png', charPath + 'Beans.xml');
 				frames = tex;
 				animation.addByPrefix('idle', "Pico Idle Dance", 24);
@@ -284,7 +309,7 @@ class Character extends FlxSprite
 				if (!isPlayer)
 					flipX = true;
 
-            case 'wow2':
+			case 'wow2':
 				tex = FlxAtlasFrames.fromSparrow('assets/data/ridge/sus_books.png', charPath + 'sus.xml');
 				frames = tex;
 				animation.addByPrefix('idle', "Pico Idle Dance", 24);
@@ -306,10 +331,10 @@ class Character extends FlxSprite
 					animation.addByPrefix('singLEFTmiss', 'Pico Note Right Miss', 24, false);
 				}
 
-                /*animation.addByPrefix('singLEFT-gspot', 'Pico NOTE LEFT0', 24, false);
-				animation.addByPrefix('singRIGHT-gspot', 'Pico Note Right0', 24, false);
-				animation.addByPrefix('singRIGHTmiss', 'Pico Note Right Miss', 24, false);
-				animation.addByPrefix('singLEFTmiss', 'Pico NOTE LEFT miss', 24, false);  */
+				/*animation.addByPrefix('singLEFT-gspot', 'Pico NOTE LEFT0', 24, false);
+					animation.addByPrefix('singRIGHT-gspot', 'Pico Note Right0', 24, false);
+					animation.addByPrefix('singRIGHTmiss', 'Pico Note Right Miss', 24, false);
+					animation.addByPrefix('singLEFTmiss', 'Pico NOTE LEFT miss', 24, false); */
 
 				animation.addByPrefix('singUPmiss', 'pico Up note miss', 24);
 				animation.addByPrefix('singDOWNmiss', 'Pico Down Note MISS', 24);
@@ -327,7 +352,7 @@ class Character extends FlxSprite
 
 				if (!isPlayer)
 					flipX = true;
-					
+
 			case 'wow':
 				tex = FlxAtlasFrames.fromSparrow(charPath + 'sus.png', charPath + 'sus.xml');
 				frames = tex;
@@ -348,7 +373,7 @@ class Character extends FlxSprite
 					animation.addByPrefix('singRIGHT', 'Pico NOTE LEFT0', 24, false);
 					animation.addByPrefix('singRIGHTmiss', 'Pico NOTE LEFT miss', 24, false);
 					animation.addByPrefix('singLEFTmiss', 'Pico Note Right Miss', 24, false);
-					
+
 					animation.addByPrefix('singLEFT-gspot', 'Pico Note Right0', 24, false);
 					animation.addByPrefix('singRIGHT-gspot', 'Pico NOTE LEFT0', 24, false);
 					animation.addByPrefix('singUP-gspot', 'pico Up note0', 24, false);
@@ -391,7 +416,6 @@ class Character extends FlxSprite
 					// Need to be flipped! REDO THIS LATER!
 					animation.addByPrefix('singLEFT', 'Pico Note Right0', 24, false);
 					animation.addByPrefix('singRIGHT', 'Pico NOTE LEFT0', 24, false);
-					
 				}
 
 				playAnim('idle');
@@ -410,25 +434,24 @@ class Character extends FlxSprite
 				animation.addByPrefix('singUP', 'pico Up note0', 24, false);
 				animation.addByPrefix('singDOWN', 'Pico Down Note0', 24, false);
 				if (isPlayer)
-					{
+				{
 					animation.addByPrefix('singLEFT', 'Pico NOTE LEFT0', 24, false);
 					animation.addByPrefix('singRIGHT', 'Pico Note Right0', 24, false);
 				}
 				else
-					{
+				{
 					// Need to be flipped! REDO THIS LATER!
 					animation.addByPrefix('singLEFT', 'Pico Note Right0', 24, false);
 					animation.addByPrefix('singRIGHT', 'Pico NOTE LEFT0', 24, false);
-					
 				}
-				
+
 				playAnim('idle');
 				addOffset('idle');
 				addOffset("singUP", -29, 27);
 				addOffset("singRIGHT", -68, -7);
 				addOffset("singLEFT", 65, 9);
 				addOffset("singDOWN", 200, -70);
-				
+
 				if (!isPlayer)
 					flipX = true;
 			case 'pic-nick':
@@ -460,28 +483,27 @@ class Character extends FlxSprite
 				animation.addByPrefix('singUP', 'pico Up note0', 24, false);
 				animation.addByPrefix('singDOWN', 'Pico Down Note0', 24, false);
 				if (isPlayer)
-					{
+				{
 					animation.addByPrefix('singLEFT', 'Pico NOTE LEFT0', 24, false);
 					animation.addByPrefix('singRIGHT', 'Pico Note Right0', 24, false);
 				}
 				else
-					{
+				{
 					// Need to be flipped! REDO THIS LATER!
 					animation.addByPrefix('singLEFT', 'Pico Note Right0', 24, false);
 					animation.addByPrefix('singRIGHT', 'Pico NOTE LEFT0', 24, false);
-					
 				}
-				
+
 				playAnim('idle');
 				addOffset('idle');
 				addOffset("singUP", -29, 27);
 				addOffset("singRIGHT", -68, -7);
 				addOffset("singLEFT", 65, 9);
 				addOffset("singDOWN", 200, -70);
-				
+
 				if (!isPlayer)
 					flipX = true;
-            case 'gandhi':
+			case 'gandhi':
 				// DAD ANIMATION LOADING CODE
 				tex = FlxAtlasFrames.fromSparrow(charPath + 'G_Spot.png', charPath + 'G_Spot.xml');
 				frames = tex;
@@ -582,26 +604,26 @@ class Character extends FlxSprite
 				getFrames('dawgee', 'Skank_and_Pronoun');
 				spookyCharacter();
 			case 'austin':
-					tex = FlxAtlasFrames.fromSparrow(charPath + 'austin.png', charPath + 'austin.xml');
-					frames = tex;
-					animation.addByPrefix('singUP', 'spooky UP NOTE', 24, false);
-					animation.addByPrefix('singDOWN', 'spooky DOWN note', 24, false);
-					animation.addByPrefix('singLEFT', 'note sing left', 24, false);
-					animation.addByPrefix('singRIGHT', 'spooky sing right', 24, false);
-					animation.addByIndices('danceLeft', 'spooky dance idle', [0, 2, 6], "", 12, false);
-					animation.addByIndices('danceRight', 'spooky dance idle', [8, 10, 12, 14], "", 12, false);
-					animation.addByPrefix('introSpin', 'spinny intro', 24, false);
-	
-					addOffset('danceLeft');
-					addOffset('danceRight');
-	
-					addOffset("singUP", 9, 50);
-					addOffset("singRIGHT", -28, 20);
-					addOffset("singLEFT", 187, 54);
-					addOffset("singDOWN", 170, -270);
-					addOffset('introSpin', 2065, 1637);
-	
-					playAnim('danceRight');
+				tex = FlxAtlasFrames.fromSparrow(charPath + 'austin.png', charPath + 'austin.xml');
+				frames = tex;
+				animation.addByPrefix('singUP', 'spooky UP NOTE', 24, false);
+				animation.addByPrefix('singDOWN', 'spooky DOWN note', 24, false);
+				animation.addByPrefix('singLEFT', 'note sing left', 24, false);
+				animation.addByPrefix('singRIGHT', 'spooky sing right', 24, false);
+				animation.addByIndices('danceLeft', 'spooky dance idle', [0, 2, 6], "", 12, false);
+				animation.addByIndices('danceRight', 'spooky dance idle', [8, 10, 12, 14], "", 12, false);
+				animation.addByPrefix('introSpin', 'spinny intro', 24, false);
+
+				addOffset('danceLeft');
+				addOffset('danceRight');
+
+				addOffset("singUP", 9, 50);
+				addOffset("singRIGHT", -28, 20);
+				addOffset("singLEFT", 187, 54);
+				addOffset("singDOWN", 170, -270);
+				addOffset('introSpin', 2065, 1637);
+
+				playAnim('danceRight');
 			case 'bonbon':
 				tex = FlxAtlasFrames.fromSparrow(charPath + 'Red_Bon.png', charPath + 'Red_Bon.xml');
 				frames = tex;
@@ -630,21 +652,14 @@ class Character extends FlxSprite
 					'mokey left',
 					'monkey is right ya know'
 				], [
-					[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], 
+					[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
 					[15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
 				]);
 
 				animation.addByPrefix('spin', 'MONKEY GO SPEEEEN', 24, false);
 				animation.addByPrefix('drop', 'monkey drop full', 24, false);
 
-				setOffsets([
-					[0, 0],
-					[0, 0],
-					[100, 70],
-					[102, 172],
-					[16, 55],
-					[16, 32],
-				], true);
+				setOffsets([[0, 0], [0, 0], [100, 70], [102, 172], [16, 55], [16, 32],], true);
 
 				addOffset('spin', -22, 43);
 				addOffset('drop', 108, 772);
@@ -661,13 +676,7 @@ class Character extends FlxSprite
 					'Monster Right note'
 				], false);
 
-				setOffsets([
-					[0, 0],
-					[-20, 50],
-					[-30, -40],
-					[-30, 0],
-					[-51, 0]
-				]);
+				setOffsets([[0, 0], [-20, 50], [-30, -40], [-30, 0], [-51, 0]]);
 
 				playAnim('idle');
 			case 'failure-dream':
@@ -681,13 +690,7 @@ class Character extends FlxSprite
 					'Monster Right note'
 				], false);
 
-				setOffsets([
-					[0, 0],
-					[-20, 50],
-					[-30, -40],
-					[-30, 0],
-					[-51, 0]
-				]);
+				setOffsets([[0, 0], [-20, 50], [-30, -40], [-30, 0], [-51, 0]]);
 
 				playAnim('idle');
 			case 'christmas-monkey':
@@ -726,7 +729,6 @@ class Character extends FlxSprite
 					animation.addByPrefix('singRIGHT', 'Pico NOTE LEFT0', 24, false);
 				}
 
-
 				addOffset('idle', 0, 23);
 				addOffset("singUP", -29, 27);
 				addOffset("singRIGHT", 2, -87);
@@ -739,370 +741,347 @@ class Character extends FlxSprite
 			case 'namebe-piss':
 				getFrames('Namebe_Pissy_Mood');
 
-				setNormalAnims([
-					'pissy idle',
-					'namebe up',
-					'namebe down',
-					'namebe left',
-					'namebe right'
-				], false);
+				setNormalAnims(['pissy idle', 'namebe up', 'namebe down', 'namebe left', 'namebe right'], false);
 
 				animation.remove('idle');
 				animation.addByPrefix('idle', 'pissy idle', 24, false, true);
 
-				setOffsets([
-					[0, 0],
-					[-60, 120],
-					[0, -50],
-					[90, -20],
-					[-40, -130]
-				]);
+				setOffsets([[0, 0], [-60, 120], [0, -50], [90, -20], [-40, -130]]);
 
 				playAnim('idle');
 			case 'radical':
-			        if (true) // too lazy to reindent everything LOOL
-			        {
-            			        switch (FlxG.save.data.outfit)
-								{
-									case 'Old Radical':
-										var tex = FlxAtlasFrames.fromSparrow(charPath + 'OgRacial.png', charPath + 'OgRacial.xml');
-										frames = tex;
-										animation.addByPrefix('idle', 'BF idle dance', 24, false);
-										animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
-										animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
-										animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
-										animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
-										animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
-										animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
-										animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
-										animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
-										animation.addByPrefix('hey', 'BF HEY', 24, false);
-
-										animation.addByPrefix('firstDeath', "BF dies", 24, false);
-										animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
-										animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
-
-										animation.addByPrefix('scared', 'BF idle shaking', 24);
-
-										addOffset('idle', -5);
-										addOffset("singUP", -29, 27);
-										addOffset("singRIGHT", -38, -7);
-										addOffset("singLEFT", 12, -6);
-										addOffset("singDOWN", -10, -50);
-										addOffset("singUPmiss", -29, 27);
-										addOffset("singRIGHTmiss", -30, 21);
-										addOffset("singLEFTmiss", 12, 24);
-										addOffset("singDOWNmiss", -11, -19);
-										addOffset("hey", 7, 4);
-										addOffset('firstDeath', 37, 11);
-										addOffset('deathLoop', 37, 5);
-										addOffset('deathConfirm', 37, 69);
-										addOffset('scared', -4);
-
-										playAnim('idle');
-
-										flipX = true;
-									case 'RedBall':
-										var coolOffset:Array<Int> = [124, 236];
-										getFrames('radicalball');
-										animation.addByPrefix('idle', 'Dad idle dance', 24, false);
-										animation.addByPrefix('singUP', 'Dad Sing Note UP', 24, false);
-										animation.addByPrefix('singLEFT', 'Dad Sing Note RIGHT', 24, false);
-										animation.addByPrefix('singDOWN', 'Dad Sing Note DOWN', 24, false);
-										animation.addByPrefix('singRIGHT', 'Dad Sing Note LEFT', 24, false);
-
-										addOffset('idle', coolOffset[0], coolOffset[1]);
-										addOffset("singUP", 6 + coolOffset[0], 50 + coolOffset[1]);
-										addOffset("singLEFT", 0 + coolOffset[0], 27 + coolOffset[1]);
-										addOffset("singRIGHT", 10 + coolOffset[0], 10 + coolOffset[1]);
-										addOffset("singDOWN", 0 + coolOffset[0], -30 + coolOffset[1]);
-
-										playAnim('idle');
-
-										//y -= 215;
-										//x -= 57;
-									case 'Chaotic Radical':
-										getFrames('Chaotic_Radical');
-										setNormalAnims(["Idle", 'Up', 'Down', 'Left', 'Right'], false);
-										setOffsets([[0, 0], [0, 190], [28, -23], [102, -24], [67, 17]]);
-										animation.addByPrefix('firstDeath', 'Death', 24, false);
-										for (i in 0...16) animation.appendByIndices('firstDeath', 'Death', [16], "");
-										animation.addByIndices('deathLoop', 'Death', [16], "", 0, false);
-										playAnim('idle');
-										flipX = true;
-									case 'Namebe Radical':
-										frames = FlxAtlasFrames.fromSparrow(charPath + 'Radical_Namebe.png', charPath + 'Radical_Namebe.xml');
-										animation.addByPrefix('idle', 'Racial Spiteful Jig', 24, false);
-										animation.addByPrefix('singUP', 'Racial sing UP', 24, false);
-										animation.addByPrefix('singDOWN', 'Racial sing DOWN', 24, false);
-										animation.addByPrefix('singLEFT', 'Racial sing LEFT', 24, false);
-										animation.addByPrefix('singRIGHT', 'Racial sing RIGHT', 24, false);
-										/*
-										animation.addByPrefix('singUPmiss', 'Racial miss UP', 24, false);
-										animation.addByPrefix('singDOWNmiss', 'Racial miss DOWN', 24, false);
-										animation.addByPrefix('singLEFTmiss', 'Racial miss LEFT', 24, false);
-										animation.addByPrefix('singRIGHTmiss', 'Racial miss RIGHT', 24, false);
-										*/
-										animation.addByPrefix('hey', 'Racial Approveds', 24, false);
-
-										animation.addByPrefix('firstDeath', 'RACIAL DEAD??!?!??', 24, false);
-										animation.addByPrefix('deathLoop', 'Racial Dead...', 24, true);
-
-										addOffset('idle', 0, 0);
-										addOffset('singUP', -17, 76);
-										addOffset('singDOWN', 10, -26);
-										addOffset('singLEFT', -31,6);
-										addOffset('singRIGHT', -18, 1);
-										/*
-										addOffset('singUPmiss', -17, 99);
-										addOffset('singDOWNmiss', 27, -13);
-										addOffset('singLEFTmiss', -1, 12);
-										addOffset('singRIGHTmiss', -17, 4);
-										*/
-										addOffset("hey", 14, 8);
-										addOffset('firstDeath', 37,86);
-										addOffset('deathLoop', 37, 20);
-
-										playAnim('idle');
-
-										flipX = true;
-									case 'Gaming Radical':
-										frames = FlxAtlasFrames.fromSparrow(charPath + 'gaming_racial.png', charPath + 'gaming_racial.xml');
-										animation.addByPrefix('idle', 'Racial Spiteful Jig', 24, false);
-										animation.addByPrefix('singUP', 'Racial sing UP', 24, false);
-										animation.addByPrefix('singDOWN', 'Racial sing DOWN', 24, false);
-										animation.addByPrefix('singLEFT', 'Racial sing LEFT', 24, false);
-										animation.addByPrefix('singRIGHT', 'Racial sing RIGHT', 24, false);
-										animation.addByPrefix('singUPmiss', 'Racial miss UP', 24, false);
-										animation.addByPrefix('singDOWNmiss', 'Racial miss DOWN', 24, false);
-										animation.addByPrefix('singLEFTmiss', 'Racial miss LEFT', 24, false);
-										animation.addByPrefix('singRIGHTmiss', 'Racial miss RIGHT', 24, false);
-										animation.addByPrefix('hey', 'Racial Approveds', 24, false);
-
-										animation.addByPrefix('firstDeath', 'RACIAL DEAD??!?!??', 24, false);
-										animation.addByPrefix('deathLoop', 'Racial Dead...', 24, true);
-
-										addOffset('idle', 0, 0);
-										addOffset('singUP', -17, 99);
-										addOffset('singDOWN', 27, -13);
-										addOffset('singLEFT', -1, 12);
-										addOffset('singRIGHT', -17, 4);
-										addOffset('singUPmiss', -17, 99);
-										addOffset('singDOWNmiss', 27, -13);
-										addOffset('singLEFTmiss', -1, 12);
-										addOffset('singRIGHTmiss', -17, 4);
-										addOffset("hey", 31, 4);
-										addOffset('firstDeath', 34, 22);
-										addOffset('deathLoop', 34, 22);
-
-										playAnim('idle');
-
-										flipX = true;
-									case 'Radical':
-										frames = FlxAtlasFrames.fromSparrow(charPath + 'racial.png', charPath + 'racial.xml');
-										animation.addByPrefix('idle', 'Racial Spiteful Jig', 24, false);
-										animation.addByPrefix('singUP', 'Racial sing UP', 24, false);
-										animation.addByPrefix('singDOWN', 'Racial sing DOWN', 24, false);
-										animation.addByPrefix('singLEFT', 'Racial sing LEFT', 24, false);
-										animation.addByPrefix('singRIGHT', 'Racial sing RIGHT', 24, false);
-										animation.addByPrefix('singUPmiss', 'Racial miss UP', 24, false);
-										animation.addByPrefix('singDOWNmiss', 'Racial miss DOWN', 24, false);
-										animation.addByPrefix('singLEFTmiss', 'Racial miss LEFT', 24, false);
-										animation.addByPrefix('singRIGHTmiss', 'Racial miss RIGHT', 24, false);
-										animation.addByPrefix('hey', 'Racial Approveds', 24, false);
-
-										animation.addByPrefix('firstDeath', 'RACIAL DEAD??!?!??', 24, false);
-										animation.addByPrefix('deathLoop', 'Racial Dead...', 24, true);
-
-										addOffset('idle', 0, 0);
-										addOffset('singUP', -17, 99);
-										addOffset('singDOWN', 27, -13);
-										addOffset('singLEFT', -1, 12);
-										addOffset('singRIGHT', -17, 4);
-										addOffset('singUPmiss', -17, 99);
-										addOffset('singDOWNmiss', 27, -13);
-										addOffset('singLEFTmiss', -1, 12);
-										addOffset('singRIGHTmiss', -17, 4);
-										addOffset("hey", 31, 4);
-										addOffset('firstDeath', 34, 22);
-										addOffset('deathLoop', 34, 22);
-
-										playAnim('idle');
-
-										flipX = true;
-									case 'Business Radical':
-										frames = FlxAtlasFrames.fromSparrow(charPath + 'racial-buisiness.png', charPath + 'racial-buisiness.xml');
-										animation.addByPrefix('idle', 'Racial Spiteful Jig', 24, false);
-										animation.addByPrefix('singUP', 'Racial sing UP', 24, false);
-										animation.addByPrefix('singDOWN', 'Racial sing DOWN', 24, false);
-										animation.addByPrefix('singLEFT', 'Racial sing LEFT', 24, false);
-										animation.addByPrefix('singRIGHT', 'Racial sing RIGHT', 24, false);
-										animation.addByPrefix('singUPmiss', 'Racial miss UP', 24, false);
-										animation.addByPrefix('singDOWNmiss', 'Racial miss DOWN', 24, false);
-										animation.addByPrefix('singLEFTmiss', 'Racial miss LEFT', 24, false);
-										animation.addByPrefix('singRIGHTmiss', 'Racial miss RIGHT', 24, false);
-										animation.addByPrefix('hey', 'Racial Approveds', 24, false);
-
-										animation.addByPrefix('firstDeath', 'RACIAL DEAD??!?!??', 24, false);
-										animation.addByPrefix('deathLoop', 'Racial Dead...', 24, true);
-
-										addOffset('idle', 0, 0);
-										addOffset('singUP', -17, 99);
-										addOffset('singDOWN', 27, -13);
-										addOffset('singLEFT', -1, 12);
-										addOffset('singRIGHT', -17, 4);
-										addOffset('singUPmiss', -17, 99);
-										addOffset('singDOWNmiss', 27, -13);
-										addOffset('singLEFTmiss', -1, 12);
-										addOffset('singRIGHTmiss', -17, 4);
-										addOffset("hey", 31, 4);
-										addOffset('firstDeath', 34, 22);
-										addOffset('deathLoop', 34, 22);
-
-										playAnim('idle');
-
-										flipX = true;
-									case 'Racial Pride':
-										frames = FlxAtlasFrames.fromSparrow(charPath + 'racial.png', charPath + 'racial.xml');
-										animation.addByPrefix('idle', 'Pride Racial Spiteful Jig', 24, false);
-										animation.addByPrefix('singUP', 'Pride Racial sing UP', 24, false);
-										animation.addByPrefix('singDOWN', 'Pride Racial sing DOWN', 24, false);
-										animation.addByPrefix('singLEFT', 'Pride Racial sing LEFT', 24, false);
-										animation.addByPrefix('singRIGHT', 'Pride Racial sing RIGHT', 24, false);
-										animation.addByPrefix('singUPmiss', 'Pride Racial miss UP', 24, false);
-										animation.addByPrefix('singDOWNmiss', 'Pride Racial miss DOWN', 24, false);
-										animation.addByPrefix('singLEFTmiss', 'Pride Racial miss LEFT', 24, false);
-										animation.addByPrefix('singRIGHTmiss', 'Pride Racial miss RIGHT', 24, false);
-
-										animation.addByPrefix('firstDeath', 'RACIAL DEAD??!?!??', 24, false);
-										animation.addByPrefix('deathLoop', 'Racial Dead...', 24, true);
-
-										addOffset('idle', 0, 0);
-										addOffset('singUP', -17, 99);
-										addOffset('singDOWN', 27, -13);
-										addOffset('singLEFT', -1, 12);
-										addOffset('singRIGHT', -17, 4);
-										addOffset('singUPmiss', -17, 99);
-										addOffset('singDOWNmiss', 27, -13);
-										addOffset('singLEFTmiss', -1, 12);
-										addOffset('singRIGHTmiss', -17, 4);
-										addOffset("hey", 31, 4);
-										addOffset('firstDeath', 34, 22);
-										addOffset('deathLoop', 34, 22);
-
-										playAnim('idle');
-
-										flipX = true;
-									case 'RadiFAIL': 
-										frames = FlxAtlasFrames.fromSparrow(charPath + 'racial.png', charPath + 'racial.xml');
-										animation.addByPrefix('idle', 'Racial Spiteful Jig', 24, false);
-										animation.addByPrefix('singUPmiss', 'Racial sing UP', 24, false);
-										animation.addByPrefix('singDOWNmiss', 'Racial sing DOWN', 24, false);
-										animation.addByPrefix('singLEFTmiss', 'Racial sing LEFT', 24, false);
-										animation.addByPrefix('singRIGHTmiss', 'Racial sing RIGHT', 24, false);
-										animation.addByPrefix('singUP', 'Racial miss UP', 24, false);
-										animation.addByPrefix('singDOWN', 'Racial miss DOWN', 24, false);
-										animation.addByPrefix('singLEFT', 'Racial miss LEFT', 24, false);
-										animation.addByPrefix('singRIGHT', 'Racial miss RIGHT', 24, false);
-										animation.addByPrefix('hey', 'Racial Approveds', 24, false);
-
-										animation.addByPrefix('firstDeath', 'RACIAL DEAD??!?!??', 24, false);
-										animation.addByPrefix('deathLoop', 'Racial Dead...', 24, true);
-
-										addOffset('idle', 0, 0);
-										addOffset('singUPmiss', -17, 99);
-										addOffset('singDOWNmiss', 27, -13);
-										addOffset('singLEFTmiss', -1, 12);
-										addOffset('singRIGHTmiss', -17, 4);
-										addOffset('singUP', -17, 99);
-										addOffset('singDOWN', 27, -13);
-										addOffset('singLEFT', -1, 12);
-										addOffset('singRIGHT', -17, 4);
-										addOffset("hey", 31, 4);
-										addOffset('firstDeath', 34, 22);
-										addOffset('deathLoop', 34, 22);
-
-										playAnim('idle');
-
-										flipX = true;
-									case 'Sussy Radical':
-										getFrames('SUSSY_RACIAL');
-										setNormalAnims([
-											'SUSSY RACIAL0',
-											'SUSSY RACIAL UP',
-											'SUSSY RACIAL DOWN',
-											'SUSSY RACIAL LEFT',
-											'SUSSY RACIAL RIGHT'
-										], false, true, 'MISS');
-
-										setOffsets([
-											[0, 0],
-											[-36, 39],
-											[-14, -7],
-											[4, 4],
-											[-33, 4],
-											[-29, 73],
-											[9, 15],
-											[4, 23],
-											[-33, 15]
-										], false, true);
-
-										flipX = true;
-									case 'Radical Babby':
-										getFrames('babRad');
-										setNormalAnims([
-											'idle',
-											'up',
-											'down',
-											'left',
-											'right'
-										], false);
-
-										setOffsets([
-											[0, 0],
-											[-45, 45],
-											[60, -70],
-											[74, -17],
-											[-67, -15]
-										]);
-
-										flipX = true;
-								}    
-					}
-					else
+				if (true) // too lazy to reindent everything LOOL
+				{
+					switch (FlxG.save.data.outfit)
 					{
-						frames = FlxAtlasFrames.fromSparrow(charPath + 'racial.png', charPath + 'racial.xml');
-						animation.addByPrefix('idle', 'Racial Spiteful Jig', 24);
-						animation.addByPrefix('singUP', 'Racial sing UP', 24, false);
-						animation.addByPrefix('singDOWN', 'Racial sing DOWN', 24, false);
-						animation.addByPrefix('singLEFT', 'Racial sing LEFT', 24, false);
-						animation.addByPrefix('singRIGHT', 'Racial sing RIGHT', 24, false);
-						animation.addByPrefix('singUPmiss', 'Racial miss UP', 24, false);
-						animation.addByPrefix('singDOWNmiss', 'Racial miss DOWN', 24, false);
-						animation.addByPrefix('singLEFTmiss', 'Racial miss LEFT', 24, false);
-						animation.addByPrefix('singRIGHTmiss', 'Racial miss RIGHT', 24, false);
-						animation.addByPrefix('hey', 'Racial Approveds', 24, false);
+						case 'Old Radical':
+							var tex = FlxAtlasFrames.fromSparrow(charPath + 'OgRacial.png', charPath + 'OgRacial.xml');
+							frames = tex;
+							animation.addByPrefix('idle', 'BF idle dance', 24, false);
+							animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
+							animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
+							animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
+							animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
+							animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
+							animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
+							animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
+							animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
+							animation.addByPrefix('hey', 'BF HEY', 24, false);
 
-						animation.addByPrefix('firstDeath', 'RACIAL DEAD??!?!??', 24, false);
-						animation.addByPrefix('deathLoop', 'Racial Dead...', 24, true);
+							animation.addByPrefix('firstDeath', "BF dies", 24, false);
+							animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
+							animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
 
-						addOffset('idle', 0, 0);
-						addOffset('singUP', -17, 99);
-						addOffset('singDOWN', 27, -13);
-						addOffset('singLEFT', -1, 12);
-						addOffset('singRIGHT', -17, 4);
-						addOffset('singUPmiss', -17, 99);
-						addOffset('singDOWNmiss', 27, -13);
-						addOffset('singLEFTmiss', -1, 12);
-						addOffset('singRIGHTmiss', -17, 4);
-						addOffset("hey", 31, 4);
-						addOffset('firstDeath', 34, 22);
-						addOffset('deathLoop', 34, 22);
+							animation.addByPrefix('scared', 'BF idle shaking', 24);
 
-						playAnim('idle');
+							addOffset('idle', -5);
+							addOffset("singUP", -29, 27);
+							addOffset("singRIGHT", -38, -7);
+							addOffset("singLEFT", 12, -6);
+							addOffset("singDOWN", -10, -50);
+							addOffset("singUPmiss", -29, 27);
+							addOffset("singRIGHTmiss", -30, 21);
+							addOffset("singLEFTmiss", 12, 24);
+							addOffset("singDOWNmiss", -11, -19);
+							addOffset("hey", 7, 4);
+							addOffset('firstDeath', 37, 11);
+							addOffset('deathLoop', 37, 5);
+							addOffset('deathConfirm', 37, 69);
+							addOffset('scared', -4);
 
-						flipX = true;
+							playAnim('idle');
+
+							flipX = true;
+						case 'RedBall':
+							var coolOffset:Array<Int> = [124, 236];
+							getFrames('radicalball');
+							animation.addByPrefix('idle', 'Dad idle dance', 24, false);
+							animation.addByPrefix('singUP', 'Dad Sing Note UP', 24, false);
+							animation.addByPrefix('singLEFT', 'Dad Sing Note RIGHT', 24, false);
+							animation.addByPrefix('singDOWN', 'Dad Sing Note DOWN', 24, false);
+							animation.addByPrefix('singRIGHT', 'Dad Sing Note LEFT', 24, false);
+
+							addOffset('idle', coolOffset[0], coolOffset[1]);
+							addOffset("singUP", 6 + coolOffset[0], 50 + coolOffset[1]);
+							addOffset("singLEFT", 0 + coolOffset[0], 27 + coolOffset[1]);
+							addOffset("singRIGHT", 10 + coolOffset[0], 10 + coolOffset[1]);
+							addOffset("singDOWN", 0 + coolOffset[0], -30 + coolOffset[1]);
+
+							playAnim('idle');
+
+						// y -= 215;
+						// x -= 57;
+						case 'Chaotic Radical':
+							getFrames('Chaotic_Radical');
+							setNormalAnims(["Idle", 'Up', 'Down', 'Left', 'Right'], false);
+							setOffsets([[0, 0], [0, 190], [28, -23], [102, -24], [67, 17]]);
+							animation.addByPrefix('firstDeath', 'Death', 24, false);
+							for (i in 0...16)
+								animation.appendByIndices('firstDeath', 'Death', [16], "");
+							animation.addByIndices('deathLoop', 'Death', [16], "", 0, false);
+							playAnim('idle');
+							flipX = true;
+						case 'Namebe Radical':
+							frames = FlxAtlasFrames.fromSparrow(charPath + 'Radical_Namebe.png', charPath + 'Radical_Namebe.xml');
+							animation.addByPrefix('idle', 'Racial Spiteful Jig', 24, false);
+							animation.addByPrefix('singUP', 'Racial sing UP', 24, false);
+							animation.addByPrefix('singDOWN', 'Racial sing DOWN', 24, false);
+							animation.addByPrefix('singLEFT', 'Racial sing LEFT', 24, false);
+							animation.addByPrefix('singRIGHT', 'Racial sing RIGHT', 24, false);
+							/*
+								animation.addByPrefix('singUPmiss', 'Racial miss UP', 24, false);
+								animation.addByPrefix('singDOWNmiss', 'Racial miss DOWN', 24, false);
+								animation.addByPrefix('singLEFTmiss', 'Racial miss LEFT', 24, false);
+								animation.addByPrefix('singRIGHTmiss', 'Racial miss RIGHT', 24, false);
+							 */
+							animation.addByPrefix('hey', 'Racial Approveds', 24, false);
+
+							animation.addByPrefix('firstDeath', 'RACIAL DEAD??!?!??', 24, false);
+							animation.addByPrefix('deathLoop', 'Racial Dead...', 24, true);
+
+							addOffset('idle', 0, 0);
+							addOffset('singUP', -17, 76);
+							addOffset('singDOWN', 10, -26);
+							addOffset('singLEFT', -31, 6);
+							addOffset('singRIGHT', -18, 1);
+							/*
+								addOffset('singUPmiss', -17, 99);
+								addOffset('singDOWNmiss', 27, -13);
+								addOffset('singLEFTmiss', -1, 12);
+								addOffset('singRIGHTmiss', -17, 4);
+							 */
+							addOffset("hey", 14, 8);
+							addOffset('firstDeath', 37, 86);
+							addOffset('deathLoop', 37, 20);
+
+							playAnim('idle');
+
+							flipX = true;
+						case 'Gaming Radical':
+							frames = FlxAtlasFrames.fromSparrow(charPath + 'gaming_racial.png', charPath + 'gaming_racial.xml');
+							animation.addByPrefix('idle', 'Racial Spiteful Jig', 24, false);
+							animation.addByPrefix('singUP', 'Racial sing UP', 24, false);
+							animation.addByPrefix('singDOWN', 'Racial sing DOWN', 24, false);
+							animation.addByPrefix('singLEFT', 'Racial sing LEFT', 24, false);
+							animation.addByPrefix('singRIGHT', 'Racial sing RIGHT', 24, false);
+							animation.addByPrefix('singUPmiss', 'Racial miss UP', 24, false);
+							animation.addByPrefix('singDOWNmiss', 'Racial miss DOWN', 24, false);
+							animation.addByPrefix('singLEFTmiss', 'Racial miss LEFT', 24, false);
+							animation.addByPrefix('singRIGHTmiss', 'Racial miss RIGHT', 24, false);
+							animation.addByPrefix('hey', 'Racial Approveds', 24, false);
+
+							animation.addByPrefix('firstDeath', 'RACIAL DEAD??!?!??', 24, false);
+							animation.addByPrefix('deathLoop', 'Racial Dead...', 24, true);
+
+							addOffset('idle', 0, 0);
+							addOffset('singUP', -17, 99);
+							addOffset('singDOWN', 27, -13);
+							addOffset('singLEFT', -1, 12);
+							addOffset('singRIGHT', -17, 4);
+							addOffset('singUPmiss', -17, 99);
+							addOffset('singDOWNmiss', 27, -13);
+							addOffset('singLEFTmiss', -1, 12);
+							addOffset('singRIGHTmiss', -17, 4);
+							addOffset("hey", 31, 4);
+							addOffset('firstDeath', 34, 22);
+							addOffset('deathLoop', 34, 22);
+
+							playAnim('idle');
+
+							flipX = true;
+						case 'Radical':
+							frames = FlxAtlasFrames.fromSparrow(charPath + 'racial.png', charPath + 'racial.xml');
+							animation.addByPrefix('idle', 'Racial Spiteful Jig', 24, false);
+							animation.addByPrefix('singUP', 'Racial sing UP', 24, false);
+							animation.addByPrefix('singDOWN', 'Racial sing DOWN', 24, false);
+							animation.addByPrefix('singLEFT', 'Racial sing LEFT', 24, false);
+							animation.addByPrefix('singRIGHT', 'Racial sing RIGHT', 24, false);
+							animation.addByPrefix('singUPmiss', 'Racial miss UP', 24, false);
+							animation.addByPrefix('singDOWNmiss', 'Racial miss DOWN', 24, false);
+							animation.addByPrefix('singLEFTmiss', 'Racial miss LEFT', 24, false);
+							animation.addByPrefix('singRIGHTmiss', 'Racial miss RIGHT', 24, false);
+							animation.addByPrefix('hey', 'Racial Approveds', 24, false);
+
+							animation.addByPrefix('firstDeath', 'RACIAL DEAD??!?!??', 24, false);
+							animation.addByPrefix('deathLoop', 'Racial Dead...', 24, true);
+
+							addOffset('idle', 0, 0);
+							addOffset('singUP', -17, 99);
+							addOffset('singDOWN', 27, -13);
+							addOffset('singLEFT', -1, 12);
+							addOffset('singRIGHT', -17, 4);
+							addOffset('singUPmiss', -17, 99);
+							addOffset('singDOWNmiss', 27, -13);
+							addOffset('singLEFTmiss', -1, 12);
+							addOffset('singRIGHTmiss', -17, 4);
+							addOffset("hey", 31, 4);
+							addOffset('firstDeath', 34, 22);
+							addOffset('deathLoop', 34, 22);
+
+							playAnim('idle');
+
+							flipX = true;
+						case 'Business Radical':
+							frames = FlxAtlasFrames.fromSparrow(charPath + 'racial-buisiness.png', charPath + 'racial-buisiness.xml');
+							animation.addByPrefix('idle', 'Racial Spiteful Jig', 24, false);
+							animation.addByPrefix('singUP', 'Racial sing UP', 24, false);
+							animation.addByPrefix('singDOWN', 'Racial sing DOWN', 24, false);
+							animation.addByPrefix('singLEFT', 'Racial sing LEFT', 24, false);
+							animation.addByPrefix('singRIGHT', 'Racial sing RIGHT', 24, false);
+							animation.addByPrefix('singUPmiss', 'Racial miss UP', 24, false);
+							animation.addByPrefix('singDOWNmiss', 'Racial miss DOWN', 24, false);
+							animation.addByPrefix('singLEFTmiss', 'Racial miss LEFT', 24, false);
+							animation.addByPrefix('singRIGHTmiss', 'Racial miss RIGHT', 24, false);
+							animation.addByPrefix('hey', 'Racial Approveds', 24, false);
+
+							animation.addByPrefix('firstDeath', 'RACIAL DEAD??!?!??', 24, false);
+							animation.addByPrefix('deathLoop', 'Racial Dead...', 24, true);
+
+							addOffset('idle', 0, 0);
+							addOffset('singUP', -17, 99);
+							addOffset('singDOWN', 27, -13);
+							addOffset('singLEFT', -1, 12);
+							addOffset('singRIGHT', -17, 4);
+							addOffset('singUPmiss', -17, 99);
+							addOffset('singDOWNmiss', 27, -13);
+							addOffset('singLEFTmiss', -1, 12);
+							addOffset('singRIGHTmiss', -17, 4);
+							addOffset("hey", 31, 4);
+							addOffset('firstDeath', 34, 22);
+							addOffset('deathLoop', 34, 22);
+
+							playAnim('idle');
+
+							flipX = true;
+						case 'Racial Pride':
+							frames = FlxAtlasFrames.fromSparrow(charPath + 'racial.png', charPath + 'racial.xml');
+							animation.addByPrefix('idle', 'Pride Racial Spiteful Jig', 24, false);
+							animation.addByPrefix('singUP', 'Pride Racial sing UP', 24, false);
+							animation.addByPrefix('singDOWN', 'Pride Racial sing DOWN', 24, false);
+							animation.addByPrefix('singLEFT', 'Pride Racial sing LEFT', 24, false);
+							animation.addByPrefix('singRIGHT', 'Pride Racial sing RIGHT', 24, false);
+							animation.addByPrefix('singUPmiss', 'Pride Racial miss UP', 24, false);
+							animation.addByPrefix('singDOWNmiss', 'Pride Racial miss DOWN', 24, false);
+							animation.addByPrefix('singLEFTmiss', 'Pride Racial miss LEFT', 24, false);
+							animation.addByPrefix('singRIGHTmiss', 'Pride Racial miss RIGHT', 24, false);
+
+							animation.addByPrefix('firstDeath', 'RACIAL DEAD??!?!??', 24, false);
+							animation.addByPrefix('deathLoop', 'Racial Dead...', 24, true);
+
+							addOffset('idle', 0, 0);
+							addOffset('singUP', -17, 99);
+							addOffset('singDOWN', 27, -13);
+							addOffset('singLEFT', -1, 12);
+							addOffset('singRIGHT', -17, 4);
+							addOffset('singUPmiss', -17, 99);
+							addOffset('singDOWNmiss', 27, -13);
+							addOffset('singLEFTmiss', -1, 12);
+							addOffset('singRIGHTmiss', -17, 4);
+							addOffset("hey", 31, 4);
+							addOffset('firstDeath', 34, 22);
+							addOffset('deathLoop', 34, 22);
+
+							playAnim('idle');
+
+							flipX = true;
+						case 'RadiFAIL':
+							frames = FlxAtlasFrames.fromSparrow(charPath + 'racial.png', charPath + 'racial.xml');
+							animation.addByPrefix('idle', 'Racial Spiteful Jig', 24, false);
+							animation.addByPrefix('singUPmiss', 'Racial sing UP', 24, false);
+							animation.addByPrefix('singDOWNmiss', 'Racial sing DOWN', 24, false);
+							animation.addByPrefix('singLEFTmiss', 'Racial sing LEFT', 24, false);
+							animation.addByPrefix('singRIGHTmiss', 'Racial sing RIGHT', 24, false);
+							animation.addByPrefix('singUP', 'Racial miss UP', 24, false);
+							animation.addByPrefix('singDOWN', 'Racial miss DOWN', 24, false);
+							animation.addByPrefix('singLEFT', 'Racial miss LEFT', 24, false);
+							animation.addByPrefix('singRIGHT', 'Racial miss RIGHT', 24, false);
+							animation.addByPrefix('hey', 'Racial Approveds', 24, false);
+
+							animation.addByPrefix('firstDeath', 'RACIAL DEAD??!?!??', 24, false);
+							animation.addByPrefix('deathLoop', 'Racial Dead...', 24, true);
+
+							addOffset('idle', 0, 0);
+							addOffset('singUPmiss', -17, 99);
+							addOffset('singDOWNmiss', 27, -13);
+							addOffset('singLEFTmiss', -1, 12);
+							addOffset('singRIGHTmiss', -17, 4);
+							addOffset('singUP', -17, 99);
+							addOffset('singDOWN', 27, -13);
+							addOffset('singLEFT', -1, 12);
+							addOffset('singRIGHT', -17, 4);
+							addOffset("hey", 31, 4);
+							addOffset('firstDeath', 34, 22);
+							addOffset('deathLoop', 34, 22);
+
+							playAnim('idle');
+
+							flipX = true;
+						case 'Sussy Radical':
+							getFrames('SUSSY_RACIAL');
+							setNormalAnims([
+								'SUSSY RACIAL0',
+								'SUSSY RACIAL UP',
+								'SUSSY RACIAL DOWN',
+								'SUSSY RACIAL LEFT',
+								'SUSSY RACIAL RIGHT'
+							], false, true, 'MISS');
+
+							setOffsets([
+								[0, 0],
+								[-36, 39],
+								[-14, -7],
+								[4, 4],
+								[-33, 4],
+								[-29, 73],
+								[9, 15],
+								[4, 23],
+								[-33, 15]
+							], false, true);
+
+							flipX = true;
+						case 'Radical Babby':
+							getFrames('babRad');
+							setNormalAnims(['idle', 'up', 'down', 'left', 'right'], false);
+
+							setOffsets([[0, 0], [-45, 45], [60, -70], [74, -17], [-67, -15]]);
+
+							flipX = true;
 					}
+				}
+				else
+				{
+					frames = FlxAtlasFrames.fromSparrow(charPath + 'racial.png', charPath + 'racial.xml');
+					animation.addByPrefix('idle', 'Racial Spiteful Jig', 24);
+					animation.addByPrefix('singUP', 'Racial sing UP', 24, false);
+					animation.addByPrefix('singDOWN', 'Racial sing DOWN', 24, false);
+					animation.addByPrefix('singLEFT', 'Racial sing LEFT', 24, false);
+					animation.addByPrefix('singRIGHT', 'Racial sing RIGHT', 24, false);
+					animation.addByPrefix('singUPmiss', 'Racial miss UP', 24, false);
+					animation.addByPrefix('singDOWNmiss', 'Racial miss DOWN', 24, false);
+					animation.addByPrefix('singLEFTmiss', 'Racial miss LEFT', 24, false);
+					animation.addByPrefix('singRIGHTmiss', 'Racial miss RIGHT', 24, false);
+					animation.addByPrefix('hey', 'Racial Approveds', 24, false);
+
+					animation.addByPrefix('firstDeath', 'RACIAL DEAD??!?!??', 24, false);
+					animation.addByPrefix('deathLoop', 'Racial Dead...', 24, true);
+
+					addOffset('idle', 0, 0);
+					addOffset('singUP', -17, 99);
+					addOffset('singDOWN', 27, -13);
+					addOffset('singLEFT', -1, 12);
+					addOffset('singRIGHT', -17, 4);
+					addOffset('singUPmiss', -17, 99);
+					addOffset('singDOWNmiss', 27, -13);
+					addOffset('singLEFTmiss', -1, 12);
+					addOffset('singRIGHTmiss', -17, 4);
+					addOffset("hey", 31, 4);
+					addOffset('firstDeath', 34, 22);
+					addOffset('deathLoop', 34, 22);
+
+					playAnim('idle');
+
+					flipX = true;
+				}
 			case 'bf-pixel':
 				frames = FlxAtlasFrames.fromSparrow(charPath + 'bfPixel.png', charPath + 'bfPixel.xml');
 				animation.addByPrefix('idle', 'BF IDLE', 24, false);
@@ -1215,240 +1194,261 @@ class Character extends FlxSprite
 
 				antialiasing = false;
 
-            	case 'four':
-                    frames = FlxAtlasFrames.fromSparrow(charPath + 'Four_Assets.png', charPath + 'Four_Assets.xml');
-                    animation.addByPrefix('idle', 'Four Grroovy Idle', 24);
-                    animation.addByPrefix('singUP', 'Four Sing UP', 24, false);
-                    animation.addByPrefix('singDOWN', 'Four Sing DOWN', 24, false);
-                    animation.addByPrefix('singLEFT', 'Four Sing LEFT', 24, false);
-                    animation.addByPrefix('singRIGHT', 'Four Sing RIGHT', 24, false);
+			case 'four':
+				frames = FlxAtlasFrames.fromSparrow(charPath + 'Four_Assets.png', charPath + 'Four_Assets.xml');
+				animation.addByPrefix('idle', 'Four Grroovy Idle', 24);
+				animation.addByPrefix('singUP', 'Four Sing UP', 24, false);
+				animation.addByPrefix('singDOWN', 'Four Sing DOWN', 24, false);
+				animation.addByPrefix('singLEFT', 'Four Sing LEFT', 24, false);
+				animation.addByPrefix('singRIGHT', 'Four Sing RIGHT', 24, false);
 
-                    addOffset('idle', 0, 0);
-                    addOffset('singUP', -117, -8);
-                    addOffset('singDOWN', -38, 237);
-                    addOffset('singLEFT', -66, -88);
-                    addOffset('singRIGHT', -121, -22);
+				addOffset('idle', 0, 0);
+				addOffset('singUP', -117, -8);
+				addOffset('singDOWN', -38, 237);
+				addOffset('singLEFT', -66, -88);
+				addOffset('singRIGHT', -121, -22);
 
-                    playAnim('idle');
+				playAnim('idle');
 
-                case 'x':
-                	frames = FlxAtlasFrames.fromSparrow(charPath + 'X.png', charPath + 'X.xml');
-                	animation.addByPrefix('idle', 'X Lovely Idle', 24);
-                    animation.addByPrefix('singUP-alt', 'X Sing UP', 24, false);
-                    animation.addByPrefix('singDOWN-alt', 'X Sing DOWN', 24, false);
-                    animation.addByPrefix('singLEFT-alt', 'X Sing LEFT', 24, false);
-                    animation.addByPrefix('singRIGHT-alt', 'X Sing RIGHT', 24, false);
+			case 'x':
+				frames = FlxAtlasFrames.fromSparrow(charPath + 'X.png', charPath + 'X.xml');
+				animation.addByPrefix('idle', 'X Lovely Idle', 24);
+				animation.addByPrefix('singUP-alt', 'X Sing UP', 24, false);
+				animation.addByPrefix('singDOWN-alt', 'X Sing DOWN', 24, false);
+				animation.addByPrefix('singLEFT-alt', 'X Sing LEFT', 24, false);
+				animation.addByPrefix('singRIGHT-alt', 'X Sing RIGHT', 24, false);
 
-                    addOffset('idle', 0, 4);
-                    addOffset('singUP-alt', 13, 78);
-                    addOffset('singDOWN-alt', -28, 7);
-                    addOffset('singLEFT-alt', 214, 144);
-                    addOffset('singRIGHT-alt', -71, 61);
+				addOffset('idle', 0, 4);
+				addOffset('singUP-alt', 13, 78);
+				addOffset('singDOWN-alt', -28, 7);
+				addOffset('singLEFT-alt', 214, 144);
+				addOffset('singRIGHT-alt', -71, 61);
 
-                    playAnim('idle');
+				playAnim('idle');
 
-                case 'racial':
-                    frames = FlxAtlasFrames.fromSparrow(charPath + 'racial.png', charPath + 'racial.xml');
-                    animation.addByPrefix('idle', 'Racial Spiteful Jig', 24);
-                    animation.addByPrefix('singUP', 'Racial sing UP', 24, false);
-                    animation.addByPrefix('singDOWN', 'Racial sing DOWN', 24, false);
-                    animation.addByPrefix('singLEFT', 'Racial sing LEFT', 24, false);
-                    animation.addByPrefix('singRIGHT', 'Racial sing RIGHT', 24, false);
-                    animation.addByPrefix('hey', 'Racial Approveds', 24, false);
+			case 'racial':
+				frames = FlxAtlasFrames.fromSparrow(charPath + 'racial.png', charPath + 'racial.xml');
+				animation.addByPrefix('idle', 'Racial Spiteful Jig', 24);
+				animation.addByPrefix('singUP', 'Racial sing UP', 24, false);
+				animation.addByPrefix('singDOWN', 'Racial sing DOWN', 24, false);
+				animation.addByPrefix('singLEFT', 'Racial sing LEFT', 24, false);
+				animation.addByPrefix('singRIGHT', 'Racial sing RIGHT', 24, false);
+				animation.addByPrefix('hey', 'Racial Approveds', 24, false);
 
-                    animation.addByPrefix('firstDeath', 'RACIAL DEAD??!?!??', 24, false);
-                    animation.addByPrefix('deathLoop', 'Racial Dead...', 24, false);
+				animation.addByPrefix('firstDeath', 'RACIAL DEAD??!?!??', 24, false);
+				animation.addByPrefix('deathLoop', 'Racial Dead...', 24, false);
 
-                    addOffset('idle', 0, 0);
-                    addOffset('singUP', -17, 99);
-                    addOffset('singDOWN', 27, -13);
-                    addOffset('singLEFT', -1, 12);
-                    addOffset('singRIGHT', -17, 4);
-                    addOffset("hey", 31, 4);
-                	addOffset('firstDeath', 34, 22);
-                	addOffset('deathLoop', 34, 22);
+				addOffset('idle', 0, 0);
+				addOffset('singUP', -17, 99);
+				addOffset('singDOWN', 27, -13);
+				addOffset('singLEFT', -1, 12);
+				addOffset('singRIGHT', -17, 4);
+				addOffset("hey", 31, 4);
+				addOffset('firstDeath', 34, 22);
+				addOffset('deathLoop', 34, 22);
 
-                    playAnim('idle');
+				playAnim('idle');
 
-				case 'pronun':
-					frames = FlxAtlasFrames.fromSparrow(charPath + 'Pronun_Assets.png', charPath + 'Pronun_Assets.xml');
-					animation.addByPrefix('idle', 'pronun idle', 24);
-					animation.addByPrefix('singUP', 'pronun up', 24, false);
-					animation.addByPrefix('singDOWN', 'pronun down', 24, false);
-					animation.addByPrefix('singLEFT', 'pronun left', 24, false);
-					animation.addByPrefix('singRIGHT', 'pronun right', 24, false);
+			case 'pronun':
+				frames = FlxAtlasFrames.fromSparrow(charPath + 'Pronun_Assets.png', charPath + 'Pronun_Assets.xml');
+				animation.addByPrefix('idle', 'pronun idle', 24);
+				animation.addByPrefix('singUP', 'pronun up', 24, false);
+				animation.addByPrefix('singDOWN', 'pronun down', 24, false);
+				animation.addByPrefix('singLEFT', 'pronun left', 24, false);
+				animation.addByPrefix('singRIGHT', 'pronun right', 24, false);
 
-					addOffset('idle');
-					addOffset('singUP', 0, 236);
-					addOffset('singDOWN', -9, 16);
-					addOffset('singLEFT', 19, 10);
-					addOffset('singRIGHT', 10, 31);
+				addOffset('idle');
+				addOffset('singUP', 0, 236);
+				addOffset('singDOWN', -9, 16);
+				addOffset('singLEFT', 19, 10);
+				addOffset('singRIGHT', 10, 31);
 
-					playAnim('idle');
+				playAnim('idle');
 
-				case 'charlie':
-					frames = FlxAtlasFrames.fromSparrow(charPath + 'Charlie_DM.png', charPath + 'Charlie_DM.xml');
-					animation.addByPrefix('idle', 'Chawlay Idle', 24, false);
-					animation.addByPrefix('singDOWN', 'Chawlay Note DOWN', 24, false);
-					animation.addByPrefix('singLEFT', 'Chawlay Sing LEFT', 24, false);
-					animation.addByPrefix('singUP', 'Chawlay Sing Note UP', 24, false);
-					animation.addByPrefix('singRIGHT', 'Chawlay Sing RIGHT', 24, false);
-					animation.addByPrefix('weird', 'Chawlay Weird', 24, false);
+			case 'charlie':
+				frames = FlxAtlasFrames.fromSparrow(charPath + 'Charlie_DM.png', charPath + 'Charlie_DM.xml');
+				animation.addByPrefix('idle', 'Chawlay Idle', 24, false);
+				animation.addByPrefix('singDOWN', 'Chawlay Note DOWN', 24, false);
+				animation.addByPrefix('singLEFT', 'Chawlay Sing LEFT', 24, false);
+				animation.addByPrefix('singUP', 'Chawlay Sing Note UP', 24, false);
+				animation.addByPrefix('singRIGHT', 'Chawlay Sing RIGHT', 24, false);
+				animation.addByPrefix('weird', 'Chawlay Weird', 24, false);
 
-					addOffset('idle');
-					addOffset('singDOWN', 64, -92);
-					addOffset('singLEFT', 110, 54);
-					addOffset('singUP', 84, -15);
-					addOffset('singRIGHT', 77, -69);
-					addOffset('weird', 191, 31);
+				addOffset('idle');
+				addOffset('singDOWN', 64, -92);
+				addOffset('singLEFT', 110, 54);
+				addOffset('singUP', 84, -15);
+				addOffset('singRIGHT', 77, -69);
+				addOffset('weird', 191, 31);
 
-				case 'flandre-cool-awesome':
-					getFrames('Flan_But_Awesome');
-					setNormalAnims([
-						'super awesome idle dance', 
-						'up (the movie)', 
-						'IM DOWN BAD', 
-						'the LEFT NOTE (swagger note)', 
-						'thats right'
-					], false);
-					setOffsets([
-						[-150, 300], 
-						[-146, 644], 
-						[27, 208], 
-						[-108, 364], 
-						[-181, 329]]);
+			case 'flandre-cool-awesome':
+				getFrames('Flan_But_Awesome');
+				setNormalAnims([
+					'super awesome idle dance',
+					'up (the movie)',
+					'IM DOWN BAD',
+					'the LEFT NOTE (swagger note)',
+					'thats right'
+				], false);
+				setOffsets([[-150, 300], [-146, 644], [27, 208], [-108, 364], [-181, 329]]);
 
-					playAnim('idle');
+				playAnim('idle');
 
-				case 'red-ball':
-					getFrames('REDBALL');
-					animation.addByPrefix('idle', 'BF idle dance', 24, false);
-					animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
-					animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
-					animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
-					animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
-					animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
-					animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
-					animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
-					animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
-					animation.addByPrefix('hey', 'BF HEY', 24, false);
-					
-					animation.addByPrefix('firstDeath', "BF dies", 24, false);
-					animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
-					animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
-					
-					animation.addByPrefix('scared', 'BF idle shaking', 24);
-					
-					addOffset('idle', -5);
-					addOffset("singUP", 0, 12);
-					addOffset("singRIGHT", -1, -67);
-					addOffset("singLEFT", -1, -66);
-					addOffset("singDOWN", 7, -34);
-					addOffset("singUPmiss", 1, 12);
-					addOffset("singRIGHTmiss", -2, -68);
-					addOffset("singLEFTmiss", -1, -65);
-					addOffset("singDOWNmiss", 9, -35);
-					addOffset("hey", -35, 3);
-					addOffset('firstDeath', 37, 11);
-					addOffset('deathLoop', -44, -211);
-					addOffset('deathConfirm', -17, 2);
-					
-					playAnim('idle');
+			case 'red-ball':
+				getFrames('REDBALL');
+				animation.addByPrefix('idle', 'BF idle dance', 24, false);
+				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
+				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
+				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
+				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
+				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
+				animation.addByPrefix('hey', 'BF HEY', 24, false);
 
-					setGraphicSize(Std.int(this.width * 1.3));
-					updateHitbox();
-					
-					flipX = true;
-				case 'red-ball-dream':
-					getFrames('glow_redball', 'REDBALL');
-					animation.addByPrefix('idle', 'BF idle dance', 24, false);
-					animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
-					animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
-					animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
-					animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
-					animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
-					animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
-					animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
-					animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
-					animation.addByPrefix('hey', 'BF HEY', 24, false);
-					
-					animation.addByPrefix('firstDeath', "BF dies", 24, false);
-					animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
-					animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
-					
-					animation.addByPrefix('scared', 'BF idle shaking', 24);
-					
-					addOffset('idle', -5);
-					addOffset("singUP", 0, 12);
-					addOffset("singRIGHT", -1, -67);
-					addOffset("singLEFT", -1, -66);
-					addOffset("singDOWN", 7, -34);
-					addOffset("singUPmiss", 1, 12);
-					addOffset("singRIGHTmiss", -2, -68);
-					addOffset("singLEFTmiss", -1, -65);
-					addOffset("singDOWNmiss", 9, -35);
-					addOffset("hey", -35, 3);
-					addOffset('firstDeath', 37, 11);
-					addOffset('deathLoop', -44, -211);
-					addOffset('deathConfirm', -17, 2);
-					
-					playAnim('idle');
+				animation.addByPrefix('firstDeath', "BF dies", 24, false);
+				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
+				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
 
-					setGraphicSize(Std.int(this.width * 1.3));
-					updateHitbox();
-					
-					flipX = true;
-				case 'community-night-funkin':
-					getFrames('Community_Night_Funkin');
-					animation.addByPrefix('idle', 'BF idle dance', 24, false);
-					animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
-					animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
-					animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
-					animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
-					animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
-					animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
-					animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
-					animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
-					animation.addByPrefix('hey', 'BF HEY', 24, false);
-					
-					animation.addByPrefix('firstDeath', "BF dies", 24, false);
-					animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
-					animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
-					
-					animation.addByPrefix('scared', 'BF idle shaking', 24);
-					
-					addOffset('idle', -5);
-					addOffset("singUP", -29, 27);
-					addOffset("singRIGHT", -38, -7);
-					addOffset("singLEFT", 12, -6);
-					addOffset("singDOWN", -10, -50);
-					addOffset("singUPmiss", -29, 27);
-					addOffset("singRIGHTmiss", -30, 21);
-					addOffset("singLEFTmiss", 12, 24);
-					addOffset("singDOWNmiss", -11, -19);
-					addOffset("hey", 7, 4);
-					addOffset('firstDeath', 37, 11);
-					addOffset('deathLoop', 37, 5);
-					addOffset('deathConfirm', 37, 69);
-					addOffset('scared', -4);
-					
-					playAnim('idle');
-					
-					flipX = true;
-				case 'nerd':
-					getFrames('nerd');
-					spookyCharacter();
-				case 'spoar-man':
-					getFrames('Real_Spoar_Man');
-					setNormalAnims(['idlee', 'up', 'down', 'left', 'right'], false);
-					setOffsets([
-						[0, 0],
-						[-20, 420],
-						[-30, -140],
-						[60, 0],
-						[-80, 20]
-					]);
-					playAnim('idle');
+				animation.addByPrefix('scared', 'BF idle shaking', 24);
+
+				addOffset('idle', -5);
+				addOffset("singUP", 0, 12);
+				addOffset("singRIGHT", -1, -67);
+				addOffset("singLEFT", -1, -66);
+				addOffset("singDOWN", 7, -34);
+				addOffset("singUPmiss", 1, 12);
+				addOffset("singRIGHTmiss", -2, -68);
+				addOffset("singLEFTmiss", -1, -65);
+				addOffset("singDOWNmiss", 9, -35);
+				addOffset("hey", -35, 3);
+				addOffset('firstDeath', 37, 11);
+				addOffset('deathLoop', -44, -211);
+				addOffset('deathConfirm', -17, 2);
+
+				playAnim('idle');
+
+				setGraphicSize(Std.int(this.width * 1.3));
+				updateHitbox();
+
+				flipX = true;
+			case 'red-ball-dream':
+				getFrames('glow_redball', 'REDBALL');
+				animation.addByPrefix('idle', 'BF idle dance', 24, false);
+				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
+				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
+				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
+				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
+				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
+				animation.addByPrefix('hey', 'BF HEY', 24, false);
+
+				animation.addByPrefix('firstDeath', "BF dies", 24, false);
+				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
+				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
+
+				animation.addByPrefix('scared', 'BF idle shaking', 24);
+
+				addOffset('idle', -5);
+				addOffset("singUP", 0, 12);
+				addOffset("singRIGHT", -1, -67);
+				addOffset("singLEFT", -1, -66);
+				addOffset("singDOWN", 7, -34);
+				addOffset("singUPmiss", 1, 12);
+				addOffset("singRIGHTmiss", -2, -68);
+				addOffset("singLEFTmiss", -1, -65);
+				addOffset("singDOWNmiss", 9, -35);
+				addOffset("hey", -35, 3);
+				addOffset('firstDeath', 37, 11);
+				addOffset('deathLoop', -44, -211);
+				addOffset('deathConfirm', -17, 2);
+
+				playAnim('idle');
+
+				setGraphicSize(Std.int(this.width * 1.3));
+				updateHitbox();
+
+				flipX = true;
+			case 'community-night-funkin':
+				getFrames('Community_Night_Funkin');
+				animation.addByPrefix('idle', 'BF idle dance', 24, false);
+				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
+				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
+				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
+				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
+				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
+				animation.addByPrefix('hey', 'BF HEY', 24, false);
+
+				animation.addByPrefix('firstDeath', "BF dies", 24, false);
+				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
+				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
+
+				animation.addByPrefix('scared', 'BF idle shaking', 24);
+
+				addOffset('idle', -5);
+				addOffset("singUP", -29, 27);
+				addOffset("singRIGHT", -38, -7);
+				addOffset("singLEFT", 12, -6);
+				addOffset("singDOWN", -10, -50);
+				addOffset("singUPmiss", -29, 27);
+				addOffset("singRIGHTmiss", -30, 21);
+				addOffset("singLEFTmiss", 12, 24);
+				addOffset("singDOWNmiss", -11, -19);
+				addOffset("hey", 7, 4);
+				addOffset('firstDeath', 37, 11);
+				addOffset('deathLoop', 37, 5);
+				addOffset('deathConfirm', 37, 69);
+				addOffset('scared', -4);
+
+				playAnim('idle');
+
+				flipX = true;
+			case 'nerd':
+				getFrames('nerd');
+				spookyCharacter();
+			case 'spoar-man':
+				getFrames('Real_Spoar_Man');
+				setNormalAnims(['idlee', 'up', 'down', 'left', 'right'], false);
+				setOffsets([[0, 0], [-20, 420], [-30, -140], [60, 0], [-80, 20]]);
+				playAnim('idle');
+			default: // default is radical, this is probably just a crash prevention idk
+				frames = FlxAtlasFrames.fromSparrow(charPath + 'racial.png', charPath + 'racial.xml');
+				animation.addByPrefix('idle', 'Racial Spiteful Jig', 24, false);
+				animation.addByPrefix('singUP', 'Racial sing UP', 24, false);
+				animation.addByPrefix('singDOWN', 'Racial sing DOWN', 24, false);
+				animation.addByPrefix('singLEFT', 'Racial sing LEFT', 24, false);
+				animation.addByPrefix('singRIGHT', 'Racial sing RIGHT', 24, false);
+				animation.addByPrefix('singUPmiss', 'Racial miss UP', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'Racial miss DOWN', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'Racial miss LEFT', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'Racial miss RIGHT', 24, false);
+				animation.addByPrefix('hey', 'Racial Approveds', 24, false);
+
+				animation.addByPrefix('firstDeath', 'RACIAL DEAD??!?!??', 24, false);
+				animation.addByPrefix('deathLoop', 'Racial Dead...', 24, true);
+
+				addOffset('idle', 0, 0);
+				addOffset('singUP', -17, 99);
+				addOffset('singDOWN', 27, -13);
+				addOffset('singLEFT', -1, 12);
+				addOffset('singRIGHT', -17, 4);
+				addOffset('singUPmiss', -17, 99);
+				addOffset('singDOWNmiss', 27, -13);
+				addOffset('singLEFTmiss', -1, 12);
+				addOffset('singRIGHTmiss', -17, 4);
+				addOffset("hey", 31, 4);
+				addOffset('firstDeath', 34, 22);
+				addOffset('deathLoop', 34, 22);
+
+				playAnim('idle');
+
+				flipX = true;
 		}
 
 		dance();
@@ -1458,7 +1458,12 @@ class Character extends FlxSprite
 			flipX = !flipX;
 
 			// Doesn't flip for BF, since his are already in the right place???
-			if (!curCharacter.startsWith('radical') && !curCharacter.startsWith('bf') && !curCharacter.startsWith('red-ball') && !(curCharacter == 'gandhi') && !(curCharacter == 'gaming-speakers') && curCharacter != 'invisible')
+			if (!curCharacter.startsWith('radical')
+				&& !curCharacter.startsWith('bf')
+				&& !curCharacter.startsWith('red-ball')
+				&& !(curCharacter == 'gandhi')
+				&& !(curCharacter == 'gaming-speakers')
+				&& curCharacter != 'invisible')
 			{
 				// var animArray
 				if (animation.getByName('singRIGHT') != null)
@@ -1498,7 +1503,7 @@ class Character extends FlxSprite
 				dance();
 				holdTimer = 0;
 			}
-			
+
 			if (curCharacter == 'gspot')
 				gspotVar = 6.1;
 			if (holdTimer >= Conductor.stepCrochet * gspotVar * 0.001)
@@ -1558,7 +1563,7 @@ class Character extends FlxSprite
 						else
 							playAnim('danceLeft');
 					default:
-							playAnim('idle');
+						playAnim('idle');
 				}
 			}
 		}
@@ -1568,8 +1573,8 @@ class Character extends FlxSprite
 	{
 		if (curCharacter == 'christmas-monkey')
 			animation.play(AnimName);
-        else
-            animation.play(AnimName, Force, Reversed, Frame);
+		else
+			animation.play(AnimName, Force, Reversed, Frame);
 
 		var daOffset = animOffsets.get(animation.curAnim.name);
 		if (animOffsets.exists(animation.curAnim.name))
@@ -1707,15 +1712,15 @@ class Character extends FlxSprite
 		animation.addByPrefix('singRIGHT', 'spooky sing right', 24, false);
 		animation.addByIndices('danceLeft', 'spooky dance idle', [0, 2, 6], "", 12, false);
 		animation.addByIndices('danceRight', 'spooky dance idle', [8, 10, 12, 14], "", 12, false);
-		
+
 		addOffset('danceLeft');
 		addOffset('danceRight');
-		
+
 		addOffset("singUP", -20, 26);
 		addOffset("singRIGHT", -130, -14);
 		addOffset("singLEFT", 130, -10);
 		addOffset("singDOWN", -50, -130);
-		
+
 		playAnim('danceRight');
 		isSpooky = true;
 	}
@@ -1735,16 +1740,15 @@ class Character extends FlxSprite
 			// Need to be flipped! REDO THIS LATER!
 			animation.addByPrefix('singLEFT', 'Pico Note Right0', 24, false);
 			animation.addByPrefix('singRIGHT', 'Pico NOTE LEFT0', 24, false);
-			
 		}
-				
+
 		playAnim('idle');
 		addOffset('idle');
 		addOffset("singUP", -29, 27);
 		addOffset("singRIGHT", -68, -7);
 		addOffset("singLEFT", 65, 9);
 		addOffset("singDOWN", 200, -70);
-				
+
 		if (!isPlayer)
 			flipX = true;
 	}

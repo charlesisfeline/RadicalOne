@@ -119,7 +119,7 @@ class OptionsMenu extends MusicBeatState
 					stupid.targetY = 0;
 					grpControls.add(stupid);
 			}
-		} // FlxG.save.data.missNoise
+		}
 
 		pressThis.visible = (FlxG.save.data.inputSystem == 'Kade Engine' && curSelected == 0);
 
@@ -168,7 +168,6 @@ class OptionsMenu extends MusicBeatState
 		{
 			PlayerSettings.player1.controls.replaceBinding(Control.LEFT, Keys, FlxG.keys.getIsDown()[0].ID, null);
 		}
-		// PlayerSettings.player1.controls.replaceBinding(Control)
 	}
 
 	var isSettingControl:Bool = false;
@@ -183,10 +182,6 @@ class OptionsMenu extends MusicBeatState
 
 	function changeSelection(change:Int = 0)
 	{
-/*		#if !switch
-		NGio.logEvent('Fresh');
-		#end*/
-
 		FlxG.sound.play('assets/sounds/scrollMenu' + TitleState.soundExt, 0.4);
 
 		curSelected += change;
@@ -201,8 +196,6 @@ class OptionsMenu extends MusicBeatState
 		else
 			inputSysTxt.visible = false;
 
-		// selector.y = (70 * curSelected) + 30;
-
 		var bullShit:Int = 0;
 
 		for (item in grpControls.members)
@@ -211,12 +204,10 @@ class OptionsMenu extends MusicBeatState
 			bullShit++;
 
 			item.alpha = 0.6;
-			// item.setGraphicSize(Std.int(item.width * 0.8));
 
 			if (item.targetY == 0)
 			{
 				item.alpha = 1;
-				// item.setGraphicSize(Std.int(item.width));
 			}
 		}
 	}

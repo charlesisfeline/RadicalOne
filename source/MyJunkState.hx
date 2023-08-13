@@ -46,33 +46,31 @@ using StringTools;
 
 class MyJunkState extends MusicBeatState
 {
-    var MYJUNK:FlxSprite;
+	var MYJUNK:FlxSprite;
 
-    override public function create()
-    {
-        Conductor.changeBPM(102);
+	override public function create()
+	{
+		Conductor.changeBPM(102);
 		persistentUpdate = true;
 		persistentDraw = true;
-        PlayerSettings.init();
+		PlayerSettings.init();
 
-        FlxG.mouse.visible = false;
+		FlxG.mouse.visible = false;
 
+		MYJUNK = new FlxSprite(0, 0);
+		MYJUNK.frames = FlxAtlasFrames.fromSparrow('assets/images/UI/MYJUNK.png', 'assets/images/UI/MYJUNK.xml');
+		MYJUNK.animation.addByPrefix('JUNKENING', 'Movie', 24, false);
+		MYJUNK.animation.play('JUNKENING');
+		add(MYJUNK);
 
-        //MYJUNK = new FlxSprite(640, 360);
-        MYJUNK = new FlxSprite(0, 0);
-        MYJUNK.frames = FlxAtlasFrames.fromSparrow('assets/images/UI/MYJUNK.png', 'assets/images/UI/MYJUNK.xml');
-        MYJUNK.animation.addByPrefix('JUNKENING', 'Movie', 24, false);
-        MYJUNK.animation.play('JUNKENING');
-        add(MYJUNK);
+		FlxG.sound.play('assets/sounds/splash.ogg', 1, false, null, true, function()
+		{
+			FlxG.switchState(new TitleState());
+		});
+	}
 
-        FlxG.sound.play('assets/sounds/splash.ogg', 1, false, null, true, function()
-        {
-            FlxG.switchState(new TitleState());
-        });
-    }
-
-    override function update(elapsed:Float)
-    {
-        super.update(elapsed);
-    }
+	override function update(elapsed:Float)
+	{
+		super.update(elapsed);
+	}
 }

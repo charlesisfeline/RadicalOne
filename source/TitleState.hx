@@ -65,13 +65,6 @@ class TitleState extends MusicBeatState
 
 		super.create();
 
-		/*NGio.noLogin(APIStuff.API);
-
-		#if ng
-		var ng:NGio = new NGio(APIStuff.API, APIStuff.EncKey);
-		trace('NEWGROUNDS LOL');
-		#end   */
-
 		FlxG.save.bind('funkin', 'ninjamuffin99');
 
 		Highscore.load();
@@ -136,7 +129,7 @@ class TitleState extends MusicBeatState
 		Conductor.changeBPM(102);
 		persistentUpdate = true;
 
-		InputSystem.initInputs();
+		RadicalPrefs.initInputs();
 		WardrobeMenu.initOutfit();
 
 		var bg:FlxSprite = new FlxSprite().loadGraphic('assets/images/prettyRacialCrystals.png');
@@ -166,13 +159,7 @@ class TitleState extends MusicBeatState
 		titleText.antialiasing = true;
 		titleText.animation.play('idle');
 		titleText.updateHitbox();
-		// titleText.screenCenter(X);
 		add(titleText);
-
-		/*var logo:FlxSprite = new FlxSprite().loadGraphic('assets/images/logo.png');
-		logo.screenCenter();
-		logo.antialiasing = true;
-		add(logo);*/
 
 		// FlxTween.tween(logoBl, {y: logoBl.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG});
 		// FlxTween.tween(logo, {y: logoBl.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG, startDelay: 0.1});
@@ -186,8 +173,6 @@ class TitleState extends MusicBeatState
 
 		credTextShit = new Alphabet(0, 0, "ninjamuffin99\nPhantomArcade\nkawaisprite\nevilsk8er", true);
 		credTextShit.screenCenter();
-
-		// credTextShit.alignment = CENTER;
 
 		credTextShit.visible = false;
 
@@ -207,8 +192,6 @@ class TitleState extends MusicBeatState
 			skipIntro();
 		else
 			initialized = true;
-
-		// credGroup.add(credTextShit);
 	}
 
 	function getIntroTextShit():Array<Array<String>>
@@ -256,11 +239,11 @@ class TitleState extends MusicBeatState
 		if (pressedEnter && !transitioning && skippedIntro)
 		{
 			#if !switch
-			NGio.unlockMedal(60960);
+			// NGio.unlockMedal(60960);
 
 			// If it's Friday according to da clock
 			if (Date.now().getDay() == 5)
-				NGio.unlockMedal(61034);
+				// NGio.unlockMedal(61034);
 			#end
 
 			titleText.animation.play('press');
@@ -269,23 +252,23 @@ class TitleState extends MusicBeatState
 			FlxG.sound.play('assets/sounds/confirmMenu' + TitleState.soundExt, 0.7);
 
 			transitioning = true;
-			// FlxG.sound.music.stop();
 
 			new FlxTimer().start(2, function(tmr:FlxTimer)
 			{
-			/*	// Check if version is outdated
+				/*	// Check if version is outdated
 
-				var version:String = "v" + Application.current.meta.get('version');
+					var version:String = "v" + Application.current.meta.get('version');
 
-				if (version.trim() != NGio.GAME_VER.trim() && !OutdatedSubState.leftState)
-				{
-					trace('OLD VERSION!');
-					FlxG.switchState(new OutdatedSubState());
-				}
-				else
-				{   */
-					FlxG.switchState(new MainMenuState());
-				//}
+					if (version.trim() != NGio.GAME_VER.trim() && !OutdatedSubState.leftState)
+					{
+						trace('OLD VERSION!');
+						FlxG.switchState(new OutdatedSubState());
+					}
+					else
+					{ */
+
+				FlxG.switchState(new MainMenuState());
+				// }
 			});
 			// FlxG.sound.play('assets/music/titleShoot' + TitleState.soundExt, 0.7);
 		}
@@ -332,62 +315,39 @@ class TitleState extends MusicBeatState
 	{
 		super.beatHit();
 
-		//logoBl.animation.play('bump');
 		danceLeft = !danceLeft;
-
-		//if (danceLeft)
-			//gfDance.animation.play('danceRight');
-		//else
-			//gfDance.animation.play('danceLeft');
 
 		FlxG.log.add(curBeat);
 
 		switch (curBeat)
 		{
 			case 1:
-				createCoolText(['grantare', 'lancey', 'gandhi from clone high', 'radicaltwo']);
-			// credTextShit.visible = true;
+				createCoolText(['sky', 'lancey', 'gandhi from clone high', 'radicaltwo']);
+			// isnt lancey the creator of the mod tho
 			case 3:
 				addMoreText('present');
-			// credTextShit.text += '\npresent...';
-			// credTextShit.addText();
 			case 4:
 				deleteCoolText();
-			// credTextShit.visible = false;
-			// credTextShit.text = 'In association \nwith';
-			// credTextShit.screenCenter();
 			case 5:
 				createCoolText(['In association', 'with']);
 			case 7:
 				addMoreText('my junk');
 				ngSpr.visible = true;
-			// credTextShit.text += '\nNewgrounds';
 			case 8:
 				deleteCoolText();
 				ngSpr.visible = false;
-			// credTextShit.visible = false;
-
-			// credTextShit.text = 'Shoutouts Tom Fulp';
-			// credTextShit.screenCenter();
 			case 9:
 				createCoolText([curWacky[0]]);
-			// credTextShit.visible = true;
 			case 11:
 				addMoreText(curWacky[1]);
-			// credTextShit.text += '\nlmao';
 			case 12:
 				deleteCoolText();
-			// credTextShit.visible = false;
-			// credTextShit.text = "Friday";
-			// credTextShit.screenCenter();
 			case 13:
 				addMoreText('RAD');
-			// credTextShit.visible = true;
 			case 14:
 				addMoreText('ICAL');
-			// credTextShit.text += '\nNight';
 			case 15:
-				addMoreText('ONE'); // credTextShit.text += '\nFunkin';
+				addMoreText('ONE');
 
 			case 16:
 				skipIntro();

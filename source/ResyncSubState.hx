@@ -36,8 +36,6 @@ class ResyncSubState extends MusicBeatSubstate
     {
         snd.play();
         FlxG.sound.list.add(snd);
-
-        trace('TIME DIFF: ' + Math.abs(Conductor.songPosition - PlayState.instance.songTime));
         Conductor.songPosition = PlayState.instance.songTime = 0;
         
         close();

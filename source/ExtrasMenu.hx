@@ -127,8 +127,6 @@ class ExtrasMenu extends MusicBeatState
 				FlxG.switchState(new TestState());
 				
 			}
-			//	var funnystring = Std.string(curSelected);
-			//	FlxG.openURL(funnystring); 
 		}
 		
 		if (isSettingControl)
