@@ -5,3 +5,5 @@ I got some racial opinions on my mind...
 This is an archive of the RadicalOne V1 source code.
 
 when v2 finna comes out imma update it just in case
+
+maybe i can do some fixes here but maybe later
