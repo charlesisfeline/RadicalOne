@@ -6,7 +6,6 @@
 
 	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
 		or you can set the actual size of your file manually at "FlxPreloaderBase-onUpdate-bytesTotal"-->
-	<!-- <app preloader="Preloader" resizable="true" /> -->
 	<app preloader="flixel.system.FlxPreloader" />
 
 	<!--Minimum without FLX_NO_GAMEPAD: 11.8, without FLX_NO_NATIVE_CURSOR: 11.2-->
@@ -36,15 +35,11 @@
 
 	<assets path="assets/images" />
 	<assets path="assets/data" />
-	<!--<assets path="assets/images/cutscenes/week1/racialMovie.swf" preload="true" /> -->
-	
-	<!-- <library name="noPreload" preload='false'/> -->
-	<!-- <library name="noPreload"/> -->
 	<assets path="assets/music" include="*.mp3" if="web"/>
 	<assets path="assets/music" include="*.ogg" unless="web"/>
 	<assets path="assets/sounds" include="*.mp3" if="web" />
 	<assets path="assets/sounds" include="*.ogg" unless="web" />
-	<library path="assets/swf/job interview cutscene.swf" preload="true" id="week1cutscene"/>
+	<library path="assets/swf/job interview cutscene.swf" preload="true" id="week1cutscene"/> <!-- i wish chroma green screen-->
 
 	<assets path="CHANGELOG.md"/>
 

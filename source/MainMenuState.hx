@@ -46,7 +46,7 @@ class MainMenuState extends MusicBeatState
 
 	var swagger:Array<String> = [
 		'The main story mode of the game.',
-		'Play any song you like, without cutscenes or dialogue.',
+		'Play any song you like, minus the weekends, without cutscenes or dialogue.',
 		'Options, Bonus Weekends, Wardrobe, Etc.'
 	];
 
@@ -67,7 +67,8 @@ class MainMenuState extends MusicBeatState
 			FlxG.sound.playMusic('assets/music/freakyMenu' + TitleState.soundExt);
 		}
 
-		if (Conductor.bpm != 102) Conductor.changeBPM(102);
+		if (Conductor.bpm != 102)
+			Conductor.changeBPM(102);
 
 		persistentUpdate = persistentDraw = true;
 
@@ -97,7 +98,8 @@ class MainMenuState extends MusicBeatState
 		wow2.alpha = 0.5;
 		add(wow2);
 
-		for (i in 0...32) {
+		for (i in 0...32)
+		{
 			var thing:FlxSprite = new FlxSprite(40 * i, 75).makeGraphic(40, 570, FlxColor.BLACK);
 			thing.alpha = 0.5;
 			thing.ID = i;
@@ -113,7 +115,6 @@ class MainMenuState extends MusicBeatState
 
 		camFollow = new FlxObject(0, 0, 1, 1);
 		add(camFollow);
-		// magenta.scrollFactor.set();
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
@@ -163,7 +164,6 @@ class MainMenuState extends MusicBeatState
 			iLoveWow2.x = iLoveWow2.realX + i * 1200;
 			iLoveWow2.antialiasing = true;
 			yoJunk.add(iLoveWow2);
-
 		}
 
 		leftArrow = new FlxSprite();
@@ -187,7 +187,8 @@ class MainMenuState extends MusicBeatState
 		add(new FlxSprite().makeGraphic(1280, 75, FlxColor.BLACK));
 		add(new FlxSprite(0, FlxG.height - 75).makeGraphic(1280, 75, FlxColor.BLACK));
 
-		for (i in 0...12) {
+		for (i in 0...12)
+		{
 			var scrol:FlxSprite = new FlxSprite(i * 225, FlxG.height - 75).loadGraphic('assets/images/UI/racialCool.png', true, 223, 72);
 			scrol.animation.add('idle', [for (i in 0...20) i], 10, true);
 			scrol.animation.play('idle');
@@ -201,9 +202,9 @@ class MainMenuState extends MusicBeatState
 			scrollThingsTop.push(scrol2);
 		}
 
-		//FlxG.camera.follow(camFollow, null, 0.06);
+		// FlxG.camera.follow(camFollow, null, 0.06);
 
-		var versionShit:FlxText = new FlxText(5, FlxG.height - 18, 0, "v" + Application.current.meta.get('version'), 12);
+		var versionShit:FlxText = new FlxText(5, FlxG.height - 18, 0, "RadicalOne - FNF v0.2.5-7"), 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
@@ -230,8 +231,10 @@ class MainMenuState extends MusicBeatState
 		racial.animation.play('idle', true);
 		gaming.animation.play('idle', true);
 
-		for (deez in weez) {
-			if (deez.ID % 2 == 0) {
+		for (deez in weez)
+		{
+			if (deez.ID % 2 == 0)
+			{
 				deez.scale.set(1, FlxG.random.float(0.5, 0.95));
 				FlxTween.tween(deez, {"scale.y": 1}, Conductor.crochet * 0.0005, {ease: SwagEase.swagEase});
 			}
@@ -294,37 +297,41 @@ class MainMenuState extends MusicBeatState
 
 					yoJunk.forEach(function(spr:FlxSprite)
 					{
-							FlxFlicker.flicker(spr, 1, 0.06, false, false, function(flick:FlxFlicker)
+						FlxFlicker.flicker(spr, 1, 0.06, false, false, function(flick:FlxFlicker)
+						{
+							var daChoice:String = optionShit[curSelected];
+
+							switch (daChoice)
 							{
-								var daChoice:String = optionShit[curSelected];
+								case 'story mode':
+									FlxG.switchState(new StoryMenuState());
+									trace("Story Menu Selected");
+								case 'freeplay':
+									FlxG.switchState(new FreeplayState());
 
-								switch (daChoice)
-								{
-									case 'story mode':
-										FlxG.switchState(new StoryMenuState());
-										trace("Story Menu Selected");
-									case 'freeplay':
-										FlxG.switchState(new FreeplayState());
+									trace("Freeplay Menu Selected");
 
-										trace("Freeplay Menu Selected");
-
-									case 'options':
-										FlxG.switchState(new ExtrasMenu());
-								}
-							});
+								case 'options':
+									FlxG.switchState(new ExtrasMenu());
+							}
+						});
 					});
 				}
 			}
 		}
 
-		for (spr in scrollThingsBottom) {
+		for (spr in scrollThingsBottom)
+		{
 			spr.x -= 2;
-			if (spr.x < 223 * -2) spr.x = 223 * (scrollThingsBottom.length - 2);
+			if (spr.x < 223 * -2)
+				spr.x = 223 * (scrollThingsBottom.length - 2);
 		}
 
-		for (spr in scrollThingsTop) {
+		for (spr in scrollThingsTop)
+		{
 			spr.x += 2;
-			if (spr.x > 223 * (scrollThingsTop.length - 2)) spr.x = 223 * -1;
+			if (spr.x > 223 * (scrollThingsTop.length - 2))
+				spr.x = 223 * -1;
 		}
 
 		Conductor.songPosition = FlxG.sound.music.time;
@@ -336,7 +343,6 @@ class MainMenuState extends MusicBeatState
 			spr.screenCenter(X);
 		});
 	}
-
 
 	function changeItem(huh:Int = 0)
 	{
@@ -364,9 +370,10 @@ class MainMenuState extends MusicBeatState
 
 		yoJunk.forEach(function(ritzDeservedIt:Parents_Christmas)
 		{
-			// FlxG.log.add(ritzDeservedIt.ID + 'deez' + (ritzDeservedIt.ID - curSelected));
 			FlxTween.cancelTweensOf(ritzDeservedIt);
-			FlxTween.tween(ritzDeservedIt, {x: ritzDeservedIt.realX + (ritzDeservedIt.ID - curSelected) * 1200, y: (ritzDeservedIt.ID != curSelected) ? -175 : ritzDeservedIt.realY}, 0.4, {ease: FlxEase.quintOut});
+			FlxTween.tween(ritzDeservedIt,
+				{x: ritzDeservedIt.realX + (ritzDeservedIt.ID - curSelected) * 1200, y: (ritzDeservedIt.ID != curSelected) ? -175 : ritzDeservedIt.realY},
+				0.4, {ease: FlxEase.quintOut});
 		});
 
 		swagText.text = swagger[curSelected];

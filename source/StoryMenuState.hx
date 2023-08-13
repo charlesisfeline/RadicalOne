@@ -2,7 +2,7 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxSprite;
-//pico ok drip dick drip new week plzplzplzplzpzlzplzp lz uit is week 3 plzplzplz ninjamuuffin plzzzzz
+// pico ok drip dick drip new week plzplzplzplzpzlzplzp lz uit is week 3 plzplzplz ninjamuuffin plzzzzz
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.group.FlxGroup;
@@ -27,18 +27,12 @@ class StoryMenuState extends MusicBeatState
 		['North', 'Radical-vs-Masked-Babbys', 'Monkey-Sprite'],
 		['Namebe', 'Bouncy-Drop', "Destructed"],
 	];
+
 	/*['BonBon-LOOOL', "Without-You", "Bonnie-Song"],
 		['Cocoa', 'Eggnog', 'Winter-Horrorland'],
 		['Ceast'],
-		['Bustom-Source', 'FL-Keys', 'I-Didnt-Ask']*/
-
-	var weekNames:Array<String> = [
-		'real tutorial 100%',
-		'get a job',
-		'minecraft babbys',
-		'test',
-		'te'
-	];
+		['Bustom-Source', 'FL-Keys', 'I-Didnt-Ask'] */ // fl keys and bonbon might probably be in v2 im just predicting
+	var weekNames:Array<String> = ['real tutorial 100%', 'get a job', 'minecraft babbys', 'test', 'te'];
 
 	var curDifficulty:Int = 2;
 
@@ -90,7 +84,7 @@ class StoryMenuState extends MusicBeatState
 
 		persistentUpdate = persistentDraw = true;
 
-		//publicWeekData = weekData;
+		// publicWeekData = weekData;
 
 		scoreText = new FlxText(10, 10, 0, "SCORE: 49324858", 36);
 		scoreText.setFormat("VCR OSD Mono", 32);
@@ -154,18 +148,18 @@ class StoryMenuState extends MusicBeatState
 
 			// Needs an offset thingie
 			/*if (!weekUnlocked[i])
-			{
-				var lock:FlxSprite = new FlxSprite(weekThing.width + 10 + weekThing.x);
-				lock.frames = ui_tex;
-				lock.animation.addByPrefix('lock', 'lock');
-				lock.animation.play('lock');
-				lock.ID = i;
-				lock.antialiasing = true;
-				grpLocks.add(lock);
+				{
+					var lock:FlxSprite = new FlxSprite(weekThing.width + 10 + weekThing.x);
+					lock.frames = ui_tex;
+					lock.animation.addByPrefix('lock', 'lock');
+					lock.animation.play('lock');
+					lock.ID = i;
+					lock.antialiasing = true;
+					grpLocks.add(lock);
 			}*/
 		}
 
-		trace("Line 96");	
+		trace("Line 96");
 
 		difficultySelectors = new FlxTypedGroup<FlxSprite>();
 		// add(difficultySelectors);
@@ -204,8 +198,6 @@ class StoryMenuState extends MusicBeatState
 		add(weekPreviewShad);
 		weekPreview = new FlxSprite();
 		add(weekPreview);
-		
-		
 
 		txtTracklist = new FlxText(FlxG.width + 50, yellowBGButItsABarLOOL.x + yellowBGButItsABarLOOL.height + 100, 0, "Tracks", 25);
 		txtTracklist.alignment = CENTER;
@@ -214,24 +206,31 @@ class StoryMenuState extends MusicBeatState
 		add(txtTracklist);
 		// add(rankText);
 		add(scoreText);
-		//add(txtWeekTitle);
+		// add(txtWeekTitle);
 
 		var daY:Float = unlockedThing.y;
 		unlockedThing.y += 2000;
 		if (justUnlockedSkin)
 		{
-			if (PlayState.sheShed == 'destructed') squishFCedAmongUsHappyMeal = true;
+			if (PlayState.sheShed == 'destructed')
+				squishFCedAmongUsHappyMeal = true;
 			justUnlockedSkin = false;
 			add(unlockedThing);
 			add(regRacial);
 			add(newRacial);
 			canSelect = false;
-			new FlxTimer().start(0.75, function(tmr:FlxTimer){
-				FlxTween.tween(unlockedThing, {y: daY}, 1.5, {ease: FlxEase.quintOut, onComplete: function(twn:FlxTween){
-					new FlxTimer().start(0.5, function(tmr:FlxTimer){
-						canExitUnlock = true;
-					});
-				}});
+			new FlxTimer().start(0.75, function(tmr:FlxTimer)
+			{
+				FlxTween.tween(unlockedThing, {y: daY}, 1.5, {
+					ease: FlxEase.quintOut,
+					onComplete: function(twn:FlxTween)
+					{
+						new FlxTimer().start(0.5, function(tmr:FlxTimer)
+						{
+							canExitUnlock = true;
+						});
+					}
+				});
 				FlxTween.tween(regRacial, {y: 370}, 1.5, {ease: FlxEase.quintOut});
 				FlxTween.tween(newRacial, {y: 370}, 1.5, {ease: FlxEase.quintOut});
 			});
@@ -272,23 +271,30 @@ class StoryMenuState extends MusicBeatState
 		{
 			if (controls.ACCEPT)
 			{
-				new FlxTimer().start(0.5, function(junk:FlxTimer){
-					if (squishFCedAmongUsHappyMeal) {
+				new FlxTimer().start(0.5, function(junk:FlxTimer)
+				{
+					if (squishFCedAmongUsHappyMeal)
+					{
 						canSelect = false;
 						var thingLOL:FlxSprite = new FlxSprite().loadGraphic('assets/images/UI/theManOfSecrets.png');
 						thingLOL.screenCenter();
 						thingLOL.alpha = 0;
 						add(thingLOL);
-						FlxTween.tween(thingLOL, {alpha: 1}, 0.45, {onComplete: function(twn:FlxTween){
-							new FlxTimer().start(0, function(tmr:FlxTimer){
-								if (FlxG.keys.justPressed.SPACE) {
-									thingLOL.alpha = 0;
-									canSelect = true;
-								}
-								else
-									tmr.reset();
-							});
-						}});
+						FlxTween.tween(thingLOL, {alpha: 1}, 0.45, {
+							onComplete: function(twn:FlxTween)
+							{
+								new FlxTimer().start(0, function(tmr:FlxTimer)
+								{
+									if (FlxG.keys.justPressed.SPACE)
+									{
+										thingLOL.alpha = 0;
+										canSelect = true;
+									}
+									else
+										tmr.reset();
+								});
+							}
+						});
 					}
 					else
 						canSelect = true;
@@ -386,7 +392,7 @@ class StoryMenuState extends MusicBeatState
 					diffic = '-hard';
 			}
 
-            FlxG.camera.flash(FlxColor.WHITE, 1);
+			FlxG.camera.flash(FlxColor.WHITE, 1);
 
 			PlayState.storyDifficulty = curDifficulty;
 
@@ -394,7 +400,8 @@ class StoryMenuState extends MusicBeatState
 			PlayState.storyWeek = curWeek;
 			PlayState.campaignScore = 0;
 
-			new FlxTimer().start(0.5, function(tmr:FlxTimer){
+			new FlxTimer().start(0.5, function(tmr:FlxTimer)
+			{
 				FlxTween.tween(yellowBGCoverLower, {y: FlxG.height + 10}, 0.5, {ease: FlxEase.quadOut});
 				FlxTween.tween(yellowBGCoverUpper, {y: -yellowBGCoverUpper.height - 10}, 0.5, {ease: FlxEase.quadOut});
 			});
@@ -404,20 +411,23 @@ class StoryMenuState extends MusicBeatState
 
 			updateText(true);
 
-			new FlxTimer().start(0.65, function(tmr:FlxTimer){
+			new FlxTimer().start(0.65, function(tmr:FlxTimer)
+			{
 				FlxTween.tween(weekPreview, {x: penis[0], y: penis[1]}, 0.5, {ease: FlxEase.quadOut});
 				FlxTween.tween(weekPreviewShad, {x: punis[0], y: punis[1]}, 0.5, {ease: FlxEase.quadOut});
 				camZooming = true;
 			});
 
-			difficultySelectors.forEach(function(spr:FlxSprite){
+			difficultySelectors.forEach(function(spr:FlxSprite)
+			{
 				FlxTween.tween(spr, {x: spr.x + 400}, 0.5, {ease: FlxEase.quadOut});
 			});
 
-			grpWeekText.forEach(function(spr:FlxSprite){
+			grpWeekText.forEach(function(spr:FlxSprite)
+			{
 				FlxTween.tween(spr, {alpha: 0}, 0.35, {ease: FlxEase.quadOut});
 			});
-			
+
 			new FlxTimer().start(1.5, function(tmr:FlxTimer)
 			{
 				if (FlxG.sound.music != null)
@@ -556,14 +566,13 @@ class StoryMenuState extends MusicBeatState
 		intendedScore = Highscore.getWeekScore(curWeek, curDifficulty);
 		#end
 	}
-
 	/*static public function correctSongData()
-	{
-		theRealCorrect();
-	}
+		{
+			theRealCorrect();
+		}
 
-	function theRealCorrect()
-	{
-		publicWeekData = weekData;
+		function theRealCorrect()
+		{
+			publicWeekData = weekData;
 	}*/
 }
